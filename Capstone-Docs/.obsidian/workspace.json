@@ -11,11 +11,83 @@
             "id": "36b44a057bed8765",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
+              "type": "markdown",
+              "state": {
+                "file": "Landing.md",
+                "mode": "source",
+                "source": false
+              }
+            },
+            "group": "6c9daa7a2ae0ecdb"
           }
         ]
+      },
+      {
+        "id": "33a230d3d2bd2c36",
+        "type": "split",
+        "children": [
+          {
+            "id": "5239638a10204aa7",
+            "type": "tabs",
+            "dimension": 31.718898385565055,
+            "children": [
+              {
+                "id": "0008852a36955547",
+                "type": "leaf",
+                "state": {
+                  "type": "localgraph",
+                  "state": {
+                    "file": "Landing.md",
+                    "options": {
+                      "collapse-filter": true,
+                      "search": "",
+                      "localJumps": 1,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": false,
+                      "showTags": false,
+                      "showAttachments": false,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": true,
+                      "colorGroups": [],
+                      "collapse-display": true,
+                      "showArrow": false,
+                      "textFadeMultiplier": 0,
+                      "nodeSizeMultiplier": 1,
+                      "lineSizeMultiplier": 1,
+                      "collapse-forces": true,
+                      "centerStrength": 0.518713248970312,
+                      "repelStrength": 10,
+                      "linkStrength": 1,
+                      "linkDistance": 250,
+                      "scale": 0.6989606412938242,
+                      "close": true
+                    }
+                  }
+                },
+                "group": "6c9daa7a2ae0ecdb"
+              }
+            ]
+          },
+          {
+            "id": "a393d8d84f627c96",
+            "type": "tabs",
+            "dimension": 68.28110161443495,
+            "children": [
+              {
+                "id": "d0a8819d1b7ddd0b",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "graph",
+                  "state": {},
+                  "pinned": true
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -81,6 +153,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Landing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +170,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Landing.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +192,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Landing.md"
+              }
             }
           }
         ]
@@ -139,5 +215,11 @@
     }
   },
   "active": "36b44a057bed8765",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "Project Timeline.md",
+    "Landing.md",
+    "Project Description.md",
+    "Design Overview.md",
+    "Study Section.md"
+  ]
 }
