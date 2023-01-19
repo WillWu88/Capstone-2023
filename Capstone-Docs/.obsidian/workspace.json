@@ -6,6 +6,7 @@
       {
         "id": "42ce6b82b62fca6e",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "36b44a057bed8765",
@@ -13,18 +14,43 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Landing.md",
+                "file": "Study Section.md",
                 "mode": "source",
                 "source": false
               }
-            },
-            "group": "6c9daa7a2ae0ecdb"
+            }
+          },
+          {
+            "id": "2312f285bd91b50a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project Timeline.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "87ddeff1867ef083",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Study Topics/Feedback Loops.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       },
       {
         "id": "33a230d3d2bd2c36",
         "type": "split",
+        "dimension": 50,
         "children": [
           {
             "id": "5239638a10204aa7",
@@ -37,7 +63,7 @@
                 "state": {
                   "type": "localgraph",
                   "state": {
-                    "file": "Landing.md",
+                    "file": "Study Topics/Feedback Loops.md",
                     "options": {
                       "collapse-filter": true,
                       "search": "",
@@ -60,12 +86,11 @@
                       "repelStrength": 10,
                       "linkStrength": 1,
                       "linkDistance": 250,
-                      "scale": 0.6989606412938242,
+                      "scale": 0.7132754626224422,
                       "close": true
                     }
                   }
-                },
-                "group": "6c9daa7a2ae0ecdb"
+                }
               }
             ]
           },
@@ -137,7 +162,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "28dc49d4292b8d3f",
@@ -153,7 +178,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Landing.md",
+                "file": "Study Topics/Feedback Loops.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -170,7 +195,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Landing.md",
+                "file": "Study Topics/Feedback Loops.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -193,7 +218,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Landing.md"
+                "file": "Study Topics/Feedback Loops.md"
               }
             }
           }
@@ -214,12 +239,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "36b44a057bed8765",
+  "active": "87ddeff1867ef083",
   "lastOpenFiles": [
+    "Study Topics/Linux Command Line.md",
+    "Study Topics/Feedback Loops.md",
+    "Study Section.md",
     "Project Timeline.md",
-    "Landing.md",
     "Project Description.md",
+    "Landing.md",
     "Design Overview.md",
-    "Study Section.md"
+    "Sensors.md"
   ]
 }
