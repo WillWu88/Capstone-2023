@@ -38,14 +38,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project Timeline.md",
+                "file": "Study Section.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "33a230d3d2bd2c36",
@@ -55,7 +55,7 @@
           {
             "id": "5239638a10204aa7",
             "type": "tabs",
-            "dimension": 31.718898385565055,
+            "dimension": 43.601190476190474,
             "children": [
               {
                 "id": "0008852a36955547",
@@ -97,7 +97,7 @@
           {
             "id": "a393d8d84f627c96",
             "type": "tabs",
-            "dimension": 68.28110161443495,
+            "dimension": 56.398809523809526,
             "children": [
               {
                 "id": "d0a8819d1b7ddd0b",
@@ -239,15 +239,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "87ddeff1867ef083",
+  "active": "2312f285bd91b50a",
   "lastOpenFiles": [
     "Study Section.md",
+    "Landing.md",
     "Project Timeline.md",
     "Project Description.md",
-    "Landing.md",
-    "Study Topics/Linux Command Line.md",
-    "Study Topics/Feedback Loops.md",
     "Design Overview.md",
+    "Study Topics/Feedback Loops.md",
+    "Study Topics/Linux Command Line.md",
     "Sensors.md"
   ]
 }
