@@ -23,3 +23,5 @@ Proportional control: Where the characteristic of the controller is proportional
 Intergral Control: Helps to avoid the need for a control signal to keep the value stable in proportional control, by making the control action proportional to the integral of the error. 
 
 Control action (PID): Sum of the proportional control, integral control, and simple error prediction (derivative).
+
+## Appendix
