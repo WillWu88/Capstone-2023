@@ -4,13 +4,16 @@ Measures:
 -Line following
 -Grass Avoiding
 
-## Encoder
+## Encoder 
 Measures:
 -Measure angular or linear distance
 -Can be used to measure velocity
+-RPM
 
-## IMU
+## IMU //accelerometer
 Measures:
+-Acceleration in x,y,z
+-gyroscope
 
 ## Motor
 [link to motor control](https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&section=SystemModeling)
