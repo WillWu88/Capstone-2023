@@ -17,3 +17,6 @@ Measures:
 
 ## Motor
 [link to motor control](https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&section=SystemModeling)
+[Induction Motor notes](Documents/Induction_Motor_Notes.pdf)
+
+

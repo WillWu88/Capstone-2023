@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dynamic Systems.md",
+                "file": "Study Topics/Feedback Systems.md",
                 "mode": "source",
                 "source": false
               }
@@ -50,7 +50,7 @@
                 "state": {
                   "type": "localgraph",
                   "state": {
-                    "file": "Dynamic Systems.md",
+                    "file": "Study Topics/Feedback Systems.md",
                     "options": {
                       "collapse-filter": true,
                       "search": "",
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dynamic Systems.md",
+                "file": "Study Topics/Feedback Systems.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -182,7 +182,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dynamic Systems.md",
+                "file": "Study Topics/Feedback Systems.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -205,7 +205,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dynamic Systems.md"
+                "file": "Study Topics/Feedback Systems.md"
               }
             }
           }
@@ -228,15 +228,15 @@
   },
   "active": "36b44a057bed8765",
   "lastOpenFiles": [
-    "Design Overview.md",
-    "Study Topics/Feedback Systems.md",
-    "Study Topics/Linux Command Line.md",
-    "Study Topics/Feedback Systems/System Modeling.md",
-    "Study Topics/Feedback Systems/Feedback Loops.md",
     "Study Section.md",
-    "Feedback Systems.md",
-    "System Modeling.md",
+    "Sensors.md",
     "Project Timeline.md",
+    "Project Description.md",
+    "Study Topics/Feedback Systems/System Modeling.md",
+    "Landing.md",
+    "Documents/Induction_Motor_Notes.pdf",
+    "Documents/Feedback_Systems_Textbook.pdf",
+    "Study Topics/Feedback Systems.md",
     "Dynamic Systems.md"
   ]
 }
