@@ -38,7 +38,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Feedback Systems.md",
+                "file": "System Modeling.md",
                 "mode": "source",
                 "source": false
               }
@@ -75,7 +75,7 @@
                 "state": {
                   "type": "localgraph",
                   "state": {
-                    "file": "Feedback Systems.md",
+                    "file": "System Modeling.md",
                     "options": {
                       "collapse-filter": true,
                       "search": "",
@@ -190,7 +190,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Feedback Systems.md",
+                "file": "System Modeling.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -207,7 +207,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Feedback Systems.md",
+                "file": "System Modeling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -230,7 +230,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Feedback Systems.md"
+                "file": "System Modeling.md"
               }
             }
           }
@@ -238,7 +238,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -252,9 +253,9 @@
   },
   "active": "59cad866d160c4cc",
   "lastOpenFiles": [
+    "Feedback Systems.md",
     "Landing.md",
     "Project Description.md",
-    "Feedback Systems.md",
     "Dynamic Systems.md",
     "Study Topics/Feedback Loops.md",
     "Documents/Feedback_Systems_Textbook.pdf",
