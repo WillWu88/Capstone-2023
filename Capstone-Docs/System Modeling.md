@@ -12,3 +12,4 @@
 
 -In multidomain systems, smaller subsystems are described and the interfaces are determined by the behavior of interconnected subsystems, and combining these descriptions allows for the complete model.
 
+-Vectors of the state variables, control variables, and the measured signal.
