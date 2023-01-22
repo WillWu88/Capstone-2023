@@ -17,7 +17,7 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Study Section.md",
+                    "file": "Project Timeline.md",
                     "mode": "source",
                     "source": false
                   }
@@ -39,7 +39,7 @@
                     "state": {
                       "type": "localgraph",
                       "state": {
-                        "file": "Study Section.md",
+                        "file": "Project Timeline.md",
                         "options": {
                           "collapse-filter": true,
                           "search": "",
@@ -156,7 +156,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Study Section.md",
+                "file": "Project Timeline.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -173,7 +173,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Study Section.md",
+                "file": "Project Timeline.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -196,7 +196,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Study Section.md"
+                "file": "Project Timeline.md"
               }
             }
           }
@@ -219,13 +219,15 @@
   },
   "active": "a236389b474032df",
   "lastOpenFiles": [
+    "Modelling and Simulation.md",
     "Dynamic Systems.md",
-    "Study Section.md",
-    "Landing.md",
-    "Project Description.md",
-    "Project Timeline.md",
     "Design Overview.md",
-    "Study Topics/Linux Command Line.md",
-    "Study Topics/Feedback Loops.md"
+    "Controller and Estimator Design.md",
+    "Study Topics/Feedback Loops.md",
+    "Project Timeline.md",
+    "System Identification.md",
+    "Filters.md",
+    "Study Section.md",
+    "Landing.md"
   ]
 }
