@@ -18,6 +18,8 @@ Measures:
 ## Motor
 [link to motor control](https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&section=SystemModeling)
 [Induction Motor notes](Documents/Induction_Motor_Notes.pdf)
+[Traxxas Titan 12 turn 550 modified motor](https://traxxas.com/products/parts/motors/titan12T)
+-Max voltage 8.4V
 
 ## XL-5 Traxxas
 [Traxxas notes](Documents/Electronic_Speed_Control.pdf)
