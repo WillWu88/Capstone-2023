@@ -9,24 +9,12 @@
         "dimension": 50,
         "children": [
           {
-            "id": "36b44a057bed8765",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Study Topics/Feedback Systems/System Modeling Examples.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "87ddeff1867ef083",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Study Section.md",
+                "file": "Car Components.md",
                 "mode": "source",
                 "source": false
               }
@@ -50,7 +38,7 @@
                 "state": {
                   "type": "localgraph",
                   "state": {
-                    "file": "Study Topics/Feedback Systems/System Modeling Examples.md",
+                    "file": "Car Components.md",
                     "options": {
                       "collapse-filter": true,
                       "search": "",
@@ -165,7 +153,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Study Topics/Feedback Systems/System Modeling Examples.md",
+                "file": "Car Components.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -182,7 +170,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Study Topics/Feedback Systems/System Modeling Examples.md",
+                "file": "Car Components.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -205,7 +193,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Study Topics/Feedback Systems/System Modeling Examples.md"
+                "file": "Car Components.md"
               }
             }
           }
@@ -226,17 +214,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "36b44a057bed8765",
+  "active": "87ddeff1867ef083",
   "lastOpenFiles": [
+    "Study Topics/Linux Command Line.md",
+    "Study Section.md",
+    "Documents/Electronic_Speed_Control.pdf",
+    "Car Components.md",
+    "Project Timeline.md",
+    "Study Topics/Feedback Systems/System Modeling Examples.md",
     "Study Topics/System Modeling Examples.md",
     "System Modeling Examples.md",
     "Study Topics/Feedback Systems.md",
-    "Study Section.md",
-    "Sensors.md",
-    "Project Timeline.md",
-    "Project Description.md",
-    "Study Topics/Feedback Systems/System Modeling.md",
-    "Landing.md",
-    "Documents/Induction_Motor_Notes.pdf"
+    "Project Description.md"
   ]
 }
