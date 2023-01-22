@@ -6,3 +6,5 @@ Constants We Need:
 -J: Moment of Inertia
 -C: Longitudenal tire stiffness
 -C: Lateral tire stiffness
+-slip
+[measuring slip](http://salesmanual.deere.com/sales/salesmanual/en_NA/tractors/2012/feature/ballasting_and_optimizing_performance/7/7r_ballast_wheel_slip.html)
