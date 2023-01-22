@@ -6,6 +6,7 @@
       {
         "id": "61a66fef82505004",
         "type": "tabs",
+        "dimension": 64.56896551724138,
         "children": [
           {
             "id": "1147f1d79684a098",
@@ -13,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Design Overview.md",
+                "file": "Capstone-Docs/Sensors.md",
                 "mode": "source",
                 "source": false
               }
@@ -24,6 +25,7 @@
       {
         "id": "c42bd19b75f812f9",
         "type": "tabs",
+        "dimension": 35.43103448275862,
         "children": [
           {
             "id": "7f367b3ee82a7a46",
@@ -99,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Design Overview.md",
+                "file": "Capstone-Docs/Sensors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Design Overview.md",
+                "file": "Capstone-Docs/Sensors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/Design Overview.md"
+                "file": "Capstone-Docs/Sensors.md"
               }
             }
           }
@@ -162,13 +164,13 @@
   },
   "active": "1147f1d79684a098",
   "lastOpenFiles": [
-    "Capstone-Docs/Dynamics Systems.md",
-    "Capstone-Docs/Sensors.md",
     "Capstone-Docs/Landing.md",
-    "Capstone-Docs/Study Section.md",
-    "Capstone-Docs/Design Overview.md",
-    "README.md",
     "Capstone-Docs/Project Timeline.md",
+    "Capstone-Docs/Dynamics Systems.md",
+    "Capstone-Docs/Design Overview.md",
+    "Capstone-Docs/Sensors.md",
+    "Week 1 Progress Report.pdf",
+    "Capstone-Docs/Project Description.md",
     "Lab 8 - Induction Machines Notes.pdf",
     "Capstone-Docs/Study Topics/Linux Command Line.md",
     "Capstone-Docs/Study Topics/Feedback Loops.md"
