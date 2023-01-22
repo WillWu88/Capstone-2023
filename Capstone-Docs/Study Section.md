@@ -7,5 +7,6 @@ The next topic reviewed was the broad topic of [[Feedback Systems]]. The first o
 ## Topics to Explore
 
 - [ ] [[Dynamic Systems]]
+- [ ] [[Sensors]]
+- [ ] [[Filters]]
 - [ ] [[Car Components]]
-- [ ] 
