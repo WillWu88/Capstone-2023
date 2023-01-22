@@ -1,6 +1,4 @@
-[Linux Survival](https://linuxsurvival.com/linux-tutorial-introduction/)
-
-Key Commands:
+## Key Commands:
 
 ls: List contents of a directory
 
@@ -47,3 +45,4 @@ df: Shows free disk space
 ps: Shows process status
 
 ## Appendix:
+[Linux Survival](https://linuxsurvival.com/linux-tutorial-introduction/)
