@@ -10,7 +10,7 @@ Measures:
 - Can be used to measure velocity
 - RPM
 
-## IMU //accelerometer
+## IMU / accelerometer
 Measures:
 - Acceleration in x,y,z
 - gyroscope

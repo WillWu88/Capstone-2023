@@ -17,7 +17,7 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Project Timeline.md",
+                    "file": "Study Section.md",
                     "mode": "source",
                     "source": false
                   }
@@ -39,7 +39,7 @@
                     "state": {
                       "type": "localgraph",
                       "state": {
-                        "file": "Project Timeline.md",
+                        "file": "Study Section.md",
                         "options": {
                           "collapse-filter": true,
                           "search": "",
@@ -62,7 +62,7 @@
                           "repelStrength": 10,
                           "linkStrength": 1,
                           "linkDistance": 250,
-                          "scale": 0.6989606412938242,
+                          "scale": 0.586335931130124,
                           "close": true
                         }
                       }
@@ -156,7 +156,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project Timeline.md",
+                "file": "Study Section.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -173,7 +173,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Project Timeline.md",
+                "file": "Study Section.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -196,7 +196,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project Timeline.md"
+                "file": "Study Section.md"
               }
             }
           }
@@ -219,15 +219,15 @@
   },
   "active": "a236389b474032df",
   "lastOpenFiles": [
-    "Modelling and Simulation.md",
+    "Sensors.md",
+    "Study Section.md",
     "Dynamic Systems.md",
+    "Project Timeline.md",
+    "Modelling and Simulation.md",
     "Design Overview.md",
     "Controller and Estimator Design.md",
     "Study Topics/Feedback Loops.md",
-    "Project Timeline.md",
     "System Identification.md",
-    "Filters.md",
-    "Study Section.md",
-    "Landing.md"
+    "Filters.md"
   ]
 }
