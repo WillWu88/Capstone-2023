@@ -164,15 +164,15 @@
   },
   "active": "1147f1d79684a098",
   "lastOpenFiles": [
-    "Capstone-Docs/Landing.md",
     "Capstone-Docs/Project Timeline.md",
-    "Capstone-Docs/Dynamics Systems.md",
-    "Capstone-Docs/Design Overview.md",
-    "Capstone-Docs/Sensors.md",
-    "Week 1 Progress Report.pdf",
     "Capstone-Docs/Project Description.md",
-    "Lab 8 - Induction Machines Notes.pdf",
-    "Capstone-Docs/Study Topics/Linux Command Line.md",
-    "Capstone-Docs/Study Topics/Feedback Loops.md"
+    "Capstone-Docs/Modelling and Simulation.md",
+    "Capstone-Docs/Landing.md",
+    "Capstone-Docs/Filters.md",
+    "Capstone-Docs/Dynamic Systems.md",
+    "Capstone-Docs/Design Overview.md",
+    "Capstone-Docs/Controller and Estimator Design.md",
+    "Capstone-Docs/Car Components.md",
+    "Capstone-Docs/Documents/Induction_Motor_Notes.pdf"
   ]
 }

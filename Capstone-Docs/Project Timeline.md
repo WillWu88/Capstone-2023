@@ -15,7 +15,7 @@
 
 - 1/19/23: Compiled ROS2 onto the Raspberry PI and established remote connection
 
-- *1/20/23: Start modeling the PI car with space models
+- *1/20/23 - 1/23/23: Start modeling the PI car with space models
 
 
 
