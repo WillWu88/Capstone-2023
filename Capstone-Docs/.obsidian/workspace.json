@@ -4,93 +4,90 @@
     "type": "split",
     "children": [
       {
-        "id": "68aeae1bc825d71f",
-        "type": "split",
+        "id": "42ce6b82b62fca6e",
+        "type": "tabs",
+        "dimension": 50,
         "children": [
           {
-            "id": "15ae1ebc705eb06e",
+            "id": "87ddeff1867ef083",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "System Identification.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "33a230d3d2bd2c36",
+        "type": "split",
+        "dimension": 50,
+        "children": [
+          {
+            "id": "5239638a10204aa7",
             "type": "tabs",
+            "dimension": 43.601190476190474,
             "children": [
               {
-                "id": "a236389b474032df",
+                "id": "0008852a36955547",
                 "type": "leaf",
                 "state": {
-                  "type": "markdown",
+                  "type": "localgraph",
                   "state": {
-                    "file": "Study Section.md",
-                    "mode": "source",
-                    "source": false
+                    "file": "System Identification.md",
+                    "options": {
+                      "collapse-filter": true,
+                      "search": "",
+                      "localJumps": 1,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": false,
+                      "showTags": false,
+                      "showAttachments": false,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": true,
+                      "colorGroups": [],
+                      "collapse-display": true,
+                      "showArrow": false,
+                      "textFadeMultiplier": 0,
+                      "nodeSizeMultiplier": 1,
+                      "lineSizeMultiplier": 1,
+                      "collapse-forces": true,
+                      "centerStrength": 0.518713248970312,
+                      "repelStrength": 10,
+                      "linkStrength": 1,
+                      "linkDistance": 250,
+                      "scale": 0.7132754626224422,
+                      "close": true
+                    }
                   }
                 }
               }
             ]
           },
           {
-            "id": "ef1ab5dd482e3557",
-            "type": "split",
+            "id": "a393d8d84f627c96",
+            "type": "tabs",
+            "dimension": 56.398809523809526,
             "children": [
               {
-                "id": "aa34beddbeeed13d",
-                "type": "tabs",
-                "children": [
-                  {
-                    "id": "1844b2530dc37cda",
-                    "type": "leaf",
-                    "state": {
-                      "type": "localgraph",
-                      "state": {
-                        "file": "Study Section.md",
-                        "options": {
-                          "collapse-filter": true,
-                          "search": "",
-                          "localJumps": 1,
-                          "localBacklinks": true,
-                          "localForelinks": true,
-                          "localInterlinks": false,
-                          "showTags": false,
-                          "showAttachments": false,
-                          "hideUnresolved": false,
-                          "collapse-color-groups": true,
-                          "colorGroups": [],
-                          "collapse-display": true,
-                          "showArrow": false,
-                          "textFadeMultiplier": 0,
-                          "nodeSizeMultiplier": 1,
-                          "lineSizeMultiplier": 1,
-                          "collapse-forces": true,
-                          "centerStrength": 0.518713248970312,
-                          "repelStrength": 10,
-                          "linkStrength": 1,
-                          "linkDistance": 250,
-                          "scale": 0.586335931130124,
-                          "close": true
-                        }
-                      }
-                    }
-                  }
-                ]
-              },
-              {
-                "id": "a393d8d84f627c96",
-                "type": "tabs",
-                "children": [
-                  {
-                    "id": "d0a8819d1b7ddd0b",
-                    "type": "leaf",
-                    "pinned": true,
-                    "state": {
-                      "type": "graph",
-                      "state": {},
-                      "pinned": true
-                    }
-                  }
-                ]
+                "id": "d0a8819d1b7ddd0b",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "graph",
+                  "state": {},
+                  "pinned": true
+                }
               }
-            ],
-            "direction": "horizontal"
+            ]
           }
         ],
-        "direction": "vertical"
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -140,7 +137,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "28dc49d4292b8d3f",
@@ -156,8 +153,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Study Section.md",
-                "collapseAll": false,
+                "file": "System Identification.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -173,7 +170,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Study Section.md",
+                "file": "System Identification.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -196,7 +193,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Study Section.md"
+                "file": "System Identification.md"
               }
             }
           }
@@ -204,7 +201,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -217,17 +214,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a236389b474032df",
+  "active": "87ddeff1867ef083",
   "lastOpenFiles": [
-    "Dynamic Systems.md",
+    "Project Description.md",
+    "Landing.md",
+    "Sensors.md",
     "Study Section.md",
+    "System Identification.md",
     "Project Timeline.md",
     "Modelling and Simulation.md",
-    "Landing.md",
-    "Study Topics/Feedback Systems/System Modeling.md",
-    "Sensors.md",
-    "Documents/Feedback_Systems_Textbook.pdf.md",
-    "Study Topics/Feedback Systems.md",
-    "Study Topics/Feedback Systems/Feedback Loops.md"
+    "Filters.md",
+    "Design Overview.md",
+    "Controller and Estimator Design.md"
   ]
 }
