@@ -17,7 +17,7 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Study Section.md",
+                    "file": "Modelling and Simulation.md",
                     "mode": "source",
                     "source": false
                   }
@@ -39,7 +39,7 @@
                     "state": {
                       "type": "localgraph",
                       "state": {
-                        "file": "Study Section.md",
+                        "file": "Modelling and Simulation.md",
                         "options": {
                           "collapse-filter": true,
                           "search": "",
@@ -156,7 +156,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Study Section.md",
+                "file": "Modelling and Simulation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -173,7 +173,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Study Section.md",
+                "file": "Modelling and Simulation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -196,7 +196,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Study Section.md"
+                "file": "Modelling and Simulation.md"
               }
             }
           }
@@ -219,15 +219,15 @@
   },
   "active": "a236389b474032df",
   "lastOpenFiles": [
-    "Sensors.md",
-    "Study Section.md",
-    "Dynamic Systems.md",
     "Project Timeline.md",
-    "Modelling and Simulation.md",
-    "Design Overview.md",
-    "Controller and Estimator Design.md",
-    "Study Topics/Feedback Loops.md",
-    "System Identification.md",
-    "Filters.md"
+    "Landing.md",
+    "Study Topics/Feedback Systems/System Modeling.md",
+    "Study Section.md",
+    "Sensors.md",
+    "Documents/Feedback_Systems_Textbook.pdf.md",
+    "Study Topics/Feedback Systems.md",
+    "Study Topics/Feedback Systems/Feedback Loops.md",
+    "Study Topics/Feedback Systems/System Modeling Examples.md",
+    "Car Components.md"
   ]
 }
