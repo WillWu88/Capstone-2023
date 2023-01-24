@@ -1,4 +1,31 @@
 ## Lidar
+[Lidar Spec Sheet](https://www.digikey.dk/htmldatasheets/production/3265529/0/0/1/a1m8.html)
+-Laser triangularation measurement system
+
+-System can perform 360 degree within 6 meter range
+
+-Scanning frequency reached 5.5hz when sampling 360 points each round. Can be configured to 10 hz max.
+
+-Rotates and scans clockwise
+
+-Comes with a speed detection and adaptive system, and the system can then adjust frequency.
+
+-System measures distance data in more than 2000 times' per second.
+
+Measurements:
+-Distance Range
+-Angular Range
+-Distance Resolution
+-Angular Resolution
+-Sample Duration
+-Sample frequency
+-Scan Rate
+
+Optical:
+-Laser wavelength
+-Laser power
+-Pulse length
+
 Measures:
 -Ranges
 -Line following

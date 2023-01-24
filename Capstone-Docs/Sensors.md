@@ -15,5 +15,3 @@ Measures:
 - Acceleration in x,y,z
 - gyroscope
 
-## Motor
-[link to motor control](https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&section=SystemModeling)
