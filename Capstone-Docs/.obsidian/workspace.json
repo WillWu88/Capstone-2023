@@ -1,107 +1,112 @@
 {
   "main": {
-    "id": "967a949c7343dd5d",
+    "id": "2bf64bd4fbddb06d",
     "type": "split",
     "children": [
       {
-        "id": "42ce6b82b62fca6e",
-        "type": "tabs",
-        "dimension": 50,
-        "children": [
-          {
-            "id": "87ddeff1867ef083",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "System Identification.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "33a230d3d2bd2c36",
+        "id": "aee718866f50c0b9",
         "type": "split",
-        "dimension": 50,
         "children": [
           {
-            "id": "5239638a10204aa7",
+            "id": "c1bf80322fd1d24f",
             "type": "tabs",
-            "dimension": 43.601190476190474,
             "children": [
               {
-                "id": "0008852a36955547",
+                "id": "8ac9d7ca65ef1b1c",
                 "type": "leaf",
                 "state": {
-                  "type": "localgraph",
+                  "type": "markdown",
                   "state": {
-                    "file": "System Identification.md",
-                    "options": {
-                      "collapse-filter": true,
-                      "search": "",
-                      "localJumps": 1,
-                      "localBacklinks": true,
-                      "localForelinks": true,
-                      "localInterlinks": false,
-                      "showTags": false,
-                      "showAttachments": false,
-                      "hideUnresolved": false,
-                      "collapse-color-groups": true,
-                      "colorGroups": [],
-                      "collapse-display": true,
-                      "showArrow": false,
-                      "textFadeMultiplier": 0,
-                      "nodeSizeMultiplier": 1,
-                      "lineSizeMultiplier": 1,
-                      "collapse-forces": true,
-                      "centerStrength": 0.518713248970312,
-                      "repelStrength": 10,
-                      "linkStrength": 1,
-                      "linkDistance": 250,
-                      "scale": 0.7132754626224422,
-                      "close": true
-                    }
+                    "file": "Modelling and Simulation.md",
+                    "mode": "source",
+                    "source": false
                   }
-                }
+                },
+                "group": "e1e8092faa774360"
               }
             ]
           },
           {
-            "id": "a393d8d84f627c96",
-            "type": "tabs",
-            "dimension": 56.398809523809526,
+            "id": "2dba81fef4b40d1f",
+            "type": "split",
             "children": [
               {
-                "id": "d0a8819d1b7ddd0b",
-                "type": "leaf",
-                "pinned": true,
-                "state": {
-                  "type": "graph",
-                  "state": {},
-                  "pinned": true
-                }
+                "id": "c1ad393d10e2dd57",
+                "type": "tabs",
+                "children": [
+                  {
+                    "id": "c405a7c3e77a48a4",
+                    "type": "leaf",
+                    "state": {
+                      "type": "localgraph",
+                      "state": {
+                        "file": "Modelling and Simulation.md",
+                        "options": {
+                          "collapse-filter": true,
+                          "search": "",
+                          "localJumps": 1,
+                          "localBacklinks": true,
+                          "localForelinks": true,
+                          "localInterlinks": false,
+                          "showTags": false,
+                          "showAttachments": false,
+                          "hideUnresolved": false,
+                          "collapse-color-groups": true,
+                          "colorGroups": [],
+                          "collapse-display": true,
+                          "showArrow": false,
+                          "textFadeMultiplier": 0,
+                          "nodeSizeMultiplier": 1,
+                          "lineSizeMultiplier": 1,
+                          "collapse-forces": true,
+                          "centerStrength": 0.518713248970312,
+                          "repelStrength": 10,
+                          "linkStrength": 1,
+                          "linkDistance": 250,
+                          "scale": 0.8502830004171924,
+                          "close": true
+                        }
+                      }
+                    },
+                    "group": "e1e8092faa774360"
+                  }
+                ]
+              },
+              {
+                "id": "e2b3a178f519c0a5",
+                "type": "tabs",
+                "children": [
+                  {
+                    "id": "2e12ea6d55a53003",
+                    "type": "leaf",
+                    "pinned": true,
+                    "state": {
+                      "type": "graph",
+                      "state": {},
+                      "pinned": true
+                    }
+                  }
+                ]
               }
-            ]
+            ],
+            "direction": "horizontal"
           }
         ],
-        "direction": "horizontal"
+        "direction": "vertical"
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "da9cf3ff9558985f",
+    "id": "109d629617c3b3d6",
     "type": "split",
     "children": [
       {
-        "id": "8b07eac848d8bfe6",
+        "id": "f978438820584cd2",
         "type": "tabs",
         "children": [
           {
-            "id": "ab36036f6ba73f8c",
+            "id": "1f9ab1acd59370fc",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -111,7 +116,7 @@
             }
           },
           {
-            "id": "5dd316ef0fca2232",
+            "id": "bb4f0cc918b9a060",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -126,7 +131,7 @@
             }
           },
           {
-            "id": "9607e643f47abed5",
+            "id": "75971d321d91b94d",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -137,24 +142,24 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300
   },
   "right": {
-    "id": "28dc49d4292b8d3f",
+    "id": "62aff61c801c0ce4",
     "type": "split",
     "children": [
       {
-        "id": "20e473694e9dfbbf",
+        "id": "28aabaa6064960da",
         "type": "tabs",
         "children": [
           {
-            "id": "3e466dbc2fb0b378",
+            "id": "3a8884290318938d",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "System Identification.md",
-                "collapseAll": true,
+                "file": "Modelling and Simulation.md",
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -165,19 +170,19 @@
             }
           },
           {
-            "id": "c5451963c5d608cd",
+            "id": "609d274eb75e75e5",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "System Identification.md",
+                "file": "Modelling and Simulation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "8108b48cf13a5ad6",
+            "id": "0742b19468c4a8c0",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -188,12 +193,12 @@
             }
           },
           {
-            "id": "a969dbff3e2be2b1",
+            "id": "4dca622f68291e96",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "System Identification.md"
+                "file": "Modelling and Simulation.md"
               }
             }
           }
@@ -201,7 +206,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
@@ -214,30 +219,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "87ddeff1867ef083",
+  "active": "8ac9d7ca65ef1b1c",
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "Continuous Integration.md",
-    "Study Section.md",
-    "Dynamic Systems.md",
-    "Project Timeline.md",
-    "Modelling and Simulation.md",
-    "Landing.md",
     "Study Topics/Feedback Systems/System Modeling.md",
-    "Sensors.md",
-    "Documents/Feedback_Systems_Textbook.pdf.md",
-    "Study Topics/Feedback Systems.md"
-=======
-    "Project Description.md",
-    "Landing.md",
-    "Sensors.md",
-    "Study Section.md",
-    "System Identification.md",
-    "Project Timeline.md",
     "Modelling and Simulation.md",
-    "Filters.md",
+    "Project Timeline.md",
+    "Landing.md",
+    "Project Description.md",
     "Design Overview.md",
-    "Controller and Estimator Design.md"
->>>>>>> 3b0ca8f5b78183fc9d5f2482bc6f183172ad7c62
+    "Study Section.md",
+    "ROS2.md",
+    "Study Topics/Feedback Systems/Feedback Loops.md",
+    "Continuous Integration.md"
   ]
 }
