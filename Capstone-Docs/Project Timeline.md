@@ -19,5 +19,7 @@
 
 * 1/22/23: Modelling PiCar, sensor research
 
+* 1/25/2023: Modelling PiCar, starting System Identification
+
 
 
