@@ -38,7 +38,9 @@ We define the state vector of the car as follows:
 $$\vec{x} = \begin{bmatrix}\dot{x} \\ \dot{y} \\ \dot{\psi}\end{bmatrix} = \begin{bmatrix}v_x \\ v_y \\ r_z\end{bmatrix}$$
 where $x$ and $y$ are the displacement of the car from an arbitrary starting point. We might extend our model to include these displacement states if we can aquire localization information, i.e global/local position through GPS or SLAM. $v_x$ and $v_y$ denote the translational speed of the car along their respective axis,  while $\psi$ and $r_z$ denotes angular quantities (right-hand rotation around a downward z-axis), yawing angle and yawing velocity to be exact. 
 
-Our dynamic system contains two inputs: steering angle $\theta$ and motor torque $\tau_m$. $$\vec{u} = \begin{bmatrix}\theta \\ \tau_m\end{bmatrix}$$Though we can control $\theta$ with direct command from the Raspberry Pi, we indirectly control $\tau_m$ by varying the voltage. See [[System Identification]] and [[#III. Actuator Modelling]] for details.
+Our dynamic system contains two inputs: steering angle $\theta$ and motor torque $\tau_m$. 
+$$\vec{u} = \begin{bmatrix}\theta \\ \tau_m\end{bmatrix}$$
+Though we can control $\theta$ with direct command from the Raspberry Pi, we indirectly control $\tau_m$ by varying the voltage. See [[System Identification]] and [[#III. Actuator Modelling]] for details.
 
 
 ## III. Actuator Modelling
