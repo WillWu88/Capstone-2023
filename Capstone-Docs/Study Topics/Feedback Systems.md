@@ -2,6 +2,6 @@ During our project, we also reviewed control systems with reference to [Feedback
 
 ## Table of Contents
 Chapter 1: [[Feedback Loops]]
-Chapter 2: [[System Modeling]]
+Chapter 2: [[System Dynamics and Modeling]]
 Chapter 3: [[System Modeling Examples]]
 

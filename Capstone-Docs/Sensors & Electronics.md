@@ -1,34 +1,93 @@
-## Lidar
+## Sensor Setup Scripts
+```shell
+sudo apt install raspi-config # pi manager to enable rpi bus protocols
+pip3 install smbus #accelerometer package
+sudo apt install python3-lgpio #python gpio package for raspberry pi
+```
+
+## I. Lidar
+
+[Lidar Spec Sheet](https://www.digikey.dk/htmldatasheets/production/3265529/0/0/1/a1m8.html)
+- Laser triangularation measurement system
+- System can perform 360 degree within 6 meter range
+- Scanning frequency reached 5.5hz when sampling 360 points each round. Can be configured to 10 hz max.
+- Rotates and scans clockwise
+- Comes with a speed detection and adaptive system, and the system can then adjust frequency.
+- System measures distance data in more than 2000 times' per second.
+
+### Measurements:
+- Distance Range
+- Angular Range
+- Distance Resolution
+- Angular Resolution
+- Sample Duration
+- Sample frequency
+- Scan Rate
+
+Optical:
+- Laser wavelength
+- Laser power
+- Pulse length
+
 Measures:
 - Ranges
 - Line following
 - Grass Avoiding
 
-## Encoder 
+## II. Encoder 
 Measures:
 - Measure angular or linear distance
 - Can be used to measure velocity
 - RPM sensor
 - refer to data sheet: "use gpio #16, pin5 on connector j6"
 
-## IMU / accelerometer - gyroscope
+## III. IMU / accelerometer - gyroscope
 Measures:
+Measures:
+- Acceleration in x,y,z
+- Angular speed around x, y, z
 Model: [MPU6050](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf)
 - Acceleration in x,y,z
-- ingyroscope
 - Pinout:
-- 
 | Pin | Full Name | Function |
 | - | - | - |
 | *SCL* | Serial Clock | |
 | *SDA* | Serial Data | |
 | *INT* | Interrupt Digital Output | |
 
-[Example Raspberry Pi Code](https://www.electronicwings.com/raspberry-pi/mpu6050-accelerometergyroscope-interfacing-with-raspberry-pi)
+- Sensor uses [[I2C]] for communication to PI
+- [Example Raspberry Pi Code](https://www.electronicwings.com/raspberry-pi/mpu6050-accelerometergyroscope-interfacing-with-raspberry-pi)
 
+```shell
+# smbus has a permission problem, so use the following command (carefully) to change permission of the file
+sudo chmod 774 <file>
+```
 
+## IV. Level Shifter
 
-## Level Shifter
-
-## Servo Control Board
+## V. Servo Control Board
 - [Data Sheet](https://cdn-shop.adafruit.com/datasheets/PCA9685.pdf)
+
+
+## VI. XL-5 Traxxas ESC
+[Traxxas notes](Documents/Electronic_Speed_Control.pdf)
+- Electronic Speed Control
+- Forward, Reverse, and Breaking
+
+Forward Specs:
+- Resistance 0.005 ohms
+- Peak Current 100A
+
+Reverse Specs:
+- Resistance 0.014 ohms
+- Peak Current 60A
+
+Other Specs: 
+- **PWM freq: 1700 Hz**
+* Braking Current: 60A
+- Continuous Current: 15A
+
+
+## Appendix: References
+- [Raspberry PI GPIO Setup](https://ubuntu.com/tutorials/gpio-on-raspberry-pi#1-overview)
+- 
