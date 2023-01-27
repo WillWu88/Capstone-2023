@@ -21,5 +21,9 @@
 
 * 1/25/2023: Modelling PiCar, starting System Identification
 
+- 1/26/2023: PiCar System ID
+
+
+
 
 
