@@ -45,6 +45,8 @@ Though we can control $\theta$ with direct command from the Raspberry Pi, we ind
 
 ## III. Actuator Modelling
 
+- Check with IMU alignment
+
 ## IV. Aerodynamics Modelling
 
 

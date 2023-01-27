@@ -50,19 +50,19 @@ Measures:
 
 ## XL-5 Traxxas
 [Traxxas notes](Documents/Electronic_Speed_Control.pdf)
--Electronic Speed Control
--Forward, Reverse, and Breaking
+- Electronic Speed Control
+- Forward, Reverse, and Breaking
 
 Forward Specs:
--Resistance 0.005 ohms
--Peak Current 100A
+- Resistance 0.005 ohms
+- Peak Current 100A
 
 Reverse Specs:
--Resistance 0.014 ohms
--Peak Current 60A
+- Resistance 0.014 ohms
+- Peak Current 60A
 
 Other Specs: 
-PWM freq: 1700 Hz
-Braking Current: 60A
-Continuous Current: 15A
+- **PWM freq: 1700 Hz**
+* Braking Current: 60A
+- Continuous Current: 15A
 

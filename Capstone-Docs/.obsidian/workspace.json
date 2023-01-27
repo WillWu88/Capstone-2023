@@ -17,7 +17,7 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "System Identification.md",
+                    "file": "Sensors & Electronics.md",
                     "mode": "source",
                     "source": false
                   }
@@ -40,7 +40,7 @@
                     "state": {
                       "type": "localgraph",
                       "state": {
-                        "file": "System Identification.md",
+                        "file": "Sensors & Electronics.md",
                         "options": {
                           "collapse-filter": true,
                           "search": "",
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "System Identification.md",
+                "file": "Sensors & Electronics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "System Identification.md",
+                "file": "Sensors & Electronics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "System Identification.md"
+                "file": "Sensors & Electronics.md"
               }
             }
           }
@@ -222,14 +222,14 @@
   "active": "8ac9d7ca65ef1b1c",
   "lastOpenFiles": [
     "Car Components.md",
-    "Study Section.md",
-    "Landing.md",
-    "Study Topics/Feedback Systems/System Modeling.md",
+    "Sensors & Electronics.md",
     "Modelling and Simulation.md",
-    "System Identification.md",
+    "Dynamic Systems.md",
+    "Study Section.md",
+    "Estimators.md",
+    "Controller and Estimator Design.md",
     "Project Timeline.md",
-    "Project Description.md",
-    "Design Overview.md",
-    "ROS2.md"
+    "System Identification.md",
+    "Landing.md"
   ]
 }
