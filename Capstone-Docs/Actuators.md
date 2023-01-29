@@ -1,3 +1,5 @@
+Definition: a device that causes a machine or other device to operate.
+
 ## Motor
 [link to motor control](https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&section=SystemModeling)
 [Induction Motor notes](Documents/Induction_Motor_Notes.pdf)
