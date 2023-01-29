@@ -1,9 +1,4 @@
-## Sensor Setup Scripts
-```shell
-sudo apt install raspi-config # pi manager to enable rpi bus protocols
-pip3 install smbus #accelerometer package
-sudo apt install python3-lgpio #python gpio package for raspberry pi
-```
+## See [[Sensor SetUp]] for sensor setup instructions
 
 ## I. Lidar
 
