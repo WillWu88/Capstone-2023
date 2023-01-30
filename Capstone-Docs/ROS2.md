@@ -63,7 +63,7 @@ $ apt-cache seach ros-foxy
 shows the packages available to install.
 
 -Command
-$ sude rosdep init
+$ sudo rosdep init
 $ rosdep update
 Used to discover dependencies in packages not solved and installs them as deb packages.
 

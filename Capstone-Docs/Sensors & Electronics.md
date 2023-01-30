@@ -42,6 +42,7 @@ Measures:
 - Acceleration in x,y,z
 - Angular speed around x, y, z
 Model: [MPU6050](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf)
+[Register Map](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf)
 - Acceleration in x,y,z
 - Pinout:
 | Pin | Full Name | Function |
