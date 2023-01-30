@@ -47,3 +47,31 @@ Key Takeaway for our Project:
 -Every time we impliment an action in ROS2, we design a computational graph. Establishing which nodes we need and what their interactions are. We must decide if a node is executed at a certain frequency or if some event causes its execution.
 
 1.1.3 The Workspace
+
+-The Workspace looks at ROS2 from a static point of view, where the ROS2 software is installed, organized, and all the tools and processes that allow us to launch a computing graph. 
+
+-The fundamental element of the workspace is the package, which contains executables, libraries, or message definitions with a common purpose. 
+
+-Another element is the workspace itself, where a workspace is a directory that contains packages. 
+
+-There can be several workspaces in use at the same time, the inital workspace, underlay, and then any additional workspaces are referred to as overlay. 
+
+-Packages can be installed from sources or with the systems installation system. Each ROS2 package is packaged in a deb package.
+
+-Command
+$ apt-cache seach ros-foxy
+shows the packages available to install.
+
+-Command
+$ sude rosdep init
+$ rosdep update
+Used to discover dependencies in packages not solved and installs them as deb packages.
+
+-Sample of creating a workspace and adding packages on page 12.
+
+-colcon (collective construction) is a command line tool for building, testing, and using multiple software packages. It automates the process of building and set up in the environment to use the packages. 
+
+Key Takeaways:
+-Sums up how to set up a workspace and add packages to ROS2 workspace.
+
+1.2 The ROS2 Design
