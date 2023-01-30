@@ -37,7 +37,7 @@ Measures:
 - refer to data sheet: "use gpio #16, pin5 on connector j6"
 
 ## III. IMU / accelerometer - gyroscope
-Measures:
+
 Measures:
 - Acceleration in x,y,z
 - Angular speed around x, y, z
@@ -56,7 +56,7 @@ Model: [MPU6050](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-
 
 ```shell
 # smbus has a permission problem, so use the following command (carefully) to change permission of the file
-sudo chmod 774 <file>
+sudo chmod 777 <file>
 ```
 
 ## IV. Level Shifter
