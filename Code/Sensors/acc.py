@@ -1,6 +1,7 @@
 # Credit: http://www.electronicwings.com
 import smbus					#import SMBus module of I2C
 from time import sleep          #import
+from imu_param import *      #import IMU setup params
 
 #some MPU6050 Registers and their Address
 PWR_MGMT_1   = 0x6B
@@ -18,16 +19,17 @@ GYRO_ZOUT_H  = 0x47
 
 def MPU_Init():
 	#write to sample rate register
-	bus.write_byte_data(Device_Address, SMPLRT_DIV, 7)
+	bus.write_byte_data(Device_Address, SMPLRT_DIV, ONE_K_HZ)
+    #gyro sampling at 1kHz
 	
 	#Write to power management register
 	bus.write_byte_data(Device_Address, PWR_MGMT_1, 1)
 	
 	#Write to Configuration register
-	bus.write_byte_data(Device_Address, CONFIG, 0)
+	bus.write_byte_data(Device_Address, CONFIG, INPUT_DISABLED_MAX_FS)
 	
 	#Write to Gyro configuration register
-	bus.write_byte_data(Device_Address, GYRO_CONFIG, 24)
+	bus.write_byte_data(Device_Address, GYRO_CONFIG, GYRO_MIN_RANGE)
 	
 	#Write to interrupt enable register
 	bus.write_byte_data(Device_Address, INT_ENABLE, 1)
@@ -51,9 +53,10 @@ Device_Address = 0x68   # MPU6050 device address
 
 MPU_Init()
 
-print (" Reading Data of Gyroscope and Accelerometer")
 
-while True:
+print (" Reading Data of Gyroscope and Accelerometer")
+sample_count = 0
+while sample_count < 1000:
 	
 	#Read Accelerometer raw value
 	acc_x = read_raw_data(ACCEL_XOUT_H)
@@ -73,7 +76,9 @@ while True:
 	Gx = gyro_x/131.0
 	Gy = gyro_y/131.0
 	Gz = gyro_z/131.0
+
+    sample_count = sample_count + 1
 	
 
-	print ("Gx=%.2f" %Gx, u'\u00b0'+ "/s", "\tGy=%.2f" %Gy, u'\u00b0'+ "/s", "\tGz=%.2f" %Gz, u'\u00b0'+ "/s", "\tAx=%.2f g" %Ax, "\tAy=%.2f g" %Ay, "\tAz=%.2f g" %Az) 	
-	sleep(1)
+	#print ("Gx=%.2f" %Gx, u'\u00b0'+ "/s", "\tGy=%.2f" %Gy, u'\u00b0'+ "/s", "\tGz=%.2f" %Gz, u'\u00b0'+ "/s", "\tAx=%.2f g" %Ax, "\tAy=%.2f g" %Ay, "\tAz=%.2f g" %Az) 	
+	#sleep(1)
