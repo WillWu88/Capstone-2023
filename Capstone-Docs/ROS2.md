@@ -75,3 +75,13 @@ Key Takeaways:
 -Sums up how to set up a workspace and add packages to ROS2 workspace.
 
 1.2 The ROS2 Design
+
+-Packages which nodes and programs are implemented in C++ use the C++ client libraries, relepp, whereas packages in python use relpy.
+
+-A crucial component of ROS2 is communications.
+
+-ROS2 is a distributed system whose computing graph has nodes that can be spread over several machines.
+
+-ROS2 chose DDS for its communication layer, more about that can be read in this chapter.
+
+2.1 First Steps with ROS2
