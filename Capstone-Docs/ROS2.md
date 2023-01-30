@@ -67,7 +67,7 @@ shows the packages available to install.
 
 - Command
 ```shell
-$ sude rosdep init
+$ sudo rosdep init
 $ rosdep update
 Used to discover dependencies in packages not solved and installs them as deb packages.
 ```
