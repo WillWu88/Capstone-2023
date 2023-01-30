@@ -20,7 +20,7 @@ rosdep -h # read the documentation
 
 ## Textbook Notes
 
-1.1.2 The Computation Graph
+### 1.1.2 The Computation Graph
 
 -A computation Graph contains ROS2 nodes that communicate with eachother so the robot can carry out tasks, the logic of the application is in the nodes, as the primary element of execution.
 
@@ -37,51 +37,57 @@ rosdep -h # read the documentation
 
 -Kobuki Robot example of different execution types and subscription to nodes, on pages 7&8.
 
--Control application can be split into two different subsystems:
+- Control application can be split into two different subsystems:
 1) Behavior Subsystem: Made up of two ndes that collaborate to generate a robots behavior. Behavior coordinator (coordinator) and a node that impliments an active vision system (headController). The Coordinator determines where to look at and which points the robot should visit on a map.
 2) Naviagtion Subsystem: Made up of several nodes. The navigation manager coordinates the planner (in charge of creating routes from the robot's position to the destination) and the controller (which makes the robot follow the created route). The planner needs the map provided by a node that shows the environmental map and the robot's position that calculates a location node.
 -Communication between both subsystems is done with ROS2 actions. Actions are also used to coordinate the planner and controller within the navigation system.
 
-Key Takeaway for our Project: 
+### Key Takeaway for our Project: 
 
--Every time we impliment an action in ROS2, we design a computational graph. Establishing which nodes we need and what their interactions are. We must decide if a node is executed at a certain frequency or if some event causes its execution.
+- Every time we impliment an action in ROS2, we design a computational graph. Establishing which nodes we need and what their interactions are. We must decide if a node is executed at a certain frequency or if some event causes its execution.
 
-1.1.3 The Workspace
+### 1.1.3 The Workspace
 
--The Workspace looks at ROS2 from a static point of view, where the ROS2 software is installed, organized, and all the tools and processes that allow us to launch a computing graph. 
+- The Workspace looks at ROS2 from a static point of view, where the ROS2 software is installed, organized, and all the tools and processes that allow us to launch a computing graph. 
 
--The fundamental element of the workspace is the package, which contains executables, libraries, or message definitions with a common purpose. 
+- The fundamental element of the workspace is the package, which contains executables, libraries, or message definitions with a common purpose. 
 
--Another element is the workspace itself, where a workspace is a directory that contains packages. 
+- Another element is the workspace itself, where a workspace is a directory that contains packages. 
 
--There can be several workspaces in use at the same time, the inital workspace, underlay, and then any additional workspaces are referred to as overlay. 
+- There can be several workspaces in use at the same time, the inital workspace, underlay, and then any additional workspaces are referred to as overlay. 
 
--Packages can be installed from sources or with the systems installation system. Each ROS2 package is packaged in a deb package.
+- Packages can be installed from sources or with the systems installation system. Each ROS2 package is packaged in a deb package.
 
--Command
+- Command
+```shell
 $ apt-cache seach ros-foxy
+```
+
 shows the packages available to install.
 
--Command
+- Command
+```shell
 $ sude rosdep init
 $ rosdep update
 Used to discover dependencies in packages not solved and installs them as deb packages.
+```
 
--Sample of creating a workspace and adding packages on page 12.
 
--colcon (collective construction) is a command line tool for building, testing, and using multiple software packages. It automates the process of building and set up in the environment to use the packages. 
+- Sample of creating a workspace and adding packages on page 12.
 
-Key Takeaways:
--Sums up how to set up a workspace and add packages to ROS2 workspace.
+- colcon (collective construction) is a command line tool for building, testing, and using multiple software packages. It automates the process of building and set up in the environment to use the packages. 
 
-1.2 The ROS2 Design
+### Key Takeaways:
+- Sums up how to set up a workspace and add packages to ROS2 workspace.
 
--Packages which nodes and programs are implemented in C++ use the C++ client libraries, relepp, whereas packages in python use relpy.
+### 1.2 The ROS2 Design
 
--A crucial component of ROS2 is communications.
+- Packages which nodes and programs are implemented in C++ use the C++ client libraries, relepp, whereas packages in python use relpy.
 
--ROS2 is a distributed system whose computing graph has nodes that can be spread over several machines.
+- A crucial component of ROS2 is communications.
 
--ROS2 chose DDS for its communication layer, more about that can be read in this chapter.
+- ROS2 is a distributed system whose computing graph has nodes that can be spread over several machines.
 
-2.1 First Steps with ROS2
+- ROS2 chose DDS for its communication layer, more about that can be read in this chapter.
+
+### 2.1 First Steps with ROS2
