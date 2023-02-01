@@ -3,6 +3,7 @@
 ## I. Lidar
 
 [Lidar Spec Sheet](https://www.digikey.dk/htmldatasheets/production/3265529/0/0/1/a1m8.html)
+[Lidar pinout and setup sheet](https://bucket-download.slamtec.com/e680b4e2d99c4349c019553820904f28c7e6ec32/LM108_SLAMTEC_rplidarkit_usermaunal_A1M8_v1.0_en.pdf)
 - Laser triangularation measurement system
 - System can perform 360 degree within 6 meter range
 - Scanning frequency reached 5.5hz when sampling 360 points each round. Can be configured to 10 hz max.
@@ -84,6 +85,8 @@ Other Specs:
 * Braking Current: 60A
 - Continuous Current: 15A
 
+## VII. Camera
+[Raspberry Pi camera spec sheet](https://www.raspberrypi.com/documentation/accessories/camera.html)
 
 ## Appendix: References
 - [Raspberry PI GPIO Setup](https://ubuntu.com/tutorials/gpio-on-raspberry-pi#1-overview)
