@@ -11,3 +11,5 @@ The next topic reviewed was the broad topic of [[Feedback Systems]]. The first o
 - [ ] [[Continuous Integration]]
 - [ ] [[ROS2]]
 - [ ] [[Bus Communication Protocols]]
+- [ ] [[Numpy]]
+
