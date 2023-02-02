@@ -23,6 +23,8 @@
 
 - 1/26/2023: PiCar System ID
 
+- 1/30/2023: Accelemeter python code and register sheet
+
 
 
 

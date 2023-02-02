@@ -1,6 +1,6 @@
 ## I. Background
 
-Refer to [[Dynamic Systems]] and [[System Modeling]] for modelling technique
+Refer to [[System Dynamics and Modeling]] for modelling technique
 
 Inputs of the system:
 - Steering angle (delta)
