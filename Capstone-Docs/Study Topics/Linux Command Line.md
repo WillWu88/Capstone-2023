@@ -44,5 +44,9 @@ df: Shows free disk space
 
 ps: Shows process status
 
+wget: download content from another git repo
+
+sudo chmod 777 /dev/ttyUSB0: enable port access (for lidar)
+
 ## Appendix:
 [Linux Survival](https://linuxsurvival.com/linux-tutorial-introduction/)

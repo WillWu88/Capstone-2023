@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Modelling and Simulation.md",
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
                 "mode": "source",
                 "source": false
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Modelling and Simulation.md",
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Modelling and Simulation.md",
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/Modelling and Simulation.md"
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md"
               }
             }
           }
@@ -177,15 +177,15 @@
   },
   "active": "659bd30e22155eda",
   "lastOpenFiles": [
-    "Capstone-Docs/Dynamic Systems.md",
-    "Capstone-Docs/Continuous Integration.md",
-    "Capstone-Docs/Car Components.md",
+    "Capstone-Docs/Figures/IMU-Reading.png",
+    "Untitled.md",
+    "Capstone-Docs/System Identification.md",
+    "Capstone-Docs/Sensors & Electronics.md",
+    "Capstone-Docs/Study Section.md",
+    "Capstone-Docs/Sensor SetUp.md",
+    "Capstone-Docs/MPU6050 Setup.md",
     "Capstone-Docs/Modelling and Simulation.md",
-    "Capstone-Docs/ROS2.md",
-    "Capstone-Docs/Documents/Electronic_Speed_Control.pdf",
-    "Capstone-Docs/Documents/Induction_Motor_Notes.pdf",
-    "Capstone-Docs/Project Description.md",
-    "Capstone-Docs/Filters.md",
-    "Capstone-Docs/Design Overview.md"
+    "Capstone-Docs/Dynamic Systems.md",
+    "Capstone-Docs/Continuous Integration.md"
   ]
 }
