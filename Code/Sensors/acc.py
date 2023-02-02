@@ -4,6 +4,7 @@ from time import sleep          #import
 from imu_param import *      #import IMU setup params
 import numpy as np;
 from scipy import savemat
+from datetime import date
 
 #some MPU6050 Registers and their Address
 PWR_MGMT_1   = 0x6B
@@ -55,37 +56,41 @@ Device_Address = 0x68   # MPU6050 device address
 
 MPU_Init()
 
+label_dict = {
+        "acc_x": 0,
+        "acc_y": 1,
+        "acc_z": 2,
+        "gyro_x": 3,
+        "gyro_y": 4,
+        "gyro_z": 5
+}
+
 if __name__ == "__main__":
         # log user-specified amount of sensor data
         print (" Reading Data of Gyroscope and Accelerometer")
-        data_num = (" Input # of data here: >>> ")
+        sample_num = (" Input # of data here: >>> ")
 
-        log_data = np.
+        log_data = np.zeros((7,sample_num))
+        log_data[1,:] = np.arange(sample_num) + 1;  #index row
 
         sample_count = 0
         while sample_count < 1000:
 
-	        #Read Accelerometer raw value
-	        acc_x = read_raw_data(ACCEL_XOUT_H)
-	        acc_y = read_raw_data(ACCEL_YOUT_H)
-	        acc_z = read_raw_data(ACCEL_ZOUT_H)
+	        #Read Accelerometer and Gyro value, then convert
+	        log_data[label_dict["acc_x"], sample_count] = read_raw_data(ACCEL_XOUT_H)/16384.0
+	        log_data[label_dict["acc_y"], sample_count] = read_raw_data(ACCEL_YOUT_H)/16384.0
+	        log_data[label_dict["acc_z"], sample_count] = read_raw_data(ACCEL_ZOUT_H)/16384.0
 
 	        #Read Gyroscope raw value
-	        gyro_x = read_raw_data(GYRO_XOUT_H)
-	        gyro_y = read_raw_data(GYRO_YOUT_H)
-	        gyro_z = read_raw_data(GYRO_ZOUT_H)
-
-	        #Full scale range +/- 250 degree/C as per sensitivity scale factor
-	        Ax = acc_x/16384.0
-	        Ay = acc_y/16384.0
-	        Az = acc_z/16384.0
-
-	        Gx = gyro_x/131.0
-	        Gy = gyro_y/131.0
-	        Gz = gyro_z/131.0
+	        log_data[label_dict["gyro_x"], sample_count] = read_raw_data(GYRO_XOUT_H)/131.0
+	        log_data[label_dict["gyro_y"], sample_count] = read_raw_data(GYRO_YOUT_H)/131.0
+	        log_data[label_dict["gyro_z"], sample_count] = read_raw_data(GYRO_ZOUT_H)/131.0
 
                 sample_count = sample_count + 1
-	
 
-	#print ("Gx=%.2f" %Gx, u'\u00b0'+ "/s", "\tGy=%.2f" %Gy, u'\u00b0'+ "/s", "\tGz=%.2f" %Gz, u'\u00b0'+ "/s", "\tAx=%.2f g" %Ax, "\tAy=%.2f g" %Ay, "\tAz=%.2f g" %Az) 	
-	#sleep(1)
+	        #print ("Gx=%.2f" %Gx, u'\u00b0'+ "/s", "\tGy=%.2f" %Gy, u'\u00b0'+ "/s", "\tGz=%.2f" %Gz, u'\u00b0'+ "/s", "\tAx=%.2f g" %Ax, "\tAy=%.2f g" %Ay, "\tAz=%.2f g" %Az)
+	        #sleep(1)
+
+       output_data = {"acc_gyro_sample": log_data}
+       date_str = date.today() #system time stamp
+       savemat("IMU_data"+date_str.strftime("%b_%d_%Y") +".mat")
