@@ -2,6 +2,8 @@
 import smbus					#import SMBus module of I2C
 from time import sleep          #import
 from imu_param import *      #import IMU setup params
+import numpy as np;
+from scipy import savemat
 
 #some MPU6050 Registers and their Address
 PWR_MGMT_1   = 0x6B
@@ -53,31 +55,36 @@ Device_Address = 0x68   # MPU6050 device address
 
 MPU_Init()
 
+if __name__ == "__main__":
+        # log user-specified amount of sensor data
+        print (" Reading Data of Gyroscope and Accelerometer")
+        data_num = (" Input # of data here: >>> ")
 
-print (" Reading Data of Gyroscope and Accelerometer")
-sample_count = 0
-while sample_count < 1000:
-	
-	#Read Accelerometer raw value
-	acc_x = read_raw_data(ACCEL_XOUT_H)
-	acc_y = read_raw_data(ACCEL_YOUT_H)
-	acc_z = read_raw_data(ACCEL_ZOUT_H)
-	
-	#Read Gyroscope raw value
-	gyro_x = read_raw_data(GYRO_XOUT_H)
-	gyro_y = read_raw_data(GYRO_YOUT_H)
-	gyro_z = read_raw_data(GYRO_ZOUT_H)
-	
-	#Full scale range +/- 250 degree/C as per sensitivity scale factor
-	Ax = acc_x/16384.0
-	Ay = acc_y/16384.0
-	Az = acc_z/16384.0
-	
-	Gx = gyro_x/131.0
-	Gy = gyro_y/131.0
-	Gz = gyro_z/131.0
+        log_data = np.
 
-    sample_count = sample_count + 1
+        sample_count = 0
+        while sample_count < 1000:
+
+	        #Read Accelerometer raw value
+	        acc_x = read_raw_data(ACCEL_XOUT_H)
+	        acc_y = read_raw_data(ACCEL_YOUT_H)
+	        acc_z = read_raw_data(ACCEL_ZOUT_H)
+
+	        #Read Gyroscope raw value
+	        gyro_x = read_raw_data(GYRO_XOUT_H)
+	        gyro_y = read_raw_data(GYRO_YOUT_H)
+	        gyro_z = read_raw_data(GYRO_ZOUT_H)
+
+	        #Full scale range +/- 250 degree/C as per sensitivity scale factor
+	        Ax = acc_x/16384.0
+	        Ay = acc_y/16384.0
+	        Az = acc_z/16384.0
+
+	        Gx = gyro_x/131.0
+	        Gy = gyro_y/131.0
+	        Gz = gyro_z/131.0
+
+                sample_count = sample_count + 1
 	
 
 	#print ("Gx=%.2f" %Gx, u'\u00b0'+ "/s", "\tGy=%.2f" %Gy, u'\u00b0'+ "/s", "\tGz=%.2f" %Gz, u'\u00b0'+ "/s", "\tAx=%.2f g" %Ax, "\tAy=%.2f g" %Ay, "\tAz=%.2f g" %Az) 	
