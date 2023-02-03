@@ -32,3 +32,16 @@ Follow [this](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Reg
 ### Camera
 
 [Installation camera](https://picamera.readthedocs.io/en/release-1.13/install.html)
+
+
+### IMU
+
+```shell
+sudo pip3 install adafruit-circuitpython-mpu6050
+```
+
+### Servo
+
+```shell
+sudo pip3 install adafruit-circuitpython-pca9685
+```
