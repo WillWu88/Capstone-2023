@@ -8,6 +8,7 @@ sudo apt install i2c-tools libi2c-dev #i2c package
 ```
 
 - [I2C Setup](https://askubuntu.com/questions/1273700/enable-spi-and-i2c-on-ubuntu-20-04-raspberry-pi)
+- [Configuring I2C](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c)
 
 Follow [this](https://abyz.me.uk/rpi/pigpio/download.html)  and [this](https://forums.raspberrypi.com/viewtopic.php?t=319761) for *pigpio* setup 
 - play around with executables, as ubuntu can be iffy
@@ -27,3 +28,7 @@ Utilizing sample code found on Github [Lidar Sample Code Github](https://github.
 
 Follow [this](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf) for the register map of the MPU6050.
 - Key registers and their functionalities are listen in the MPU6050 setup.
+
+### Camera
+
+[Installation camera](https://picamera.readthedocs.io/en/release-1.13/install.html)

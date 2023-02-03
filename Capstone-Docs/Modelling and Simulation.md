@@ -32,6 +32,12 @@ $\tau_{front}$ and $\tau_{rear}$ respectivey denotes the net torque casted by th
 
 ### 2. Forces and Moments
 
+Three differential equations can be derived from the use of Newton's law of motion and some geometric relationships. They describe the longitudinal velocity($v_y(t)$), the lateral velocity($v_y(t)$) and the yaw rate measured around the Center Of Gravity.
+
+$$
+\frac{d\mathbf{v_x(t)}}{dt} = v_y(t) + 1/m*(F_{x,FL}(t)+F_{x,FR}(t))
+$$
+
 ### 3. State-Space Model
 We define the state vector of the car as follows:
 
