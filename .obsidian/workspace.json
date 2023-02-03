@@ -29,10 +29,8 @@
             "id": "60d97195457ca155",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Week 1 Progress Report.pdf"
-              }
+              "type": "empty",
+              "state": {}
             }
           },
           {
@@ -109,7 +107,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Week 1 Progress Report.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +123,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Week 1 Progress Report.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,9 +144,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Week 1 Progress Report.pdf"
-              }
+              "state": {}
             }
           }
         ]
@@ -172,6 +166,7 @@
   },
   "active": "60d97195457ca155",
   "lastOpenFiles": [
+    "Week 1 Progress Report.pdf",
     "Capstone-Docs/Estimators.md",
     "Capstone-Docs/Modelling and Simulation.md",
     "Capstone-Docs/Documents/Induction_Motor_Notes.pdf",
@@ -180,7 +175,6 @@
     "Capstone-Docs/Figures/Center_of_gravity.jpg",
     "Capstone-Docs/Figures/Weighing_picar.jpg",
     "Capstone-Docs/Figures/IMU-Reading.png",
-    "Capstone-Docs/Documents/Electronic_Speed_Control.pdf",
-    "Capstone-Docs/Project Description.md"
+    "Capstone-Docs/Documents/Electronic_Speed_Control.pdf"
   ]
 }
