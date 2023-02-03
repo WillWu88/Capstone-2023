@@ -56,7 +56,7 @@ Device_Address = 0x68   # MPU6050 device address
 
 MPU_Init()
 
-label_dict = {
+index_dict = {
         "acc_x": 1,
         "acc_y": 2,
         "acc_z": 3,
@@ -64,6 +64,7 @@ label_dict = {
         "gyro_y": 5,
         "gyro_z": 6
 }
+
 
 if __name__ == "__main__":
     # log user-specified amount of sensor data
@@ -77,14 +78,14 @@ if __name__ == "__main__":
     while sample_count < sample_num:
 
         #Read Accelerometer and Gyro value, then convert
-        log_data[label_dict["acc_x"], sample_count] = read_raw_data(ACCEL_XOUT_H)/16384.0
-        log_data[label_dict["acc_y"], sample_count] = read_raw_data(ACCEL_YOUT_H)/16384.0
-        log_data[label_dict["acc_z"], sample_count] = read_raw_data(ACCEL_ZOUT_H)/16384.0
+        log_data[index_dict["acc_x"], sample_count] = read_raw_data(ACCEL_XOUT_H)/16384.0
+        log_data[index_dict["acc_y"], sample_count] = read_raw_data(ACCEL_YOUT_H)/16384.0
+        log_data[index_dict["acc_z"], sample_count] = read_raw_data(ACCEL_ZOUT_H)/16384.0
 
         #Read Gyroscope raw value
-        log_data[label_dict["gyro_x"], sample_count] = read_raw_data(GYRO_XOUT_H)/131.0
-        log_data[label_dict["gyro_y"], sample_count] = read_raw_data(GYRO_YOUT_H)/131.0
-        log_data[label_dict["gyro_z"], sample_count] = read_raw_data(GYRO_ZOUT_H)/131.0
+        log_data[index_dict["gyro_x"], sample_count] = read_raw_data(GYRO_XOUT_H)/131.0
+        log_data[index_dict["gyro_y"], sample_count] = read_raw_data(GYRO_YOUT_H)/131.0
+        log_data[index_dict["gyro_z"], sample_count] = read_raw_data(GYRO_ZOUT_H)/131.0
 
         sample_count += 1
 
