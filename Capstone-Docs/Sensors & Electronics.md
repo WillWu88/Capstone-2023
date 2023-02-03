@@ -1,5 +1,7 @@
 ## See [[Sensor SetUp]] for sensor setup instructions
 
+- [Old Groups Github](https://github.com/esecapstone/picar)
+
 ## I. Lidar
 
 ### Links about Lidar Specs/Pinout:
