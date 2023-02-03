@@ -4,6 +4,7 @@
 
 [Lidar Spec Sheet](https://www.digikey.dk/htmldatasheets/production/3265529/0/0/1/a1m8.html)
 [Lidar pinout and setup sheet](https://bucket-download.slamtec.com/e680b4e2d99c4349c019553820904f28c7e6ec32/LM108_SLAMTEC_rplidarkit_usermaunal_A1M8_v1.0_en.pdf)
+
 - Laser triangularation measurement system
 - System can perform 360 degree within 6 meter range
 - Scanning frequency reached 5.5hz when sampling 360 points each round. Can be configured to 10 hz max.
@@ -43,8 +44,6 @@ Measures:
 - Acceleration in x,y,z
 - Angular speed around x, y, z
 Model: [MPU6050](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf)
-[Register Map](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf)
-[[MPU6050 Setup]]
 - Acceleration in x,y,z
 - Pinout:
 | Pin | Full Name | Function |

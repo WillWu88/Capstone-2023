@@ -25,6 +25,8 @@
 
 - 1/30/2023: Accelemeter python code and register sheet
 
+- 2/2/2023: Lidar Setup and sample code
+
 
 
 
