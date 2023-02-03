@@ -6,7 +6,7 @@
       {
         "id": "e7c8d299627a1927",
         "type": "tabs",
-        "dimension": 60.978520286396176,
+        "dimension": 67.85714285714286,
         "children": [
           {
             "id": "1a91e1820aa8c98c",
@@ -17,22 +17,37 @@
                 "file": "Capstone-Docs/Documents/Induction_Motor_Notes.pdf"
               }
             }
-          }
-        ]
-      },
-      {
-        "id": "a84588e3f03152d3",
-        "type": "tabs",
-        "dimension": 39.02147971360382,
-        "children": [
+          },
           {
-            "id": "60d97195457ca155",
+            "id": "a46901f374d2a14a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "pdf",
+              "state": {
+                "file": "Capstone-Docs/Documents/Feedback_Systems_Textbook.pdf"
+              }
             }
           },
+          {
+            "id": "f3c4004d6aabd62c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Capstone-Docs/MPU6050 Setup.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "f626ee14833d8ff9",
+        "type": "tabs",
+        "dimension": 32.142857142857146,
+        "children": [
           {
             "id": "4bc2a660fb3dbabd",
             "type": "leaf",
@@ -164,17 +179,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "60d97195457ca155",
+  "active": "4bc2a660fb3dbabd",
   "lastOpenFiles": [
-    "Week 1 Progress Report.pdf",
-    "Capstone-Docs/Estimators.md",
-    "Capstone-Docs/Modelling and Simulation.md",
+    "Capstone-Docs/Documents/Feedback_Systems_Textbook.pdf",
+    "Capstone-Docs/MPU6050 Setup.md",
+    "Capstone-Docs/Sensors & Electronics.md",
     "Capstone-Docs/Documents/Induction_Motor_Notes.pdf",
-    "Capstone-Docs/Study Topics/Linux Command Line.md",
-    "Untitled.md",
-    "Capstone-Docs/Figures/Center_of_gravity.jpg",
-    "Capstone-Docs/Figures/Weighing_picar.jpg",
-    "Capstone-Docs/Figures/IMU-Reading.png",
-    "Capstone-Docs/Documents/Electronic_Speed_Control.pdf"
+    "Capstone-Docs/Bus Communication Protocols.md",
+    "Capstone-Docs/Continuous Integration.md",
+    "Capstone-Docs/Controller and Estimator Design.md",
+    "Capstone-Docs/Estimators.md",
+    "Capstone-Docs/Project Timeline.md",
+    "Capstone-Docs/Sensor SetUp.md"
   ]
 }
