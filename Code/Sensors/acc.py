@@ -57,12 +57,12 @@ Device_Address = 0x68   # MPU6050 device address
 MPU_Init()
 
 label_dict = {
-        "acc_x": 0,
-        "acc_y": 1,
-        "acc_z": 2,
-        "gyro_x": 3,
-        "gyro_y": 4,
-        "gyro_z": 5
+        "acc_x": 1,
+        "acc_y": 2,
+        "acc_z": 3,
+        "gyro_x": 4,
+        "gyro_y": 5,
+        "gyro_z": 6
 }
 
 if __name__ == "__main__":
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     sample_num = int(input(" Input # of data here: >>> "))
 
     log_data = np.zeros((7,sample_num))
-    log_data[1,:] = np.arange(sample_num) + 1;  #index row
+    log_data[0,:] = np.arange(sample_num) + 1;  #index row
 
     sample_count = 0
     print("Collecting data now...")
