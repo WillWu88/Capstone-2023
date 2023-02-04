@@ -91,3 +91,103 @@ Used to discover dependencies in packages not solved and installs them as deb pa
 - ROS2 chose DDS for its communication layer, more about that can be read in this chapter.
 
 ### 2.1 First Steps with ROS2
+
+```shell
+$ ros2 <command> <verb> [<params>|<option>]*
+```
+- ros2 is the main command in ros2, it allows interaction with the ROS2 system to obtain infomation or carry out actions.
+
+```shell
+$ ros2 pkg list
+```
+- A command used to obtain the list of available packages.
+
+- ros2cli is the command line interface tool. It's modular and extensible, so that more functionality can be added by adding new actions.
+
+```shell
+$ ros2 pkg executables demo_nodes_cpp
+```
+- It is possible to get information on a specific package. For example, this code gets the executable programs for this cpp package.
+
+```shell
+$ ros2 run demo_nodes_cpp talker
+```
+- The run verb allows you to run arguments. and the word *talker* after the executable becomes the nodes name
+
+```shell
+$ ros2 node list
+```
+- Checks the nodes that are currently running.
+
+```shell
+$ ros2 topic list
+```
+- While a node is running, you can list the topics in the system.
+
+```shell
+$ ros2 node info /talker
+```
+- The info parameter gives more information on the system. This command will give the subscribers, publishers, and service servers for the node specified. 
+
+```shell
+$ ros2 topic info chatter
+```
+- Each topic supports messages of only one type. The topic command displays the type of the message, the publisher count, and the subscriber count.
+
+```shell
+$ ros2 topic echo /chatter
+```
+- To check the messages currently being published in a topic with the echo command.
+
+```
+$ ros2 run demo_nodes_py listener
+```
+- command to run the listener node that runs in python.
+
+```shell
+$ ros2 run rqt_graph rqt_graph
+```
+- It is possible to visualize the Computation Graph by running the rqt_graph tool which is in the rqt_graph package.
+
+### 2.2 Developing the First Node
+
+- All packages must be in the src directory
+
+```shell
+$ ros2 pkg create my_package --dependencies rclcpp std_msgs
+```
+- This command creates the skeleton of the basics package, with some empty directories to host the source files of our programs and libraries.
+- ROS2 recognizes a directory contains a package because it has an XML file called package.xml.
+- The --dependencies option allows you to add the dependencies of this package.
+
+```C++
+#include "rclcpp/rclcpp.hpp"
+
+int main(int argc, char * argv[]){
+	rclcpp::init(argc, argv);
+	auto node = rclcpp::Node::make_shared("simple node");
+	rclcpp::spin(node);
+	rclcpp::shutdown();
+	return 0;
+}
+```
+- #include "rclcpp/rclcpp.hpp" allows access to most of the ROS2 types and functions in C++
+- rclcpp::init(argc,argv) extracts from the arguments with which the process was launched any option should be taken into account by ROS2 
+- Line 6 creates a ROS2 node (auto node), and named it simple node.
+- The rclcpp::Node class is equipped with many aliases and static functions to simplify the code. 
+- spin blocks the execution of the program so it doesn't terminate immediately.
+- shutdown manages the shutdown of the node, prior to the end of the program in the next line.
+
+- Identifying the parts of a built in text file (see CMakeLists.txt on page 26)
+	- The packages needed are specified with find_package.
+	- It is a good habit to create a dependencies variable with the packages that this package depends on since we will have to use that list several times.
+	- Compile it: Done with add_executables, indiciating the name of the result and its sources.
+	- Install it: Indiciate where to install the program produced, which generally doesn't vary; use a single install instruction.
+
+```shell
+colcon build --symlink-install
+```
+- Compiles the workspace.
+
+### 2.3 Analyzing the BR2_BASICS Package
+
