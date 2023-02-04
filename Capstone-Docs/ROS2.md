@@ -191,3 +191,145 @@ colcon build --symlink-install
 
 ### 2.3 Analyzing the BR2_BASICS Package
 
+#### 2.3.1 Controlling the Iterative Execution
+
+```C++
+auto node = rclcpp::Node::make_shared(logger_node);
+
+rclcpp::Rate loop_rate(500ms);
+int counter = 0;
+while (rclcpp::ok()){
+	RCLCPP_INFO(node->get_logger(), "Hello %d", counter++);
+	rclcpp::spin_some(node);
+	loop_rate.sleep();
+}
+```
+- This code shows the first of the typical strategy to perform a task at a fixed frequency, which is common in any program that performs some control.
+- The control loop is made in the while loop , controlling the rate with the rclcpp::Rate object.
+- This code uses spin_some instead of spin, both are to manage messages that arrive at the node, calling the functions that should handle them. While spin blocks wait for new messages, spin_some returns when there are no messages left to handle.
+
+```shell
+$ ros2 run rqt_console rqt_console
+```
+- This tool shows the messages that are published in /rosout.
+
+- There is a second strategy to iteratively execute a task can be seen in the src/logger_class.cpp program (seen on page 31).
+	- This approach allows to have a cleaner code and opens the door to many possibilities that will be shown later.
+	- A timer controls the control loop, producing an event at the desired frequency.
+	- When this event happens, it calls the callback that handles it.
+	- Schedule the nodes to see how often they should run
+
+#### 2.3.2 Publishing and Subscribing
+
+```C++
+class PublisherNode : public rclcpp::Node
+{
+public:
+	PublisherNode() : Node("publisher_node")
+	{
+	publisher = create_publisher<std_msgs::msg::Int32>("int_topic",10);
+	timer = create_wall_timer(500ms, std::bind(&PublisherNode::timer_callback, this));
+	}
+	void timer_callback();
+	{
+	message_.data += 1;
+	publisher_->publish(message);
+	}
+private:
+	rclcpp::Publisher,std_msgs::msg::Int32>("int_topic",10);
+	rclcpp::TimerBase::SharedPtr timer_;
+	std_msgs::msg::Int32 message_;
+}
+```
+- We will use the std_msgs/msg/Int32 message:
+	- Its header is std_msgs/msg/int32.hpp
+	- The data type is std_msgs::msg::Int32
+- Creates a publisher, the object in charge of creating the topic and publishing messages. 
+- We use create_publisher, which is a public method of rclcpp::Node, and it returns a shared_ptr to an rclcpp::Publisher object. The arguments are the name of the topic and an rclcpp::QoS object.
+- We create a std_msgs::msg::Int32 message, which we can verify only has one data field, and every 500ms, in the timer callback, we intrement the message field and call the publisher's publish method to publish the message.
+
+- QoS in ROS2 is an essential and valuable feature, the durablility and reliability profiles as well as other QoS features on page 34.
+
+```shell
+$ ros2 run br2_basics publisher_class
+```
+- runs the program and displays what is being published.
+
+```C++
+class SubscriberNode : public rclcpp::Node
+{
+public:
+	SubscriberNode() : Node("subscriber_node")
+	{
+		subscriber = create_subscription<stdmsgs:msg:Int32>("int_topic", 10, std::bind(&SubscriberNode::callback, this, _1);
+	}
+	void callback(const std_msgs::msg::Int32::SharedPtr msg)
+	{
+		RCLCPP_INFO(get_logger(), "Hello %d", msg->data);
+	}
+private:
+	rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr subscriber_;
+};
+```
+- Creates a subscription to the same topic, with the same type of messages.
+
+```shell
+$ ros2 run br2_basics subscriber_class
+```
+- runs the subscriber class.
+
+#### 2.3.3 Launchers
+
+- So far we have seen programs run with ros2 run, however there is another way to run programs through the command ros2 launch, and using a file called launcher, that specifies which programs should be run.
+
+- The launcher files are written in Python and their function is declaring which programs to execute with which options or arguments.
+
+- The need for launchers comes from the fact tat a robotic application has many nodes, and they should all be launched simultaneously.
+
+- Launchers for a package are located in the launch directory of a package, and their name usually ends in _launch.py.
+
+```shell
+$ ros2 launch
+```
+- completes the programs with available launchers.
+
+- A launcher is a python program that contains a generate_launch_description() function that returns a LaunchDescription object, which contains:
+	- Node action: to run a program
+	- IncludeLaunchDescription action: to include another launcher
+	- DeclareLaunchArgument action: to declare launcher parameters
+	- SetEnvironmentVariable action: to set an environment variable
+
+- To see how we can launch a publisher and subscriber at the same time, analyze the first launcer in the basics package (pg 36).
+
+#### 2.3.4 Parameters
+
+- A node uses the parameters to configure its operation. 
+
+- Parameters are read at run time, usually when a node starts, and their operation depends on these values.
+
+- Create a param_reader.cpp file in the basics package. (pg 37)
+	- All parameters of a node must be decalred using methods like declare parameter. In the declaration, we specify the parameter name and the default value.
+	- We obtain its value with functions like get_parameter, specifying the name of the parameter and where to store its value.
+	- There are methods to do this in blocks.
+	- The parameters can be read at any time, even subscribe to modifications in real time. However, reading them to the startup makes yout code more predictable.
+
+```shell
+$ ros2 run br2_basics param_reader
+```
+- running the program without setting parameter values
+
+- It is usually convenient to use a file containing the parameters' values with which wwe want to execute a node. 
+
+#### 2.3.5 Executors
+
+- ROS2 offers you several ways to run multiple nodes in the same process, the most recommended is to make use of executors.
+
+- An Executor is an object to which nodes are added to execute them together. 
+
+- See examples of single and multi thread executors (pg 40)
+
+### 2.4 Simulated Robot Setup
+
+- This section walks through using the Kobuki Robot, which will have minimal applications for our project.
+
+### 3.1 Perception and Actuation Models
