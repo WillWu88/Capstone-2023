@@ -29,11 +29,15 @@ def Motor_Speed(pca,percent):
 
 #initialization
 pca = Servo_Motor_Initialization()
-Motor_Start(pca)
 
-x = input("Armed? >")
-Motor_Speed(pca, 0.2)
-time.sleep(0.5)
-Motor_Speed(pca, 0.16)
-time.sleep(3)
-Motor_Speed(pca, 0)
+arm_state = input("Armed? (y/n)> ")
+if (arm_state !="y"):
+    Motor_Start(pca)
+
+while True:
+    command = input("Stop? (y/n)> ")
+    if (command == "y"):
+        Motor_Speed(pca,0)
+        break
+
+    Motor_Speed(pca, 0.2)
