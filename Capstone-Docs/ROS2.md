@@ -333,3 +333,18 @@ $ ros2 run br2_basics param_reader
 - This section walks through using the Kobuki Robot, which will have minimal applications for our project.
 
 ### 3.1 Perception and Actuation Models
+
+- ROS2 uses the metric system of measurements (SI). For different dimensions, we will consider the units of meters, seconds, and radians.
+
+- In ROS2 we are right-handed: x grows forward, y to the left, and z grows up. 
+
+- Angles are defined as rotations around the axes. Rotation around x is something called the roll, y pitch, and z yaw.
+
+- Angles grow by turning to the left. Angle 0 is forward , pi is back, and pi/2 is left
+
+- Talks about the outputs of a lazer, not applicable to our project. 
+
+- An essential feature of ROS is standardization.
+
+### 3.2 Computation Graph
+
