@@ -5,3 +5,7 @@
 # detect i2c address matrix
 sudo i2cdetect -y 1
 ```
+
+### Setup
+
+[[Sensor SetUp]]

@@ -29,3 +29,10 @@ Constants We Need:
 
 [measuring slip](http://salesmanual.deere.com/sales/salesmanual/en_NA/tractors/2012/feature/ballasting_and_optimizing_performance/7/7r_ballast_wheel_slip.html)
 [more about slip](https://en.wikipedia.org/wiki/Slip_(vehicle_dynamics))
+
+### Bifilar Torsion Pendulum Experiment
+
+This experiment can be used to calculate the moment of inertia of the Pi car. The torsion pendulum can be simulated by suspending two vertical steel rod, which are connected to the lower right and left end the car. The torsion will be measured using a stiff coupling induced by an oscillatory motion about the longitudinal axis of the rods. The system will oscillate with a specific frequency determined by the moment of inertia of the car and the torsional rigidity of the rod. 
+
+Experimental procedure:
+- 

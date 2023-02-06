@@ -6,10 +6,34 @@
       {
         "id": "e7c8d299627a1927",
         "type": "tabs",
-        "dimension": 67.85714285714286,
+        "dimension": 67.14285714285714,
         "children": [
           {
             "id": "1a91e1820aa8c98c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Capstone-Docs/Modelling and Simulation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5839a9d1cf43c7ce",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2fbda3460d2e6067",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -29,26 +53,17 @@
                 "file": "Capstone-Docs/Documents/Feedback_Systems_Textbook.pdf"
               }
             }
-          },
-          {
-            "id": "f3c4004d6aabd62c",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Capstone-Docs/Figures/Accelerometer histogram (z-axis).png"
-              }
-            }
           }
-        ]
+        ],
+        "currentTab": 2
       },
       {
-        "id": "f626ee14833d8ff9",
+        "id": "93e150504ab2ad9d",
         "type": "tabs",
-        "dimension": 32.142857142857146,
+        "dimension": 32.857142857142854,
         "children": [
           {
-            "id": "4bc2a660fb3dbabd",
+            "id": "00fb6f4f78f5b51a",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -182,16 +197,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1a91e1820aa8c98c",
+  "active": "2fbda3460d2e6067",
   "lastOpenFiles": [
-    "Capstone-Docs/Sensors & Electronics.md",
     "Capstone-Docs/Study Section.md",
-    "Capstone-Docs/MPU6050 Setup.md",
-    "Capstone-Docs/Sensor SetUp.md",
-    "Capstone-Docs/ROS2.md",
-    "Capstone-Docs/Project Timeline.md",
+    "Capstone-Docs/System Identification.md",
     "Capstone-Docs/Project Description.md",
-    "Capstone-Docs/Numpy.md",
+    "Capstone-Docs/Project Timeline.md",
+    "Capstone-Docs/Actuators.md",
+    "Capstone-Docs/Sensor SetUp.md",
+    "Capstone-Docs/I2C.md",
+    "Capstone-Docs/Study Topics/Linux Command Line.md",
     "Capstone-Docs/Modelling and Simulation.md",
     "Capstone-Docs/Landing.md"
   ]
