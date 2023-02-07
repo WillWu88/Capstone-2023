@@ -348,3 +348,75 @@ $ ros2 run br2_basics param_reader
 
 ### 3.2 Computation Graph
 
+- The control logic interprets the input sensory information and produces the control commands.
+
+- This logic is what we implement with an FSM.
+
+- A good approach is that if the number of publishers and subscribers in a node is known, use generic topic names, like the ones used in this example, and perform a remap.
+
+- A seasoned ROS2 programmer will read in the documentation, what topics it uses, find out with a ros2 node info, and quickly make work with remaps, instead of looking for the correct parameters to be set up in the configuration files.
+
+### 3.3.1 Execution Control
+
+- The node execution model consists of calling the control_cycle method at the selected frequency.
+	- To do this we declare a timer and start it in the constructor to call the control_cycle method every 50 ms.
+	- The control logic, implemented with an FSM, will publish the commands in speeds.
+
+- The Callbacks in ROS2 can have different signatures , depending on the needs.
+	- Some signatures allow to obtain information about the message (timestamp in origin and destination, and identifier of the sender) and even the serialized message, but that is only used in very specialized cases.
+
+- As a general rule, for a communication to be compatible, the quality of service of the publisher should be reliable, and it is the subscriber who can choose to relax it to be the best effort.
+
+### 3.3.2 Implementing a FSM
+
+- Sample FSM code pg 55 is for C++
+
+- Uses switch state to decide the state of the FSM
+
+### 3.3.3 Running the Code
+
+- Walks though steps for running books sample code
+
+### 3.4 Bump and Go Behavior in Python
+
+```shell
+$ ros2 pkg create --build-type ament_python br2_fsm_bumpgo_py --dependencies sensor_msgs geometry_msgs
+```
+- To create a skeleton.
+
+### 3.4.1 Execution Control
+
+- Displays python sample code
+	- Our code will have a subscriber, a publisher, and a timer
+	- Has a walkthrough of features of the sample code
+
+### 3.4.2 Implementing the FSM
+
+- Sample code for communicating with the clock to get the time
+
+- Code Notes:
+	- The Time.from_msg function allows to create a Time object from the timestamp of a message.
+	- The current time is obtained with Nodes get.clock().now() method.
+	- The operation between time has as a result an object of type Duration, which can be compared with another object of type Duration that represents the duration of 2s.
+
+### 3.4.3 Running the Code
+
+```shell
+$ colcon build --symlink-install
+```
+- Add a package needed for the sample code
+
+```shell
+$ ros2 launch br2_tiago sim.launch.py
+```
+- Launches the simulator.
+
+```shell
+$ ros2 run br2_fsm_bumpgo_py bump_go_main --ros-args -r output_vel:=/nav_vel -r input_scan:=/scan_raw -p use_sim_time:=true
+```
+- Run the program in another terminal
+
+```shell
+$ ros2 launch br2_fsm_bumpgo_py bump_and_go.launch.py
+```
+- Another launcher option
