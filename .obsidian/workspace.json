@@ -38,7 +38,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Sensor SetUp.md",
+                "file": "Capstone-Docs/Modelling and Simulation.md",
                 "mode": "source",
                 "source": false
               }
@@ -136,7 +136,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Sensor SetUp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +152,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Sensor SetUp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,9 +173,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Capstone-Docs/Sensor SetUp.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -197,17 +193,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2fbda3460d2e6067",
+  "active": "00fb6f4f78f5b51a",
   "lastOpenFiles": [
-    "Capstone-Docs/Study Section.md",
-    "Capstone-Docs/System Identification.md",
-    "Capstone-Docs/Project Description.md",
-    "Capstone-Docs/Project Timeline.md",
-    "Capstone-Docs/Actuators.md",
-    "Capstone-Docs/Sensor SetUp.md",
-    "Capstone-Docs/I2C.md",
-    "Capstone-Docs/Study Topics/Linux Command Line.md",
     "Capstone-Docs/Modelling and Simulation.md",
-    "Capstone-Docs/Landing.md"
+    "Capstone-Docs/Design Overview.md",
+    "Capstone-Docs/System Identification.md",
+    "Capstone-Docs/Sensors & Electronics.md",
+    "Capstone-Docs/Study Section.md",
+    "Untitled.md",
+    "README.md",
+    "Capstone-Docs/Sensor SetUp.md",
+    "Capstone-Docs/Project Description.md",
+    "Capstone-Docs/Project Timeline.md"
   ]
 }
