@@ -32,6 +32,8 @@
 
 - 2/5/2023: Finalized projected timeline and got the motor to run.
 
+- 2/8/2023: Restored encoder and set up magnet.
+
 
 
 
