@@ -34,6 +34,43 @@ $\tau_{front}$ and $\tau_{rear}$ respectivey denotes the net torque casted by th
 
 ### 2. Forces and Moments
 
+The tire forces can be modeled through the linear appoximation relating the longitudinal and lateral tire stiffness. These parameters for the four tires can be calculated with the longitudinal slip of the tire ($s_i(t)$) and the slip angle ($\alpha(t)$). 
+
+The longitudinal tire forces can be calculated as the linear approximation of the multiplication of the longitudinal tire stiffness $C_x$ and the longitudinal slip of the tires $s(t)$. Noted as:
+$$F_{x, FL} = C_x*s_{FL}(t)$$
+$$F_{x, FR} = C_x*s_{FR}(t)$$
+$$F_{x, RR} = C_x*s_{RR}(t)$$
+$$F_{x, RL} = C_x*s_{RL}(t)$$
+The latitudinal tire forces can be noted as the linear approximation of the lateral tire stiffness $C_y$ multiplied by the tire slip angle ($\alpha(t)$):
+$$
+F_{y, FL} = C_y*\alpha_{FL}(t)
+$$
+$$
+F_{y, FR} = C_y*\alpha_{FR}(t)
+$$
+$$
+F_{y, RL} = C_y*\alpha_{RL}(t)
+$$
+$$
+F_{y, RR} = C_y*\alpha_{RR}(t)
+$$
+The slip angles can be determined by: 
+...
+
+Three differential equations can be derived from the use of Newton's law of motion, some geometric relationships and the tire forces determined above. They describe the longitudinal velocity($v_y(t)$), the lateral velocity($v_y(t)$) and the yaw rate measured around the Center Of Gravity.
+
+$$
+\frac{d\mathbf{v_x(t)}}{dt} = v_y(t)*r(t) + 1/m*((F_{x,FL}(t)+F_{x,FR}(t))cos(\delta(t)) - (F_{y,FL}(t)+F_{y,FR}(t))sin(\delta(t) + F_{x,RL}(t)+F_{x,RR}(t) - C_A*v_x(t)^2)
+$$
+$$
+\frac{d\mathbf{v_y(t)}}{dt} = -v_x(t)*r(t) + 1/m*((F_{x,FL}(t)+F_{x,FR}(t))sin(\delta(t)) - (F_{y,FL}(t)+F_{y,FR}(t))cos(\delta(t) + F_{x,RL}(t)+F_{x,RR}(t))
+$$
+$$
+\frac{d\mathbf{r(t)}}{dt} = 1/J *(a*(F_{x,FL}(t)+F_{x,FR}(t))sin(\delta(t)) - (F_{y,FL}(t)+F_{y,FR}(t))cos(\delta(t) -b*( F_{y,RL}(t)+F_{y,RR}(t)))
+$$
+
+
+
 ### 3. State-Space Model
 We define the state vector of the car as follows:
 

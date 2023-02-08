@@ -32,7 +32,7 @@ def Motor_StartUp(pca):
 
 def Motor_Speed(pca, percent, channel = channel_num):
     pca.channels[channel].duty_cycle = math.floor(percent*65535)
-    print(percent)
+    print(percent*65535)
 
 pca = Servo_Initialize()
 Motor_StartUp(pca)

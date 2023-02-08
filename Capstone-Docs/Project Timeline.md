@@ -28,6 +28,10 @@
 
 - 2/2/2023: Lidar Setup and sample code
 
+- 2/3/2023: IMU data collection into Matlab, encoder setup and sample code, and servo setup and sample code.
+
+- 2/5/2023: Finalized projected timeline and got the motor to run.
+
 
 
 

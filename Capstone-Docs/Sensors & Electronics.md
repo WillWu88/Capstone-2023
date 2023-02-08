@@ -86,6 +86,8 @@ example reading out from IMU below:
 
 ### ESC Spec sheet and key notes:
 
+- **Only run startup once: otherwise it fails, but once startup successfully runs, it is programmable**
+
 - [Traxxas notes](Documents/Electronic_Speed_Control.pdf)
 - Electronic Speed Control
 - Forward, Reverse, and Breaking

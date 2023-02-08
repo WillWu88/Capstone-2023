@@ -24,16 +24,16 @@ def Motor_Start(pca):
 def Motor_Speed(pca,percent):
    #converts a -1 to 1 value to 16-bit duty cycle
    speed = ((percent) * 3276) + 65535 * 0.15
-   pca.channels[6].duty_cycle = math.floor(speed)
+   pca.channels[15].duty_cycle = math.floor(speed)
    print(speed/65535)
 
 #initialization
 pca = Servo_Motor_Initialization()
 Motor_Start(pca)
 
+x = input("Armed? >")
 Motor_Speed(pca, 0.2)
 time.sleep(0.5)
 Motor_Speed(pca, 0.16)
 time.sleep(3)
 Motor_Speed(pca, 0)
-Footer
