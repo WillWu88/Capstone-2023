@@ -1,3 +1,5 @@
+#actuator #design #control 
+
 Constants We Need:
 
 | Property | Symbol | Quantity | Note |

@@ -1,3 +1,5 @@
+#theory 
+
 ## Modeling Concepts
 
 - A model is a mathematical representation of numerical information in a system, which allows us to make predictions about a system will behave.

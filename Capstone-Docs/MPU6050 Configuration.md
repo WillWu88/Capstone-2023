@@ -1,3 +1,5 @@
+#sensor #acc
+
 ### Overall Notes 
 
 - Utilize the \_H, highbit, features for accelerometer and gyro values. This allows for easy access to lowbit values by simply interating the address value. 

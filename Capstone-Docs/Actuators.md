@@ -1,3 +1,5 @@
+#actuator #control 
+
 Definition: a device that causes a machine or other device to operate.
 
 ## Motor

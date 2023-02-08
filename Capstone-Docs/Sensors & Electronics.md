@@ -1,3 +1,5 @@
+#sensor
+
 ## See [[Sensor SetUp]] for sensor setup instructions
 
 - [Old Groups Github](https://github.com/esecapstone/picar)
@@ -67,8 +69,12 @@
 
 ```shell
 # smbus has a permission problem, so use the following command (carefully) to change permission of the file
-sudo chmod 777 <file>
+sudo chmod 777 /dev/i2c-1
 ```
+
+example reading out from IMU below:
+![IMU Reading][Figures/IMU-Reading.png]
+
 
 ## IV. Level Shifter
 
@@ -96,6 +102,9 @@ Other Specs:
 - **PWM freq: 1700 Hz**
 * Braking Current: 60A
 - Continuous Current: 15A
+
+**The ESC uses 5V j connectors, not the servo board**
+
 
 ## VII. Camera
 [Raspberry Pi camera spec sheet](https://www.raspberrypi.com/documentation/accessories/camera.html)

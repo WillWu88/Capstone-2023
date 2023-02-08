@@ -1,3 +1,5 @@
+#theory 
+
 Feedback - Refers to a situation where two (or more) dynamical sustems are connected together such that each system influences the other and their dynamics are thus strongly coupled.
 
 Open Loop: input, r, into system 1, gives output u which is input to system 2, which gives output y.
