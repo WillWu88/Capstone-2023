@@ -17,7 +17,12 @@ IO.setmode(IO.BCM)
 
 GPIO_num = 16
 IO.setup(GPIO_num,IO.IN,IO.PUD_UP)
+last_val = IO.input(GPIO_num)
 
 while True:
     curr_pin_val = IO.input(GPIO_num)
-    print(curr_pin_val)
+    if not(curr_pin_val) and last_val:
+        print("Detected!")
+        last_val = curr_pin_val
+    else:
+        last_val = curr_pin_val
