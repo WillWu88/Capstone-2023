@@ -38,4 +38,8 @@
 
 ### 10.2 Simple Controllers for Complex Systems
 
+- Low-order models can be obtained from first principles. 
+	- Any system can be modeled by a static system if its inputs are sufficiently slow. 
+	- A first-order model is sufficient if the storage of mass, momnetum or energy can be captured by only one variable.
 
+- System dynamics are of second order if the storage of mass 
