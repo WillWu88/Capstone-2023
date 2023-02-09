@@ -6,22 +6,33 @@
       {
         "id": "e7c8d299627a1927",
         "type": "tabs",
-        "dimension": 67.14285714285714,
         "children": [
           {
-            "id": "1a91e1820aa8c98c",
+            "id": "2fbda3460d2e6067",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Modelling and Simulation.md",
+                "file": "Capstone-Docs/Study Section.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "5839a9d1cf43c7ce",
+            "id": "febd350c9bafb460",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Capstone-Docs/Study Topics/Feedback Systems.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e48d402ddd41910c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -31,43 +42,22 @@
                 "source": false
               }
             }
-          },
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "a5d280206f787d70",
+        "type": "tabs",
+        "children": [
           {
-            "id": "2fbda3460d2e6067",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Capstone-Docs/Modelling and Simulation.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a46901f374d2a14a",
+            "id": "90e4254b908edfc6",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
                 "file": "Capstone-Docs/Documents/Feedback_Systems_Textbook.pdf"
               }
-            }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
-        "id": "93e150504ab2ad9d",
-        "type": "tabs",
-        "dimension": 32.857142857142854,
-        "children": [
-          {
-            "id": "00fb6f4f78f5b51a",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
             }
           }
         ]
@@ -136,6 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Capstone-Docs/Study Topics/Feedback Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,6 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Capstone-Docs/Study Topics/Feedback Systems.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -173,7 +165,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Capstone-Docs/Study Topics/Feedback Systems.md"
+              }
             }
           }
         ]
@@ -193,17 +187,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "00fb6f4f78f5b51a",
+  "active": "febd350c9bafb460",
   "lastOpenFiles": [
-    "Capstone-Docs/Modelling and Simulation.md",
-    "Capstone-Docs/Design Overview.md",
+    "Capstone-Docs/Documents/Feedback_Systems_Textbook.pdf",
+    "Capstone-Docs/Study Topics/Feedback Systems.md",
+    "Capstone-Docs/Study Topics/Linux Command Line.md",
+    "Capstone-Docs/Figures/IMU-Reading.png",
+    "Capstone-Docs/Figures/Center_of_gravity.jpg",
     "Capstone-Docs/System Identification.md",
-    "Capstone-Docs/Sensors & Electronics.md",
     "Capstone-Docs/Study Section.md",
-    "Untitled.md",
-    "README.md",
-    "Capstone-Docs/Sensor SetUp.md",
-    "Capstone-Docs/Project Description.md",
-    "Capstone-Docs/Project Timeline.md"
+    "Capstone-Docs/SLAM.md",
+    "Capstone-Docs/Sensors & Electronics.md",
+    "Capstone-Docs/Sensor SetUp.md"
   ]
 }
