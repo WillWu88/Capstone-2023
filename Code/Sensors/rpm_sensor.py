@@ -26,7 +26,7 @@ class circ_buff:
         self.write_ptr += 1
 
     def CalcRaw(self, start_time, stop_time):
-        raw_rpm = 60/(stop_time - start_time)
+        raw_rpm = 20/(stop_time - start_time)
         self.updateBuffer(raw_rpm)
         return raw_rpm
         
@@ -47,7 +47,6 @@ IO.setup(GPIO_num,IO.IN,IO.PUD_UP)
 last_val = IO.input(GPIO_num)
 start = time.perf_counter()
 rpm_filter = circ_buff(5)
-'''
 
 while True:
     curr_pin_val = IO.input(GPIO_num)
@@ -61,7 +60,6 @@ while True:
         start = stop
     else:
         last_val = curr_pin_val
-'''
 
 
 
