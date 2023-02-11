@@ -4,63 +4,45 @@
     "type": "split",
     "children": [
       {
-        "id": "e7c8d299627a1927",
+        "id": "a5d280206f787d70",
         "type": "tabs",
         "children": [
           {
-            "id": "2fbda3460d2e6067",
+            "id": "13b70b7f91fbf9cf",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Capstone-Docs/Figures/Weighing_picar.jpg"
+              }
+            }
+          },
+          {
+            "id": "6ccbbfa9c5b9a8b2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Study Section.md",
+                "file": "Capstone-Docs/Sensors & Electronics.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "febd350c9bafb460",
+            "id": "16c66831ee6731a3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Feedback Systems.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e48d402ddd41910c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
+                "file": "Capstone-Docs/PiCar Modelling and Simulation.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
-      },
-      {
-        "id": "a5d280206f787d70",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "90e4254b908edfc6",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Capstone-Docs/Documents/Feedback_Systems_Textbook.pdf"
-              }
-            }
-          }
-        ]
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -126,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Feedback Systems.md",
+                "file": "Capstone-Docs/PiCar Modelling and Simulation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Feedback Systems.md",
+                "file": "Capstone-Docs/PiCar Modelling and Simulation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -166,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Feedback Systems.md"
+                "file": "Capstone-Docs/PiCar Modelling and Simulation.md"
               }
             }
           }
@@ -187,17 +169,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "febd350c9bafb460",
+  "active": "16c66831ee6731a3",
   "lastOpenFiles": [
-    "Capstone-Docs/Documents/Feedback_Systems_Textbook.pdf",
-    "Capstone-Docs/Study Topics/Feedback Systems.md",
-    "Capstone-Docs/Study Topics/Linux Command Line.md",
-    "Capstone-Docs/Figures/IMU-Reading.png",
-    "Capstone-Docs/Figures/Center_of_gravity.jpg",
     "Capstone-Docs/System Identification.md",
-    "Capstone-Docs/Study Section.md",
-    "Capstone-Docs/SLAM.md",
     "Capstone-Docs/Sensors & Electronics.md",
-    "Capstone-Docs/Sensor SetUp.md"
+    "Capstone-Docs/Figures/Weighing_picar.jpg",
+    "Capstone-Docs/Figures/Center_of_gravity.jpg",
+    "Center_of_gravity.md",
+    "Figures/Center_of_gravity.png.md",
+    "Capstone-Docs/Sensor SetUp.md",
+    "Capstone-Docs/SLAM.md",
+    "Capstone-Docs/Study Section.md",
+    "Capstone-Docs/ROS2.md"
   ]
 }
