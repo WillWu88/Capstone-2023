@@ -91,4 +91,4 @@ if __name__ == "__main__":
 
     output_data = {"acc_gyro_sample": log_data}
     date_str = date.today() #system time stamp
-    savemat("IMU_data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
+    savemat("./Data/IMU_data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
