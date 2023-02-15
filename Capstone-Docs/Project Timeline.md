@@ -34,6 +34,10 @@
 
 - 2/8/2023: Restored encoder and set up magnet.
 
+- 2/9/2023: Created python program to measure RPMs
+
+- 2/10/2023: SSH into Raspberry Pi to program the motor and programmed car to run to measure the slip of the tires.
+
 
 
 
