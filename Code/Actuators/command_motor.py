@@ -35,9 +35,9 @@ if (arm_state !="y"):
     Motor_Start(pca)
 
 while True:
-    command = input("Stop? (y/n)> ")
+    command = input("Stop? (y/n/val)> ")
     if (command == "y"):
         Motor_Speed(pca,0)
         break
 
-    Motor_Speed(pca, 0.2)
+    Motor_Speed(pca, float(command))

@@ -13,7 +13,6 @@ Constants We Need:
 - C_y: Lateral tire stiffness
 - slip
 
-
 ## Mass:
 - chassis mass: 1545.1g
 - battery mass: 395.5g
@@ -23,6 +22,8 @@ Constants We Need:
 - Pi Hat: 37.8g
 - camera + sensors: ~250g
 
+![Weighing Experiment](Weighing_picar.jpg)
+
 ## Lever Arm length
 - b = 10.5cm
 - a = 18.3cm
@@ -31,6 +32,8 @@ Constants We Need:
 
 [measuring slip](http://salesmanual.deere.com/sales/salesmanual/en_NA/tractors/2012/feature/ballasting_and_optimizing_performance/7/7r_ballast_wheel_slip.html)
 [more about slip](https://en.wikipedia.org/wiki/Slip_(vehicle_dynamics))
+
+![Experiment to determine these physical parameters](Figures/Center_of_gravity.jpg)
 
 ### Wheel Slip
 

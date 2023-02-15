@@ -50,5 +50,7 @@ wget: download content from another git repo
 
 sudo chmod 777 /dev/ttyUSB0: enable port access (for lidar)
 
+sudo chmod 777/dev/i2c-1: enable port access to motor
+
 ## Appendix:
 [Linux Survival](https://linuxsurvival.com/linux-tutorial-introduction/)
