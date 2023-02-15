@@ -45,4 +45,9 @@ Constants We Need:
 This experiment can be used to calculate the moment of inertia of the Pi car. The torsion pendulum can be simulated by suspending two vertical steel rod, which are connected to the lower right and left end the car. The torsion will be measured using a stiff coupling induced by an oscillatory motion about the longitudinal axis of the rods. The system will oscillate with a specific frequency determined by the moment of inertia of the car and the torsional rigidity of the rod. 
 
 Experimental procedure:
-- 
+
+### Tire Stiffness
+
+[Tire Stiffness Forum](https://engineering.stackexchange.com/questions/19253/questions-regarding-cornering-stiffness-for-rc-car)
+- May be able to assume tire is a pnuematic tire and thus would have a 0.1mu/deg cornering stiffness.
+	- This is due to the RC cars relatively very slow mass and velocity when compared to actual cars who's mass/velocity would be measured for tire stiffness.
