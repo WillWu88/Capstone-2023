@@ -57,29 +57,42 @@ if __name__ == "__main__":
 	# log user-specified amount of sensor data
 	sample_num = int(input(" Input # of data here: >>> "))
 
-	log_data = np.zeros((3,sample_num))
-	log_data[index_dict["commanded_rpm"],:] = np.ones((1, sample_num))*default_rpm_com
-
-	sample_count = 0
-	print("Collecting data now...")
-	try:
-		while sample_count < sample_num:
+	if (not(sample_num)):
+		while True:
 			curr_pin_val = IO.input(GPIO_num) # read rpm value when sensor triggers
 			if not(curr_pin_val) and last_val:
 				stop = time.perf_counter();
-				log_data[index_dict["raw_rpm"], sample_count] = rpm_filter.CalcRaw(start, stop)
-				log_data[index_dict["filtered_rpm"], sample_count] = rpm_filter.CalcFilter()
+				rpm_filter.CalcRaw(start,stop)
+				print("Filtered: " + str(rpm_filter.CalcFilter()) + "\n")
 				last_val = curr_pin_val
 				start = stop
-				sample_count += 1
 			else:
 				last_val = curr_pin_val
+	else:
 
-		output_data = {"RPM_sample": log_data}
-		date_str = date.today() #system time stamp
-		savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
-			
-	except KeyboardInterrupt:
-		output_data = {"RPM_sample": log_data}
-		date_str = date.today() #system time stamp
-		savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
+		log_data = np.zeros((3,sample_num))
+		log_data[index_dict["commanded_rpm"],:] = np.ones((1, sample_num))*default_rpm_com
+
+		sample_count = 0
+		print("Collecting data now...")
+		try:
+			while sample_count < sample_num:
+				curr_pin_val = IO.input(GPIO_num) # read rpm value when sensor triggers
+				if not(curr_pin_val) and last_val:
+					stop = time.perf_counter();
+					log_data[index_dict["raw_rpm"], sample_count] = rpm_filter.CalcRaw(start, stop)
+					log_data[index_dict["filtered_rpm"], sample_count] = rpm_filter.CalcFilter()
+					last_val = curr_pin_val
+					start = stop
+					sample_count += 1
+				else:
+					last_val = curr_pin_val
+
+			output_data = {"RPM_sample": log_data}
+			date_str = date.today() #system time stamp
+			savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
+				
+		except KeyboardInterrupt:
+			output_data = {"RPM_sample": log_data}
+			date_str = date.today() #system time stamp
+			savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
