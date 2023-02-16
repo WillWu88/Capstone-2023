@@ -75,11 +75,11 @@ if __name__ == "__main__":
 			else:
 				last_val = curr_pin_val
 
-		output_data = {"RPM sample": log_data}
+		output_data = {"RPM_sample": log_data}
 		date_str = date.today() #system time stamp
-		savemat("./Data/RPM_Data"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
+		savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
 			
 	except KeyboardInterrupt:
-		output_data = {"RPM sample": log_data}
+		output_data = {"RPM_sample": log_data}
 		date_str = date.today() #system time stamp
 		savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
