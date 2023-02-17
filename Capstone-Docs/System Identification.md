@@ -29,6 +29,7 @@ Constants We Need:
 - a = 18.3cm
 - Car length = 42cm
  width = 32.5cm
+ width without wheels = 22cm
 
 [measuring slip](http://salesmanual.deere.com/sales/salesmanual/en_NA/tractors/2012/feature/ballasting_and_optimizing_performance/7/7r_ballast_wheel_slip.html)
 [more about slip](https://en.wikipedia.org/wiki/Slip_(vehicle_dynamics))
