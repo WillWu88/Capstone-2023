@@ -38,7 +38,8 @@
 
 - 2/10/2023: SSH into Raspberry Pi to program the motor and programmed car to run to measure the slip of the tires.
 
+- 2/15/2023: Worked on formal proposal, found tire stiffness
 
-
+- 2/16/2023: Exported RPM data to matlab and checked that our filtered RPM data removes the noise that is inherent to the encoder.
 
 
