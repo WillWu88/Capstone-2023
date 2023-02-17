@@ -35,7 +35,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/PiCar Modelling and Simulation.md",
+                "file": "Capstone-Docs/System Identification.md",
                 "mode": "source",
                 "source": false
               }
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/PiCar Modelling and Simulation.md",
+                "file": "Capstone-Docs/System Identification.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/PiCar Modelling and Simulation.md",
+                "file": "Capstone-Docs/System Identification.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/PiCar Modelling and Simulation.md"
+                "file": "Capstone-Docs/System Identification.md"
               }
             }
           }
@@ -171,15 +171,15 @@
   },
   "active": "16c66831ee6731a3",
   "lastOpenFiles": [
+    "Capstone-Docs/Project Timeline.md",
+    "Capstone-Docs/PiCar Modelling and Simulation.md",
+    "Capstone-Docs/Navigation Design.md",
+    "Capstone-Docs/Continuous Integration.md",
+    "Capstone-Docs/Figures/Weighing_picar.jpg",
     "Capstone-Docs/System Identification.md",
     "Capstone-Docs/Sensors & Electronics.md",
-    "Capstone-Docs/Figures/Weighing_picar.jpg",
     "Capstone-Docs/Figures/Center_of_gravity.jpg",
     "Center_of_gravity.md",
-    "Figures/Center_of_gravity.png.md",
-    "Capstone-Docs/Sensor SetUp.md",
-    "Capstone-Docs/SLAM.md",
-    "Capstone-Docs/Study Section.md",
-    "Capstone-Docs/ROS2.md"
+    "Figures/Center_of_gravity.png.md"
   ]
 }
