@@ -23,9 +23,11 @@
             "id": "16c66831ee6731a3",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png"
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -96,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png",
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png",
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png"
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md"
               }
             }
           }
@@ -159,9 +161,9 @@
   },
   "active": "16c66831ee6731a3",
   "lastOpenFiles": [
+    "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png",
     "Capstone-Docs/Figures/IMU-Reading-histogram-acc.png",
     "Capstone-Docs/Figures/IMU-Reading.png",
-    "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png",
     "Capstone-Docs/Documents/Feedback_Systems_Textbook.pdf",
     "Capstone-Docs/Sensors & Electronics.md",
     "Capstone-Docs/Figures/Weighing_picar.jpg",
