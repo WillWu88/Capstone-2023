@@ -8,16 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "13b70b7f91fbf9cf",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Capstone-Docs/Figures/Weighing_picar.jpg"
-              }
-            }
-          },
-          {
             "id": "6ccbbfa9c5b9a8b2",
             "type": "leaf",
             "state": {
@@ -33,16 +23,14 @@
             "id": "16c66831ee6731a3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Capstone-Docs/System Identification.md",
-                "mode": "source",
-                "source": false
+                "file": "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png"
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -108,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/System Identification.md",
+                "file": "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/System Identification.md",
+                "file": "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/System Identification.md"
+                "file": "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png"
               }
             }
           }
@@ -171,15 +159,15 @@
   },
   "active": "16c66831ee6731a3",
   "lastOpenFiles": [
-    "Capstone-Docs/Project Timeline.md",
-    "Capstone-Docs/PiCar Modelling and Simulation.md",
-    "Capstone-Docs/Navigation Design.md",
-    "Capstone-Docs/Continuous Integration.md",
+    "Capstone-Docs/Figures/IMU-Reading-histogram-acc.png",
+    "Capstone-Docs/Figures/IMU-Reading.png",
+    "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png",
+    "Capstone-Docs/Documents/Feedback_Systems_Textbook.pdf",
+    "Capstone-Docs/Sensors & Electronics.md",
     "Capstone-Docs/Figures/Weighing_picar.jpg",
     "Capstone-Docs/System Identification.md",
-    "Capstone-Docs/Sensors & Electronics.md",
-    "Capstone-Docs/Figures/Center_of_gravity.jpg",
-    "Center_of_gravity.md",
-    "Figures/Center_of_gravity.png.md"
+    "Capstone-Docs/Project Timeline.md",
+    "Capstone-Docs/PiCar Modelling and Simulation.md",
+    "Capstone-Docs/Navigation Design.md"
   ]
 }

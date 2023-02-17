@@ -41,6 +41,11 @@ Constants We Need:
 -Back wheel slip ~5%
 -Front wheel slip ~2%
 
+## Gear ratio
+Number of teeth on small gear: 16
+Number of teeth on big gear: ~103
+GR = ~ 0.1553
+
 ### Bifilar Torsion Pendulum Experiment
 
 This experiment can be used to calculate the moment of inertia of the Pi car. The torsion pendulum can be simulated by suspending two vertical steel rod, which are connected to the lower right and left end the car. The torsion will be measured using a stiff coupling induced by an oscillatory motion about the longitudinal axis of the rods. The system will oscillate with a specific frequency determined by the moment of inertia of the car and the torsional rigidity of the rod. 
