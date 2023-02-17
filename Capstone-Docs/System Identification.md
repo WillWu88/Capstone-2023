@@ -50,4 +50,12 @@ Experimental procedure:
 
 [Tire Stiffness Forum](https://engineering.stackexchange.com/questions/19253/questions-regarding-cornering-stiffness-for-rc-car)
 - May be able to assume tire is a pnuematic tire and thus would have a 0.1mu/deg cornering stiffness.
-	- This is due to the RC cars relatively very slow mass and velocity when compared to actual cars who's mass/velocity would be measured for tire stiffness.
+	- This is due to the RC cars relatively very low mass and velocity when compared to actual cars who's mass/velocity would be measured for tire stiffness.
+
+### Moment of Inertia
+
+- Approximated as a rectngular slab
+
+- Equation used: $(1/12)(massChassis)(length^{2}+width^{2})$
+
+- Found to be 0.0359 $km*m^2$
