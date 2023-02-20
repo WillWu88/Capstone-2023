@@ -49,7 +49,7 @@
 - The observer design problem is the dual of the state feedback design problem.
 
 - Theorem 7.2 (Observer design by eigenvalue assinment).
-	- *Consider the system given by* $dx/dt = Ax + Bu$ $y=Cx$ *with one input and one output. Let* $lamba(s) = s^{n} + a_{1}s^{n-1}+ ... +a_{n-1}s + a_{n}$ *be the characeristic polynomial for A. If the system is observable, then the dynamical system* $dx_{hat}/dt = Ax_{hat} + Bu + L(y-C*x_{hat}$ *is an observer for the system, with L chosed as ..* see page 220 for matricies.
+	- *Consider the system given by* $dx/dt = Ax + Bu$ $y=Cx$ *with one input and one output. Let* $lamba(s) = s^{n} + a_{1}s^{n-1}+ ... +a_{n-1}s + a_{n}$ *be the characeristic polynomial for A. If the system is observable, then the dynamical system* $dx_{hat}/dt = Ax_{hat} + Bu + L(y-C*x_{hat}$ *is an observer for the system, with L chosen as ..* see page 220 for matricies.
 
 - $dx_{hat}/dt = Ax_{hat} + Bu + L(y-C*x_{hat}$ is called an observer for (the states of) the system because it will generate an approimation of the states of the  system from its inputs and outputs.
 	- The form of an observer is a much more useful form than the one given by pure differentiation in equation.
