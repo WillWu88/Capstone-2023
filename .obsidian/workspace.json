@@ -13,26 +13,23 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Sensors & Electronics.md",
+                "file": "Capstone-Docs/System Identification.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "16c66831ee6731a3",
+            "id": "bd978f2ac6230101",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
-                "mode": "source",
-                "source": false
+                "file": "Capstone-Docs/Progress Reports/Week 1 Progress Report.pdf"
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
+                "file": "Capstone-Docs/System Identification.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
+                "file": "Capstone-Docs/System Identification.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Linux Command Line.md"
+                "file": "Capstone-Docs/System Identification.md"
               }
             }
           }
@@ -159,17 +156,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "16c66831ee6731a3",
+  "active": "6ccbbfa9c5b9a8b2",
   "lastOpenFiles": [
-    "Capstone-Docs/Figures/IMU-Reading-histogram-gyro.png",
-    "Capstone-Docs/Figures/IMU-Reading-histogram-acc.png",
-    "Capstone-Docs/Figures/IMU-Reading.png",
-    "Capstone-Docs/Documents/Feedback_Systems_Textbook.pdf",
-    "Capstone-Docs/Sensors & Electronics.md",
-    "Capstone-Docs/Figures/Weighing_picar.jpg",
-    "Capstone-Docs/System Identification.md",
-    "Capstone-Docs/Project Timeline.md",
+    "Capstone-Docs/Project Description.md",
     "Capstone-Docs/PiCar Modelling and Simulation.md",
-    "Capstone-Docs/Navigation Design.md"
+    "Capstone-Docs/Project Timeline.md",
+    "Capstone-Docs/Sensors & Electronics.md",
+    "Capstone-Docs/Documents/Induction_Motor_Notes.pdf",
+    "Capstone-Docs/Documents/Feedback_Systems_Textbook.pdf",
+    "Capstone-Docs/Documents/Electronic_Speed_Control.pdf",
+    "Capstone-Docs/Documents/Autonomous_rifting_of_a_1_5_scale_model_car.pdf",
+    "Capstone-Docs/Progress Reports/Week 1 Progress Report.pdf",
+    "Capstone-Docs/Figures/Weighing_picar.jpg"
   ]
 }
