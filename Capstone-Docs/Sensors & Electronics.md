@@ -75,6 +75,10 @@ sudo chmod 777 /dev/i2c-1
 example reading out from IMU below:
 ![IMU Reading][Figures/IMU-Reading.png]
 
+### ROS2 Publisher Implementation
+
+- See [[IMU Publisher]]
+
 
 ## IV. Level Shifter
 

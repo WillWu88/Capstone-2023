@@ -23,14 +23,14 @@ On the $x$ axis, the summation of forces can be written as below:
 
 $$F_x = m\cdot a_x = F_{cor} + F_{front} + F_{rear} + F_D$$
 
-Where $F_{cor}$ is the [Coriolis Force](https://en.wikipedia.org/wiki/Coriolis_force) due to rotation, $F_{front}$ and $F_{rear}$ are rolling/slipping forces the wheels exert on the car, and $F_D$ denotes the aerodynamic drag experienced by the car. Because the car travels below $80km/h$, a well-recognized aerodynamic-effect speed threashold, we neglect $F_D$ in our modelling for now. Refer to section [[#IV. Aerodynamics Modelling]] for further resolution to our model.
+Where $F_{cor}$ is the [Coriolis Force](https://en.wikipedia.org/wiki/Coriolis_force) due to rotation, $F_{front}$ and $F_{rear}$ are rolling/slipping forces the wheels exert on the car, and $F_D$ denotes the aerodynamic drag experienced by the car. Because the car travels below $80km/h$, a well-recognized aerodynamic-effect speed threshold, we neglect $F_D$ in our modelling for now. Refer to section [[#IV. Aerodynamics Modelling]] for further resolution to our model.
 
 On the $y$ axis, similar forces come into play:
 $$F_y = m\cdot a_y = F_{cor} + F_{front} + F_{rear}$$
 We can model the network experienced by the car around the $z$ axis as follows:
 $$\tau_z = J\cdot \alpha_{z} = \tau_{front} + \tau_{rear}$$
 
-$\tau_{front}$ and $\tau_{rear}$ respectivey denotes the net torque casted by the latitudinal friction of the wheels.
+$\tau_{front}$ and $\tau_{rear}$ respectively denotes the net torque casted by the latitudinal friction of the wheels.
 
 ### 2. Forces and Moments
 
@@ -55,7 +55,6 @@ $$
 F_{y, RR} = C_y*\alpha_{RR}(t)
 $$
 The slip angles can be determined by: 
-...
 
 Three differential equations can be derived from the use of Newton's law of motion, some geometric relationships and the tire forces determined above. They describe the longitudinal velocity($v_y(t)$), the lateral velocity($v_y(t)$) and the yaw rate measured around the Center Of Gravity.
 
@@ -87,6 +86,13 @@ Though we can control $\theta$ with direct command from the Raspberry Pi, we ind
 - Check with IMU alignment
 
 ## IV. Aerodynamics Modelling
+
+## V. Power Modelling
+
+We notice a significant degradation in motor speed due to power consumption. The battery drops in voltage, resulting in a decrease in motor rpm. We assume the following linear relationship for battery/motor degradation.
+
+$$\frac{V_{Bat}}{V_{Full}} = m \cdot \frac{R_{actual}}{R_{commanded}}$$
+To determine the empirical value of $m$, we command the motor at a constant speed while monitoring battery voltage and wheel speed. See [[System Identification]] for experiment and result.
 
 
 ## Appendix: References
