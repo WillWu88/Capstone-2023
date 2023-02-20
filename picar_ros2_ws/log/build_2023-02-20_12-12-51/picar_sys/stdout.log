@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/picar_sys/picar_sys.egg-info
+writing ../../build/picar_sys/picar_sys.egg-info/PKG-INFO
+writing dependency_links to ../../build/picar_sys/picar_sys.egg-info/dependency_links.txt
+writing entry points to ../../build/picar_sys/picar_sys.egg-info/entry_points.txt
+writing requirements to ../../build/picar_sys/picar_sys.egg-info/requires.txt
+writing top-level names to ../../build/picar_sys/picar_sys.egg-info/top_level.txt
+writing manifest file '../../build/picar_sys/picar_sys.egg-info/SOURCES.txt'
+reading manifest file '../../build/picar_sys/picar_sys.egg-info/SOURCES.txt'
+writing manifest file '../../build/picar_sys/picar_sys.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/willwu/Capstone-2023/picar_ros2_ws/build/picar_sys/build
+creating /home/willwu/Capstone-2023/picar_ros2_ws/build/picar_sys/build/lib
+creating /home/willwu/Capstone-2023/picar_ros2_ws/build/picar_sys/build/lib/picar_sys
+copying picar_sys/__init__.py -> /home/willwu/Capstone-2023/picar_ros2_ws/build/picar_sys/build/lib/picar_sys
+copying picar_sys/imu.py -> /home/willwu/Capstone-2023/picar_ros2_ws/build/picar_sys/build/lib/picar_sys
+running install
+running install_lib
+creating /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/lib/python3.10/site-packages/picar_sys
+copying /home/willwu/Capstone-2023/picar_ros2_ws/build/picar_sys/build/lib/picar_sys/__init__.py -> /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/lib/python3.10/site-packages/picar_sys
+copying /home/willwu/Capstone-2023/picar_ros2_ws/build/picar_sys/build/lib/picar_sys/imu.py -> /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/lib/python3.10/site-packages/picar_sys
+byte-compiling /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/lib/python3.10/site-packages/picar_sys/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/lib/python3.10/site-packages/picar_sys/imu.py to imu.cpython-310.pyc
+running install_data
+creating /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/share/ament_index
+creating /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/share/ament_index/resource_index
+creating /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/share/ament_index/resource_index/packages
+copying resource/picar_sys -> /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/share/ament_index/resource_index/packages
+copying package.xml -> /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/share/picar_sys
+running install_egg_info
+Copying ../../build/picar_sys/picar_sys.egg-info to /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/lib/python3.10/site-packages/picar_sys-0.0.0-py3.10.egg-info
+running install_scripts
+Installing imu script to /home/willwu/Capstone-2023/picar_ros2_ws/install/picar_sys/lib/picar_sys
+writing list of installed files to '/home/willwu/Capstone-2023/picar_ros2_ws/build/picar_sys/install.log'
