@@ -82,3 +82,22 @@
 
 ### 7.4 Kalman Filtering
 
+- One of the principal uses of observers in practice is to estimate the state of a system in the presence of *noisy* measurements.
+
+- The Kalman filter has the *recursive* filter: given mean square error at time *k*, we can compute how the estimate and error *change*.
+
+- The Kalman filter gives the estimate *and* the error covariance, so we can see how reliable the estimate is.
+	- Also extracts the maximum possible information about output data.
+
+- The Kalman filter is extremely versatile and can be used even if the process, noise or disturbances are nonstationary.
+
+- We see that the optimal gain depends on both the process noise and the measurement noise, but in a nontrivial way.
+	- Like the use of LQR to choose state feedback gains, the Kalman filter permits a systematic derivation of the oberver gains given a description of the noise processes.
+
+- Theorem 7.5: *The optimal estimator has the form of a linear observer* pg 229 of the textbook.
+
+- Example 7.5: Vectored thrust aircraft pg 229
+
+### 7.5 A General Controller Structure
+
+
