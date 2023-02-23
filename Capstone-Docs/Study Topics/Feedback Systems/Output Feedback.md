@@ -100,4 +100,58 @@
 
 ### 7.5 A General Controller Structure
 
+- State estimators and state feedback are important components of a controller.
+
+#### Feedforward
+
+- A more sophisticated controller consists of three parts:
+ 1)  An observer that computes estimates of the states based on a model and measured process inputs and outputs
+ 2) A state feedback
+ 3) A trajectory generator that generates the desired behavior of all states $x_{d}$ and a feedforward signal $u_{ff}$
+
+- To generate the signal $u_{ff}$, we must also have a model of the inverse of the process dynamics.
+
+- This controller is saif to have *two degrees of freedom* because the responses to command signals and disturbances are decoupled.
+
+- Disturbance responses are governed by the observer and the state feedback, while the response to command signals is governed by the trajectory generator (feedforward).
+
+- A *gain scheduled* linear controller with *feedforward* $u_{ff}$:
+ $u = -K(x_{d})(x-x_{d})+u_{ff})$
+- The form of the observer shown on page 232 is known as an *extended Kalman filter* and has proved to be a very effective means of estimating the state of a nonlinear system.
+
+- The internal model principle applies: the controller contains a model of the system to be controlled through the observer.
+
+- Example 7.6: Vehicle steering is on page 233
+
+#### Kalman's Decomposition of a Linear System
+
+- Two fundamental properties of a linear input/output system are reachability and observability, which can also be used to classify the dynamics of a system.
+
+- Kalman's decomposition theorem, which says a linear system can be divided into four subsystems:
+	- Reachable and observable 
+	- Reachable but not observable
+	- Not reachable but observable
+	- Not reachable nor observable
+
+- From the input/output point of view, it is only the reachable and observable dynamics that matter.
+
+- Book example 7.7: System and controller with feedback from observer states page 236
+
+#### Computer Implementation
+
+- Controllers obtained so far have been described bt ordinary differential equations.
+
+- A computer-controlled system typically operates periodically: every cycle, signals from the sensors are sampled and converted to digital form by the A/D converter, the control signal is computed and the resulting output is converted to analog form for the actuators. 
+
+- The number of computations between reading the analog input and setting the analog output has been minimized by updating the state after the analog output has been set.
+
+- There are more sophisticated ways of approximating a differential equation by a difference equation.
+
+- It is necessary to filter measured signals before they are sampled so that the filtered signal has little frequency content above $f_{s}/2$, where $f_s$ is the sampling frequency.
+	- This avoids a phenomena called *aliasing*
+
+- If controllers with integral action are used, it is also necessary to provide protection so that the integral does not become too large when the actuator saturates.
+	- This issue is known as *integrator windup*
+
+- Care must also be taken so that parameter changes do not cause disturbances
 
