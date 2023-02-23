@@ -8,6 +8,9 @@ setup.py
 ../../build/picar_sys/picar_sys.egg-info/requires.txt
 ../../build/picar_sys/picar_sys.egg-info/top_level.txt
 ../../build/picar_sys/picar_sys.egg-info/zip-safe
+drivers/__init__.py
+drivers/imu_driver.py
+drivers/imu_param.py
 picar_sys/__init__.py
 picar_sys/imu.py
 resource/picar_sys
