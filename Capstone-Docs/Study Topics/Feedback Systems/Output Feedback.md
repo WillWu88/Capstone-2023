@@ -1,3 +1,4 @@
+#theory 
 - Introduces the concept of observability and show that if a system is observable, it is possible to recover the state from measurements of the inputs and outputs to the system
 
 ### 7.1 Observability

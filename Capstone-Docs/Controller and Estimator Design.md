@@ -1,6 +1,6 @@
 #design
 
-Controller definition: thing that directs or regulates something
+Controller 
 
 refer to [[Estimators]] and [[Feedback Loops]] for theoretical background
 
