@@ -83,6 +83,8 @@
 
 ### 7.4 Kalman Filtering
 
+- [[Kalman Filter]]
+
 - One of the principal uses of observers in practice is to estimate the state of a system in the presence of *noisy* measurements.
 
 - The Kalman filter has the *recursive* filter: given mean square error at time *k*, we can compute how the estimate and error *change*.
