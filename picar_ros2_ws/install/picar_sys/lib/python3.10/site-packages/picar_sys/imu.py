@@ -18,26 +18,26 @@ class IMUPublisher(Node):
     def timer_callback(self):
 
         self.imu.update()
-        msg = self.populate_message
+        msg = self.populate_message()
 
         self.publisher_.publish(msg)
         self.get_logger().info('Publishing: "%d"' % self.msg_count)
         self.msg_count += 1
 
-    def populate_message(self):
+    def populate_message(self) -> Imu:
         # put current imu data into msg
 
         msg = Imu()
 
         # header config
-        msg.header.stamp = self.get_clock.now().to_msg()
+        msg.header.stamp = self.get_clock().now().to_msg()
         msg.header.frame_id = '' #empty for now
 
         # keeping at 0 for now, estimator relevant
         msg.orientation = Quaternion()
-        msg.orientation_covariance = [0] * 9
-        msg.angular_velocity_covariance = [0] * 9
-        msg.linear_acceleration_covariance = [0] * 9
+        msg.orientation_covariance = [0.0] * 9
+        msg.angular_velocity_covariance = [0.0] * 9
+        msg.linear_acceleration_covariance = [0.0] * 9
 
         # sensor data here
         msg.angular_velocity.x = self.imu.data[self.imu.index_dict['gyro_x']] 
