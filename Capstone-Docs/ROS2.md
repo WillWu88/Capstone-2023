@@ -10,7 +10,13 @@ rosdep update
 rosdep -h # read the documentation
 ```
 
-### ROS Index 
+### ROS Index
+- Useful website
+- See [[#Appendix: References]] for link
+
+### Messaging
+- ROS2 comes with many implemented messages
+- See [Github](https://github.com/ros2/common_interfaces) for implementation details
 
 
 
@@ -422,3 +428,4 @@ $ ros2 launch br2_fsm_bumpgo_py bump_and_go.launch.py
 - [Robotics Back-end tutorials](https://roboticsbackend.com/category/ros2/)
 - [Official ROS Documentation](https://docs.ros.org/en/humble/index.html)
 - [ROS index](https://index.ros.org/p/std_msgs/github-ros2-common_interfaces/#humble)
+- [ROS2 Message Implementations](https://github.com/ros2/common_interfaces)
