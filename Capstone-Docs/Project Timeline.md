@@ -54,3 +54,5 @@
 
 - 2/24/2023: Started 3D print of PiTop in maker space, did work on creating the skeleton of our Kalman Filter
 
+- 2/26/2023: First attempt at new PiTop implementation, made changes and reprinted new model and new front of car mountings that were also remodeled. Statistical analysis of the noise in the sensors via Matlab.
+
