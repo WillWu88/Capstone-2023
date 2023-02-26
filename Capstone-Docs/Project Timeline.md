@@ -42,4 +42,15 @@
 
 - 2/16/2023: Exported RPM data to matlab and checked that our filtered RPM data removes the noise that is inherent to the encoder.
 
+- 2/17/2023: Worked on Formal Proposal
+
+- 2/19/2023: Finished Formal Proposal
+
+- 2/20/2023: Began work on IMU ROS node and PiTop redesign
+
+- 2/21/2023: Continued work on above
+
+- 2/23/2023: Finished IMU ROS node, and PiTop first draft redesign, Began Encoder ROS node
+
+- 2/24/2023: Started 3D print of PiTop in maker space, did work on creating the skeleton of our Kalman Filter
 
