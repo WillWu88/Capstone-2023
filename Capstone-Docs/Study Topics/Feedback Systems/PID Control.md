@@ -1,3 +1,5 @@
+#theory 
+
 ### 10.1 Basic Control Functions
 
 - Most PID controllers do not use derivative action, but PID is the generic term for this class of controller.

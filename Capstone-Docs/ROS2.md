@@ -10,7 +10,13 @@ rosdep update
 rosdep -h # read the documentation
 ```
 
-### ROS Index 
+### ROS Index
+- Useful website
+- See [[#Appendix: References]] for link
+
+### Messaging
+- ROS2 comes with many implemented messages
+- See [Github](https://github.com/ros2/common_interfaces) for implementation details
 
 
 
@@ -416,9 +422,104 @@ $ ros2 launch br2_fsm_bumpgo_py bump_and_go.launch.py
 ```
 - Another launcher option
 
+### Chapter 4: The TF System
+
+- One of the greatest hidden treasures in ROS is its geometric transformation subsystem TF.
+	- This subsystem allows defining different reference axes (also called frames) and the geometric relationship between them, even when this relationship is constantly changing.
+	- Any coordinate in a frame can be recalculated to another frame without the need for tedious manual calculations.
+
+- A robot perceives the environment through sensors placed somewhere on the robot and performs actions for which it needs to specify some spatial position. Ex:
+	- A distance sensor (laser or RGBD) generates a set of points (x, y, z) that indicate the detected obsticles
+	- A robot moves its end effector by specifying a target position (x, y, z, roll, pitch, yaw).
+	- A robot moves to a point (x, y, yaw) on a map
+- All these coordinates are reference to a frame.
+
+- In a robot there are multiple frames (for sensors, actuators, etc).
+	- The relationship between these frames must be known to reason, ex, the coordinate of an obstacle detected by the laser on the arm reference axis to avoid it.
+	- Frames relationships are the displacement and rotation of a frame to another frame.
+
+- ROS2 implements the TF transform system (now called TF2, the second version) using two topics that receives transformations, as messages of type tf2_msgs_msg/TFMessage;
+
+```C++
+$ ros2 interface show tf2.msgs/msg/TFMessage
+
+geometry_msgs/TransformStamped[] transforms
+	std_msgs/Header header
+	string child_frame_id
+	Transform transform
+		Vector3 translation
+			float64 x
+			float64 y
+			float64 z
+		Quaternion rotation
+			float64 x 0
+			float64 y 0
+			float64 z 0
+			float64 w 1
+```
+- /tf: for transforms that vary dynamically, like the joints of a robot are specified here. By default, they are valid for a short time (10 s). For example , frames relation linked by motorized joints are published here.
+- /tf_static: for transforms that do not vary over time. This topic has a QoS transient_local, so any node that subscribes to this topic receives all the transforms published so far. Typically the transforms published in this topic do not change over time, like the robot geometry.
+
+- The frames of a robot are organized as a tree of TFs, in which each TF should have at most one parent and can have several children. 
+	- If this is not true, or several trees are not connected, the robot is not well modeled.
+
+- /base_footprint: is usually the root of the robot's TFs, and corresponds to the center of the robot on the ground. It is helpful to transform the information from the robot's sensors to this axis to relate them to each other.
+- /base_link: is usually the child of /base_footprint, and is typically the center of the robot, already above ground level.
+- /odom: is the parent frame of /base_footprint, and the transformation that relates them indicates the robot's displacement since the robot driver started.
+
+- When a node wants to use this system, it does not subscribe directly to these topics but uses TFListeners, which are objects that update a buffer where are stored all the latest published TFs, and that has an API that lets, for example:
+	- To know if there is a TF from one frame to another at time t.
+	- To know what is the rotation from frame A to frame B at time t.
+	- To ask to transform a coordinate that is in frame A and to frame B in an arbitrary time t.
+- The buffer may not contain just the TF at time t, but if it has an earlier and a later one, it performs interpolation.
+
+- Without going into much detail, for now, publishing a transform to a ROS2 node is very straightforward. Just have a transform broadcaster and send transforms to the TF system:
+```C++
+geometry_msgs::msg::TransformStamped detection_tf;
+
+detection_tf.header.frame_id = "base_footprint";
+detection_tf.header.stamp = now();
+detection_tf.chaild_frame_id = "detected obstacle";
+detection_tf.transform.translation.x = 1.0;
+
+tf_broadcaster_->sendTransform(detection_tf);
+```
+
+- Getting the transform is easy too. Any calculation is done transparently for the developer:
+```C++
+tf2_ros::Buffer tfBuffer;
+tf2_ros::TransformListener tfListener(tfBuffer);
+
+...
+
+geometry_msgs::msg::TransformStamped odom2obstacle;
+odom2obstacle = tfBuffer_.lookupTransform("odom", "detected_obstacle", tf2::TimePointZero);
+```
+
+- We can operate with transforms, multiplying them or calculating their inverse. This will help us to operate with TFs:
+	- If an object represent a transformation from frame origin to frame target, we call it origin2target.
+	- If want multiply two TFs:
+		1) We can only operate it if the frame names near operator * are equal. In this case, the frame names are equals (robot).
+		2) The result frame id must be the outer part of the operators (odom from first operator and object from second).
+		3) If we invert a TF (they are invertibles), we invert the frame ids in this name.
+
+#### 4.1 An Obstacle Detector that uses TF2
+
+- In this project, apart from using the concepts about TFs, we will show a powerful debugging tool called *Visual Markers*, which allows us to publish 3D visual elements that can be viewed in RViz2 from a node.
+
+#### 4.2 Computation Graph
+
+- Our node subscribes to /input_scan, so we will have to remap from /scan_raw.
+
+- We will create a node /obstacles_monitor that reads the transform corresponding to the detection and shows in console its position with respect to the general frame of the robot, base_footprint.
+
+- The node /obstacle_monitor publishes also a virtual marker.
+
+#### 4.3 Basic Detector
 
 ## Appendix: References
 
 - [Robotics Back-end tutorials](https://roboticsbackend.com/category/ros2/)
 - [Official ROS Documentation](https://docs.ros.org/en/humble/index.html)
 - [ROS index](https://index.ros.org/p/std_msgs/github-ros2-common_interfaces/#humble)
+- [ROS2 Message Implementations](https://github.com/ros2/common_interfaces)
