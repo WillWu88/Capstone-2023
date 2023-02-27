@@ -22,3 +22,10 @@
 - Then utilizing the 3D printerOs webpage, slice and queue up the 3D print .STL sketch for printing.
 
 ## Step 4: First Test of the New PiTop
+
+- The two halves of the PiTop fit together well on the first trial, however with the error associated with the 3D printer the Lidar didn't fit into the Lidar screw spots.
+	- For the second draft, there were holes for the Lidar screws to fall into before hitting the previous screw spot, which will allow for more secure mounting and for smaller screws to be used to fasten the Lidar.
+	- In addition, in the second draft, screw spots were added for the PiHat to be mounted.
+	- Also a remodel of the front car mounting pegs was completed to add more height.
+
+- The two halves and the two front car mounts were sent to the 3D printer after being redesigned.
