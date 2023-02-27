@@ -56,3 +56,5 @@
 
 - 2/26/2023: First attempt at new PiTop implementation, made changes and reprinted new model and new front of car mountings that were also remodeled. Statistical analysis of the noise in the sensors via Matlab.
 
+- 2/27/2023: Spent time working on PID equations for our model and began implementing the PID in Matlab integrated with our previous model.
+
