@@ -29,3 +29,13 @@
 	- Also a remodel of the front car mounting pegs was completed to add more height.
 
 - The two halves and the two front car mounts were sent to the 3D printer after being redesigned.
+
+## Step 5: Second Test of New PiTop
+
+- The Lidar fit into the screw spots and the raspberry Pi lined up properly this time.
+	- More of convenience/security fixes:
+		- Added screw drops so screws aren't sitting on the surface.
+		- Added a drop for the Lidar motor.
+		- Added a slit for the Lidar cord to go through.
+		- Made the screw hexagon holes a bit smaller for more screw security.
+
