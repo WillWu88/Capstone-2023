@@ -1,6 +1,8 @@
 from setuptools import setup
 import os
 
+import rclpy
+from rclpy.node import Node
 package_name = 'picar_sys'
 
 setup(

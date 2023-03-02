@@ -20,9 +20,9 @@ class EncoderDriver():
 
         # ---------------------------
         self.index_dict = {
-		"raw_rpm": 0,
-		"filtered_rpm": 1,
-		"commanded_rpm": 2 #commanded will always be 20% for now
+		    "raw_rpm": 0,
+		    "filtered_rpm": 1,
+		    "commanded_rpm": 2 #commanded will always be 20% for now
         }
         self.data = [0] * len(self.index_dict)
         # ---------------------------
@@ -42,7 +42,7 @@ class EncoderDriver():
 		filter_sum = 0;
 		for elements in self.circ:
 			filter_sum += elements
-		return filter_sum/self.size
+		return filter_sum/self.size 
 
 
 IO.setwarnings(False)
@@ -91,11 +91,11 @@ if __name__ == "__main__":
 				else:
 					last_val = curr_pin_val
 
-			output_data = {"RPM_sample": log_data}
+			self.output_data = {"RPM_sample": log_data}
 			date_str = date.today() #system time stamp
 			#savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
 				
 		except KeyboardInterrupt:
-			output_data = {"RPM_sample": log_data}
+			self.output_data = {"RPM_sample": log_data}
 			date_str = date.today() #system time stamp
 			#savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
