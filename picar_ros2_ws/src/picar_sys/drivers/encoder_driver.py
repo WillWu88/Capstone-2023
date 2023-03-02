@@ -18,16 +18,6 @@ class EncoderDriver():
 		# zero out initial buffer, fixed sized
 		self.write_ptr = 0
 
-        # ---------------------------
-        self.index_dict = {
-		"raw_rpm": 0,
-		"filtered_rpm": 1,
-		"commanded_rpm": 2 #commanded will always be 20% for now
-        }
-        self.data = [0] * len(self.index_dict)
-        # ---------------------------
-
-
 	def updateBuffer(self, new_val):
 		self.circ[self.write_ptr % self.size] = new_val #insert new val based on ptr
 		self.write_ptr += 1

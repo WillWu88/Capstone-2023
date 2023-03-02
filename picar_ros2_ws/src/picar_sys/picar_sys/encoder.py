@@ -7,7 +7,8 @@ from sensor_msgs.msg import Temperature
 class EncoderPublisher(Node):
     def __init__(self):
         self.encoder = drivers.encoder_driver.EncoderDriver()
-        self.publisher_ = self.create_publisher(Encoder, 'encoder_raw', 10)
+        self.publisher_ = self.create_publisher(Temperature, 'rpm_raw', 10)
+        self.publisher_ = self.create_publisher(Temperature, 'rpm_filtered', 10)
         timer_period = 0.001
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.msg_count = 0
