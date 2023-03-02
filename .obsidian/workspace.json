@@ -13,7 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Feedback Systems/PID Control.md",
+                "file": "Capstone-Docs/IMU Publisher.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "813ac15eedd88e02",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Capstone-Docs/I2C.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0fc1434dcfed8a03",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
                 "mode": "source",
                 "source": false
               }
@@ -27,7 +51,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 2
       },
       {
         "id": "d38c518226c00e30",
@@ -109,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Feedback Systems/PID Control.md",
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Feedback Systems/PID Control.md",
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Feedback Systems/PID Control.md"
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md"
               }
             }
           }
@@ -170,13 +195,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "22bcfc8ee6939d91",
+  "active": "0fc1434dcfed8a03",
   "lastOpenFiles": [
-    "Capstone-Docs/ROS2.md",
+    "Capstone-Docs/Sensor SetUp.md",
+    "Capstone-Docs/I2C.md",
+    "Capstone-Docs/MPU6050 Configuration.md",
+    "Capstone-Docs/Python Notes.md",
+    "picar_ros2_ws/src/picar_sys/drivers/encoder_driver.py",
     "Capstone-Docs/IMU Publisher.md",
+    "Capstone-Docs/Study Topics/Feedback Systems/PID Control.md",
+    "Capstone-Docs/ROS2.md",
     "Capstone-Docs/Study Topics/Linux Command Line.md",
     "Capstone-Docs/Study Section.md",
-    "Capstone-Docs/I2C.md",
     "Capstone-Docs/Estimators.md",
     "Capstone-Docs/Design Overview.md",
     "Capstone-Docs/Controller and Estimator Design.md",
