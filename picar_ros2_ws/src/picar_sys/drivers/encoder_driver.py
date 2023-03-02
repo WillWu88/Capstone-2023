@@ -66,7 +66,7 @@ if __name__ == "__main__":
 			if not(curr_pin_val) and last_val:
 				stop = time.perf_counter();
 				rpm_filter.CalcRaw(start,stop)
-				print("Filtered: " + str(rpm_filter.CalcFilter()) + "\n")
+				#print("Filtered: " + str(rpm_filter.CalcFilter()) + "\n")
 				last_val = curr_pin_val
 				start = stop
 			else:

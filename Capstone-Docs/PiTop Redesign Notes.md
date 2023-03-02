@@ -39,3 +39,9 @@
 		- Added a slit for the Lidar cord to go through.
 		- Made the screw hexagon holes a bit smaller for more screw security.
 
+## Step 6: Third Test of New PiTop
+
+- Newest PiTop Model works and completes all of our specs.
+
+- Needed to redesign the front mounts
+	- Took off some of the height.

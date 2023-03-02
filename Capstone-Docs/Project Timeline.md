@@ -59,3 +59,5 @@
 - 2/27/2023: Spent time working on PID equations for our model and began implementing the PID in Matlab integrated with our previous model.
 
 - 3/1/2023: (hopefully) final changes on PiTop model; adding in screw drops, thinning the screw holes, adding a drop spot for Lidar motor, and a slit for the Lidar cord. Began making servo code more user friendly.
+
+- 3/2/2023: Finished the PiTop model
