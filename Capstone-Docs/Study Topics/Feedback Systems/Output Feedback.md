@@ -1,3 +1,4 @@
+#theory 
 - Introduces the concept of observability and show that if a system is observable, it is possible to recover the state from measurements of the inputs and outputs to the system
 
 ### 7.1 Observability
@@ -81,6 +82,8 @@
 - Book example 7.4 Vehicle Steering pg 226
 
 ### 7.4 Kalman Filtering
+
+- [[Kalman Filter]]
 
 - One of the principal uses of observers in practice is to estimate the state of a system in the presence of *noisy* measurements.
 

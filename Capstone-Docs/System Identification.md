@@ -1,13 +1,13 @@
 #actuator #design #control 
 
 Constants We Need:
-
+[Sample with constants](https://www.politesi.polimi.it/bitstream/10589/137501/1/Tesi%20Ravizzoli%20Carlo.pdf)
 | Property | Symbol | Quantity | Note |
 | ---- | - | - | - |
 | Mass | $m$ | | |
 | Center of gravity | $cg$ | | center of gravity will be marked on the car |
 - a: Distance from center of gravity to front axle wheels
-- b: Distance from center of gravity to front axle wheels
+- b: Distance from center of gravity to back axle wheels
 - J: Moment of Inertia
 - C_x: Longitudenal tire stiffness
 - C_y: Lateral tire stiffness
@@ -20,7 +20,7 @@ Constants We Need:
 - Lidar: 210.5
 - Raspberry Pi: 82.9g
 - Pi Hat: 37.8g
-- camera + sensors: ~250g
+- PiTop: 59.23 + 58.84 g
 
 ![Weighing Experiment](Weighing_picar.jpg)
 
@@ -64,4 +64,4 @@ Experimental procedure:
 
 - Equation used: $(1/12)(massChassis)(length^{2}+width^{2})$
 
-- Found to be 0.0359 $km*m^2$
+- Found to be 0.0359 $kg*m^2$
