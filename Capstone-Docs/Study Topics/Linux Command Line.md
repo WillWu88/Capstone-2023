@@ -1,4 +1,11 @@
 #programming 
+## Putty info
+
+IP Address: 172.27.51.9
+
+Username: willwu
+
+Password: Raspberry23
 
 ## Key Commands:
 
@@ -54,11 +61,3 @@ sudo chmod 777/dev/i2c-1: enable port access to motor
 
 ## Appendix:
 [Linux Survival](https://linuxsurvival.com/linux-tutorial-introduction/)
-
-## Putty info
-
-IP Address: 172.27.51.9
-
-Username: willwu
-
-Password: Raspberry23
