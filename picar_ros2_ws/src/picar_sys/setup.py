@@ -25,6 +25,7 @@ setup(
         'console_scripts': [
             'imu = picar_sys.imu:main',
             'test_sub = picar_sys.test_sub:main'
+            'service = picar_sys.rpm_service:main'
         ],
     },
 )

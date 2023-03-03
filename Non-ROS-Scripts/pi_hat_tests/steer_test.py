@@ -8,6 +8,35 @@ import busio
 from adafruit_motor import servo
 from adafruit_pca9685 import PCA9685
 
+maxAngle = 30
+def init():
+    prev = 90
+    servo7.angle = int(prev)
+
+def progressiveSet(currAngle,newAngle):
+    while currAngle != newAngle:
+        if(currAngle > newAngle):
+            currAngle -= 1
+        if(currAngle < newAngle):
+            currAngle += 1
+        servo7.angle = int(currAngle)
+        time.sleep(0.03)
+
+def turnAngleToRCAngle(angle):
+    while angle > maxAngle or angle < -maxAngle:
+        angle = int(input("Please put in a valid angle"))
+    angle = angle + maxAngle
+    if(angle == maxAngle):
+        angle = 90
+    elif(angle < maxAngle):
+        offset = (angle / maxAngle) * 55
+        offset = 55 - offset
+        angle = 90 + offset
+    elif(angle > maxAngle):
+        offset = ((angle - maxAngle) / maxAngle) * 55
+        angle = 90 - offset
+    return(angle)
+
 i2c = busio.I2C(SCL, SDA)
 
 # Create a simple PCA9685 class instance.
@@ -39,11 +68,21 @@ channel_num = 14
 # range, but the default is to use 180 degrees. You can specify the expected range if you wish:
 # servo7 = servo.Servo(pca.channels[7], actuation_range=135)
 servo7 = servo.Servo(pca.channels[channel_num])
-
+i = 0
 # We sleep in the loops to give the servo time to move into position.
+# input is 35-145 to not overextend
 while True:
+    if (i == 0):
+        init()
+        prev = 90
+        i += 1
     command = input("Input angle here> ")
-    servo7.angle = int(command)
+    #servo7.angle = int(command)
+    if (command == "stop"):
+        break
+    command = turnAngleToRCAngle(int(command))
+    progressiveSet(int(prev), int(command))
+    prev = int(command)
 ##for i in range(180):
     ##servo7.angle = i
     ##time.sleep(0.03)
