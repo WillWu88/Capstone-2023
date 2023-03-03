@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Actuators.md",
+                "file": "Capstone-Docs/Study Topics/Feedback Systems/Output Feedback.md",
                 "mode": "source",
                 "source": false
               }
@@ -41,14 +41,6 @@
                 "mode": "source",
                 "source": false
               }
-            }
-          },
-          {
-            "id": "bd978f2ac6230101",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
             }
           }
         ]
@@ -133,7 +125,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Actuators.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +141,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Actuators.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -172,9 +162,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Capstone-Docs/Actuators.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -194,10 +182,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "22bcfc8ee6939d91",
+  "active": "77b2faa54d933479",
   "lastOpenFiles": [
-    "Capstone-Docs/IMU Publisher.md",
+    "Capstone-Docs/Study Topics/Feedback Systems/Output Feedback.md",
+    "Capstone-Docs/Study Topics/Linux Command Line.md",
+    "Capstone-Docs/SLAM.md",
+    "Capstone-Docs/Study Section.md",
     "Capstone-Docs/Actuators.md",
+    "Capstone-Docs/IMU Publisher.md",
     "Capstone-Docs/Alpha-Beta-Gamma Filter.md",
     "Capstone-Docs/Bus Communication Protocols.md",
     "Capstone-Docs/Continuous Integration.md",
@@ -217,11 +209,7 @@
     "Capstone-Docs/ROS2.md",
     "Capstone-Docs/Sensor SetUp.md",
     "Capstone-Docs/Sensors & Electronics.md",
-    "Capstone-Docs/SLAM.md",
-    "Capstone-Docs/Study Section.md",
     "Capstone-Docs/System Identification.md",
-    "Capstone-Docs/Study Topics/Linux Command Line.md",
-    "picar_ros2_ws/src/picar_sys/drivers/encoder_driver.py",
-    "Capstone-Docs/Study Topics/Feedback Systems/PID Control.md"
+    "picar_ros2_ws/src/picar_sys/drivers/encoder_driver.py"
   ]
 }
