@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Feedback Systems/Output Feedback.md",
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
                 "mode": "source",
                 "source": false
               }
@@ -125,6 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,6 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +164,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Capstone-Docs/Study Topics/Linux Command Line.md"
+              }
             }
           }
         ]
@@ -182,7 +186,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "77b2faa54d933479",
+  "active": "22bcfc8ee6939d91",
   "lastOpenFiles": [
     "Capstone-Docs/Study Topics/Feedback Systems/Output Feedback.md",
     "Capstone-Docs/Study Topics/Linux Command Line.md",
