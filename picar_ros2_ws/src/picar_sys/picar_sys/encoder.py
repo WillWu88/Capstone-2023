@@ -1,5 +1,4 @@
 import rclpy
-from rclpy.node import Node
 from std_msgs.msg import String, Header
 from geometry_msgs.msg import Vector3, Quaternion
 from sensor_msgs.msg import Temperature
@@ -13,9 +12,14 @@ class EncoderPublisher(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.msg_count = 0
 
+        # ---- service client part ---
+        #self.cli = self.create_client(AddTwoInts,'add_two_ints')
+        #while not self.cli.wait_for_service(timeout_sec=1.0):
+        #    self.get_logger().infor('service not available, waiting again...')
+        #self.req = AddTwoInts.Request()
+
     def timer_callback(self):
 
-        #self.imu.update()
         msg = self.populate_message()
 
         self.publisher_.publish(msg)

@@ -86,6 +86,10 @@ if __name__ == "__main__":
         log_data[index_dict["gyro_x"], sample_count] = read_raw_data(GYRO_XOUT_H)/131.0
         log_data[index_dict["gyro_y"], sample_count] = read_raw_data(GYRO_YOUT_H)/131.0
         log_data[index_dict["gyro_z"], sample_count] = read_raw_data(GYRO_ZOUT_H)/131.0
+        print(read_raw_data(GYRO_ZOUT_H)/131.0)
+        print('Radian: ' + str(read_raw_data(GYRO_ZOUT_H)/131.0*0.0175))
+        print('\n')
+
 
         sample_count += 1
 
