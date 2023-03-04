@@ -83,22 +83,10 @@ if __name__ == "__main__":
                     sample_count += 1
                 else:
                     last_val = curr_pin_val
-
-<<<<<<< HEAD
             output_data = {"RPM_sample": log_data}
             date_str = date.today() #system time stamp
-            #savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
         except KeyboardInterrupt:
-            output_data = {"RPM_sample": log_data}
+            output_data = {"RAPM_sample": log_data}
             date_str = date.today() #system time stamp
-            #savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
-=======
-			output_data = {"RPM_sample": log_data}
-			date_str = date.today() #system time stamp
-			#savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
-				
-		except KeyboardInterrupt:
-			output_data = {"RPM_sample": log_data}
-			date_str = date.today() #system time stamp
-			#savemat("./Data/RPM_Data_"+date_str.strftime("%b_%d_%Y") +".mat", output_data)
->>>>>>> 595fd37eb9e4dac0f2ec943587a69789a268a10b
+
+    

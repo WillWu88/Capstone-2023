@@ -5,10 +5,10 @@ import rclpy
 from rclpy.node import Node
 
 
-class MinimalClientAsync(Node):
+class RpmClient(Node):
 
     def __init__(self):
-        super().__init__('minimal_client_async')
+        super().__init__('rpm_client')
         self.cli = self.create_client(AddTwoInts, 'add_two_ints')
         while not self.cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')
@@ -22,16 +22,16 @@ class MinimalClientAsync(Node):
         return self.future.result()
 
 
-def main(args=None):
-    rclpy.init(args=args)
+def main():
+    rclpy.init()
 
-    minimal_client = MinimalClientAsync()
-    response = minimal_client.send_request(int(sys.argv[1]), int(sys.argv[2]))
-    minimal_client.get_logger().info(
+    rpm_client = RpmClient()
+    response = rpm_client.send_request(int(sys.argv[1]), int(sys.argv[2]))
+    rpm_client.get_logger().info(
         'Result of add_two_ints: for %d + %d = %d' %
         (int(sys.argv[1]), int(sys.argv[2]), response.sum))
 
-    minimal_client.destroy_node()
+    rpm_client.destroy_node()
     rclpy.shutdown()
 
 

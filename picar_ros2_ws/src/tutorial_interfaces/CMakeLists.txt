@@ -4,9 +4,10 @@ project(tutorial_interfaces)
 find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
-rosidl_generate_interfaces(${PROJECT_NAME}
-    "src/srv/AskRpm.srv"
-  DEPENDENCIES geometry_msgs # Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
+rosidl_generate_interfaces(${tutorial_interfaces} 
+    "srv/AskRpm.srv" 
+    DEPENDENCIES geometry_msgs
+    # Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
 )
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
