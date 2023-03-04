@@ -38,15 +38,30 @@ wheel_rad_f = 80/1000; % front wheel radius, meters
 %% Numerical Simulation
 
 x_0 = [0 0 0]'; % initial condition, zero speed
-t = 0:1/100:10 ; % 10s simulation, sampling at 100Hz for dt systems
+f_s = 100; % 100Hz update rate
+t = 0:1/f_s:10-1/f_s; % 10s simulation, sampling at 100Hz for dt systems
 
-% 3s engine step input from t=2-5, 700 RPM (around 20%)
+
+
+% simulation, crude for loop for now
+% [t,y] = ode45(@(v_x, v_y, v_z) state_space([v_x v_y v_z]', [0 0]), t, x_0);
+
+% Input: 3s engine step input from t=2-5, 700 RPM (around 20%)
 tau_20 = tau_multiplier / (700 * gear_ratio); % 6:1 gear ratio
 tau_in = tau_20*(heaviside(t-2) - heaviside(t-5));
-steer_angle = 0 * t;
+steer_angle = 0 * t;    
 
-% simulation
-[t,y] = ode45(@(v_x, v_y, v_z) state_space([v_x v_y v_z], [tau_in, steer_angle]), t, x_0);
+u = [tau_in; steer_angle]';
+
+y = zeros(length(t), length(x_0));
+for i=1:length(t)-1
+    if (i == 1)
+        x_curr = x_0;
+    else
+        x_curr = y(i,:);
+    end
+    y(i+1,:) = state_space(x_curr, u(i,:));
+end
 
 %% function declaration, dynamics model
 
@@ -62,8 +77,12 @@ function force = fy_front(c_y, a, states, delta)
     v_x = states(1);
     v_y = states(2);
     r_z = states(3);
-
-    alpha = delta - arctan((v_y + a*r_z)/v_x);
+    
+    if (v_x == 0)
+        alpha = delta;
+    else
+        alpha = delta - atan((v_y + a*r_z)/v_x);
+    end
     force = c_y * alpha; 
 end
 
@@ -71,23 +90,35 @@ function force = fy_rear(c_y, b, states)
     v_x = states(1);
     v_y = states(2);
     r_z = states(3);
-
-    alpha = - arctan((v_y - b*r_z)/v_x);
+    if (v_x == 0)
+        alpha = 0;
+    else
+       alpha = - atan((v_y - b*r_z)/v_x);
+    end
     force = c_y * alpha;
 end
 
 function x_dot = state_space(x, u)
-    % global variables
-    global mass_total;
-    global J;
-    global cg_front_ax;
-    global cg_back_ax;
-    global wheel_rad_r;
-    global wheel_rad_f;
-    global c_x; %N/rad
-    global c_y;
-    global back_wheel_s;
-    global front_wheel_s;
+
+    % paste physical params here till better solutions than global variables
+    % are found
+    mass_total = (1545.1 + 395.5 + 187.3 + 210.5 + 82.9 + 87.8 + 59.23...
+        + 58.84)/1000;
+    
+    % distance measurements
+    cg_front_ax = 18.3/100;
+    cg_back_ax = 10.5/100;
+    
+    % tyre slip
+    front_wheel_s = 0.02;
+    
+    % moment of inertia
+    J = 0.0359; % kg*m^2
+    
+    % tyre params
+    c_x = 17; %N/rad
+    c_y = 17.81;
+    wheel_rad_r = 101/1000; % rear wheel radius, meters
 
     % state decomp
     v_x = x(1);
@@ -102,10 +133,10 @@ function x_dot = state_space(x, u)
     f_x_rr = fx_rear(wheel_rad_r, tau);
     f_x_rl = fx_rear(wheel_rad_r, tau);
 
-    f_y_fl = fy_front(c_y, cg_front_ax, states, delta);
-    f_y_fr = fy_front(c_y, cg_front_ax, states, delta);
-    f_y_rl = fy_rear(c_y, cg_back_ax, states);
-    f_y_rr = fy_rear(c_y, cg_back_ax, states);
+    f_y_fl = fy_front(c_y, cg_front_ax, x, delta);
+    f_y_fr = fy_front(c_y, cg_front_ax, x, delta);
+    f_y_rl = fy_rear(c_y, cg_back_ax, x);
+    f_y_rr = fy_rear(c_y, cg_back_ax, x);
 
     x_dot(1) = v_y * r_z + 1/mass_total*((f_x_fl + f_x_fr)*cos(delta)...
                                         - (f_y_fl + f_y_fr)*sin(delta)...
