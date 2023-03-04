@@ -18,4 +18,4 @@ After completing the barebones Matlab model, we began running system identificat
 - [ ] [[Bus Communication Protocols]]
 - [ ] [[Numpy]]
 - [ ] [[SLAM]]
-
+- [ ] Land-mark based navigation: determine the sensing range, vSLAM (overkill)

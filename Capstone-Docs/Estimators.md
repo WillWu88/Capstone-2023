@@ -21,7 +21,7 @@ The model can also receive observations $z_k$ made of the true state $x_k$, wher
 $$z_k = H_k x_k + v_k$$
 Note that $H_k$ denotes the measurement model and $v_k$ denotes the observation noise, which also follows a gaussian distribution centered around 0 with covariance $R_k$
 $$v_k \sim \mathcal{N}(0,R_k)$$
-Note that the noise random vectors and the initial condition are assumed to be independent. 
+	Note that the noise random vectors and the initial condition are assumed to be independent. 
 
 Kalman filter resembles a [[Alpha-Beta-Gamma Filter]]
 
