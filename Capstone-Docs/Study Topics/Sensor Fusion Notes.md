@@ -73,7 +73,7 @@ Sections:
 	4) Extended Kalman Filter
 4) Results
 	1) Quaternion verification
-	2) Extended Kalman Filter
+	2) [[Extended Kalman Filter]]
 		1) No Delay Compensation
 		2) Delay Compensation
 		3) Larger Dataset
