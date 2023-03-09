@@ -70,7 +70,7 @@ Sections:
 	1) Data acquisition
 	2) Physical model and general approach
 	3) Sensor Fuison of GPS and IMU
-	4) Extended Kalman Filter
+	4) [[Extended Kalman Filter]]
 4) Results
 	1) Quaternion verification
 	2) [[Extended Kalman Filter]]
@@ -107,7 +107,7 @@ ReadMe Sections:
 ### Link 6:
 [Sensor Fusion: Extended Kalman Filter (EKF)](https://kusemanohar.wordpress.com/2020/04/08/sensor-fusion-extended-kalman-filter-ekf/)
 
-Overview Summary: Extended Kalman Filter, sensor fusion of IMU measurements and estimates from other SLAM algorithm.  Uses EXtended Kalman Filter, Camera + IMU (loose fusion)
+Overview Summary: Extended Kalman Filter, sensor fusion of IMU measurements and estimates from other SLAM algorithm.  Uses Extended Kalman Filter, Camera + IMU (loose fusion)
 
 Sections: 
 1) Kalman Filter

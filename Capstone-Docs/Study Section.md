@@ -19,3 +19,8 @@ After completing the barebones Matlab model, we began running system identificat
 - [ ] [[Numpy]]
 - [ ] [[SLAM]]
 - [ ] Land-mark based navigation: determine the sensing range, vSLAM (overkill)
+
+## Spring Break Topics
+
+- [ ] GPS
+- [ ] PiTop Completion
