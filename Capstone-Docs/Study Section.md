@@ -24,3 +24,4 @@ After completing the barebones Matlab model, we began running system identificat
 
 - [ ] GPS
 - [ ] PiTop Completion
+- [ ] ROS 4-6
