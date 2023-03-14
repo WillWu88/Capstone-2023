@@ -517,6 +517,39 @@ odom2obstacle = tfBuffer_.lookupTransform("odom", "detected_obstacle", tf2::Time
 
 #### 4.3 Basic Detector
 
+- We compile the nodes as a dynamic library linked by the executables.
+
+#### 4.31 Obstacle Detector Node
+
+- Its execution follows an event-oriented mode rather than an iterative one.
+	- Every message the node receives will produce an output so it makes sense that the node's logic resides in the laser callback.
+
+```C++
+void
+ObstacleDetectorNode::scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg){
+	double dist = msg->ranges[msg->ranges.size()/2];
+	if(!std::isinf(dist)){
+		geometry_msgs::msg::TransformStamped detection_tf;
+
+		detection_tf.header = msg->header;
+		detection_tf.child_frame_id = "detected_obstacle";
+		detection_tf.transform.translation.x = msg->ranges[msg->ranges.size()/2];
+
+		tf_broadcaster_->sendTransform(detection_tf);
+	}
+}
+```
+
+- The header of the output message will be the header of the input laser message.
+	- The frame_id is the source frame of the transformation, already in the header. In this case, it is the sensor frame since the perceived coordinates of the object are in this frame.
+
+- The child_frame_id field is the id of the new frame that we are goint to create, and that represents the perceived obstacle.
+
+- The transform field contains a translation and a rotation appled in this order, from the parent frame to the child frame that we want to create.
+	- The default quaternion is (0,0,0,1)
+
+- Use the sendTransform() method of the tf_broadcaster_ to send the transform to the TF subsystem.
+
 ## Appendix: References
 
 - [Robotics Back-end tutorials](https://roboticsbackend.com/category/ros2/)
