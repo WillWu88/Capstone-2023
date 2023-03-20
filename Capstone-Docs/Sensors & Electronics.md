@@ -115,6 +115,11 @@ Other Specs:
 ## VII. Camera
 [Raspberry Pi camera spec sheet](https://www.raspberrypi.com/documentation/accessories/camera.html)
 
+## VIII. GPS
+
+- Obtains location and velocity reading
+- Heading information? 
+
 ## Appendix: References
 - [Raspberry PI GPIO Setup](https://ubuntu.com/tutorials/gpio-on-raspberry-pi#1-overview)
 - 
