@@ -1,28 +1,46 @@
-from example_interfaces.srv import AddTwoInts
-
 import rclpy
+import time
 from rclpy.node import Node
+import drivers.encoder_driver
+from rpm_server.action import RPM
 
+class RpmActionServer(Node):
 
-class MinimalService(Node):
+    def __init__(self,size):
+        super().__init__('rpm_service')
+        self.size = 5
+        self.encoder = drivers.encoder_driver.EncoderDriver(self.size)
+        self.action_server = ActionServer(
+            self,
+            RPM,
+            'rpm readings',
+            self.rpm_callback)
 
-    def __init__(self):
-        super().__init__('minimal_service')
-        self.srv = self.create_service(AddTwoInts, 'add_two_ints', self.add_two_ints_callback)
+    def rpm_callback(self, request, response):
 
-    def add_two_ints_callback(self, request, response):
-        response.sum = request.a + request.b
-        self.get_logger().info('Incoming request\na: %d b: %d' % (request.a, request.b))
+        self.get_logger().info('Reading RPM...')
 
+        # feedback here
+        feedback_msg = RPM.Feedback()
+        feedback_msg.instant = self.encoder.CalcFilter()
+        goal_handle.publish_feedback(feedback_msg)
+
+        self.encoder.update()
+        goal_handle.succeed()
+        # results below
+        self.get_logger().info('Data read!')
+        response = RPM.Result()
+        response.filtered = self.encoder.CalcFilter()
+        response.raw = self.encoder.latest
         return response
 
 
 def main(args=None):
     rclpy.init(args=args)
 
-    minimal_service = MinimalService()
+    rpm_service = RpmActionServer()
 
-    rclpy.spin(minimal_service)
+    rclpy.spin(rpm_service)
 
     rclpy.shutdown()
 

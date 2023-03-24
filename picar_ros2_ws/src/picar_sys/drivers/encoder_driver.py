@@ -17,9 +17,16 @@ class EncoderDriver():
         self.circ = [0] * self.size
         # zero out initial buffer, fixed sized
         self.write_ptr = 0
+        IO.setwarnings(False)
+        IO.setmode(IO.BCM)
+        self.GPIO_num = 16
+        IO.setup(self.GPIO_num,IO.IN,IO.PUD_UP)
+        self.last_val = IO.input(GPIO_num)
+        self.latest = 0
 
     def updateBuffer(self,new_val):
         self.circ[self.write_ptr % self.size] = new_val #insert new val based on ptr
+        self.latest = new_val
         self.write_ptr += 1
 
     def CalcRaw(self, start_time, stop_time):
@@ -33,16 +40,26 @@ class EncoderDriver():
         for elements in self.circ:
             filter_sum += elements
         return filter_sum/self.size 
+    
+    def update(self):
+        trig_state = 0
+        while True:
+            curr_pin_val = IO.input(GPIO_num) # read rpm value when sensor triggers
+            if not(curr_pin_val) and last_val:
+                if not(trig_state):
+                    start = time.perf_counter()
+                    trig_state = trig_state + 1
+                else:
+                    stop = time.perf_counter()
+                    rpm_filter.CalcRaw(start,stop)
+                    self.last_val = curr_pin_val
+                    break;
+            else:
+                last_val = curr_pin_val
 
-IO.setwarnings(False)
-IO.setmode(IO.BCM)
 
-GPIO_num = 16
-IO.setup(GPIO_num,IO.IN,IO.PUD_UP)
-last_val = IO.input(GPIO_num)
 start = time.perf_counter()
 rpm_filter = circ_buff(5)
-default_rpm_com = 0.2
 
 index_dict = {
 		"raw_rpm": 0,

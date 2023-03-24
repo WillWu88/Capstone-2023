@@ -1,0 +1,4 @@
+Bool filtered
+---
+float64 rpmraw
+float64 rpmfiltered
