@@ -45,3 +45,15 @@
 
 - Needed to redesign the front mounts
 	- Took off some of the height.
+
+## Step 7: Mount Redesign
+
+- The holes for the mount needed to be a bit higher and the spherical head needed to be shorter.
+
+## Step 8: GPS Mount
+
+- Added a GPS Mount to the front of car half of the PiTop, this is an optional improvement as only our group used the GPS.
+
+## Conclusion
+
+These were the steps taken to create and modify the PiTop and mounts for our purposes. All the .stl and .SLDPRT files are available in our team's [Github](https://github.com/WillWu88/Capstone-2023), so they can be modified and/or reprinted for the purpose of future projects. 
