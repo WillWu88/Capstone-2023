@@ -61,3 +61,21 @@
 - 3/1/2023: (hopefully) final changes on PiTop model; adding in screw drops, thinning the screw holes, adding a drop spot for Lidar motor, and a slit for the Lidar cord. Began making servo code more user friendly.
 
 - 3/2/2023: Finished the PiTop model, worked on the encoder publisher and server, and worked on controller model.
+
+- 3/3/2023: Met with Professor Kantaros about navagation system approach, and walked the trail for the picar.
+
+- 3/4/2023: Walked through PID error functions as would apply to our code, and attempted to model it in Matlab.
+
+- *SD card snap*
+
+- 3/9/2023: Finished final PiTop design. IMU ROS node finished as well.
+
+- 3/11/2023: Finished making servo code more user friendly. Decided to move to a GPS/Lidar Sensor fusion approach.
+
+- 3/16/2023-3/24/2023: Spring break; Ordered GPS, began sensor fusion research and extended kalman filter research. 
+
+- 3/25/2023: Found the servo angles and switched from encoder node approach to a I2C peripheral approach. Printed a PiTop with a spot to mount the GPS.
+
+- 3/27/2023: Remodeled Picar mounts and began robot_localization_node notes. Started building the I2C peripheral for RPM sensor.
+
+- 3/28/2023: Assembled the Picar to completion
