@@ -172,7 +172,7 @@ int main(int argc, char * argv[]){
 	return 0;
 }
 ```
-- #include "rclcpp/rclcpp.hpp" allows access to most of the ROS2 types and functions in C++
+- `#include rclcpp/rclcpp.hpp` allows access to most of the ROS2 types and functions in C++
 - rclcpp::init(argc,argv) extracts from the arguments with which the process was launched any option should be taken into account by ROS2 
 - Line 6 creates a ROS2 node (auto node), and named it simple node.
 - The rclcpp::Node class is equipped with many aliases and static functions to simplify the code. 
@@ -525,8 +525,7 @@ odom2obstacle = tfBuffer_.lookupTransform("odom", "detected_obstacle", tf2::Time
 	- Every message the node receives will produce an output so it makes sense that the node's logic resides in the laser callback.
 
 ```C++
-void
-ObstacleDetectorNode::scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg){
+void ObstacleDetectorNode::scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg){
 	double dist = msg->ranges[msg->ranges.size()/2];
 	if(!std::isinf(dist)){
 		geometry_msgs::msg::TransformStamped detection_tf;

@@ -46,6 +46,9 @@
 - RPM sensor
 - refer to data sheet: "use gpio #16, pin5 on connector j6"
 
+### Implementation
+- See [[RPM Publisher]] for ROS2 implementation
+
 ## III. IMU / accelerometer - gyroscope
 
 ### Basic Notes on IMU:

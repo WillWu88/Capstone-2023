@@ -70,7 +70,7 @@
 
 - 3/9/2023: Finished final PiTop design. IMU ROS node finished as well.
 
-- 3/11/2023: Finished making servo code more user friendly. Decided to move to a GPS/Lidar Sensor fusion approach.
+- 3/11/2023: Finished making servo code more user friendly. Decided to move to a GPS/Lidar/IMU sensor fusion approach.
 
 - 3/16/2023-3/24/2023: Spring break; Ordered GPS, began sensor fusion research and extended kalman filter research. 
 
@@ -78,4 +78,4 @@
 
 - 3/27/2023: Remodeled Picar mounts and began robot_localization_node notes. Started building the I2C peripheral for RPM sensor.
 
-- 3/28/2023: Assembled the Picar to completion
+- 3/28/2023: Assembled the Picar to completion. I2C peripheral implementation in progress
