@@ -543,7 +543,7 @@ ObstacleDetectorNode::scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg){
 - The header of the output message will be the header of the input laser message.
 	- The frame_id is the source frame of the transformation, already in the header. In this case, it is the sensor frame since the perceived coordinates of the object are in this frame.
 
-- The child_frame_id field is the id of the new frame that we are goint to create, and that represents the perceived obstacle.
+- The child_frame_id field is the id of the new frame that we are going to create, and that represents the perceived obstacle.
 
 - The transform field contains a translation and a rotation appled in this order, from the parent frame to the child frame that we want to create.
 	- The default quaternion is (0,0,0,1)
