@@ -21,7 +21,7 @@ Control engineering rely on dynamics modelling, information, software and operat
 
 ## PID control
 
-A PID controller is used to solve a wide range of control problems. This algorithm consists of three coefficients: proportional, integral and derivative which are dtermined to get an optimal response. The proportional control uses the proportionality between the characteristics of the controller to the control error for small errors. The proportional band of the controller is linear when the error is in the interval: $e_{min} \le e \le e_{max}$. The controller gain $k_p$ can be determined as:
+A PID controller is an algorithm that consists of three coefficients: proportional, integral and derivative which are dtermined to get an optimal response. The proportional control uses the proportionality between the characteristics of the controller to the control error for small errors. The proportional band of the controller is linear when the error is in the interval: $e_{min} \le e \le e_{max}$. The controller gain $k_p$ can be determined as:
 $$
 u = k_p(r-y) = k_pe
 $$

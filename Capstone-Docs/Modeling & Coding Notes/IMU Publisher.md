@@ -12,3 +12,4 @@ A [[ROS2]] node that publishes raw IMU readings
 - [ROS Index: Geometry_msgs](https://index.ros.org/p/geometry_msgs/github-ros2-common_interfaces/#humble)
 - [rclpy reference](https://docs.ros2.org/foxy/api/rclpy/index.html)
 - [[Python Notes]]
+- [ROS 2 Documentation: How to write a publisher node] (https://docs.ros.org/en/galactic/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)

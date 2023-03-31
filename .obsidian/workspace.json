@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
+                "file": "Capstone-Docs/IMU Publisher.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "528dfb01c5f53d43",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Capstone-Docs/Encoder node.md",
                 "mode": "source",
                 "source": false
               }
@@ -43,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "d38c518226c00e30",
@@ -125,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
+                "file": "Capstone-Docs/Encoder node.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +155,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Linux Command Line.md",
+                "file": "Capstone-Docs/Encoder node.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Linux Command Line.md"
+                "file": "Capstone-Docs/Encoder node.md"
               }
             }
           }
@@ -186,34 +199,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "22bcfc8ee6939d91",
+  "active": "528dfb01c5f53d43",
   "lastOpenFiles": [
-    "Capstone-Docs/Study Topics/Feedback Systems/Output Feedback.md",
-    "Capstone-Docs/Study Topics/Linux Command Line.md",
-    "Capstone-Docs/SLAM.md",
-    "Capstone-Docs/Study Section.md",
-    "Capstone-Docs/Actuators.md",
-    "Capstone-Docs/IMU Publisher.md",
-    "Capstone-Docs/Alpha-Beta-Gamma Filter.md",
-    "Capstone-Docs/Bus Communication Protocols.md",
-    "Capstone-Docs/Continuous Integration.md",
-    "Capstone-Docs/Controller and Estimator Design.md",
-    "Capstone-Docs/Design Overview.md",
-    "Capstone-Docs/Estimators.md",
     "Capstone-Docs/I2C.md",
-    "Capstone-Docs/Landing.md",
-    "Capstone-Docs/MPU6050 Configuration.md",
-    "Capstone-Docs/Navigation Design.md",
-    "Capstone-Docs/Numpy.md",
-    "Capstone-Docs/PiCar Modelling and Simulation.md",
-    "Capstone-Docs/PiTop Redesign Notes.md",
-    "Capstone-Docs/Project Description.md",
-    "Capstone-Docs/Project Timeline.md",
-    "Capstone-Docs/Python Notes.md",
+    "Capstone-Docs/Encoder node.md",
+    "Capstone-Docs/IMU Publisher.md",
     "Capstone-Docs/ROS2.md",
-    "Capstone-Docs/Sensor SetUp.md",
+    "Capstone-Docs/Project Description.md",
+    "Capstone-Docs/PiTop Redesign Notes.md",
+    "Capstone-Docs/PiCar Modelling and Simulation.md",
+    "Capstone-Docs/Numpy.md",
+    "Capstone-Docs/Navigation Design.md",
+    "Capstone-Docs/MPU6050 Configuration.md",
+    "Capstone-Docs/Landing.md",
+    "Capstone-Docs/Python Notes.md",
+    "picar_ros2_ws/src/tutorial_interfaces/srv/Rpm.srv",
+    "picar_ros2_ws/src/tutorial_interfaces/srv/AddThreeInts.srv",
+    "picar_ros2_ws/src/tutorial_interfaces/srv",
+    "picar_ros2_ws/src/tutorial_interfaces/msg/Sphere.msg",
+    "picar_ros2_ws/src/tutorial_interfaces/msg/Num.msg",
+    "picar_ros2_ws/src/tutorial_interfaces/msg/Rpmmsg.msg",
+    "picar_ros2_ws/src/tutorial_interfaces/msg",
+    "picar_ros2_ws/src/rpm_server/action/RPM.action",
+    "picar_ros2_ws/src/rpm_server/package.xml",
+    "picar_ros2_ws/src/rpm_server/CMakeLists.txt",
     "Capstone-Docs/Sensors & Electronics.md",
+    "Capstone-Docs/SLAM.md",
+    "Capstone-Docs/Sensor SetUp.md",
+    "Capstone-Docs/Project Timeline.md",
+    "Capstone-Docs/Actuators.md",
+    "Capstone-Docs/Study Topics/Feedback Systems.md",
+    "Capstone-Docs/Study Topics/Extended Kalman Filter.md",
+    "Capstone-Docs/Study Topics/Sensor Fusion Notes.md",
+    "Capstone-Docs/Study Topics/Linux Command Line.md",
+    "Capstone-Docs/Study Topics/Kalman Filter.md",
     "Capstone-Docs/System Identification.md",
-    "picar_ros2_ws/src/picar_sys/drivers/encoder_driver.py"
+    "Capstone-Docs/Study Section.md",
+    "Capstone-Docs/SPI.md",
+    "Capstone-Docs/Estimators.md"
   ]
 }
