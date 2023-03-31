@@ -13,6 +13,18 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "367533de0c6a4003",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Capstone-Docs/RPM Publisher.md",
                 "mode": "source",
                 "source": false
@@ -101,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/RPM Publisher.md",
+                "file": "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/RPM Publisher.md",
+                "file": "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/RPM Publisher.md"
+                "file": "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md"
               }
             }
           }
@@ -164,10 +176,10 @@
   },
   "active": "31d688bf3e2e3414",
   "lastOpenFiles": [
-    "Capstone-Docs/Modeling & Coding Notes/Encoder node.md",
     "Capstone-Docs/RPM Publisher.md",
-    "Capstone-Docs/RPM I2C Peripheral.md",
     "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md",
+    "Capstone-Docs/Modeling & Coding Notes/Encoder node.md",
+    "Capstone-Docs/RPM I2C Peripheral.md",
     "Capstone-Docs/SPI.md",
     "Capstone-Docs/I2C.md",
     "Capstone-Docs/IMU Publisher.md",

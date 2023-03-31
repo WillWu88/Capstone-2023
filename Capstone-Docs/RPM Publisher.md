@@ -45,7 +45,7 @@ Important aspects include:
 ```python
 from tutorial_interfaces.msg import Rpmmsg
 ```
-- Caliing the class's constructor and give the node a name:
+- Calling the class's constructor and give the node a name:
 ```python
 super().__init__('rpm_publisher')
 ```
