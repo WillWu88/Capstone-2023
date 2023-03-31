@@ -25,6 +25,35 @@ Though this model works in theory, it also significant drawbacks. Unlike the IMU
 
 See [[RPM I2C Peripheral]] for detailed implementation.
 
+## II. Publisher node design
+
+###  1. Creating custom srv files
+
+Topics act as a bus for nodes to exchange messages. The structure of each topic is defined by a .srv or .msg file. Unlike the IMU publisher, the encoder does not have a predefined interface definition from existing ROS2 documentation. So, we created a custom .msg file in its own package. 
+
+RPM.msg structure:
+```python
+std_msgs/Header header
+float64 rpmraw
+float64 rpmfiltered
+```
+
+### 2. Publisher
+
+Important aspects include:
+- Importing the built-in message type, which structures the data that passes on the topic.
+```python
+from tutorial_interfaces.msg import Rpmmsg
+```
+- Caliing the class's constructor and give the node a name:
+```python
+super().__init__('rpm_publisher')
+```
+- Creating a publisher object which is in charge of creating the topic and publishing the messages. We used the public method of `rclcpp:Node`: `create_publisher` which returns the `rclcpp:: Publisher` object. 
+- Creating a `timer_callback` which increments the message field and call the publisher method at a frequency of 200Hz (so every 0.005s) to publish the message. The message is then published to the console with `get_logger().info` method.
+- Creating a `populate_message` function which assigns data to the `header`, `rpmraw` and `rpmfiltered` data types.
+- Defining the main function which initializes the rclpy library and "spins" the node using the `rclpy.spin` method to call the callbacks.
+
 ## Appendix: References
 
 - [rclpy reference](https://docs.ros2.org/foxy/api/rclpy/index.html)
