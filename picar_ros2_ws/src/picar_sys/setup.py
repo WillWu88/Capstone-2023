@@ -26,6 +26,7 @@ setup(
             'imu = picar_sys.imu:main',
             'test_sub = picar_sys.test_sub:main',
             #'client = picar_sys.rpm_client:main',
+            'rpm = picar_sys.rpm_publisher:main',
             'server = picar_sys.rpm_server:main'
         ],
     },

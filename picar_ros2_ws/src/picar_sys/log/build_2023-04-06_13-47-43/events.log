@@ -1,0 +1,130 @@
+[0.000000] (-) TimerEvent: {}
+[0.000710] (picar_sys) JobQueued: {'identifier': 'picar_sys', 'dependencies': OrderedDict()}
+[0.000905] (picar_sys) JobStarted: {'identifier': 'picar_sys'}
+[0.096893] (-) TimerEvent: {}
+[0.197873] (-) TimerEvent: {}
+[0.299132] (-) TimerEvent: {}
+[0.400021] (-) TimerEvent: {}
+[0.500773] (-) TimerEvent: {}
+[0.601710] (-) TimerEvent: {}
+[0.702667] (-) TimerEvent: {}
+[0.803358] (-) TimerEvent: {}
+[0.904057] (-) TimerEvent: {}
+[1.004788] (-) TimerEvent: {}
+[1.105586] (-) TimerEvent: {}
+[1.206522] (-) TimerEvent: {}
+[1.307886] (-) TimerEvent: {}
+[1.410765] (-) TimerEvent: {}
+[1.511708] (-) TimerEvent: {}
+[1.612574] (-) TimerEvent: {}
+[1.713429] (-) TimerEvent: {}
+[1.814238] (-) TimerEvent: {}
+[1.915204] (-) TimerEvent: {}
+[2.016270] (-) TimerEvent: {}
+[2.117112] (-) TimerEvent: {}
+[2.218774] (-) TimerEvent: {}
+[2.319855] (-) TimerEvent: {}
+[2.420544] (-) TimerEvent: {}
+[2.521174] (-) TimerEvent: {}
+[2.622115] (-) TimerEvent: {}
+[2.722897] (-) TimerEvent: {}
+[2.823749] (-) TimerEvent: {}
+[2.924403] (-) TimerEvent: {}
+[3.025137] (-) TimerEvent: {}
+[3.125872] (-) TimerEvent: {}
+[3.226576] (-) TimerEvent: {}
+[3.327319] (-) TimerEvent: {}
+[3.428016] (-) TimerEvent: {}
+[3.528730] (-) TimerEvent: {}
+[3.629647] (-) TimerEvent: {}
+[3.730806] (-) TimerEvent: {}
+[3.831580] (-) TimerEvent: {}
+[3.932275] (-) TimerEvent: {}
+[4.033349] (-) TimerEvent: {}
+[4.135224] (-) TimerEvent: {}
+[4.236295] (-) TimerEvent: {}
+[4.337064] (-) TimerEvent: {}
+[4.437715] (-) TimerEvent: {}
+[4.538526] (-) TimerEvent: {}
+[4.639745] (-) TimerEvent: {}
+[4.699046] (picar_sys) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', 'build/picar_sys', 'build', '--build-base', '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build', 'install', '--record', '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/install.log', '--single-version-externally-managed'], 'cwd': '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys', 'env': {'TMUX': '/tmp/tmux-1000/default,2242,0', 'SSH_CLIENT': '172.27.80.91 50674 22', 'USER': 'willwu', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'SHLVL': '2', 'HOME': '/home/willwu', 'LESS': '-R', 'MOTD_SHOWN': 'pam', 'OLDPWD': '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/picar_sys', 'SSH_TTY': '/dev/pts/0', 'TERM_PROGRAM_VERSION': '3.2a', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'ZSH': '/home/willwu/.oh-my-zsh', 'PAGER': 'less', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'ROS_DISTRO': 'humble', 'LOGNAME': 'willwu', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'screen', 'XDG_SESSION_ID': '4', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/willwu/.local/bin:/home/willwu/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'TERM_PROGRAM': 'tmux', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/usr/bin/zsh', 'PWD': '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys', 'SSH_CONNECTION': '172.27.80.91 50674 172.27.51.9 22', 'PYTHONPATH': '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/prefix_override:/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'TMUX_PANE': '%1'}, 'shell': False}
+[4.739879] (-) TimerEvent: {}
+[4.840557] (-) TimerEvent: {}
+[4.941195] (-) TimerEvent: {}
+[5.041870] (-) TimerEvent: {}
+[5.142514] (-) TimerEvent: {}
+[5.243163] (-) TimerEvent: {}
+[5.343851] (-) TimerEvent: {}
+[5.444427] (-) TimerEvent: {}
+[5.545056] (-) TimerEvent: {}
+[5.645830] (-) TimerEvent: {}
+[5.746531] (-) TimerEvent: {}
+[5.847293] (-) TimerEvent: {}
+[5.948472] (-) TimerEvent: {}
+[6.049130] (-) TimerEvent: {}
+[6.059296] (picar_sys) StdoutLine: {'line': b'running egg_info\n'}
+[6.061509] (picar_sys) StdoutLine: {'line': b'creating build/picar_sys/picar_sys.egg-info\n'}
+[6.062393] (picar_sys) StdoutLine: {'line': b'writing build/picar_sys/picar_sys.egg-info/PKG-INFO\n'}
+[6.063475] (picar_sys) StdoutLine: {'line': b'writing dependency_links to build/picar_sys/picar_sys.egg-info/dependency_links.txt\n'}
+[6.064810] (picar_sys) StdoutLine: {'line': b'writing entry points to build/picar_sys/picar_sys.egg-info/entry_points.txt\n'}
+[6.065388] (picar_sys) StdoutLine: {'line': b'writing requirements to build/picar_sys/picar_sys.egg-info/requires.txt\n'}
+[6.065848] (picar_sys) StdoutLine: {'line': b'writing top-level names to build/picar_sys/picar_sys.egg-info/top_level.txt\n'}
+[6.066798] (picar_sys) StdoutLine: {'line': b"writing manifest file 'build/picar_sys/picar_sys.egg-info/SOURCES.txt'\n"}
+[6.074187] (picar_sys) StdoutLine: {'line': b"reading manifest file 'build/picar_sys/picar_sys.egg-info/SOURCES.txt'\n"}
+[6.077543] (picar_sys) StdoutLine: {'line': b"writing manifest file 'build/picar_sys/picar_sys.egg-info/SOURCES.txt'\n"}
+[6.078152] (picar_sys) StdoutLine: {'line': b'running build\n'}
+[6.078608] (picar_sys) StdoutLine: {'line': b'running build_py\n'}
+[6.079187] (picar_sys) StdoutLine: {'line': b'creating /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build\n'}
+[6.079737] (picar_sys) StdoutLine: {'line': b'creating /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib\n'}
+[6.080155] (picar_sys) StdoutLine: {'line': b'creating /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/picar_sys\n'}
+[6.080478] (picar_sys) StdoutLine: {'line': b'copying picar_sys/rpm_publisher.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/picar_sys\n'}
+[6.080883] (picar_sys) StdoutLine: {'line': b'copying picar_sys/__init__.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/picar_sys\n'}
+[6.081429] (picar_sys) StdoutLine: {'line': b'copying picar_sys/test_sub.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/picar_sys\n'}
+[6.082931] (picar_sys) StdoutLine: {'line': b'copying picar_sys/imu.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/picar_sys\n'}
+[6.084061] (picar_sys) StdoutLine: {'line': b'creating /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/drivers\n'}
+[6.084531] (picar_sys) StdoutLine: {'line': b'copying drivers/imu_driver.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/drivers\n'}
+[6.085778] (picar_sys) StdoutLine: {'line': b'copying drivers/__init__.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/drivers\n'}
+[6.086451] (picar_sys) StdoutLine: {'line': b'copying drivers/imu_param.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/drivers\n'}
+[6.087722] (picar_sys) StdoutLine: {'line': b'copying drivers/encoder_driver.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/drivers\n'}
+[6.089241] (picar_sys) StdoutLine: {'line': b'running install\n'}
+[6.089852] (picar_sys) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[6.090420] (picar_sys) StderrLine: {'line': b'  warnings.warn(\n'}
+[6.091143] (picar_sys) StdoutLine: {'line': b'running install_lib\n'}
+[6.094347] (picar_sys) StdoutLine: {'line': b'creating /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/picar_sys\n'}
+[6.094948] (picar_sys) StdoutLine: {'line': b'copying /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/picar_sys/rpm_publisher.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/picar_sys\n'}
+[6.095773] (picar_sys) StdoutLine: {'line': b'copying /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/picar_sys/__init__.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/picar_sys\n'}
+[6.096485] (picar_sys) StdoutLine: {'line': b'copying /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/picar_sys/test_sub.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/picar_sys\n'}
+[6.097283] (picar_sys) StdoutLine: {'line': b'copying /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/picar_sys/imu.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/picar_sys\n'}
+[6.098405] (picar_sys) StdoutLine: {'line': b'creating /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/drivers\n'}
+[6.098965] (picar_sys) StdoutLine: {'line': b'copying /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/drivers/imu_driver.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/drivers\n'}
+[6.099779] (picar_sys) StdoutLine: {'line': b'copying /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/drivers/__init__.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/drivers\n'}
+[6.100545] (picar_sys) StdoutLine: {'line': b'copying /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/drivers/imu_param.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/drivers\n'}
+[6.101425] (picar_sys) StdoutLine: {'line': b'copying /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/build/lib/drivers/encoder_driver.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/drivers\n'}
+[6.103819] (picar_sys) StdoutLine: {'line': b'byte-compiling /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/picar_sys/rpm_publisher.py to rpm_publisher.cpython-310.pyc\n'}
+[6.106194] (picar_sys) StdoutLine: {'line': b'byte-compiling /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/picar_sys/__init__.py to __init__.cpython-310.pyc\n'}
+[6.107368] (picar_sys) StdoutLine: {'line': b'byte-compiling /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/picar_sys/test_sub.py to test_sub.cpython-310.pyc\n'}
+[6.109275] (picar_sys) StdoutLine: {'line': b'byte-compiling /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/picar_sys/imu.py to imu.cpython-310.pyc\n'}
+[6.111735] (picar_sys) StdoutLine: {'line': b'byte-compiling /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/drivers/imu_driver.py to imu_driver.cpython-310.pyc\n'}
+[6.114376] (picar_sys) StdoutLine: {'line': b'byte-compiling /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/drivers/__init__.py to __init__.cpython-310.pyc\n'}
+[6.115585] (picar_sys) StdoutLine: {'line': b'byte-compiling /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/drivers/imu_param.py to imu_param.cpython-310.pyc\n'}
+[6.117066] (picar_sys) StdoutLine: {'line': b'byte-compiling /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/drivers/encoder_driver.py to encoder_driver.cpython-310.pyc\n'}
+[6.119340] (picar_sys) StdoutLine: {'line': b'running install_data\n'}
+[6.121631] (picar_sys) StdoutLine: {'line': b'creating /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/share/ament_index\n'}
+[6.122304] (picar_sys) StdoutLine: {'line': b'creating /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/share/ament_index/resource_index\n'}
+[6.122773] (picar_sys) StdoutLine: {'line': b'creating /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/share/ament_index/resource_index/packages\n'}
+[6.123097] (picar_sys) StdoutLine: {'line': b'copying resource/picar_sys -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/share/ament_index/resource_index/packages\n'}
+[6.123523] (picar_sys) StdoutLine: {'line': b'copying package.xml -> /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/share/picar_sys\n'}
+[6.123925] (picar_sys) StdoutLine: {'line': b'running install_egg_info\n'}
+[6.130172] (picar_sys) StdoutLine: {'line': b'Copying build/picar_sys/picar_sys.egg-info to /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/python3.10/site-packages/picar_sys-0.0.0-py3.10.egg-info\n'}
+[6.135532] (picar_sys) StdoutLine: {'line': b'running install_scripts\n'}
+[6.149329] (-) TimerEvent: {}
+[6.207522] (picar_sys) StdoutLine: {'line': b'Installing imu script to /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/picar_sys\n'}
+[6.208338] (picar_sys) StdoutLine: {'line': b'Installing rpm script to /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/picar_sys\n'}
+[6.208963] (picar_sys) StdoutLine: {'line': b'Installing server script to /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/picar_sys\n'}
+[6.209492] (picar_sys) StdoutLine: {'line': b'Installing test_sub script to /home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/install/picar_sys/lib/picar_sys\n'}
+[6.211487] (picar_sys) StdoutLine: {'line': b"writing list of installed files to '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys/build/picar_sys/install.log'\n"}
+[6.249601] (-) TimerEvent: {}
+[6.350785] (-) TimerEvent: {}
+[6.354939] (picar_sys) CommandEnded: {'returncode': 0}
+[6.413671] (picar_sys) JobEnded: {'identifier': 'picar_sys', 'rc': 0}
+[6.417192] (-) EventReactorShutdown: {}

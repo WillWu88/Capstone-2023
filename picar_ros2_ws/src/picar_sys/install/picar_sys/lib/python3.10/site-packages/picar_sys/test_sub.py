@@ -1,14 +1,14 @@
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Imu
-from tutorial_interfaces.msg import RPM
+from tutorial_interfaces.msg import Rpmmsg
 
 class TestSubscriber(Node):
 
     def __init__(self):
         super().__init__('test_subscriber')
-        self.subscription = self.create_subscription(RPM,
-                                                    'rpm',
+        self.subscription = self.create_subscription(Rpmmsg,
+                                                    'Rpm',
                                                     self.imu_callback,
                                                     10)
         self.subscription  # prevent unused variable warning
@@ -16,7 +16,7 @@ class TestSubscriber(Node):
     def imu_callback(self, msg):
         self.get_logger().info('Time stamp: ' + str(msg.header.stamp))
         # test reception on x-axis
-        self.get_logger().info('x feedback: "%f"' %msg.rpmfiltered)
+        self.get_logger().info('x feedback: "%f"' %msg.linear_acceleration.x)
 
 
 def main(args=None):

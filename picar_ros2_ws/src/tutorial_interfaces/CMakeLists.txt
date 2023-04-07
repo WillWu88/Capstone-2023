@@ -13,17 +13,12 @@ find_package(ament_cmake REQUIRED)
 
 find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
-find_package(std_msgs REQUIRED)
+
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/Num.msg"
-    "msg/Sphere.msg"
-    "msg/Rpmmsg.msg"
-      "srv/AddThreeInts.srv"
-        "srv/Rpm.srv"
-        DEPENDENCIES geometry_msgs
-        DEPENDENCIES std_msgs# Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
-        )
+    "msg/RPM.msg"
+    DEPENDENCIES geometry_msgs 
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

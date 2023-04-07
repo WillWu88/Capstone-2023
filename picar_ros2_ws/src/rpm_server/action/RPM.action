@@ -1,6 +1,0 @@
-bool filter
----
-float64 filtered
-float64 raw
----
-float64 instant 

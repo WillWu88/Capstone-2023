@@ -2,7 +2,13 @@
 #reading of 1 means no magnet detected
 
 import RPi.GPIO as IO
-import serial
+import time
+import sys
+import busio
+import math
+import numpy as np;
+from scipy.io import savemat
+from datetime import date
 
 class EncoderDriver():
 
