@@ -73,4 +73,11 @@ b_kf = [delta_t^2/2; delta_t];
 c_x = eye(2);
 d_x = zeros(2,1);
 
-a_x_in = [transpose(stationary(1,:)/f_s) transpose(stationary(acc_x, :))];
+t = 0:delta_t:((length(time_stat)-1)/f_s);
+a_x_in = [t' transpose(stationary(acc_x, :))];
+
+rpm_in = zeros(size(t'));
+gps_in = zeros(size(t'));
+
+meas_x_in = [t' rpm_in];
+

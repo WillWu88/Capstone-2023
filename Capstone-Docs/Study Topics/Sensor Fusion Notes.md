@@ -118,3 +118,10 @@ Sections:
 	4) Process Model
 3) Linearization
 4) Continous ODE to Discrete ODE
+
+### Link 7: GPS+IMU Fusion Implementation
+
+- https://github.com/smahajan07/sensor-fusion
+- https://www.youtube.com/watch?v=T9jXoG0QYIA&t=573s
+- https://www.youtube.com/watch?v=6M6wSLD-8M8&t=687s
+- 
