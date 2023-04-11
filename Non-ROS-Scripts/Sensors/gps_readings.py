@@ -38,7 +38,7 @@ gps.send_command(b"PMTK314,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0")
 
 gps.send_command(b"PMTK220,1000")
 last_print = time.monotonic()
-log_data = np.zeros((2,1000))
+log_data = np.zeros((2,50))
 '''
 index_dict = {
     "x_pos": 0,
