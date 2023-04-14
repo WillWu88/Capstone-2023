@@ -19,10 +19,7 @@ class gps_reading:
     def __init__(self,size):
         self.size = size
         self.circ = [0]*self.size
-'''
-    def calc_xpos(sel, long, lat, start_time stop_time)
-        x_pos = 
-'''
+    def read_raw_data(self,)
 
 
 uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=10)

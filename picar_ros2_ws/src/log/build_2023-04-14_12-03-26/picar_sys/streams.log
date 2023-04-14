@@ -1,0 +1,29 @@
+[3.871s] Invoking command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys': PYTHONPATH=/home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/prefix_override:/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/picar_sys build --build-base /home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/build install --record /home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/install.log --single-version-externally-managed
+[5.420s] running egg_info
+[5.422s] writing ../build/picar_sys/picar_sys.egg-info/PKG-INFO
+[5.423s] writing dependency_links to ../build/picar_sys/picar_sys.egg-info/dependency_links.txt
+[5.425s] writing entry points to ../build/picar_sys/picar_sys.egg-info/entry_points.txt
+[5.426s] writing requirements to ../build/picar_sys/picar_sys.egg-info/requires.txt
+[5.427s] writing top-level names to ../build/picar_sys/picar_sys.egg-info/top_level.txt
+[5.435s] reading manifest file '../build/picar_sys/picar_sys.egg-info/SOURCES.txt'
+[5.440s] writing manifest file '../build/picar_sys/picar_sys.egg-info/SOURCES.txt'
+[5.440s] running build
+[5.441s] running build_py
+[5.444s] copying drivers/gps_driver.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/build/lib/drivers
+[5.446s] running install
+[5.447s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[5.447s]   warnings.warn(
+[5.448s] running install_lib
+[5.453s] copying /home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/build/lib/drivers/gps_driver.py -> /home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/python3.10/site-packages/drivers
+[5.457s] byte-compiling /home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/python3.10/site-packages/drivers/gps_driver.py to gps_driver.cpython-310.pyc
+[5.461s] running install_data
+[5.463s] running install_egg_info
+[5.469s] removing '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/python3.10/site-packages/picar_sys-0.0.0-py3.10.egg-info' (and everything under it)
+[5.471s] Copying ../build/picar_sys/picar_sys.egg-info to /home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/python3.10/site-packages/picar_sys-0.0.0-py3.10.egg-info
+[5.476s] running install_scripts
+[5.548s] Installing imu script to /home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/picar_sys
+[5.549s] Installing rpm script to /home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/picar_sys
+[5.550s] Installing server script to /home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/picar_sys
+[5.550s] Installing test_sub script to /home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/picar_sys
+[5.553s] writing list of installed files to '/home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/install.log'
+[5.703s] Invoked command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys' returned '0': PYTHONPATH=/home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/prefix_override:/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/picar_sys build --build-base /home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/build install --record /home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/install.log --single-version-externally-managed
