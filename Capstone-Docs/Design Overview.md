@@ -26,4 +26,4 @@ Then we started on looking into the relevant filters for our Picar. Specifically
 -- this could probably also use help
 We then began moving our python scripts for the sensors into ROS2 and creating nodes. This process is documented in [[Python Notes]] and [[IMU Publisher]]. The package [[Numpy]] was useful for creating the python scripts. 
 
-We finally shifted our focus to [[Navigation Design]] as our final goal for our Picar is for it to be able to autonomously navigate a test course. 
+We finally shifted our focus to [[Navigation Design]] as our final goal for our Picar is for it to be able to autonomously navigate a test course. In order to focus and test our design we began conducting [[Outdoor Testing]], this allows us to better see the successes and faults of our system at different points of time. The outdoor testing process is also critical for data collection and successfully filtering the data.

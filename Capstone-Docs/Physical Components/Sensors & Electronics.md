@@ -6,6 +6,7 @@
 
 ## I. Lidar
 
+![Lidar Test Code Results](Figures/Lidar.png)
 ### Links about Lidar Specs/Pinout:
 
 - [Lidar Spec Sheet](https://www.digikey.dk/htmldatasheets/production/3265529/0/0/1/a1m8.html)
@@ -39,6 +40,7 @@
 
 ## II. Encoder 
 
+![Filtered and Unfiltered RPM Data](Figures/rpm_sensor.jpg)
 ### Basic Notes on Encoder
 
 - Measure angular or linear distance
@@ -76,8 +78,8 @@ sudo chmod 777 /dev/i2c-1
 ```
 
 example reading out from IMU below:
-![IMU Reading][Figures/IMU-Reading.png]
-
+![IMU Reading][Figures/IMU-Reading.png]![IMU Reading][Figures/IMU-Reading-acc.png]
+![IMU Reading][Figures/IMU-Reading-gyro.png]
 ### ROS2 Publisher Implementation
 
 - See [[IMU Publisher]]
