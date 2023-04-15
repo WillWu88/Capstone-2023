@@ -79,5 +79,5 @@ a_x_in = [t' transpose(stationary(acc_x, :))];
 rpm_in = zeros(size(t'));
 gps_in = zeros(size(t'));
 
-meas_x_in = [t' rpm_in];
+meas_x_in = [t' gps_in rpm_in];
 
