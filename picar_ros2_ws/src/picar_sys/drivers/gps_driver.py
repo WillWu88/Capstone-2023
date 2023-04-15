@@ -25,27 +25,26 @@ class GPSDriver():
         # Turn on the basic GGA and RMC info (what you typically want)
         self.gps.send_command(b"PMTK314,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0")
         # Set update rate to once a second (1hz) which is what you typically want.
-        self.gps.send_command(b"PMTK220,1000")  
+        self.gps.send_command(b"PMTK220,100")  
     
     def update(self):
         self.gps.update()
         if not self.gps.has_fix:
-            self.data[self.index_dict["lat_deg"]] = 0
-            self.data[self.index_dict["lat_min"]] = 0
-            self.data[self.index_dict["long_deg"]] = 0
-            self.data[self.index_dict["long_min"]] = 0
+            self.data[self.index_dict['lat_deg']] = 0.0
+            self.data[self.index_dict['lat_min']] = 0.0
+            self.data[self.index_dict['long_deg']] = 0.0
+            self.data[self.index_dict['long_min']] = 0.0
         else:
-            self.data[self.index_dict["lat_deg"]] = gps.latitude_degrees
-            self.data[self.index_dict["lat_min"]] = gps.latitude_minutes
-            self.data[self.index_dict["long_deg"]] = gps.longitude_degrees
-            self.data[self.index_dict["long_min"]] = gps.longitude_minutes
+            self.data[self.index_dict['lat_deg']] = float(self.gps.latitude_degrees)
+            self.data[self.index_dict['lat_min']] = float(self.gps.latitude_minutes)
+            self.data[self.index_dict['long_deg']] = float(self.gps.longitude_degrees)
+            self.data[self.index_dict['long_min']] = float(self.gps.longitude_minutes)
         
 
 if __name__ == "__main__":
     gps = GPSDriver()
     gps.update()
-    print("Time: " + time.monotonic())
-    print("GPS data " + gps.data[1])
+    #print("GPS data " + gps.data[1])
 
     while True:
         # Make sure to call gps.update() every loop iteration and at least twice
@@ -100,5 +99,5 @@ if __name__ == "__main__":
             if gps.horizontal_dilution is not None:
                 print("Horizontal dilution: {}".format(gps.horizontal_dilution))
             if gps.height_geoid is not None:
-                print("Height geoid: {} meters".format(gps.height_geoid))
+                rint("Height geoid: {} meters".format(gps.height_geoid))
     

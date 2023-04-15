@@ -16,7 +16,7 @@ class KalmanX(Node):
         self.y_pub = self.create_publisher(YFiltered, 'y_filtered', 10)
         self.psi_pub = self.create_publisher(YawFiltered, 'yaw_filtered', 10)
 
-        self.:
+        #self.:
 
     def timer_callback(self):
         

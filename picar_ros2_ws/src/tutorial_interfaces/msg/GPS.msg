@@ -1,7 +1,7 @@
 std_msgs/Header header
-str latdeg
-str longdeg
-str latmin
-str longmin
+float64 latdeg
+float64 longdeg
+float64 latmin
+float64 longmin
 bool flag
 

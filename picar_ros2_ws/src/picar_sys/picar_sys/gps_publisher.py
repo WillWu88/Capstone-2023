@@ -20,10 +20,10 @@ class GpsPublisher(Node):
         self.gps.update()
         msg = self.populate_message()
         self.publisher.publish(msg)
-        self.get_logger().info('Publishing: "%f"' % msg.longitude_degrees)
+        self.get_logger().info('Publishing: "%f"' % msg.longmin)
         self.msg_count +=1
 
-    def populate_message(self):
+    def populate_message(self) -> GPS:
         msg = GPS()
         #Header
         msg.header.stamp = self.get_clock().now().to_msg()

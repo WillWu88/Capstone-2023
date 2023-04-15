@@ -84,12 +84,12 @@ while True:
         print("Latitude: {0:.6f} degrees".format(gps.latitude))
         print("Longitude: {0:.6f} degrees".format(gps.longitude))
         print(
-            "Precise Latitude: {:2.}{:2.4f} degrees".format(
+            "Precise Latitude: {:2.4f}{:2.4f} degrees".format(
                 gps.latitude_degrees, gps.latitude_minutes
             )
         )
         print(
-            "Precise Longitude: {:2.}{:2.4f} degrees".format(
+            "Precise Longitude: {:2.4f}{:2.4f} degrees".format(
                 gps.longitude_degrees, gps.longitude_minutes
             )
         )
