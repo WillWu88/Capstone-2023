@@ -79,3 +79,15 @@
 - 3/27/2023: Remodeled Picar mounts and began robot_localization_node notes. Started building the I2C peripheral for RPM sensor.
 
 - 3/28/2023: Assembled the Picar to completion. I2C peripheral implementation in progress
+
+- 3/30/2023: Obsidian Notes page restructure and notes of what notes need to be filled out/updated were added. 
+
+- 4/1/2023: *Meeting I missed, need help filling this out*
+
+- 4/6/2023: Working encoder with Raspberry Pi pico node
+
+- 4/7/2023: Able to connect to the GPS with a hotspot and run GPS test code.
+
+- 4/7/2023 - 4/9/2023: Worked on Kalman filter for IMU and GPS script.
+
+- 4/11/2023: First outdoor PiCar test, gathered IMU and Encoder data.

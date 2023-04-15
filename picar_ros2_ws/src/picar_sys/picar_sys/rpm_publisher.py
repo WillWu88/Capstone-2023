@@ -11,7 +11,7 @@ class RpmPublisher(Node):
         super().__init__('rpm_publisher')
         self.size = 5
         self.encoder = drivers.rpm_serial_driver.EncoderDriver()
-        self.publisher_ = self.create_publisher(RPM, 'rpm', 10) # history depth of 10
+        self.publisher_ = self.create_publisher(RPM, 'rpm_raw', 10) # history depth of 10
         timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.msg_count = 0

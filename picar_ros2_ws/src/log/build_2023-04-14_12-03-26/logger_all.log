@@ -1,0 +1,184 @@
+[1.408s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[1.408s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffb8ba7d90>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffb9499000>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffb9499000>>)
+[1.540s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.541s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.541s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.541s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.541s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.541s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.542s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/willwu/Capstone-2023/picar_ros2_ws/src'
+[1.542s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.542s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.542s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.543s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.543s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.543s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.543s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.543s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.543s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.590s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.590s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.591s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.591s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.591s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.591s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.592s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.592s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.594s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.594s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.594s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.594s] Level 1:colcon.colcon_core.package_identification:_identify(picar_sys) by extensions ['ignore', 'ignore_ament_install']
+[1.595s] Level 1:colcon.colcon_core.package_identification:_identify(picar_sys) by extension 'ignore'
+[1.595s] Level 1:colcon.colcon_core.package_identification:_identify(picar_sys) by extension 'ignore_ament_install'
+[1.595s] Level 1:colcon.colcon_core.package_identification:_identify(picar_sys) by extensions ['colcon_pkg']
+[1.595s] Level 1:colcon.colcon_core.package_identification:_identify(picar_sys) by extension 'colcon_pkg'
+[1.595s] Level 1:colcon.colcon_core.package_identification:_identify(picar_sys) by extensions ['colcon_meta']
+[1.596s] Level 1:colcon.colcon_core.package_identification:_identify(picar_sys) by extension 'colcon_meta'
+[1.596s] Level 1:colcon.colcon_core.package_identification:_identify(picar_sys) by extensions ['ros']
+[1.596s] Level 1:colcon.colcon_core.package_identification:_identify(picar_sys) by extension 'ros'
+[1.604s] DEBUG:colcon.colcon_core.package_identification:Package 'picar_sys' with type 'ros.ament_python' and name 'picar_sys'
+[1.605s] Level 1:colcon.colcon_core.package_identification:_identify(tutorial_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[1.605s] Level 1:colcon.colcon_core.package_identification:_identify(tutorial_interfaces) by extension 'ignore'
+[1.606s] Level 1:colcon.colcon_core.package_identification:_identify(tutorial_interfaces) by extension 'ignore_ament_install'
+[1.606s] Level 1:colcon.colcon_core.package_identification:_identify(tutorial_interfaces) by extensions ['colcon_pkg']
+[1.606s] Level 1:colcon.colcon_core.package_identification:_identify(tutorial_interfaces) by extension 'colcon_pkg'
+[1.606s] Level 1:colcon.colcon_core.package_identification:_identify(tutorial_interfaces) by extensions ['colcon_meta']
+[1.606s] Level 1:colcon.colcon_core.package_identification:_identify(tutorial_interfaces) by extension 'colcon_meta'
+[1.606s] Level 1:colcon.colcon_core.package_identification:_identify(tutorial_interfaces) by extensions ['ros']
+[1.607s] Level 1:colcon.colcon_core.package_identification:_identify(tutorial_interfaces) by extension 'ros'
+[1.609s] DEBUG:colcon.colcon_core.package_identification:Package 'tutorial_interfaces' with type 'ros.ament_cmake' and name 'tutorial_interfaces'
+[1.609s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.609s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.609s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.610s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.610s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.700s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.701s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.719s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 273 installed packages in /opt/ros/humble
+[1.725s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.981s] Level 5:colcon.colcon_core.verb:set package 'picar_sys' build argument 'cmake_args' from command line to 'None'
+[1.981s] Level 5:colcon.colcon_core.verb:set package 'picar_sys' build argument 'cmake_target' from command line to 'None'
+[1.981s] Level 5:colcon.colcon_core.verb:set package 'picar_sys' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.981s] Level 5:colcon.colcon_core.verb:set package 'picar_sys' build argument 'cmake_clean_cache' from command line to 'False'
+[1.981s] Level 5:colcon.colcon_core.verb:set package 'picar_sys' build argument 'cmake_clean_first' from command line to 'False'
+[1.981s] Level 5:colcon.colcon_core.verb:set package 'picar_sys' build argument 'cmake_force_configure' from command line to 'False'
+[1.981s] Level 5:colcon.colcon_core.verb:set package 'picar_sys' build argument 'ament_cmake_args' from command line to 'None'
+[1.982s] Level 5:colcon.colcon_core.verb:set package 'picar_sys' build argument 'catkin_cmake_args' from command line to 'None'
+[1.982s] Level 5:colcon.colcon_core.verb:set package 'picar_sys' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.982s] DEBUG:colcon.colcon_core.verb:Building package 'picar_sys' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys', 'merge_install': False, 'path': '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys', 'symlink_install': False, 'test_result_base': None}
+[1.986s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_args' from command line to 'None'
+[1.986s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_target' from command line to 'None'
+[1.986s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.986s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[1.986s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[1.987s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[1.987s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[1.987s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[1.987s] Level 5:colcon.colcon_core.verb:set package 'tutorial_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.987s] DEBUG:colcon.colcon_core.verb:Building package 'tutorial_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces', 'merge_install': False, 'path': '/home/willwu/Capstone-2023/picar_ros2_ws/src/tutorial_interfaces', 'symlink_install': False, 'test_result_base': None}
+[1.990s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.002s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.003s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys' with build type 'ament_python'
+[2.004s] Level 1:colcon.colcon_core.shell:create_environment_hook('picar_sys', 'ament_prefix_path')
+[2.023s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.024s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/picar_sys/hook/ament_prefix_path.ps1'
+[2.026s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/picar_sys/hook/ament_prefix_path.dsv'
+[2.028s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/picar_sys/hook/ament_prefix_path.sh'
+[2.036s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.036s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.055s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/willwu/Capstone-2023/picar_ros2_ws/src/tutorial_interfaces' with build type 'ament_cmake'
+[2.055s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/willwu/Capstone-2023/picar_ros2_ws/src/tutorial_interfaces'
+[2.062s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.062s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.534s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys'
+[3.539s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.539s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.576s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces -- -j4 -l4
+[5.604s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces -- -j4 -l4
+[5.879s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys': PYTHONPATH=/home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/prefix_override:/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/picar_sys build --build-base /home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/build install --record /home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/install.log --single-version-externally-managed
+[6.095s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces
+[6.402s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tutorial_interfaces)
+[6.406s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces
+[6.424s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces' for CMake module files
+[6.429s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces' for CMake config files
+[6.432s] Level 1:colcon.colcon_core.shell:create_environment_hook('tutorial_interfaces', 'cmake_prefix_path')
+[6.437s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.ps1'
+[6.440s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.dsv'
+[6.442s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.sh'
+[6.445s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/lib'
+[6.446s] Level 1:colcon.colcon_core.shell:create_environment_hook('tutorial_interfaces', 'ld_library_path_lib')
+[6.452s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.ps1'
+[6.454s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.dsv'
+[6.455s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.sh'
+[6.457s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/bin'
+[6.458s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/lib/pkgconfig/tutorial_interfaces.pc'
+[6.459s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/lib/python3.10/site-packages'
+[6.460s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/bin'
+[6.465s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/package.ps1'
+[6.469s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/package.dsv'
+[6.471s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/package.sh'
+[6.475s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/package.bash'
+[6.478s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/package.zsh'
+[6.481s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/colcon-core/packages/tutorial_interfaces)
+[6.883s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tutorial_interfaces)
+[6.891s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces' for CMake module files
+[6.896s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces' for CMake config files
+[6.899s] Level 1:colcon.colcon_core.shell:create_environment_hook('tutorial_interfaces', 'cmake_prefix_path')
+[6.905s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.ps1'
+[6.907s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.dsv'
+[6.909s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/cmake_prefix_path.sh'
+[6.912s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/lib'
+[6.912s] Level 1:colcon.colcon_core.shell:create_environment_hook('tutorial_interfaces', 'ld_library_path_lib')
+[6.918s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.ps1'
+[6.920s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.dsv'
+[6.922s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/hook/ld_library_path_lib.sh'
+[6.924s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/bin'
+[6.925s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/lib/pkgconfig/tutorial_interfaces.pc'
+[6.926s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/lib/python3.10/site-packages'
+[6.927s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/bin'
+[6.933s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/package.ps1'
+[6.935s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/package.dsv'
+[6.938s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/package.sh'
+[6.940s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/package.bash'
+[6.943s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/tutorial_interfaces/package.zsh'
+[6.946s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/willwu/Capstone-2023/picar_ros2_ws/src/install/tutorial_interfaces/share/colcon-core/packages/tutorial_interfaces)
+[7.709s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys' for CMake module files
+[7.710s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/picar_sys' returned '0': PYTHONPATH=/home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/prefix_override:/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/picar_sys build --build-base /home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/build install --record /home/willwu/Capstone-2023/picar_ros2_ws/src/build/picar_sys/install.log --single-version-externally-managed
+[7.712s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys' for CMake config files
+[7.716s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib'
+[7.716s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/bin'
+[7.717s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/pkgconfig/picar_sys.pc'
+[7.717s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/lib/python3.10/site-packages'
+[7.718s] Level 1:colcon.colcon_core.shell:create_environment_hook('picar_sys', 'pythonpath')
+[7.723s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/picar_sys/hook/pythonpath.ps1'
+[7.725s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/picar_sys/hook/pythonpath.dsv'
+[7.727s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/picar_sys/hook/pythonpath.sh'
+[7.730s] Level 1:colcon.colcon_core.environment:checking '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/bin'
+[7.730s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(picar_sys)
+[7.735s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/picar_sys/package.ps1'
+[7.737s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/picar_sys/package.dsv'
+[7.739s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/picar_sys/package.sh'
+[7.742s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/picar_sys/package.bash'
+[7.743s] INFO:colcon.colcon_core.shell:Creating package script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/picar_sys/package.zsh'
+[7.745s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/willwu/Capstone-2023/picar_ros2_ws/src/install/picar_sys/share/colcon-core/packages/picar_sys)
+[7.747s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[7.748s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[7.749s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[7.750s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[7.774s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[7.774s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[7.774s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[7.814s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[7.820s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/local_setup.ps1'
+[7.824s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/_local_setup_util_ps1.py'
+[7.829s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/setup.ps1'
+[7.835s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/local_setup.sh'
+[7.837s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/_local_setup_util_sh.py'
+[7.840s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/setup.sh'
+[7.845s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/local_setup.bash'
+[7.848s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/setup.bash'
+[7.853s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/local_setup.zsh'
+[7.855s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/willwu/Capstone-2023/picar_ros2_ws/src/install/setup.zsh'
