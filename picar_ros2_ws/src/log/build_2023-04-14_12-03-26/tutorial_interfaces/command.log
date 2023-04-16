@@ -1,4 +1,0 @@
-Invoking command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces -- -j4 -l4
-Invoked command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces -- -j4 -l4
-Invoking command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces
-Invoked command in '/home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/willwu/Capstone-2023/picar_ros2_ws/src/build/tutorial_interfaces

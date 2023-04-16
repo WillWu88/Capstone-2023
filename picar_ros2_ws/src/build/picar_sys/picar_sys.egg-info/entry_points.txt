@@ -1,6 +1,0 @@
-[console_scripts]
-imu = picar_sys.imu:main
-rpm = picar_sys.rpm_publisher:main
-server = picar_sys.rpm_server:main
-test_sub = picar_sys.test_sub:main
-

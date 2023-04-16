@@ -1,7 +1,0 @@
-std_msgs/Header header
-float64 latitude_degrees
-float64 longitude_degrees
-float64 latitude_minutes
-float64 longitude_minutes
-bool flag
-

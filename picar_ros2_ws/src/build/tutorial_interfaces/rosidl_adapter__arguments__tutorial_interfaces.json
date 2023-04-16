@@ -1,7 +1,0 @@
-{
-  "package_name": "tutorial_interfaces",
-  "non_idl_tuples": [
-    "/home/willwu/Capstone-2023/picar_ros2_ws/src/tutorial_interfaces:msg/RPM.msg",
-    "/home/willwu/Capstone-2023/picar_ros2_ws/src/tutorial_interfaces:msg/GPS.msg"
-  ]
-}

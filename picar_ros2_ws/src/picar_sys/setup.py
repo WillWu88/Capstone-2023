@@ -23,9 +23,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'imu = picar_sys.imu:main',
+            'imu = picar_sys.imu_publisher:main',
             'test_sub = picar_sys.test_sub:main',
-            #'client = picar_sys.rpm_client:main',
             'rpm = picar_sys.rpm_publisher:main',
             'server = picar_sys.rpm_server:main',
             'gps = picar_sys.gps_publisher:main'
