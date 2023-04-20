@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\src\tutorial_interfaces\src\tutorial_interfaces_GPS_message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\src\tutorial_interfaces\src\tutorial_interfaces_PoseSetpoint_message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\src\tutorial_interfaces\src\tutorial_interfaces_RPM_message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\src\tutorial_interfaces\src\tutorial_interfaces_VelSetpoint_message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\src\tutorial_interfaces\src\tutorial_interfaces_XFiltered_message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\src\tutorial_interfaces\src\tutorial_interfaces_YFiltered_message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\src\tutorial_interfaces\src\tutorial_interfaces_YawFiltered_message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\src\tutorial_interfaces\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5F41AFBE-51F3-3634-B69F-F216A1F1AE3C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

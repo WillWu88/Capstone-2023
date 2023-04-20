@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\x64\Release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\x64\Release\tutorial_interfaces__cpp</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\Release\tutorial_interfaces__rosidl_generator_c.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\Release\tutorial_interfaces__rosidl_typesupport_c.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\Release\tutorial_interfaces__rosidl_typesupport_cpp.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\Release\tutorial_interfaces__rosidl_typesupport_fastrtps_cpp.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\Release\tutorial_interfaces__rosidl_typesupport_fastrtps_c.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\Release\tutorial_interfaces__rosidl_typesupport_introspection_c.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\Release\tutorial_interfaces__rosidl_typesupport_introspection_cpp.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\x64\Release\tutorial_interfaces</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\tutorial_interfaces__py\x64\Release\tutorial_interfaces__py</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\rosidl_generator_py\tutorial_interfaces\tutorial_interfaces__python.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\rosidl_generator_py\tutorial_interfaces\tutorial_interfaces_s__rosidl_typesupport_c.pyd</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

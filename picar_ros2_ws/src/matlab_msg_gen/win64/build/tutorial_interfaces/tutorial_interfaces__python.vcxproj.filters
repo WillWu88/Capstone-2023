@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\rosidl_generator_py\tutorial_interfaces\msg\_gps_s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\rosidl_generator_py\tutorial_interfaces\msg\_pose_setpoint_s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\rosidl_generator_py\tutorial_interfaces\msg\_rpm_s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\rosidl_generator_py\tutorial_interfaces\msg\_vel_setpoint_s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\rosidl_generator_py\tutorial_interfaces\msg\_x_filtered_s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\rosidl_generator_py\tutorial_interfaces\msg\_y_filtered_s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\rosidl_generator_py\tutorial_interfaces\msg\_yaw_filtered_s.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\src\tutorial_interfaces\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5F41AFBE-51F3-3634-B69F-F216A1F1AE3C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

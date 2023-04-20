@@ -1,0 +1,29 @@
+function [data, info] = gPS
+%GPS gives an empty data for tutorial_interfaces/GPS
+% Copyright 2019-2020 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'tutorial_interfaces/GPS';
+[data.header, info.header] = ros.internal.ros2.messages.std_msgs.header;
+info.header.MLdataType = 'struct';
+[data.latdeg, info.latdeg] = ros.internal.ros2.messages.ros2.default_type('double',1,0);
+[data.longdeg, info.longdeg] = ros.internal.ros2.messages.ros2.default_type('double',1,0);
+[data.latmin, info.latmin] = ros.internal.ros2.messages.ros2.default_type('double',1,0);
+[data.longmin, info.longmin] = ros.internal.ros2.messages.ros2.default_type('double',1,0);
+[data.flag, info.flag] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+info.MessageType = 'tutorial_interfaces/GPS';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,10);
+info.MatPath{1} = 'header';
+info.MatPath{2} = 'header.stamp';
+info.MatPath{3} = 'header.stamp.sec';
+info.MatPath{4} = 'header.stamp.nanosec';
+info.MatPath{5} = 'header.frame_id';
+info.MatPath{6} = 'latdeg';
+info.MatPath{7} = 'longdeg';
+info.MatPath{8} = 'latmin';
+info.MatPath{9} = 'longmin';
+info.MatPath{10} = 'flag';

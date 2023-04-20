@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\rosidl_generator_py\tutorial_interfaces\_tutorial_interfaces_s.ep.rosidl_typesupport_c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\src\tutorial_interfaces\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5F41AFBE-51F3-3634-B69F-F216A1F1AE3C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

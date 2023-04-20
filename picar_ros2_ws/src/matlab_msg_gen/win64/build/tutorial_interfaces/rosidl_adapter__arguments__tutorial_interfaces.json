@@ -1,0 +1,12 @@
+{
+  "package_name": "tutorial_interfaces",
+  "non_idl_tuples": [
+    "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/src/tutorial_interfaces:msg/GPS.msg",
+    "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/src/tutorial_interfaces:msg/PoseSetpoint.msg",
+    "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/src/tutorial_interfaces:msg/RPM.msg",
+    "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/src/tutorial_interfaces:msg/VelSetpoint.msg",
+    "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/src/tutorial_interfaces:msg/XFiltered.msg",
+    "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/src/tutorial_interfaces:msg/YFiltered.msg",
+    "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/src/tutorial_interfaces:msg/YawFiltered.msg"
+  ]
+}

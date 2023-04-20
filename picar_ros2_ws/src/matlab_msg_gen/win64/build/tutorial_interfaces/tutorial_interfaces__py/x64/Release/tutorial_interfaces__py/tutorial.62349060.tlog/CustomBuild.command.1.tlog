@@ -1,0 +1,28 @@
+^C:\OBSIDIAN VAULT\PICAR_ROS2_WS\SRC\MATLAB_MSG_GEN\WIN64\BUILD\TUTORIAL_INTERFACES\CMAKEFILES\62F88091D4808CB13C0D5BFE637F25B6\_TUTORIAL_INTERFACES_S.EP.ROSIDL_TYPESUPPORT_C.C.RULE
+setlocal
+C:\Users\raben\AppData\Roaming\MathWorks\MATLAB\R2021a\ros2\win64\venv\Scripts\python.exe "C:/Program Files/MATLAB/R2021a/sys/ros2/win64/ros2/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py" --generator-arguments-file "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/build/tutorial_interfaces/rosidl_generator_py__arguments.json" --typesupport-impls rosidl_typesupport_c";"rosidl_typesupport_fastrtps_c";"rosidl_typesupport_introspection_c
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\OBSIDIAN VAULT\PICAR_ROS2_WS\SRC\MATLAB_MSG_GEN\WIN64\BUILD\TUTORIAL_INTERFACES\CMAKEFILES\3383847F678B66F935386B937D5B17D2\TUTORIAL_INTERFACES__PY.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\OBSIDIAN VAULT\PICAR_ROS2_WS\SRC\MATLAB_MSG_GEN\WIN64\BUILD\TUTORIAL_INTERFACES\TUTORIAL_INTERFACES__PY\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/src/tutorial_interfaces" "-BC:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/build/tutorial_interfaces" --check-stamp-file "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/build/tutorial_interfaces/tutorial_interfaces__py/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

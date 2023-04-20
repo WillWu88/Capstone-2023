@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\CMakeFiles\3476a3d1d2790ee542d4d8e6410aa88e\gps.hpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\CMakeFiles\66779a3de1824990a845cfe94d81fb23\tutorial_interfaces__cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\src\tutorial_interfaces\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Obsidian vault\picar_ros2_ws\src\matlab_msg_gen\win64\build\tutorial_interfaces\CMakeFiles\tutorial_interfaces__cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2E041CBE-7536-326C-A271-60C60C98F4F8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

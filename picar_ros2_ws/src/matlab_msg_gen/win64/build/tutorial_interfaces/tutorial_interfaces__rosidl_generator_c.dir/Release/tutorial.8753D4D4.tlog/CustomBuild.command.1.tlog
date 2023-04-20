@@ -1,0 +1,20 @@
+^C:\OBSIDIAN VAULT\PICAR_ROS2_WS\SRC\MATLAB_MSG_GEN\WIN64\BUILD\TUTORIAL_INTERFACES\CMAKEFILES\6E764BD115F1C7E246A6642475612976\GPS.H.RULE
+setlocal
+C:\Users\raben\AppData\Roaming\MathWorks\MATLAB\R2021a\ros2\win64\venv\Scripts\python.exe "C:/Program Files/MATLAB/R2021a/sys/ros2/win64/ros2/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c" --generator-arguments-file "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/build/tutorial_interfaces/rosidl_generator_c__arguments.json"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\OBSIDIAN VAULT\PICAR_ROS2_WS\SRC\MATLAB_MSG_GEN\WIN64\SRC\TUTORIAL_INTERFACES\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/src/tutorial_interfaces" "-BC:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/build/tutorial_interfaces" --check-stamp-file "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/build/tutorial_interfaces/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

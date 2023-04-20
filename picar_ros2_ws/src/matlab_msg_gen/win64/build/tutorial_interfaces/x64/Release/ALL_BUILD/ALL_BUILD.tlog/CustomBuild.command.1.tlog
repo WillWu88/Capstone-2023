@@ -1,0 +1,10 @@
+^C:\OBSIDIAN VAULT\PICAR_ROS2_WS\SRC\MATLAB_MSG_GEN\WIN64\SRC\TUTORIAL_INTERFACES\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/src/tutorial_interfaces" "-BC:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/build/tutorial_interfaces" --check-stamp-file "C:/Obsidian vault/picar_ros2_ws/src/matlab_msg_gen/win64/build/tutorial_interfaces/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
