@@ -26,8 +26,8 @@ setup(
             'imu = picar_sys.imu_publisher:main',
             'test_sub = picar_sys.test_sub:main',
             'rpm = picar_sys.rpm_publisher:main',
-            'server = picar_sys.rpm_server:main',
-            'gps = picar_sys.gps_publisher:main'
+            'gps = picar_sys.gps_publisher:main',
+            'kf = picar_sys.kalman_node:main'
         ],
     },
 )

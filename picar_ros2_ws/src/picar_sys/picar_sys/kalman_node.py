@@ -8,6 +8,7 @@ from message_filters import TimeSynchronizer, Subscriber
 from filterpy.kalman import KalmanFilter
 from filterpy.common import Q_discrete_white_noise
 import drivers.sensor_noise
+import drivers.kf_constants
 
 class KalmanNode(Node):
 
@@ -19,8 +20,9 @@ class KalmanNode(Node):
 
         self.imu_sub = Subscriber(self, Imu, 'imu_raw') #qos profile always 10
         self.rpm_sub = Subscriber(self, RPM, 'rpm_raw') 
+        # time synchronizer
         self.time_sync = TimeSynchronizer([self.imu_sub, self.rpm_sub], 10)
-        self.time_sync.registerCallback(kf_update)
+        self.time_sync.registerCallback(self.kf_update)
 
         self.f_s = 100.0
         self.kf_x = KalmanFilter(dim_x=2, dim_z=1)
@@ -32,9 +34,10 @@ class KalmanNode(Node):
                      Q_discrete_white_noise(2, 1./self.f_s, var=imu_y_var))
 
         self.kf_psi = KalmanFilter(dim_x=1, dim_z=1)
-        self.kf_init(self.kf_psi, self.f_s, np.array([1]), )
+        self.kf_init(self.kf_psi, self.f_s, np.array([1]), tan_cov,
+                     Q_discrete_white_noise(1, 1./self.f_s, var=imu_psi_var))
 
-        # GPS fusion, expand in the future
+        # GPS fusion, expand after normal kf
         self.gps_sub = self.create_subscription(GPS, 'gps_raw', self.gps_callback, 10)
 
     def kf_init(self, kf, f_s, custom_H, custom_R, custom_Q):
@@ -48,7 +51,22 @@ class KalmanNode(Node):
         kf.Q = custom_Q
 
     def kf_update(self, imu_msg, rpm_msg):
-        pass
+        try:
+            assert imu_msg.header.stamp == rpm.header.stamp
+        except AssertionError:
+            self.get_logger().info("Time stamp mismatch")
+        else:
+            u_x = np.array([[0],[imu_msg.linear_acceleration.x]])
+            z_x = np.array([[0],[rpm_msg.rpmfiltered]])
+            self.kf_x.predict(u=u_x)
+            self.kf_x.update(z_x)
+
+            x_msg = XFiltered()
+            x_msg.header.stamp = self.get_clock().now().to_msg()
+            x_msg.header.frame_id = 'body' 
+            x_msg.xpos = self.kf_x.x[0]
+            x_msg.xpos = self.kf_x.x[1]
+            self.x_pub.publish(x_msg)
 
     def gps_callback(self):
         self.get_logger().info('GPS Update Received')
@@ -58,9 +76,9 @@ class KalmanNode(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    kalman_x = KalmanNode()
+    kalman = KalmanNode()
 
-    rclpy.spin(kalman_x)
+    rclpy.spin(kalman)
 
     #rpm_publisher.destroy_node()
 

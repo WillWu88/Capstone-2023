@@ -1,2 +1,2 @@
 std_msgs/Header header
-float64 velsetpoint
+float64 theta
