@@ -20,6 +20,7 @@ class KalmanNode(Node):
 
         self.f_s = 100.0
         self.kf_x = KalmanFilter(dim_x=2, dim_z=1)
+        self.kf_x.x = np.array([[0.0],[0.0]])
         self.kf_init(self.kf_x, self.f_s, np.array([[0., 1.]]), rpm_cov, 
                      Q_discrete_white_noise(2, 1./self.f_s, var=imu_x_var))
         self.kf_x.inv = np.reciprocal
@@ -45,7 +46,7 @@ class KalmanNode(Node):
         '''default: dt double integrator F=ma process 
             initial covariance set to identity
         '''
-        kf.F = np.array([[1., 1/f_s],[0., 1.]])
+        kf.F = np.array([[1., 1./f_s],[0., 1.]])
         kf.B = np.array([[1./(f_s*f_s*2.)],[1./f_s]]) # imu input
         kf.H = custom_H
         kf.R = custom_R
@@ -59,7 +60,7 @@ class KalmanNode(Node):
             self.get_logger().info("Time stamp mismatch")
         finally:
             u_x = imu_msg.linear_acceleration.x - imu_x_mean
-            v_x_meas = 3.1415*wheel_diam*rpm_msg.rpmfiltered/60. #rpm to linear speed
+            v_x_meas = 3.1415*wheel_diam*rpm_msg.rpmfiltered/60.0 #rpm to linear speed
             self.get_logger().info('Process: %f' % u_x)
             self.get_logger().info('Meas: %f' % v_x_meas)
             z_x = np.array([v_x_meas])
@@ -75,6 +76,8 @@ class KalmanNode(Node):
             x_msg = XFiltered()
             x_msg.header.stamp = self.get_clock().now().to_msg()
             x_msg.header.frame_id = 'body' 
+            self.get_logger().info('X 1: %f' % self.kf_x.x[0])
+            self.get_logger().info('X 2: %f' % self.kf_x.x[1])
             x_msg.xpos = float(self.kf_x.x[0])
             x_msg.xvel = float(self.kf_x.x[1])
             self.x_pub.publish(x_msg)
