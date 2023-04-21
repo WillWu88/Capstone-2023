@@ -3,7 +3,7 @@
 
 # tuning: section
 Q_mult_x = 1000.0
-R_mult_x = 1.0
+R_mult_x = 0.1
 Q_mult_y = 1.0
 R_mult_y = 1.0
 Q_mult_psi = 1.0
