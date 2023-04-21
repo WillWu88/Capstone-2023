@@ -30,19 +30,9 @@ class PidVel(Node):
         timer_period = 0.05 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.msg_count = 0
-
-    def pid_update(self):
-        self.get_logger().info('PID updating')
-        try:
-            assert kfx_sub.header.stamp == kfy_sub.header.stamp
-        except AssertionError:
-            self.get_logger().info("Time stamp mismatch")
-        finally:
-            
-
-
+    
     def timer_callback(self):
-        self.pid_calc.update()
+        self.pid_update()
         msg = populate_message()
         self.publisher.publish(msg)
         self.get_logger().info('Publishing: "%f"' %msg.tau)
@@ -56,6 +46,17 @@ class PidVel(Node):
         # Rest of the message
         msg.tau = 0
         return msg
+    
+    def pid_update(self):
+        self.get_logger().info('PID updating')
+        try:
+            assert kfx_sub.header.stamp == kfy_sub.header.stamp
+        except AssertionError:
+            self.get_logger().info("Time stamp mismatch")
+        finally:
+            pass
+            
+
 
 def main(args=None):
     rcply.init(args=args)
@@ -68,7 +69,5 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
-
 
 

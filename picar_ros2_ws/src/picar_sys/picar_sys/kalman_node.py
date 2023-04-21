@@ -22,7 +22,7 @@ class KalmanNode(Node):
         self.f_s = 100.0
         self.kf_x = KalmanFilter(dim_x=2, dim_z=1)
         self.kf_x.x = np.array([[0.0],[0.0]])
-        self.kf_init(self.kf_x, self.f_s, np.array([[0., 1.]]), rpm_cov, 
+        self.kf_init(self.kf_x, self.f_s, np.array([[0., 1.]]), ms_cov, 
                      Q_discrete_white_noise(2, 1./self.f_s, var=imu_x_var))
         self.kf_x.inv = np.reciprocal # numpy doesn't like 1-d inverse
 
@@ -63,7 +63,9 @@ class KalmanNode(Node):
             self.get_logger().info("Time stamp mismatch")
         finally:
             u_x = imu_msg.linear_acceleration.x - imu_x_mean
-            v_x_meas = 3.1415*wheel_diam*rpm_msg.rpmfiltered/60.0 #rpm to linear speed
+            # v_x_meas = 3.1415*wheel_diam*rpm_msg.rpmfiltered/60.0 #rpm to linear speed
+            v_x_meas = rpm_msg.derivedms - ms_mean
+
             self.get_logger().info('Process: %f' % u_x)
             self.get_logger().info('Meas: %f' % v_x_meas)
             z_x = np.array([v_x_meas])
