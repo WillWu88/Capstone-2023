@@ -21,7 +21,8 @@ if __name__ == "__main__":
     if (not(sample_num)):
         while True:
             new = parseSerial(encoder, last)
-            print(new)
+            if (new > 100):
+                print(new)
             last = new
 
     else:
