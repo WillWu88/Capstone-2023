@@ -3,6 +3,8 @@ import time
 from rclpy.node import Node
 import drivers.rpm_serial_driver
 from tutorial_interfaces.msg import RPM
+from drivers.kf_constants import *
+from drivers.car_param import *
 
 class RpmPublisher(Node):
 
@@ -31,7 +33,10 @@ class RpmPublisher(Node):
         msg.header.stamp = self.get_clock().now().to_msg()
         msg.header.frame_id = '' #empty for now
         msg.rpmraw = 0.0
-        msg.rpmfiltered = self.encoder.update()
+        filtered_rpm = self.encoder.update()
+        msg.rpmfiltered = filtered_rpm
+        msg.derivedms = 3.1415*filtered_rpm*wheel_diam/60.0
+
         return msg
 
 def main(args=None):

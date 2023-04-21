@@ -9,8 +9,14 @@ class EncoderDriver():
     def update(self):
         val = self.port.readline()
         try:
-            self.backup = float(val.decode('utf-8').replace('\r\n', ''))
-            return self.backup
+            new = float(val.decode('utf-8').replace('\r\n', ''))
         except ValueError:
             return self.backup
+        else:
+            # eliminate data spikes
+            if (new >= 3000):
+                return self.backup
+            else:
+                self.backup = new
+                return self.backup
 
