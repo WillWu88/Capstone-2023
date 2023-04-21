@@ -18,17 +18,20 @@ class KalmanNode(Node):
         self.y_pub = self.create_publisher(YFiltered, 'y_filtered', 10)
         self.psi_pub = self.create_publisher(YawFiltered, 'yaw_filtered', 10)
 
+        # x-axis kf config
         self.f_s = 100.0
         self.kf_x = KalmanFilter(dim_x=2, dim_z=1)
         self.kf_x.x = np.array([[0.0],[0.0]])
         self.kf_init(self.kf_x, self.f_s, np.array([[0., 1.]]), rpm_cov, 
                      Q_discrete_white_noise(2, 1./self.f_s, var=imu_x_var))
-        self.kf_x.inv = np.reciprocal
+        self.kf_x.inv = np.reciprocal # numpy doesn't like 1-d inverse
 
+        # y-axis kf
         self.kf_y = KalmanFilter(dim_x=2, dim_z=1)
         self.kf_init(self.kf_y, self.f_s, np.array([[0., 1.]]), gps_cov,
                      Q_discrete_white_noise(2., 1./self.f_s, var=imu_y_var))
 
+        # yaw kf
         self.kf_psi = KalmanFilter(dim_x=1, dim_z=1)
         self.kf_init(self.kf_psi, self.f_s, np.array([[1.]]), tan_cov,
                      imu_psi_var)

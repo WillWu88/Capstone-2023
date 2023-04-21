@@ -22,8 +22,8 @@ kf_init(kf_x, f_s, np.array([[0., 1.]]), np.array([[rpm_cov]]),
 kf_x.inv = np.reciprocal
 
 
-v_x_meas = 1
-u_x = 1
+v_x_meas = 1.0
+u_x = 1.0
 
 while True:
     v_x_meas = v_x_meas + 0.5
