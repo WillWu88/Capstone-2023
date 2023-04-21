@@ -22,5 +22,8 @@ class PidDriver():
         return u_curr
 
     def update(self):
-        pass
+        self.e1 = 0 # change this
+        self.e2 = self.e1
+        self.e3 = self.e2
+        self.u_last = self.u_curr
 

@@ -1,6 +1,14 @@
 # kalman filter constants
 # calculated by Matlab
 
+# tuning: section
+Q_mult_x = 100.0
+R_mult_x = 1.0
+Q_mult_y = 1.0
+R_mult_y = 1.0
+Q_mult_psi = 1.0
+R_mult_psi = 1.0
+
 imu_x_mean = 0.0264
 imu_y_mean = -0.08387
 imu_psi_mean = -1.548
