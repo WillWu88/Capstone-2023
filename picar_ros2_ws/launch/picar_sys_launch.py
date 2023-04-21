@@ -18,4 +18,9 @@ def generate_launch_description():
             executable='gps',
             name='gps'
         ),
+        Node(
+            package='picar_sys',
+            executable='kf',
+            name='kalman_filter'
+        ),
     ])
