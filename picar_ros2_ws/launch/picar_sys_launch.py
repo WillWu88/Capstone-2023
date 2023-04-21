@@ -6,16 +6,16 @@ def generate_launch_description():
         Node(
             package='picar_sys',
             executable='imu',
-            name='picar'
+            name='imu'
         ),
         Node(
             package='picar_sys',
             executable='rpm',
-            name='picar'
+            name='rpm'
         ),
         Node(
             package='picar_sys',
             executable='gps',
-            name='picar'
+            name='gps'
         ),
     ])

@@ -80,7 +80,7 @@ while True:
     #servo7.angle = int(command)
     if (command == "stop"):
         break
-    command = turnAngleToRCAngle(int(command))
+    command = turnAngleToRCAngle(int(command)+3)
     progressiveSet(int(prev), int(command))
     prev = int(command)
 ##for i in range(180):
