@@ -27,7 +27,7 @@ class GpsPublisher(Node):
         msg = GPS()
         #Header
         msg.header.stamp = self.get_clock().now().to_msg()
-        msg.header.frame_id = ''
+        msg.header.frame_id = 'world'
         msg.longdeg = self.gps.data[self.gps.index_dict['long_deg']]
         msg.longmin = self.gps.data[self.gps.index_dict['long_min']]
         msg.latdeg = self.gps.data[self.gps.index_dict['lat_deg']]

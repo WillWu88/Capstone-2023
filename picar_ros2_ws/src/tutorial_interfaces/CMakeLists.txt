@@ -19,7 +19,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     "msg/RPM.msg"
     "msg/GPS.msg"
     "msg/XFiltered.msg"
-    "msg/YFiltered.msg"
     "msg/YawFiltered.msg"
     "msg/VelSetpoint.msg"
     "msg/PoseSetpoint.msg"
