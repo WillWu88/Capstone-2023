@@ -9,6 +9,10 @@ x_jiggle = load('IMU_x_jiggle.mat');
 x_jiggle = x_jiggle.acc_gyro_sample;
 y_jiggle = load('IMU_y_jiggle.mat');
 y_jiggle = y_jiggle.acc_gyro_sample;
+rpm_20 = load('RPM_Data_Apr_21_2023.mat');
+rpm_20 = rpm_20.RPM_sample;
+m_s_20 = rpm_20(2,:)*pi*0.105/60;
+
 
 % lables
 acc_x = 2;
@@ -21,6 +25,8 @@ gyro_z = 7;
 % all data are sampled at 1000Hz for 10 seconds
 f_s = 1000;
 time_stat = 0:1/f_s:10-1/f_s;
+atan_psi = atan(stationary(acc_y, :) ./ stationary(acc_x, :));
+
 %% IMU Behaviroal Analysis
 
 % jiggle data sets are data collected while shaking the IMU back and forth
@@ -51,19 +57,35 @@ plot(time_stat, detrend(stationary(acc_z, :))); % note that z is detrended
 legend('x','y','z'), xlabel('Time'),ylabel('Magnitude (m/s^2)');
 title('Sensor Data at Stationary Equilibrium')
 
+% RPM time series, 10000 samples
+figure;
+plot(rpm_20(2,:))
+title('RPM Time Series')
+
+figure, plot(m_s_20), title('m/s time series')
+
 %% statiscal analysis
 
 % distribution analysis
 figure, histogram(stationary(acc_x,:)), title('X Acc Distribution');
 figure, histogram(stationary(acc_y,:)), title('Y Acc Distribution');
 figure, histogram(stationary(acc_z,:)), title('Z Acc Distribution');
+figure, histogram(rpm_20(2,:)), title('RPM Distribution (20% PWM)');
+figure, histogram(m_s_20), title('linear speed Distribution (20% PWM)')
+figure, histogram(atan_psi), title('Inverse Tangent Psi Measurement')
 
 % gyro readings in deg/s
 sensor_mean = mean(stationary(acc_x:gyro_z,:),2);
+rpm_mean = mean(rpm_20(2,:));
+m_s_mean = mean(m_s_20);
+psi_meas_mean = mean(atan_psi);
 
 % starting Kalman Q & R values
 sensor_cov = cov(transpose(stationary(acc_x:gyro_z,:)));
 sensor_var = diag(sensor_cov);  
+rpm_cov = cov(rpm_20(2,:));
+m_s_cov = cov(m_s_20);
+psi_cov = cov(atan_psi);
 
 %% Kalman filter setup
 f_s = 100; %Hz
