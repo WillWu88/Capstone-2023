@@ -20,7 +20,7 @@ Follow [this](https://abyz.me.uk/rpi/pigpio/download.html)  and [this](https://f
 - [[MPU6050 Configuration]]
 Follow [this](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf) for the register map of the MPU6050.
 - Key registers and their functionalities are listen in the MPU6050 setup.
-
+- x, y, z in m/s, p, q, r (angular velocity) in deg/s
 
 ### Camera
 

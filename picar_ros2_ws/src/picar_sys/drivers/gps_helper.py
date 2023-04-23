@@ -37,6 +37,7 @@ def origin_distance(label, new):
     
 def frame_transfer_x(angle, x, y):
     # first row of the rotation matrix
+    # earth to body frame
     # up z, right hand rotation for positive angle
     # see doc for specific formula
     return cos(angle)*x - sin(angle)*y

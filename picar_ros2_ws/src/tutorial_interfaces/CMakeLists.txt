@@ -24,6 +24,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     "msg/PoseSetpoint.msg"
     "msg/PIDVEL.msg"
     "msg/PIDPOSE.msg"
+    "msg/Origin.msg"
     DEPENDENCIES geometry_msgs 
 )
 

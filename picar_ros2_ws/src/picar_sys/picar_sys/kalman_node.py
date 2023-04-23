@@ -4,7 +4,7 @@ import math
 from rclpy.node import Node
 from std_msgs.msg import String, Header
 from sensor_msgs.msg import Imu
-from tutorial_interfaces.msg import GPS, PoseSetpoint, RPM, VelSetpoint, XFiltered, YawFiltered
+from tutorial_interfaces.msg import GPS, PoseSetpoint, RPM, VelSetpoint, XFiltered, YawFiltered, Origin
 from message_filters import ApproximateTimeSynchronizer, Subscriber
 from filterpy.kalman import KalmanFilter
 from filterpy.common import Q_discrete_white_noise
@@ -49,10 +49,13 @@ class KalmanNode(Node):
 
         # GPS fusion, expand after normal kf
         self.gps_sub = self.create_subscription(GPS, 'gps_raw', self.gps_callback, 10)
+        self.origin_sub = self.create_subscription(Origin, 'origin', self.origin_update, 10)
         self.update_not_used = True # potential race condition?
         self.gps_x = 0.
         self.gps_y = 0.
         self.curr_heading = 0.
+        self.origin_x = 0.
+        self.origin_y = 0.
 
     def kf_init(self, kf, f_s, custom_H, custom_R, 
                 custom_Q, custom_F=None, custom_B=None):
@@ -88,8 +91,8 @@ class KalmanNode(Node):
             # gps fusion, update with GPS if coordinate is available
             if (self.update_not_used):
                 self.get_logger().info('Updating with GPS')
-                x_meas = gps_helper.origin_distance(1, self.gps_x)
-                y_meas = gps_helper.origin_distance(0, self.gps_y)
+                x_meas = gps_helper.approx_distance(self.origin_x, self.gps_x)
+                y_meas = gps_helper.approx_distance(self.origin_y, self.gps_y)
                 pos_meas = gps_helper.frame_transfer_x(self.curr_heading, x_meas, y_meas)
                 self.update_not_used = False
             else: 
@@ -138,6 +141,11 @@ class KalmanNode(Node):
         # update distance measurement
         self.gps_x = new_x
         self.gps_y = new_y
+
+    def origin_update(self, new_origin):
+        self.origin_x = math.copysign(new_origin.latmin, new_origin.latdeg) # north-south, latitude
+        self.origin_y = math.copysign(new_origin.longmin, new_origin.longdeg) # east-west, longitude
+
 
         
 

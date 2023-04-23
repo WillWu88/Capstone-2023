@@ -26,6 +26,7 @@ gyro_z = 7;
 f_s = 1000;
 time_stat = 0:1/f_s:10-1/f_s;
 atan_psi = atan(stationary(acc_y, :) ./ stationary(acc_x, :));
+psi_rad = stationary(gyro_z,:) .*0.0175;
 
 %% IMU Behaviroal Analysis
 
@@ -73,12 +74,14 @@ figure, histogram(stationary(acc_z,:)), title('Z Acc Distribution');
 figure, histogram(rpm_20(2,:)), title('RPM Distribution (20% PWM)');
 figure, histogram(m_s_20), title('linear speed Distribution (20% PWM)')
 figure, histogram(atan_psi), title('Inverse Tangent Psi Measurement')
+figure, histogram(psi_rad), title('Yaw angular velocity (rad/s)')
 
 % gyro readings in deg/s
 sensor_mean = mean(stationary(acc_x:gyro_z,:),2);
 rpm_mean = mean(rpm_20(2,:));
 m_s_mean = mean(m_s_20);
 psi_meas_mean = mean(atan_psi);
+psi_rad_mean = mean(psi_rad);
 
 % starting Kalman Q & R values
 sensor_cov = cov(transpose(stationary(acc_x:gyro_z,:)));
@@ -86,6 +89,7 @@ sensor_var = diag(sensor_cov);
 rpm_cov = cov(rpm_20(2,:));
 m_s_cov = cov(m_s_20);
 psi_cov = cov(atan_psi);
+psi_rad_cov = cov(psi_rad);
 
 %% Kalman filter setup
 f_s = 100; %Hz
