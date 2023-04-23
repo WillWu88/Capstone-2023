@@ -12,8 +12,6 @@ class PidVel(Node):
     def __init__(self):
         # Super constructor
         super().__init__('pid_node')
-        
-        # Pid Driver
 
         # Subscriber
         self.kfx_sub = self.create_subscription(XFiltered, 'x_filtered', 

@@ -12,8 +12,6 @@ class PidPose(Node):
     def __init__(self):
         # Super constructor
         super().__init__('pid_pose_node')
-        
-        # Pid Driver
 
         # Subscriber
         self.kfyaw_sub = self.create_subscription(Heading, 'heading', 

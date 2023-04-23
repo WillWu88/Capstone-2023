@@ -28,7 +28,8 @@ setup(
             'rpm = picar_sys.rpm_publisher:main',
             'gps = picar_sys.gps_publisher:main',
             'kf = picar_sys.kalman_node:main',
-            'pid_vel = picar_sys.pid_node:main'
+            'pid_vel = picar_sys.pid_node:main',
+            'pid_pose = picar_sys.pid_pose_node:main'
         ],
     },
 )
