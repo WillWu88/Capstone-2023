@@ -41,3 +41,10 @@ def frame_transfer_x(angle, x, y):
     # up z, right hand rotation for positive angle
     # see doc for specific formula
     return cos(angle)*x - sin(angle)*y
+
+def frame_transfer_y(angle, x, y):
+    # first row of the rotation matrix
+    # earth to body frame
+    # up z, right hand rotation for positive angle
+    # see doc for specific formula
+    return sin(angle)*x + cos(angle)*y

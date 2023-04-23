@@ -19,12 +19,11 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     "msg/RPM.msg"
     "msg/GPS.msg"
     "msg/XFiltered.msg"
-    "msg/YawFiltered.msg"
     "msg/VelSetpoint.msg"
     "msg/PoseSetpoint.msg"
     "msg/PIDVEL.msg"
     "msg/PIDPOSE.msg"
-    "msg/Origin.msg"
+    "msg/Heading.msg"
     DEPENDENCIES geometry_msgs 
 )
 

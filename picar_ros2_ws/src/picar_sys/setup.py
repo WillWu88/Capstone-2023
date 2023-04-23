@@ -27,7 +27,8 @@ setup(
             'test_sub = picar_sys.test_sub:main',
             'rpm = picar_sys.rpm_publisher:main',
             'gps = picar_sys.gps_publisher:main',
-            'kf = picar_sys.kalman_node:main'
+            'kf = picar_sys.kalman_node:main',
+            'pid_vel = picar_sys.pid_node:main'
         ],
     },
 )

@@ -1,2 +1,2 @@
 std_msgs/Header header
-float64 target
+float64 heading
