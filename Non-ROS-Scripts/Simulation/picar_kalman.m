@@ -12,6 +12,8 @@ y_jiggle = y_jiggle.acc_gyro_sample;
 rpm_20 = load('RPM_Data_Apr_21_2023.mat');
 rpm_20 = rpm_20.RPM_sample;
 m_s_20 = rpm_20(2,:)*pi*0.105/60;
+gps = load('GPS_readings_Apr_23_2023.mat');
+gps = gps.GPS_readings;
 
 
 % lables
@@ -21,6 +23,10 @@ acc_z = 4;
 gyro_x = 5;
 gyro_y = 6;
 gyro_z = 7;
+
+longitude = 1;
+latitude = 2;
+
 
 % all data are sampled at 1000Hz for 10 seconds
 f_s = 1000;
@@ -73,8 +79,9 @@ figure, histogram(stationary(acc_y,:)), title('Y Acc Distribution');
 figure, histogram(stationary(acc_z,:)), title('Z Acc Distribution');
 figure, histogram(rpm_20(2,:)), title('RPM Distribution (20% PWM)');
 figure, histogram(m_s_20), title('linear speed Distribution (20% PWM)')
-figure, histogram(atan_psi), title('Inverse Tangent Psi Measurement')
 figure, histogram(psi_rad), title('Yaw angular velocity (rad/s)')
+figure, histogram(gps(longitude,:)), title('Longitude Distribution');
+figure, histogram(gps(latitude,:)), title('Latitude Distribution');
 
 % gyro readings in deg/s
 sensor_mean = mean(stationary(acc_x:gyro_z,:),2);
@@ -82,6 +89,7 @@ rpm_mean = mean(rpm_20(2,:));
 m_s_mean = mean(m_s_20);
 psi_meas_mean = mean(atan_psi);
 psi_rad_mean = mean(psi_rad);
+gps_mean = mean(gps,2);
 
 % starting Kalman Q & R values
 sensor_cov = cov(transpose(stationary(acc_x:gyro_z,:)));
@@ -90,6 +98,7 @@ rpm_cov = cov(rpm_20(2,:));
 m_s_cov = cov(m_s_20);
 psi_cov = cov(atan_psi);
 psi_rad_cov = cov(psi_rad);
+gps_cov = cov(gps');
 
 %% Kalman filter setup
 f_s = 100; %Hz

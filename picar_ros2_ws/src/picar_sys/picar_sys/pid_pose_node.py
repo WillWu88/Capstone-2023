@@ -1,9 +1,10 @@
 import numpy as np
 import time
-from tutorial_interfaces.msg import Heading, PoseSetPoint, PIDPOSE
+from tutorial_interfaces.msg import Heading, PoseSetpoint, PIDPOSE
 import rclpy
 import drivers.pid_driver
 from drivers.pid_constant import *
+from math import atan, pi
 
 from rclpy.node import Node
 
@@ -14,9 +15,10 @@ class PidPose(Node):
         super().__init__('pid_pose_node')
 
         # Subscriber
+        self.curr_heading = 0.
         self.kfyaw_sub = self.create_subscription(Heading, 'heading', 
                                                 self.heading_callback, 10)
-        self.posesetpoint_sub = self.create_subscription(PoseSet, 'pose_set', 
+        self.posesetpoint_sub = self.create_subscription(PoseSetpoint, 'pose_set',
                                                 self.poseset_callback, 10)
         # Publisher
         self.pid_pose_pub = self.create_publisher(PIDPOSE, 'theta', 10)
