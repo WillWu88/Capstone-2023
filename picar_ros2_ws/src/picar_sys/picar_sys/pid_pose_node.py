@@ -1,6 +1,6 @@
 import numpy as np
 import time
-from tutorial_interfaces.msg import Heading, PoseSetpoint, PIDPOSE
+from tutorial_interfaces.msg import Heading, PoseSetpoint, PIDPOSE, 
 import rclpy
 import drivers.pid_driver
 from drivers.pid_constant import *
@@ -16,8 +16,8 @@ class PidPose(Node):
 
         # Subscriber
         self.curr_heading = 0.
-        self.kfyaw_sub = self.create_subscription(Heading, 'heading', 
-                                                self.heading_callback, 10)
+        self.kfx_sub = self.create_subscription(Xfiltered, 'x_filtered', 
+                                                self.xfiltered_callback, 10)
         self.posesetpoint_sub = self.create_subscription(PoseSetpoint, 'pose_set',
                                                 self.poseset_callback, 10)
         # Publisher
@@ -30,9 +30,18 @@ class PidPose(Node):
 
         self.pid_driver = drivers.pid_driver.PidDriver(Kp_pose, Ki_pose, Kd_pose, 1/timer_period)
 
-    def heading_callback(self, msg):
-        self.pid_driver.curr_state = msg.heading
-        self.get_logger().info('Received heading info: "%f"' %msg.heading)
+    def xfiltered_callback(self, msg):
+        self.theta_calc = atan((msg.ysetpoint-msg.ypos)/(msg.xsetpoint-msg.xpos))
+        try: 
+            self.theta_calc == atan(1/0)
+        except ZeroDivisionError:
+            if(y == 0):
+                self.theta_filtered = 0
+            else:
+                self.theta_filtered = self.theta_calc
+
+        self.pid_driver.curr_state = self.theta_filtered
+        self.get_logger().info('Received heading info: "%f"' %self.theta_filtered)
  
     def poseset_callback(self, msg):
         self.pid_driver.setpoint = msg.yawsetpoint
