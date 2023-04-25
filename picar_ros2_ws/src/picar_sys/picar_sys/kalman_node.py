@@ -28,10 +28,10 @@ class KalmanNode(Node):
         self.discrete_b = np.array([[1./(self.f_s*self.f_s*2.), 1./(self.f_s*self.f_s*2.)],
                                [1./self.f_s, 1./self.f_s]])
 
-        x_b = np.array([[cos(self.heading*math.pi), sin(self.heading*math.pi)],
-                        [cos(self.heading*math.pi), sin(self.heading*math.pi)]])
-        y_b = np.array([[-sin(self.heading*math.pi), cos(self.heading*math.pi)],
-                        [-sin(self.heading*math.pi), cos(self.heading*math.pi)]])
+        x_b = np.array([[cos(self.heading*pi), sin(self.heading*pi)],
+                        [cos(self.heading*pi), sin(self.heading*pi)]])
+        y_b = np.array([[-sin(self.heading*pi), cos(self.heading*pi)],
+                        [-sin(self.heading*pi), cos(self.heading*pi)]])
         self.kf_init(self.kf_x, self.f_s, np.array([[1, 0],[0, 1]]),
                      ms_var * np.array([[gps_x_var, 0.], [0., ms_var]]),
                      Q_mult_x * Q_discrete_white_noise(2, 1./self.f_s, var=imu_x_var),
@@ -39,10 +39,10 @@ class KalmanNode(Node):
 
         # x-axis kf config
         self.f_s = 100.0
-        self.kf_y = KalmanFilter(dim_x=2, dim_z=1)
+        self.kf_y = KalmanFilter(dim_x=2, dim_z=2)
         self.kf_y.x = np.array([[0.0],[0.0]])
-        self.kf_init(self.kf_y, self.f_s, np.array([[1., 0.]]), 
-                     R_mult_y * np.array([[gps_y_var]]),
+        self.kf_init(self.kf_y, self.f_s, np.array([[1., 0.], [0., 1.]]),
+                     R_mult_y * np.array([[gps_y_var, 0.],[0. ms_var]]),
                      Q_mult_y * Q_discrete_white_noise(2, 1./self.f_s, var=imu_y_var),
                      custom_B=np.multiply(y_b, self.discrete_b))
         self.kf_y.inv = np.reciprocal
@@ -107,11 +107,11 @@ class KalmanNode(Node):
                 y_pos_meas = float(self.kf_y.x[0])
             
 
-            v_x_meas = np.array([[x_pos_meas],[vel_meas]])
-            v_y_meas = np.array([[y_pos_meas]])
+            x_meas = np.array([[x_pos_meas],[vel_meas*cos(self.heading*pi)]])
+            y_meas = np.array([[y_pos_meas],[vel_meas*sin(self.heading*pi)]])
 
-            self.kf_x.update(v_x_meas)
-            self.kf_y.update(v_y_meas)
+            self.kf_x.update(x_meas)
+            self.kf_y.update(y_meas)
             x_msg = XFiltered()
             x_msg.header.stamp = self.get_clock().now().to_msg()
             x_msg.header.frame_id = 'mixed' 
@@ -142,10 +142,10 @@ class KalmanNode(Node):
 
     def heading_update(self, heading_msg):
         self.heading = heading_msg.heading
-        x_b = np.array([[cos(self.heading*math.pi), sin(self.heading*math.pi)],
-                        [cos(self.heading*math.pi), sin(self.heading*math.pi)]])
-        y_b = np.array([[-sin(self.heading*math.pi), cos(self.heading*math.pi)],
-                        [-sin(self.heading*math.pi), cos(self.heading*math.pi)]])
+        x_b = np.array([[cos(self.heading*pi), sin(self.heading*pi)],
+                        [cos(self.heading*pi), sin(self.heading*pi)]])
+        y_b = np.array([[-sin(self.heading*pi), cos(self.heading*pi)],
+                        [-sin(self.heading*pi), cos(self.heading*pi)]])
         self.kf_x.B = np.multiply(x_b, self.discrete_b)
         self.kf_y.B = np.multiply(y_b, self.discrete_b)
 
