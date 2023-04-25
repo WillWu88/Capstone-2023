@@ -37,7 +37,7 @@ class KalmanNode(Node):
                      Q_mult_x * Q_discrete_white_noise(2, 1./self.f_s, var=imu_x_var),
                      custom_B=np.multiply(x_b, self.discrete_b))
 
-        # x-axis kf config
+        # y-axis kf config
         self.f_s = 100.0
         self.kf_y = KalmanFilter(dim_x=2, dim_z=2)
         self.kf_y.x = np.array([[0.0],[0.0]])
@@ -47,17 +47,16 @@ class KalmanNode(Node):
                      custom_B=np.multiply(y_b, self.discrete_b))
         self.kf_y.inv = np.reciprocal
 
-
+        # time synchronizer for simultaneous sensor reading
         self.imu_sub = Subscriber(self, Imu, "/imu_raw", qos_profile=10) #qos profile always 10
         self.rpm_sub = Subscriber(self, RPM, "/rpm_raw", qos_profile=10) 
-        # time synchronizer
-        self.time_sync = ApproximateTimeSynchronizer([self.imu_sub, self.rpm_sub], 
+        self.time_sync = ApproximateTimeSynchronizer([self.imu_sub, self.rpm_sub],
                                                      10, 
                                                      0.01)
 
         self.time_sync.registerCallback(self.kf_update)
 
-        # GPS fusion, expand after normal kf
+        # GPS Fusion
         self.gps_sub = self.create_subscription(GPS, 'gps_raw', self.gps_callback, 10)
         self.update_not_used = True # potential race condition?
         self.gps_x = 0.
@@ -98,8 +97,8 @@ class KalmanNode(Node):
             # gps fusion, update with GPS if coordinate is available
             if (self.update_not_used):
                 self.get_logger().info('Updating with GPS')
-                x_pos_meas = approx_distance(origin_x, self.gps_x)
-                y_pos_meas = approx_distance(origin_y, self.gps_y)
+                x_pos_meas = approx_distance_lat(origin_x, self.gps_x)
+                y_pos_meas = approx_distance_lon(origin_y, self.gps_y)
                 self.update_not_used = False
             else: 
                 # use previous state estimate if not available

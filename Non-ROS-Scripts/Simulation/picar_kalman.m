@@ -116,3 +116,10 @@ gps_in = zeros(size(t'));
 
 meas_x_in = [t' gps_in rpm_in];
 
+%% GPS Origin
+
+gps_origin = load('GPS_readings_Apr_24_2023.mat');
+gps_origin = gps_origin.GPS_readings;
+
+lat_org = mean(gps_origin(latitude,:), 2);
+long_org = mean(gps_origin(longitude,:), 2);
