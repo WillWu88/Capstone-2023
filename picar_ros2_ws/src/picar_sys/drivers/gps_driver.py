@@ -3,6 +3,7 @@ import board
 import serial
 
 import adafruit_gps
+from drivers.car_param import *
 
 class GPSDriver():
 
@@ -30,10 +31,10 @@ class GPSDriver():
     def update(self):
         self.gps.update()
         if not self.gps.has_fix:
-            self.data[self.index_dict['lat_deg']] = 0.0
-            self.data[self.index_dict['lat_min']] = 0.0
-            self.data[self.index_dict['long_deg']] = 0.0
-            self.data[self.index_dict['long_min']] = 0.0
+            self.data[self.index_dict['lat_deg']] = 38.
+            self.data[self.index_dict['lat_min']] = ORIGIN_X
+            self.data[self.index_dict['long_deg']] = -90.0
+            self.data[self.index_dict['long_min']] = ORIGIN_Y
         else:
             self.data[self.index_dict['lat_deg']] = float(self.gps.latitude_degrees)
             self.data[self.index_dict['lat_min']] = float(self.gps.latitude_minutes)

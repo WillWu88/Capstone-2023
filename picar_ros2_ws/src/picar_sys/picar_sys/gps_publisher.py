@@ -20,8 +20,9 @@ class GpsPublisher(Node):
         self.gps.update()
         msg = self.populate_message()
         self.publisher.publish(msg)
-        self.get_logger().info('Publishing: "%f"' % msg.longmin)
-        self.msg_count +=1
+        if (not(self.msg_count)):
+            self.get_logger().info('Publishing: "%f"' % msg.longmin)
+            self.msg_count +=1
 
     def populate_message(self) -> GPS:
         msg = GPS()

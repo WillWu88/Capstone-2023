@@ -13,7 +13,6 @@ from drivers.car_param import *
 from drivers.gps_helper import *
 
 class KalmanNode(Node):
-
     def __init__(self):
         super().__init__('kalman_filter_x')
         self.state_pub = self.create_publisher(XFiltered, 'x_filtered', 10) 
@@ -25,27 +24,24 @@ class KalmanNode(Node):
         self.f_s = 100.0
         self.kf_x = KalmanFilter(dim_x=2, dim_z=2)
         self.kf_x.x = np.array([[0.0],[0.0]])
-        self.discrete_b = np.array([[1./(self.f_s*self.f_s*2.), 1./(self.f_s*self.f_s*2.)],
-                               [1./self.f_s, 1./self.f_s]])
+        self.discrete_b = np.array([[1./(self.f_s*self.f_s*2.)],
+                                   [1./self.f_s]])
 
-        x_b = np.array([[cos(self.heading*pi), sin(self.heading*pi)],
-                        [cos(self.heading*pi), sin(self.heading*pi)]])
-        y_b = np.array([[-sin(self.heading*pi), cos(self.heading*pi)],
-                        [-sin(self.heading*pi), cos(self.heading*pi)]])
+        x_b = np.array([[cos(self.heading*pi), sin(self.heading*pi)]])
+        y_b = np.array([[-sin(self.heading*pi), cos(self.heading*pi)]])
         self.kf_init(self.kf_x, self.f_s, np.array([[1, 0],[0, 1]]),
-                     ms_var * np.array([[gps_x_var, 0.], [0., ms_var]]),
+                     R_mult_x * np.array([[gps_x_var, 0.], [0., ms_var]]),
                      Q_mult_x * Q_discrete_white_noise(2, 1./self.f_s, var=imu_x_var),
-                     custom_B=np.multiply(x_b, self.discrete_b))
+                     custom_B=np.dot(self.discrete_b, x_b))
 
         # y-axis kf config
         self.f_s = 100.0
         self.kf_y = KalmanFilter(dim_x=2, dim_z=2)
         self.kf_y.x = np.array([[0.0],[0.0]])
         self.kf_init(self.kf_y, self.f_s, np.array([[1., 0.], [0., 1.]]),
-                     R_mult_y * np.array([[gps_y_var, 0.],[0. ms_var]]),
+                     R_mult_y * np.array([[gps_y_var, 0.],[0., ms_var]]),
                      Q_mult_y * Q_discrete_white_noise(2, 1./self.f_s, var=imu_y_var),
-                     custom_B=np.multiply(y_b, self.discrete_b))
-        self.kf_y.inv = np.reciprocal
+                     custom_B=np.dot(self.discrete_b, y_b))
 
         # time synchronizer for simultaneous sensor reading
         self.imu_sub = Subscriber(self, Imu, "/imu_raw", qos_profile=10) #qos profile always 10
@@ -59,8 +55,10 @@ class KalmanNode(Node):
         # GPS Fusion
         self.gps_sub = self.create_subscription(GPS, 'gps_raw', self.gps_callback, 10)
         self.update_not_used = True # potential race condition?
-        self.gps_x = 0.
-        self.gps_y = 0.
+        self.ORIGIN_X = 64.8417 #north-south direction, latitude
+        self.ORIGIN_Y = -30.2358 #east west-direction, longitude
+        self.gps_x = self.ORIGIN_X
+        self.gps_y = self.ORIGIN_Y
 
     def kf_init(self, kf, f_s, custom_H, custom_R, 
                 custom_Q, custom_F=None, custom_B=None):
@@ -80,27 +78,29 @@ class KalmanNode(Node):
         kf.Q = custom_Q
 
     def kf_update(self, imu_msg, rpm_msg):
-        self.get_logger().info('Kalman updating')
+        # self.get_logger().info('Kalman updating')
         try:
             assert imu_msg.header.stamp == rpm_msg.header.stamp
         except AssertionError:
-            self.get_logger().info("Time stamp mismatch")
+            # self.get_logger().info("Time stamp mismatch")
+            pass
         finally:
             u_x = imu_msg.linear_acceleration.x - imu_x_mean
             u_y = imu_msg.linear_acceleration.y - imu_y_mean
             process_meas = np.array([[u_x], [u_y]])
 
             self.kf_x.predict(u=process_meas)
-            self.kf_x.predict(u=process_meas)
+            self.kf_y.predict(u=process_meas)
             vel_meas = rpm_msg.derivedms - ms_mean
 
             # gps fusion, update with GPS if coordinate is available
             if (self.update_not_used):
-                self.get_logger().info('Updating with GPS')
-                x_pos_meas = approx_distance_lat(origin_x, self.gps_x)
-                y_pos_meas = approx_distance_lon(origin_y, self.gps_y)
+                self.get_logger().warning('Updating with GPS')
+                x_pos_meas = approx_distance_lat(self.ORIGIN_X, self.gps_x)
+                y_pos_meas = approx_distance_lon(self.ORIGIN_Y, self.gps_y)
                 self.update_not_used = False
             else: 
+                self.get_logger().warning('Updating without GPS')
                 # use previous state estimate if not available
                 x_pos_meas = float(self.kf_x.x[0])
                 y_pos_meas = float(self.kf_y.x[0])
@@ -124,12 +124,22 @@ class KalmanNode(Node):
             x_msg.ybvel = float(frame_transfer_y(self.heading, 
                                                             self.kf_x.x[1], 
                                                             self.kf_y.x[1]))
+            x_msg.debug_gps_x = self.gps_x
+            x_msg.debug_gps_y = self.gps_y
+            x_msg.debug_gps_x_org = x_pos_meas
+            x_msg.debug_gps_y_org = y_pos_meas
             self.state_pub.publish(x_msg)
             
             
-            self.get_logger().info('Kalman X Updated')
+            # self.get_logger().info('Kalman X Updated')
 
     def gps_callback(self, gps_msg):
+        self.get_logger().warning('Updating GPS')
+        # if (gps_msg.latmin < 63 or gps_msg.longmin > -29):
+        #     self.get_logger().warning('Removing Outlier')
+        #     # remove outliers
+        #     return 
+        # else:
         self.update_not_used = True;
         # get new gps reading
         new_x = math.copysign(gps_msg.latmin, gps_msg.latdeg) # north-south, latitude
@@ -141,12 +151,10 @@ class KalmanNode(Node):
 
     def heading_update(self, heading_msg):
         self.heading = heading_msg.heading
-        x_b = np.array([[cos(self.heading*pi), sin(self.heading*pi)],
-                        [cos(self.heading*pi), sin(self.heading*pi)]])
-        y_b = np.array([[-sin(self.heading*pi), cos(self.heading*pi)],
-                        [-sin(self.heading*pi), cos(self.heading*pi)]])
-        self.kf_x.B = np.multiply(x_b, self.discrete_b)
-        self.kf_y.B = np.multiply(y_b, self.discrete_b)
+        x_b = np.array([[cos(self.heading*pi), sin(self.heading*pi)]])
+        y_b = np.array([[-sin(self.heading*pi), cos(self.heading*pi)]])
+        self.kf_x.B = np.dot(self.discrete_b, x_b)
+        self.kf_y.B = np.dot(self.discrete_b, y_b)
 
         
 

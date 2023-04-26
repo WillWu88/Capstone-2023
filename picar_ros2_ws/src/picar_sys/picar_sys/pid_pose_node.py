@@ -1,6 +1,6 @@
 import numpy as np
 import time
-from tutorial_interfaces.msg import Heading, PoseSetpoint, PIDPOSE, 
+from tutorial_interfaces.msg import Heading, PoseSetpoint, PIDPOSE
 import rclpy
 import drivers.pid_driver
 from drivers.pid_constant import *

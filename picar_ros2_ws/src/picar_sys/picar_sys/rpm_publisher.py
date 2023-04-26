@@ -24,8 +24,9 @@ class RpmPublisher(Node):
         msg = self.populate_message()
 
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%f"' % msg.rpmfiltered)
-        self.msg_count += 1
+        if (not(self.msg_count)):
+            self.get_logger().info('Publishing: "%f"' % msg.rpmfiltered)
+            self.msg_count += 1
 
     def populate_message(self):
         msg = RPM()

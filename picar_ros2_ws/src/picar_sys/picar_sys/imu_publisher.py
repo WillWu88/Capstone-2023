@@ -21,8 +21,9 @@ class IMUPublisher(Node):
         msg = self.populate_message()
 
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%d"' % self.msg_count)
-        self.msg_count += 1
+        if (not(self.msg_count)):
+            self.get_logger().info('Publishing: "%d"' % self.msg_count)
+            self.msg_count += 1
 
     def populate_message(self) -> Imu:
         # put current imu data into msg

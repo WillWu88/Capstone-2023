@@ -3,8 +3,8 @@
 import math
 
 # tuning: section
-Q_mult_x = 5000.0
-R_mult_x = 0.005
+Q_mult_x = 1.
+R_mult_x = 1.
 Q_mult_y = 1.0
 R_mult_y = 1.0
 
