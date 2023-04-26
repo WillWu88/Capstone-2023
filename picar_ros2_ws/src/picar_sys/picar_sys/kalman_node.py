@@ -30,7 +30,7 @@ class KalmanNode(Node):
         x_b = np.array([[cos(self.heading*pi), sin(self.heading*pi)]])
         y_b = np.array([[-sin(self.heading*pi), cos(self.heading*pi)]])
         self.kf_init(self.kf_x, self.f_s, np.array([[1, 0],[0, 1]]),
-                     R_mult_x * np.array([[gps_x_var, 0.], [0., ms_var]]),
+                     R_mult_x * np.array([[gps_x_var, 0.], [0., ms_var * ms_x_mult]]),
                      Q_mult_x * Q_discrete_white_noise(2, 1./self.f_s, var=imu_x_var),
                      custom_B=np.dot(self.discrete_b, x_b))
 
