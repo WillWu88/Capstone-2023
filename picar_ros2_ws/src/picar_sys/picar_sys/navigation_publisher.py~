@@ -37,31 +37,20 @@ class Navigation(Node):
         match msg_type:
             case "pose_set_point":
                 msg = PoseSetpoint()
-                msg.xsetpoint = self.xsetpoint_callback()
-                msg.ysetpoint = self.ysetpoint_callback()
+                msg.xsetpoint = 0.
+                msg.ysetpoint = 0.
             case 'vel_set_point':
                 msg = VelSetpoint()
-                msg.target = self.velsetpoint_callback()
+                msg.target =
             case 'heading':
                 msg = Heading()
-                msg.heading = self.heading_callback()
+                msg.heading = 
         # Header
         msg.header.stamp = self.get_clock().now().to_msg()
         msg.header.frame_id = 'body'
         return msg
     
-    def xsetpoint_callback(self):
-        pass
-
-    def ysetpoint_callback(self):
-        pass
-
-    def velsetpoint_callback(self):
-        pass
-
-    def heading_callback(self):
-        pass
-
+    def 
 
 
 def main(args=None):
