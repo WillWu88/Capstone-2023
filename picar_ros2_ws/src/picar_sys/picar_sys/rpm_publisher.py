@@ -13,7 +13,7 @@ class RpmPublisher(Node):
         super().__init__('rpm_publisher')
         self.size = 5
         self.encoder = drivers.rpm_serial_driver.EncoderDriver()
-        self.publisher_ = self.create_publisher(RPM, 'rpm_raw', 10) # history depth of 10
+        self.publisher = self.create_publisher(RPM, 'rpm_raw', 10) # history depth of 10
         timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.msg_count = 0
@@ -23,7 +23,7 @@ class RpmPublisher(Node):
         self.encoder.update()
         msg = self.populate_message()
 
-        self.publisher_.publish(msg)
+        self.publisher.publish(msg)
         if (not(self.msg_count)):
             self.get_logger().info('Publishing: "%f"' % msg.rpmfiltered)
             self.msg_count += 1

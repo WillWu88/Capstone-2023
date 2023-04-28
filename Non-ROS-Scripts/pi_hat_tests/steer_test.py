@@ -25,7 +25,7 @@ def progressiveSet(currAngle,newAngle):
 def turnAngleToRCAngle(angle):
     while angle > maxAngle or angle < -maxAngle:
         angle = int(input("Please put in a valid angle"))
-    angle = angle + maxAngle
+    angle = angle + maxAngle + 3
     if(angle == maxAngle):
         angle = 90
     elif(angle < maxAngle):
@@ -80,7 +80,7 @@ while True:
     #servo7.angle = int(command)
     if (command == "stop"):
         break
-    command = turnAngleToRCAngle(int(command)+3)
+    command = turnAngleToRCAngle(int(command))
     progressiveSet(int(prev), int(command))
     prev = int(command)
 ##for i in range(180):

@@ -20,8 +20,15 @@ class KalmanNode(Node):
         self.heading_sub = self.create_subscription(Heading, 'heading', self.heading_update, 10)
         self.heading = 0.
 
-        # x-axis kf config
         self.f_s = 100.0
+        # local frame linear kalman filter for speed tracking
+        self.kf_localx = KalmanFilter(dim_x=1, dim_z=1)
+        self.kf_localx.x = np.array([[0.0]])
+        self.kf_init(self.kf_localx, self.f_s, np.array([[1.]]), 
+                     0.005 * ms_var, 5000.0 * imu_x_var, custom_F = np.array([[1.]]), 
+                     custom_B=np.array([[1./self.f_s]]))
+
+        # x-axis kf config
         self.kf_x = KalmanFilter(dim_x=2, dim_z=2)
         self.kf_x.x = np.array([[0.0],[0.0]])
         self.discrete_b = np.array([[1./(self.f_s*self.f_s*2.)],
@@ -35,11 +42,10 @@ class KalmanNode(Node):
                      custom_B=np.dot(self.discrete_b, x_b))
 
         # y-axis kf config
-        self.f_s = 100.0
         self.kf_y = KalmanFilter(dim_x=2, dim_z=2)
         self.kf_y.x = np.array([[0.0],[0.0]])
         self.kf_init(self.kf_y, self.f_s, np.array([[1., 0.], [0., 1.]]),
-                     R_mult_y * np.array([[gps_y_var, 0.],[0., ms_var]]),
+                     R_mult_y * np.array([[gps_y_var, 0.],[0., ms_var * ms_y_mult]]),
                      Q_mult_y * Q_discrete_white_noise(2, 1./self.f_s, var=imu_y_var),
                      custom_B=np.dot(self.discrete_b, y_b))
 
@@ -91,6 +97,7 @@ class KalmanNode(Node):
 
             self.kf_x.predict(u=process_meas)
             self.kf_y.predict(u=process_meas)
+            self.kf_localx.predict(u=u_x)
             vel_meas = rpm_msg.derivedms - ms_mean
 
             # gps fusion, update with GPS if coordinate is available
@@ -111,6 +118,7 @@ class KalmanNode(Node):
 
             self.kf_x.update(x_meas)
             self.kf_y.update(y_meas)
+            self.kf_localx.update(vel_meas)
             x_msg = XFiltered()
             x_msg.header.stamp = self.get_clock().now().to_msg()
             x_msg.header.frame_id = 'mixed' 
@@ -118,9 +126,7 @@ class KalmanNode(Node):
             x_msg.xvel = float(self.kf_x.x[1])
             x_msg.ypos = float(self.kf_y.x[0])
             x_msg.yvel = float(self.kf_y.x[1])
-            x_msg.xbvel = float(frame_transfer_x(self.heading, 
-                                                            self.kf_x.x[1], 
-                                                            self.kf_y.x[1]))
+            x_msg.xbvel = float(self.kf_localx.x[0])
             x_msg.ybvel = float(frame_transfer_y(self.heading, 
                                                             self.kf_x.x[1], 
                                                             self.kf_y.x[1]))

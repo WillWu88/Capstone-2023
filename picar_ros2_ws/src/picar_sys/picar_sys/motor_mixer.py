@@ -1,17 +1,25 @@
 import rclpy
 from rclpy.node import Node
 import drivers.motor_driver
+from tutorial_interfaces.msg import PIDVEL
 
 class MotorMixer(Node):
 
     def __init__(self):
-        super().__init__('motor mixer')
+        super().__init__('motor_mixer')
         self.driver = drivers.motor_driver.MotorDriver()
-        self.command_sub = self.create_subscription()
-        timer_period = 0.01  # seconds
-        self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.msg_count = 0
+        self.command_sub = self.create_subscription(PIDVEL, 'tau', self.tau_callback, 10)
+        self.tau = 0.
+        self.curr = 0.
+        self.timer = self.create_timer(0.005, self.timer_callback)
 
+    def tau_callback(self, msg):
+        self.tau = msg.tau
+
+    def timer_callback(self):
+        if (self.curr != self.tau):
+            self.driver.Motor_Speed(self.tau)
+            self.curr = self.tau
 
 
 def main(args=None):

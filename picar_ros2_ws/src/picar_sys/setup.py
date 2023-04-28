@@ -25,12 +25,15 @@ setup(
         'console_scripts': [
             'imu = picar_sys.imu_publisher:main',
             'test_sub = picar_sys.test_sub:main',
+            'test_pub = picar_sys.test_pub:main',
             'rpm = picar_sys.rpm_publisher:main',
             'gps = picar_sys.gps_publisher:main',
             'kf = picar_sys.kalman_node:main',
             'pid_vel = picar_sys.pid_node:main',
             'pid_pose = picar_sys.pid_pose_node:main',
-            'nav = picar_sys.navigation_publisher:main'
+            'nav = picar_sys.navigation_publisher:main',
+            'motor = picar_sys.motor_mixer:main',
+            'steer = picar_sys.servo_node:main',
         ],
     },
 )

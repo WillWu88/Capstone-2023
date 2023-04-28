@@ -36,30 +36,36 @@ class Navigation(Node):
     def timer_callback(self):
         # Set point
         msg_setpoint  = self.populate_message(self, 'pose_set_point')
-        self.publisher_.publish(msg_setpoint)
+        self.pose_pub.publish(msg_setpoint)
 
         # Vel set point
         msg_velsetpoint = self.populate_message(self, 'vel_set_point')
-        self.publisher_.publish(msg_velsetpoint)
+        self.vel_pub.publish(msg_velsetpoint)
 
         # Heading
         msg_heading = self.populate_message(self,'heading')
-        self.publisher_.publish(msg_heading)
+        self.heading_pub.publish(msg_heading)
 
     
     def kf_callback(self,msg):
         self.curr_x = msg.xpos
         self.curr_y = msg.ypos
         if self.car_arrived():
-            point_q.pop[0]
-            match is_turn_q.pop[0]:
-                case is_turn_status["heading_change"]:
-                    self.heading -= 0.5
-                    self.turn_now = False
-                case is_turn_status["turn"]:
-                    self.turn_now = True
-                case _:
-                    self.turn_now = False
+            if not(len(point_q)):
+                # we have reached our last point
+                raise SystemExit
+                return
+            point_q.pop(0)
+            ret  = is_turn_q.pop(0);
+            heading_change = is_turn_status["heading_change"]
+            turn = is_turn_status["turn"]
+            if (ret == heading_change):
+                self.heading -= 0.5
+                self.turn_now = False
+            elif (ret == turn):
+                self.turn_now = True
+            else:
+                self.turn_now = False
 
     def populate_message(self, msg_type):
         match msg_type:
@@ -102,7 +108,7 @@ class Navigation(Node):
                 if self.heading % 1 != 0:
                     self.frac = copysign(pi/2, self.curr_x - ORIGIN_X)
                 else:
-                    self.frac = copysign(pi/2, self.curr_y - ORIGIN_Y)
+                    self.frac = copysign(pi/2, -1.*(self.curr_y - ORIGIN_Y))
             return atan(self.frac)
         else:
             return self.turn_angle 

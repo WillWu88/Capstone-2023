@@ -37,8 +37,8 @@ class PidDriver():
 
     def saturation(self, u):
         # allow for negative inputs
-        if (abs(u) >= sat_val):
-            return math.copysign(sat_val, u)
+        if (abs(u) >= self.sat_val):
+            return math.copysign(self.sat_val, u)
         else:
             return u
 

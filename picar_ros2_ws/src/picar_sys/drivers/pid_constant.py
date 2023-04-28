@@ -1,4 +1,4 @@
-Kp_vel = 0.
+Kp_vel = 0.069
 Ki_vel = 0.
 Kd_vel = 0.
 

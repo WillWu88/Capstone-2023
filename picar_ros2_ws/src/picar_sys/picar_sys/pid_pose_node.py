@@ -49,7 +49,7 @@ class PidPose(Node):
     
     def timer_callback(self):
         msg = populate_message()
-        self.publisher.publish(msg)
+        self.pid_pose_pub.publish(msg)
         self.get_logger().info('Publishing: "%f"' %msg.theta)
         self.msg_count +=1
         self.pid_driver.update()
