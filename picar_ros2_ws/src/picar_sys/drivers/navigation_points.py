@@ -3,7 +3,7 @@
 origin_lat_deg = 38.0
 origin_lat_min = 64.8417
 origin_long_deg = -90.0
-origin_long_min = 30.2358
+origin_long_min = -30.2358
 
 is_turn_status = {
     "turn": 0,
@@ -19,8 +19,10 @@ coord_label = {
 point_q = []
 is_turn_q = []
 
-p1_lat_min = 64.8646
-p1_long_min = -30.2166
+p1_lat_min = 64.8670
+p1_long_min = -30.2331
+# p1_lat_min = 15.
+# p1_long_min = -0.5
 point_q.append([p1_lat_min, p1_long_min])
 is_turn_q.append(is_turn_status["turn"])
 

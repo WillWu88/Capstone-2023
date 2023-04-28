@@ -2,6 +2,6 @@ Kp_vel = 0.069
 Ki_vel = 0.
 Kd_vel = 0.
 
-Kp_pose = 0.
-Ki_pose = 0.
+Kp_pose = 0.0005
+Ki_pose = 0.04
 Kd_pose = 0.

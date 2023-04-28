@@ -17,5 +17,15 @@ def generate_launch_description():
             package='picar_sys',
             executable='gps',
             name='gps'
+        ),
+        Node(
+            package='picar_sys',
+            executable='kf',
+            name='kf'
+        ),
+        Node(
+            package='picar_sys',
+            executable='test_pub',
+            name='test_pub'
         )
     ])

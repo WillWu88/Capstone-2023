@@ -4,20 +4,24 @@ from math import atan
 from tutorial_interfaces.msg import VelSetpoint, PIDVEL, PIDPOSE, PoseSetpoint, XFiltered
 from drivers.navigation_points import *
 from drivers.car_param import *
+from drivers.navigation_points import *
+from drivers.gps_helper import *
 
 class TestPub(Node):
 
     def __init__(self):
         super().__init__('test_pub')
         #self.test_pub = self.create_publisher(PIDVEL, 'tau', 10)
-        #self.test_pub2 = self.create_publisher(VelSetpoint, 'vel_setpoint', 10)
-        self.test_pub3 = self.create_publisher(PIDPOSE, 'theta', 10)
+        self.test_pub2 = self.create_publisher(VelSetpoint, 'vel_setpoint', 10)
+        #self.test_pub3 = self.create_publisher(PIDPOSE, 'theta', 10)
         self.test_pub4 = self.create_publisher(PoseSetpoint, 'pose_setpoint', 10)
         timer_period = 0.1
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.x_sub = self.create_subscription(XFiltered, 'x_filtered', self.x_sub_callback, 10)
-        self.curr_x = ORIGIN_X
-        self.curr_y = ORIGIN_Y
+        self.curr_x = 0
+        self.curr_y = 0
+        self.x_target = 15. * 8.
+        self.y_target = 0.
 
     def timer_callback(self):
         # msg = PIDVEL()
@@ -25,22 +29,32 @@ class TestPub(Node):
         # msg.header.frame_id = 'body'
         # msg.header.stamp = self.get_clock().now().to_msg()
         # self.test_pub.publish(msg)
-        # msg2 = VelSetpoint()
+        msg2 = VelSetpoint()
+        if (self.curr_x > 0 and self.curr_x - self.x_target < 0.1):
+            msg2.target = 0.
+        else:
+            msg2.target = 2.5
         # msg2.target = 2.5
-        # msg2.header.frame_id = 'body'
-        # msg2.header.stamp = self.get_clock().now().to_msg()
-        # self.test_pub2.publish(msg2)
+
+        msg2.header.frame_id = 'body'
+        msg2.header.stamp = self.get_clock().now().to_msg()
+        self.test_pub2.publish(msg2)
+
         # msg3 = PIDPOSE()
         # msg3.theta = 28.
         # msg3.header.frame_id = 'body'
         # msg3.header.stamp = self.get_clock().now().to_msg()
         # self.test_pub3.publish(msg3)
-        # self.get_logger().info('Publishing setpoint')
+
         msg4 = PoseSetpoint()
         msg4.header.frame_id = 'body'
         msg4.xsetpoint = p1_lat_min
         msg4.ysetpoint = p1_long_min
-        msg4.yawsetpoint = atan((self.curr_y - ORIGIN_Y) / (ORIGIN_X - self.curr_x))
+        try:
+            msg4.yawsetpoint = atan((self.y_target - self.curr_y)/(self.curr_x - self.x_target))
+        except ZeroDivisionError:
+            msg4.yawsetpoint = 0
+        msg4.heading = 0.
         msg4.header.stamp = self.get_clock().now().to_msg()
         self.test_pub4.publish(msg4)
         self.get_logger().info('Publishing setpoint')
@@ -48,6 +62,9 @@ class TestPub(Node):
     def x_sub_callback(self, msg):
         self.curr_x = msg.xpos
         self.curr_y = msg.ypos
+
+        # self.curr_x = ORIGIN_X + self.curr_x * 4 / 1852
+        # self.curr_y = ORIGIN_Y + self.curr_y * 4 / 1852 * 0.788
 
 
 

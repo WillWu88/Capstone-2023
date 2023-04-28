@@ -3,7 +3,7 @@ import rclpy
 from math import atan, copysign, pi, degrees
 from rclpy.node import Node
 import drivers.navigation_driver
-from tutorial_interfaces import VelSetpoint, Heading, PoseSetpoint, XFiltered
+from tutorial_interfaces.msg import VelSetpoint, Heading, PoseSetpoint, XFiltered, GPS
 from drivers.car_param import *
 from drivers.navigation_points import *
 from drivers.gps_helper import *
@@ -18,7 +18,8 @@ class Navigation(Node):
         self.vel_pub = self.create_publisher(VelSetpoint, 'vel_setpoint', 10)
         
         # Subscribers
-        self.kf_sub = self.create_subscription(XFiltered, 'x_filtered', self.kf_callback, 10)
+        # self.kf_sub = self.create_subscription(XFiltered, 'x_filtered', self.kf_callback, 10)
+        self.gps_sub = self.create_subscription(GPS, 'gps_raw', self.kf_callback, 10)
         self.origin_x = ORIGIN_X
         self.origin_y = ORIGIN_Y
         self.curr_x = ORIGIN_X
@@ -35,21 +36,21 @@ class Navigation(Node):
 
     def timer_callback(self):
         # Set point
-        msg_setpoint  = self.populate_message(self, 'pose_set_point')
+        msg_setpoint  = self.populate_message('pose_set_point')
         self.pose_pub.publish(msg_setpoint)
 
         # Vel set point
-        msg_velsetpoint = self.populate_message(self, 'vel_set_point')
+        msg_velsetpoint = self.populate_message('vel_set_point')
         self.vel_pub.publish(msg_velsetpoint)
 
         # Heading
-        msg_heading = self.populate_message(self,'heading')
+        msg_heading = self.populate_message('heading')
         self.heading_pub.publish(msg_heading)
 
     
     def kf_callback(self,msg):
-        self.curr_x = msg.xpos
-        self.curr_y = msg.ypos
+        self.curr_x = msg.latmin
+        self.curr_y = copysign(msg.longmin, msg.longdeg)
         if self.car_arrived():
             if not(len(point_q)):
                 # we have reached our last point
@@ -74,6 +75,7 @@ class Navigation(Node):
                 msg.xsetpoint = self.xsetpoint_callback()
                 msg.ysetpoint = self.ysetpoint_callback()
                 msg.yawsetpoint = self.yawsetpoint_callback()
+                msg.heading = self.heading
                 msg.header.frame_id = 'earth'
             case 'vel_set_point':
                 msg = VelSetpoint()
@@ -101,14 +103,15 @@ class Navigation(Node):
         if not(self.turn_now):
             try:
                 if self.heading % 1 != 0:
-                    self.frac = ((self.curr_x - ORIGIN_X)/(self.curr_y - ORIGIN_Y))
+                    self.frac = (self.curr_x - point_q[0][coord_label["lat"]])/(self.curr_y - point_q[0][coord_label["long"]])
                 else:
-                    self.frac = -1/((self.curr_x - ORIGIN_X)/(self.curr_y - ORIGIN_Y))
+                    self.frac = -1/((self.curr_x - point_q[0][coord_label["lat"]])
+                                /(self.curr_y - point_q[0][coord_label["long"]]))
             except ZeroDivisionError:
                 if self.heading % 1 != 0:
-                    self.frac = copysign(pi/2, self.curr_x - ORIGIN_X)
+                    self.frac = 0
                 else:
-                    self.frac = copysign(pi/2, -1.*(self.curr_y - ORIGIN_Y))
+                    self.frac = 0
             return atan(self.frac)
         else:
             return self.turn_angle 
@@ -118,8 +121,8 @@ class Navigation(Node):
 
 
     def car_arrived(self):
-        x_dist = approx_distance_lat(self.origin_x, self.curr_x) ** 2
-        y_dist = approx_distance_lat(self.origin_y, self.curr_y) ** 2
+        x_dist = approx_distance_lat(point_q[0][coord_label["lat"]], self.curr_x) ** 2
+        y_dist = approx_distance_lon(point_q[0][coord_label["long"]], self.curr_y) ** 2
                    
         if (x_dist + y_dist) < 0.2:
             return True
@@ -137,5 +140,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
-
