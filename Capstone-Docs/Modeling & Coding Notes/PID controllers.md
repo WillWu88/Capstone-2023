@@ -1,3 +1,6 @@
+#programming #ros2 #acc #sensor 
+
+A [[ROS2]] node that publishes raw IMU readings
 ## 1. Discrete implementation
 
 The overall control function in continuous time can be defined as:

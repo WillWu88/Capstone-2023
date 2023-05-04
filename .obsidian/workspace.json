@@ -6,7 +6,7 @@
       {
         "id": "a5d280206f787d70",
         "type": "tabs",
-        "dimension": 64.52702702702703,
+        "dimension": 36.317567567567565,
         "children": [
           {
             "id": "31d688bf3e2e3414",
@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Modeling & Coding Notes/PiCar Modelling and Simulation.md",
+                "file": "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
                 "mode": "source",
                 "source": false
               }
@@ -50,7 +50,7 @@
       {
         "id": "d38c518226c00e30",
         "type": "tabs",
-        "dimension": 35.47297297297297,
+        "dimension": 63.682432432432435,
         "children": [
           {
             "id": "de37bf562005f544",
@@ -108,11 +108,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 275.5
+    "width": 275.5,
+    "collapsed": true
   },
   "right": {
     "id": "e9676d15770ba9d8",
@@ -191,10 +193,12 @@
   },
   "active": "02a8431015e89047",
   "lastOpenFiles": [
-    "Capstone-Docs/Modeling & Coding Notes/PiCar Modelling and Simulation.md",
-    "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
-    "Capstone-Docs/Modeling & Coding Notes/PID controllers.md",
     "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md",
+    "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
+    "Capstone-Docs/Modeling & Coding Notes/PiCar Modelling and Simulation.md",
+    "Untitled.canvas",
+    "2023-05-04.md",
+    "Capstone-Docs/Modeling & Coding Notes/PID controllers.md",
     "Capstone-Docs/Modeling & Coding Notes/Controller and Estimator Design.md",
     "Capstone-Docs/Study Topics/Kalman Filter.md",
     "Capstone-Docs/Physical Components/System Identification.md",
@@ -228,8 +232,6 @@
     "Capstone-Docs/Design Overview.md",
     "Capstone-Docs/Study Topics/Robot_Localization Package.md",
     "Capstone-Docs/To Delete Later.md",
-    "Capstone-Docs/Study Section.md",
-    "Capstone-Docs/Project Timeline.md",
-    "Capstone-Docs/Project Description.md"
+    "Capstone-Docs/Study Section.md"
   ]
 }
