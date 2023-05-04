@@ -4,17 +4,15 @@ A [[ROS2]] node that publishes both raw and filtered RPM sensor readings
 
 ## I. Driver Design
 
+The challenge of designing the encoder node is dealing with the synchronicity of the raw readings and the publishing frequency. Our encoder driver reads the time passed between each magnet triggers, and from this it calculates the speed of the car. Therefore, the RPM calculation is always irregular and depends on how fast the car is going.  However, the publishing frequency of the node itself is regulated at 200Hz. To solve this problem we looked at two different options: creating an action node, or using a micro-controller. 
+
 ### 1. Action Server
 
-The ROS node is implemented as an action server. We chose this implementation for the following reasons:
-- The action server follows an asynchronous communication model. The service sends a request, and the server processes the request and sends responses. 
-- Two server offers two types of response: feedback and result. We can design the feedback to be instantaneous while the server processes responses. 
-- This asynchronous nature is perfect for our RPM sampling process, which needs to execute the timing process before returning a reading
+The action server follows an asynchronous communication model. The service sends a request, the server processes it and sends responses. In our case, the encoder node would request the rpm reading, our driver processes it and sends it back.
 
-Because the RPM object uses a circular buffer to filter results, we can return the moving average and the latest result stored in the buffer instanteously as the "feedback". When the server finishes, it returns the updated data. 
+The action server offers two types of response: feedback and result. We can design the feedback to be instantaneous while the server processes responses. We thought to have the feeback be the raw RPM reading, and the reponse is the moving average RPM. Because the RPM object uses a circular buffer to filter results, we can return the moving average and the latest result stored in the buffer instanteously as the "feedback". When the server finishes, it returns the updated data. 
 
-Though this model works in theory, it also significant drawbacks. Unlike the IMU, this data is not instanteous. Though the feedback is instantaneous, it is an older version of the reading. The server does not start sampling unless the client tells it to. If we integrate the client into a mision-critical node such as the controller, the node will suffer from significant lag and inaccruate reading.
-
+Though this model works in theory, it also significant drawbacks. Unlike the IMU, this data is not instanteous. Though the feedback is instantaneous, it is an older version of the reading. The server does not start sampling unless the client tells it to. If we integrate the client into a mision-critical node such as the controller, the node will suffer from significant lag and inaccruate reading. This option did not resolve our issue. We moved on to using a micro-controller.
 
 ### 2. Alternative: micro-controller co-pilot
 
@@ -50,13 +48,63 @@ from tutorial_interfaces.msg import Rpmmsg
 super().__init__('rpm_publisher')
 ```
 - Creating a publisher object which is in charge of creating the topic and publishing the messages. We used the public method of `rclcpp:Node`: `create_publisher` which returns the `rclcpp:: Publisher` object. 
+``` python
+self.publisher = self.create_publisher(RPM, 'rpm_raw', 10) # history depth of 10
+```
 - Creating a `timer_callback` which increments the message field and call the publisher method at a frequency of 200Hz (so every 0.005s) to publish the message. The message is then published to the console with `get_logger().info` method.
+```python
+def timer_callback(self):
+
+        self.encoder.update()
+
+        msg = self.populate_message()
+
+        self.publisher.publish(msg)
+
+        if (not(self.msg_count)):
+
+            self.get_logger().info('Publishing: "%f"' % msg.rpmfiltered)
+
+            self.msg_count += 1
+```
 - Creating a `populate_message` function which assigns data to the `header`, `rpmraw` and `rpmfiltered` data types.
+```python
+def populate_message(self):
+
+        msg = RPM()
+
+        # Header
+
+        msg.header.stamp = self.get_clock().now().to_msg()
+
+        msg.header.frame_id = '' #empty for now
+
+		# RPM readings messages
+
+        msg.rpmraw = 0.0
+
+        filtered_rpm = self.encoder.update()
+
+        msg.rpmfiltered = filtered_rpm
+
+        msg.derivedms = 3.1415*filtered_rpm*wheel_diam/60.0
+```
 - Defining the main function which initializes the rclpy library and "spins" the node using the `rclpy.spin` method to call the callbacks.
+```python
+def main(args=None):
+
+    rclpy.init(args=args)
+    
+    rpm_publisher = RpmPublisher()
+
+    rclpy.spin(rpm_publisher)  
+
+    rclpy.shutdown()
+```
 
 ## Appendix: References
 
 - [rclpy reference](https://docs.ros2.org/foxy/api/rclpy/index.html)
 - [[Python Notes]]
 - [Bool Message Type](https://github.com/ros2/common_interfaces/blob/rolling/std_msgs/msg/Bool.msg)
-- 
+- [Writing an action server in python](https://docs.ros.org/en/foxy/Tutorials/Intermediate/Writing-an-Action-Server-Client/Py.html)

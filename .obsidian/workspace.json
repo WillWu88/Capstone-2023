@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Design Overview.md",
+                "file": "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
                 "mode": "source",
                 "source": false
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Design Overview.md",
+                "file": "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Design Overview.md",
+                "file": "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/Design Overview.md"
+                "file": "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md"
               }
             }
           }
@@ -177,27 +177,37 @@
   },
   "active": "f46acb00661090ac",
   "lastOpenFiles": [
-    "picar_ros2_ws/src/picar_sys/picar_sys/pid_node.py~",
-    "picar_ros2_ws/src/picar_sys/picar_sys/pid_node.py",
-    "picar_ros2_ws/src/picar_sys/picar_sys/pid_subscriber.py",
-    "Non-ROS-Scripts/KF/kalmanScratch.py",
-    "Non-ROS-Scripts/KF",
-    "picar_ros2_ws/src/tutorial_interfaces/msg/YawFiltered.msg",
-    "picar_ros2_ws/src/tutorial_interfaces/msg/YFiltered.msg",
-    "picar_ros2_ws/src/tutorial_interfaces/msg/XFiltered.msg",
-    "picar_ros2_ws/src/tutorial_interfaces/msg/VelSetpoint.msg",
-    "picar_ros2_ws/src/tutorial_interfaces/msg/PoseSetpoint.msg",
-    "picar_ros2_ws/src/tutorial_interfaces/msg/GPS.msg",
+    "picar_ros2_ws/test_bags/straight_stop/rosbag2_2023_04_28-13_21_03_0.db3",
+    "picar_ros2_ws/test_bags/straight_stop/metadata.yaml",
+    "picar_ros2_ws/test_bags/straight_stop",
+    "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_26_38/rosbag2_2023_04_28-13_26_38_0.db3",
+    "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_26_38/metadata.yaml",
+    "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_26_38",
+    "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_25_26/rosbag2_2023_04_28-13_25_26_0.db3",
+    "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_25_26/metadata.yaml",
+    "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_25_26",
+    "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_24_10/rosbag2_2023_04_28-13_24_10_0.db3",
+    "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_24_10/metadata.yaml",
+    "Capstone-Docs/Modeling & Coding Notes/RPM I2C Peripheral.md",
+    "Capstone-Docs/Modeling & Coding Notes/Python Notes.md",
+    "Capstone-Docs/Modeling & Coding Notes/PiCar Modelling and Simulation.md",
     "Capstone-Docs/Modeling & Coding Notes/Outdoor Testing.md",
-    "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
-    "Capstone-Docs/Modeling & Coding Notes/Sensor SetUp.md",
+    "Capstone-Docs/Modeling & Coding Notes/Numpy.md",
+    "Capstone-Docs/Modeling & Coding Notes/Navigation Design.md",
     "Capstone-Docs/Modeling & Coding Notes/MPU6050 Configuration.md",
+    "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md",
     "Capstone-Docs/Modeling & Coding Notes/I2C.md",
     "Capstone-Docs/Modeling & Coding Notes/Controller and Estimator Design.md",
     "Capstone-Docs/Modeling & Coding Notes/CAN.md",
     "Capstone-Docs/Modeling & Coding Notes/Bus Communication Protocols.md",
+    "Capstone-Docs/Figures/Center_of_gravity.jpg",
+    "Capstone-Docs/Figures/IMU-Reading.png",
+    "Capstone-Docs/Figures/IMU-Reading-acc.png",
+    "Capstone-Docs/Figures/IMU-Reading-gyro.png",
+    "Capstone-Docs/Design Overview.md",
+    "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
+    "Capstone-Docs/Modeling & Coding Notes/Sensor SetUp.md",
     "Capstone-Docs/Physical Components/System Identification.md",
-    "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md",
     "Capstone-Docs/Study Topics/Robot_Localization Package.md",
     "Capstone-Docs/Study Topics/Kalman Filter.md",
     "Capstone-Docs/To Delete Later.md",
@@ -205,13 +215,7 @@
     "Capstone-Docs/Project Timeline.md",
     "Capstone-Docs/Project Description.md",
     "Capstone-Docs/Landing.md",
-    "Capstone-Docs/Design Overview.md",
     "Capstone-Docs/Study Topics/SLAM.md",
-    "Capstone-Docs/Study Topics/Sensor Fusion Notes.md",
-    "Capstone-Docs/Study Topics/ROS2.md",
-    "Capstone-Docs/Study Topics/Linux Command Line.md",
-    "Capstone-Docs/Study Topics/Feedback Systems.md",
-    "Capstone-Docs/Study Topics/Extended Kalman Filter.md",
-    "Capstone-Docs/Study Topics/Estimators.md"
+    "Capstone-Docs/Study Topics/Sensor Fusion Notes.md"
   ]
 }
