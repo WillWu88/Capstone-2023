@@ -6,6 +6,7 @@
       {
         "id": "a5d280206f787d70",
         "type": "tabs",
+        "dimension": 64.52702702702703,
         "children": [
           {
             "id": "31d688bf3e2e3414",
@@ -13,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Study Topics/Kalman Filter.md",
+                "file": "Capstone-Docs/Modeling & Coding Notes/PiCar Modelling and Simulation.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,18 +26,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
+                "file": "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "02a8431015e89047",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Capstone-Docs/Modeling & Coding Notes/PID controllers.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       },
       {
         "id": "d38c518226c00e30",
         "type": "tabs",
+        "dimension": 35.47297297297297,
         "children": [
           {
             "id": "de37bf562005f544",
@@ -98,7 +112,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 275.5
   },
   "right": {
     "id": "e9676d15770ba9d8",
@@ -114,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
+                "file": "Capstone-Docs/Modeling & Coding Notes/PID controllers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
+                "file": "Capstone-Docs/Modeling & Coding Notes/PID controllers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md"
+                "file": "Capstone-Docs/Modeling & Coding Notes/PID controllers.md"
               }
             }
           }
@@ -175,8 +189,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f46acb00661090ac",
+  "active": "02a8431015e89047",
   "lastOpenFiles": [
+    "Capstone-Docs/Modeling & Coding Notes/PiCar Modelling and Simulation.md",
+    "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
+    "Capstone-Docs/Modeling & Coding Notes/PID controllers.md",
+    "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md",
+    "Capstone-Docs/Modeling & Coding Notes/Controller and Estimator Design.md",
+    "Capstone-Docs/Study Topics/Kalman Filter.md",
+    "Capstone-Docs/Physical Components/System Identification.md",
+    "Capstone-Docs/Physical Components/Sensors & Electronics.md",
+    "Capstone-Docs/Physical Components/PiTop Redesign.md",
+    "Capstone-Docs/Modeling & Coding Notes/SPI.md",
+    "Capstone-Docs/Modeling & Coding Notes/Sensor SetUp.md",
     "picar_ros2_ws/test_bags/straight_stop/rosbag2_2023_04_28-13_21_03_0.db3",
     "picar_ros2_ws/test_bags/straight_stop/metadata.yaml",
     "picar_ros2_ws/test_bags/straight_stop",
@@ -187,17 +212,13 @@
     "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_25_26/metadata.yaml",
     "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_25_26",
     "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_24_10/rosbag2_2023_04_28-13_24_10_0.db3",
-    "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_24_10/metadata.yaml",
     "Capstone-Docs/Modeling & Coding Notes/RPM I2C Peripheral.md",
     "Capstone-Docs/Modeling & Coding Notes/Python Notes.md",
-    "Capstone-Docs/Modeling & Coding Notes/PiCar Modelling and Simulation.md",
     "Capstone-Docs/Modeling & Coding Notes/Outdoor Testing.md",
     "Capstone-Docs/Modeling & Coding Notes/Numpy.md",
     "Capstone-Docs/Modeling & Coding Notes/Navigation Design.md",
     "Capstone-Docs/Modeling & Coding Notes/MPU6050 Configuration.md",
-    "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md",
     "Capstone-Docs/Modeling & Coding Notes/I2C.md",
-    "Capstone-Docs/Modeling & Coding Notes/Controller and Estimator Design.md",
     "Capstone-Docs/Modeling & Coding Notes/CAN.md",
     "Capstone-Docs/Modeling & Coding Notes/Bus Communication Protocols.md",
     "Capstone-Docs/Figures/Center_of_gravity.jpg",
@@ -205,17 +226,10 @@
     "Capstone-Docs/Figures/IMU-Reading-acc.png",
     "Capstone-Docs/Figures/IMU-Reading-gyro.png",
     "Capstone-Docs/Design Overview.md",
-    "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
-    "Capstone-Docs/Modeling & Coding Notes/Sensor SetUp.md",
-    "Capstone-Docs/Physical Components/System Identification.md",
     "Capstone-Docs/Study Topics/Robot_Localization Package.md",
-    "Capstone-Docs/Study Topics/Kalman Filter.md",
     "Capstone-Docs/To Delete Later.md",
     "Capstone-Docs/Study Section.md",
     "Capstone-Docs/Project Timeline.md",
-    "Capstone-Docs/Project Description.md",
-    "Capstone-Docs/Landing.md",
-    "Capstone-Docs/Study Topics/SLAM.md",
-    "Capstone-Docs/Study Topics/Sensor Fusion Notes.md"
+    "Capstone-Docs/Project Description.md"
   ]
 }
