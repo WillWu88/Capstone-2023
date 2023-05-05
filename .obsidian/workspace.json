@@ -9,55 +9,55 @@
         "dimension": 71.75141242937853,
         "children": [
           {
-            "id": "2ccc14fc7b5201aa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "02a8431015e89047",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Capstone-Docs/Modeling & Coding Notes/PID controllers.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "a553e1870dafa183",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Modeling & Coding Notes/GPS Node.md",
+                "file": "Capstone-Docs/To Delete Later.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "d4a946a593a38015",
+            "id": "618ff03f0a409ab9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Capstone-Docs/Physical Components/System Identification.md",
+                "file": "Capstone-Docs/Design Overview.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "08a2034caad92da9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Capstone-Docs/Modeling & Coding Notes/Navigation Design.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "eee68eee183241d8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Capstone-Docs/Modeling & Coding Notes/PiCar Modelling and Simulation.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "d38c518226c00e30",
@@ -148,7 +148,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capstone-Docs/Modeling & Coding Notes/GPS Node.md",
+                "file": "Capstone-Docs/Design Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -165,7 +165,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capstone-Docs/Modeling & Coding Notes/GPS Node.md",
+                "file": "Capstone-Docs/Design Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capstone-Docs/Modeling & Coding Notes/GPS Node.md"
+                "file": "Capstone-Docs/Design Overview.md"
               }
             }
           }
@@ -209,29 +209,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a553e1870dafa183",
+  "active": "618ff03f0a409ab9",
   "lastOpenFiles": [
-    "Capstone-Docs/Modeling & Coding Notes/PID controllers.md",
-    "Capstone-Docs/Modeling & Coding Notes/RPM Publisher.md",
-    "Capstone-Docs/Modeling & Coding Notes/GPS Node.md",
-    "Capstone-Docs/Figures/GPS_set_points/origin gps.png",
-    "Capstone-Docs/Physical Components/System Identification.md",
-    "Figures/GPS_set_points/origin.png.md",
-    "Figures/GPS_set_points",
-    "Capstone-Docs/Modeling & Coding Notes/Outdoor Testing.md",
-    "Capstone-Docs/Modeling & Coding Notes/RPM I2C Peripheral.md",
-    "Capstone-Docs/Modeling & Coding Notes/IMU Publisher.md",
-    "Capstone-Docs/To Delete Later.md",
+    "Capstone-Docs/Modeling & Coding Notes/Navigation Design.md",
+    "Capstone-Docs/Design Overview.md",
+    "Capstone-Docs/Figures/ROS2_nodes_diagram.jpeg",
+    "Capstone-Docs/Figures/Weighing_picar.jpg",
     "Capstone-Docs/Modeling & Coding Notes/PiCar Modelling and Simulation.md",
-    "Capstone-Docs/Figures/Accelerometer histogram (z-axis).png",
-    "Untitled.canvas",
-    "2023-05-04.md",
-    "Capstone-Docs/Modeling & Coding Notes/Controller and Estimator Design.md",
-    "Capstone-Docs/Study Topics/Kalman Filter.md",
+    "Capstone-Docs/To Delete Later.md",
+    "Capstone-Docs/Study Section.md",
+    "Capstone-Docs/Project Timeline.md",
+    "Capstone-Docs/Project Description.md",
+    "Capstone-Docs/Landing.md",
+    "Capstone-Docs/Study Topics/SLAM.md",
+    "Capstone-Docs/Study Topics/Extended Kalman Filter.md",
+    "Capstone-Docs/Physical Components/System Identification.md",
     "Capstone-Docs/Physical Components/Sensors & Electronics.md",
     "Capstone-Docs/Physical Components/PiTop Redesign.md",
-    "Capstone-Docs/Modeling & Coding Notes/SPI.md",
-    "Capstone-Docs/Modeling & Coding Notes/Sensor SetUp.md",
+    "Capstone-Docs/Modeling & Coding Notes/GPS Node.md",
+    "Capstone-Docs/Modeling & Coding Notes/Controller and Estimator Design.md",
+    "Capstone-Docs/Modeling & Coding Notes/CAN.md",
+    "Capstone-Docs/Modeling & Coding Notes/Bus Communication Protocols.md",
+    "Capstone-Docs/Figures/rpm_sensor.jpg",
+    "Capstone-Docs/Figures/Capstone ROS2 nodes diagram.jpeg",
+    "Capstone-Docs/Figures/Lidar.png",
+    "README.md",
+    "Figures/ROS2 nodes diagram.png",
+    "2023-05-04.md",
+    "Untitled.canvas",
+    "Capstone-Docs/Modeling & Coding Notes/PID controllers.md",
+    "Capstone-Docs/Modeling & Coding Notes/MPU6050 Configuration.md",
+    "Capstone-Docs/Study Topics/Actuators.md",
+    "Capstone-Docs/Study Topics/Alpha-Beta-Gamma Filter.md",
+    "Capstone-Docs/Study Topics/Estimators.md",
+    "Capstone-Docs/Study Topics/Feedback Systems.md",
+    "Capstone-Docs/Figures/GPS_set_points/origin gps.png",
+    "Figures/GPS_set_points",
+    "Capstone-Docs/Figures/Accelerometer histogram (z-axis).png",
     "picar_ros2_ws/test_bags/straight_stop/rosbag2_2023_04_28-13_21_03_0.db3",
     "picar_ros2_ws/test_bags/straight_stop/metadata.yaml",
     "picar_ros2_ws/test_bags/straight_stop",
@@ -241,17 +255,7 @@
     "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_25_26/rosbag2_2023_04_28-13_25_26_0.db3",
     "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_25_26/metadata.yaml",
     "picar_ros2_ws/test_bags/rosbag2_2023_04_28-13_25_26",
-    "Capstone-Docs/Modeling & Coding Notes/Python Notes.md",
-    "Capstone-Docs/Modeling & Coding Notes/Numpy.md",
-    "Capstone-Docs/Modeling & Coding Notes/Navigation Design.md",
-    "Capstone-Docs/Modeling & Coding Notes/MPU6050 Configuration.md",
-    "Capstone-Docs/Modeling & Coding Notes/I2C.md",
-    "Capstone-Docs/Modeling & Coding Notes/CAN.md",
-    "Capstone-Docs/Modeling & Coding Notes/Bus Communication Protocols.md",
     "Capstone-Docs/Figures/Center_of_gravity.jpg",
-    "Capstone-Docs/Figures/IMU-Reading.png",
-    "Capstone-Docs/Figures/IMU-Reading-acc.png",
-    "Capstone-Docs/Figures/IMU-Reading-gyro.png",
-    "Capstone-Docs/Design Overview.md"
+    "Capstone-Docs/Figures/IMU-Reading.png"
   ]
 }
