@@ -1,6 +1,7 @@
-#programming #ros2 #acc #sensor 
+#programming #ros2 
 
-A [[ROS2]] node that publishes raw IMU readings
+A [[ROS2]] node that reads Kalman filter estimations and navigation set points and publishes the controlled input of the system.
+
 ## 1. Discrete implementation
 
 The overall control function in continuous time can be defined as:
@@ -12,7 +13,7 @@ $$u(t_k) = u(t_{k-1}) + (K_p + K_i\Delta t + K_d/\Delta t)e(t_k) + (-K_p - 2K_d/
 - $K_p$ is the proportional gain.
 - $K_i$ is the integral gain.
 - $K_d$ is the derivative gain.
-- $\Delta t$ is the interval time which we defined as the same as the publishing frequency.
+- $\Delta t$ is the interval time which we defined as the same as the publishing frequency (for both PID nodes 20Hz).
 - $e(t_k)$ is the current error.
 - $e(t_{k-1})$ and $e(t_{k-2})$ are the previous errors.
 - $u(t_k)$ is the current state.
@@ -48,9 +49,13 @@ def __init__(self, Ki, Kp, Kd, delta, sat_val):
 
         self.sat_val = sat_val
 ```
-In a separate function, we have the current error function which is the current set point substracted by the current reading. Once this calculation is done, we can implement the discrete algorithm and return the corrected state. Finally, all of the parameters will be updated accordingly.
+In a separate function, we have the current error function which is the current set point substracted by the current reading:
+$$e(t_k) = w_{setpoint} - w_{estimation}$$
+Once this calculation is done, we can implement the discrete algorithm and return the corrected state. Finally, all of the parameters will be updated accordingly.
 
 ## 3. ROS nodes
+
+Two PID nodes were created, one that publishes the velocity input $\tau$ and the steering angle $\theta$. See [[PiCar Modelling and Simulation]] for the detailed state-space model of the car.
 
 ### a. Velocity PID publisher
 
@@ -105,7 +110,7 @@ def populate_message(self):
         return msg
 ```
 
-### b. Steering PID publisher
+### b. Steering angle PID publisher
 
 Important aspects include:
 - Calling the class's constructor and give the node a name:
@@ -131,3 +136,6 @@ Where $\hat{x}$ and $\hat{y}$ are the next set points the car must go to. $\bar{
 - A `timer_callback` which increments the message field and call the publisher method at a frequency of 20Hz (so every 0.05s) to publish the message. It will also call back on the driver functions to calculate the current state.
 - A `populate_message` function which will assign the correct information to each messages accordingly.
 
+## References:
+- [Matlab Vehicle Modelling](https://www.mathworks.com/help/ident/ug/modeling-a-vehicle-dynamics-system.html)
+- [Coriolis Force](https://en.wikipedia.org/wiki/Coriolis_force)
