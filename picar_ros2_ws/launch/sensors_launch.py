@@ -23,9 +23,4 @@ def generate_launch_description():
             executable='kf',
             name='kf'
         ),
-        Node(
-            package='picar_sys',
-            executable='test_pub',
-            name='test_pub'
-        )
     ])

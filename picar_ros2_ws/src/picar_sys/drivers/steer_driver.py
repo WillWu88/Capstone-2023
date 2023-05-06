@@ -15,7 +15,7 @@ class ServoDriver():
         self.setAngle(0)
        
     def progressiveSet(self, newAngle):
-        target = self.turnAngleToRCAngle(newAngle) + 3
+        target = self.turnAngleToRCAngle(newAngle) - 3
         while self.currAngle != newAngle:
             if(self.currAngle > newAngle):
                 self.currAngle -= 1
@@ -25,7 +25,7 @@ class ServoDriver():
             time.sleep(0.01)
 
     def turnAngleToRCAngle(self, angle):
-        angle = angle + self.maxAngle
+        angle = angle + self.maxAngle + 3
         if(angle == self.maxAngle):
             angle = 90
         elif(angle < self.maxAngle):

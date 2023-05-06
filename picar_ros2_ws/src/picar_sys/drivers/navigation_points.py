@@ -19,8 +19,8 @@ coord_label = {
 point_q = []
 is_turn_q = []
 
-p1_lat_min = 64.8670
-p1_long_min = -30.2331
+p1_lat_min = 64.8664
+p1_long_min = -30.2264
 # p1_lat_min = 15.
 # p1_long_min = -0.5
 point_q.append([p1_lat_min, p1_long_min])
