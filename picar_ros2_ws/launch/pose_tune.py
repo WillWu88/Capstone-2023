@@ -25,7 +25,7 @@ def generate_launch_description():
         ),
         Node(
             package='picar_sys',
-            executable='nav',
+            executable='test_pub',
             name='navigator'
         ),
     ])

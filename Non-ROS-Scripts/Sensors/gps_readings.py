@@ -69,6 +69,7 @@ if __name__ == "__main__":
         # We have a fix! (gps.has_fix is true)
         # Print out details about the fix like location, date, etc.
             print("Collecting")
+            print(sample_count)
             log_data[index_dict["long"], sample_count] = gps.longitude_minutes
             log_data[index_dict["lat"], sample_count] = gps.latitude_minutes
 

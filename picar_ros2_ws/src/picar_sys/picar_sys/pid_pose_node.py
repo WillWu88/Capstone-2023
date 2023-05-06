@@ -43,12 +43,13 @@ class PidPose(Node):
                 theta_calc = atan(1/(self.y_set-msg.ypos)*(self.x_set-msg.xpos))
         except ZeroDivisionError:
             if self.heading % 1 == 0:
-                theta_calc = copysign(pi/2, (msg.ypos - msg.ysetpoint))
+                theta_calc = 0
             else:
-                theta_calc = copysign(pi/2, (msg.xsetpoint - msg.xpos))
+                theta_calc = 0
 
         self.pid_driver.curr_state = theta_calc
         self.pid_driver.error_calc()
+        self.pid_driver.e1 += 0.5
  
     def poseset_callback(self, msg):
         self.pid_driver

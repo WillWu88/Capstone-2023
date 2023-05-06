@@ -18,12 +18,10 @@ We began this process with [[PiCar Modelling and Simulation]], where we ulilized
 
 After completing our model, we began getting basic code to run on each of our sensors ([[Sensor SetUp]]). Including trying to take notes on the different configuration specs when the sample code exposed the configuration ([[MPU6050 Configuration]]).
 
--- need help with this explanation
 Running the sensor code exposed the need for [[Bus Communication Protocols]] knowledge. Specifically with utilizing [[I2C]], but also looking into [[CAN]] and [[SPI]].
 
-Then we started on looking into the relevant filters for our Picar. Specifically, we hoped to have a [[Controller and Estimator Design]] for our Picar implementation in the form of a PID and Kalman Filter. We spent time not only with the theory and how it applied to our car, but in working out the math as it pertained to our model.
+Then we started on looking into the relevant filters for our Picar. Specifically, we hoped to have a [[Controller and Estimator Design]] for our Picar implementation in the form of a PID and Kalman Filter. We spent time not only with the theory and how it applied to our car, but in working out the math as it pertained to our model. Our overall ROS2 design can be visualized by the following block diagram:
 
--- this could probably also use help
-We then began moving our python scripts for the sensors into ROS2 and creating nodes. This process is documented in [[Python Notes]] and [[IMU Publisher]]. The package [[Numpy]] was useful for creating the python scripts. 
+![ROS2 nodes design](Figures/ROS2_nodes_diagram.jpeg)
 
 We finally shifted our focus to [[Navigation Design]] as our final goal for our Picar is for it to be able to autonomously navigate a test course. In order to focus and test our design we began conducting [[Outdoor Testing]], this allows us to better see the successes and faults of our system at different points of time. The outdoor testing process is also critical for data collection and successfully filtering the data.

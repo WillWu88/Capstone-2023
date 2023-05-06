@@ -45,6 +45,7 @@ class PidVel(Node):
         # Header
         msg.header.stamp = self.get_clock().now().to_msg()
         msg.header.frame_id = 'body'
+        msg.debug_error = self.pid_driver.e1
         # Rest of the message
         msg.tau = float(self.pid_driver.pid_calc())
         return msg

@@ -26,7 +26,7 @@ class Navigation(Node):
         self.curr_y = ORIGIN_Y
         self.heading = 0.
         self.turn_now = False
-        self.turn_angle = -4;
+        self.turn_angle = 4;
 
         # heading is in radians, but servo control is in degrees
 
@@ -49,8 +49,10 @@ class Navigation(Node):
 
     
     def kf_callback(self,msg):
+        # self.curr_x = msg.xpos*0.002160 + 64.8417 # hard code fix later. Reverse approx distance
+        # self.curr_y = -30.2358 + 0.00274*msg.ypos
         self.curr_x = msg.latmin
-        self.curr_y = copysign(msg.longmin, msg.longdeg)
+        self.curr_y = -msg.longmin
         if self.car_arrived():
             if not(len(point_q)):
                 # we have reached our last point

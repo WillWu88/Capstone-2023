@@ -20,8 +20,8 @@ class TestPub(Node):
         self.x_sub = self.create_subscription(XFiltered, 'x_filtered', self.x_sub_callback, 10)
         self.curr_x = 0
         self.curr_y = 0
-        self.x_target = 15. * 8.
-        self.y_target = 0.
+        self.x_target = point_q[0][0]
+        self.y_target = point_q[0][1]
 
     def timer_callback(self):
         # msg = PIDVEL()
@@ -29,12 +29,12 @@ class TestPub(Node):
         # msg.header.frame_id = 'body'
         # msg.header.stamp = self.get_clock().now().to_msg()
         # self.test_pub.publish(msg)
-        msg2 = VelSetpoint()
-        if (self.curr_x > 0 and self.curr_x - self.x_target < 0.1):
-            msg2.target = 0.
-        else:
-            msg2.target = 2.5
-        # msg2.target = 2.5
+        if (self.curr_x > 0 and self.curr_x - self.x_target < 0.003):
+            point_q.pop(0)
+            self.x_target = point_q[0][0]
+            self.y_target = point_q[0][1]
+
+        msg2.target = 2.5
 
         msg2.header.frame_id = 'body'
         msg2.header.stamp = self.get_clock().now().to_msg()

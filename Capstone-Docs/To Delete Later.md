@@ -28,6 +28,14 @@
 - [ ] Commands and links for Pi nano Encoder setup
 - [ ] Commands and links for when sensor fusion begins
 - [ ] Document sensor fusion/kalman filter process
+- [x] GPS node
+- [x] RPM node
+- [x] PID controller nodes
+- [ ] IMU publisher
+- [ ] KF node
+- [ ] Motor driver
+- [ ] Servo driver
+- [ ] Navigation publisher
 - [x] Outside Testing Process
 
 ## Notes of things to clean up
