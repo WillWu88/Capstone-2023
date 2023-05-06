@@ -13,6 +13,8 @@ gps_x_mult = 0.05
 gps_y_mult = 0.015
 ms_x_mult = 0.5
 ms_y_mult = 0.5
+local_ms_mult = 1
+local_imu_x_mult = 1
 
 imu_x_mean = 0.0264
 imu_y_mean = -0.0839

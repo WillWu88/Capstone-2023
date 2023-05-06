@@ -25,7 +25,7 @@ class PidVel(Node):
         timer_period = 0.05 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
-        self.max_ctrl = 0.30 # maximum of 20% pwm
+        self.max_ctrl = 0.30 # maximum of 30% pwm
         self.pid_driver = drivers.pid_driver.PidDriver(Kp_vel, Ki_vel, Kd_vel, 1/timer_period, self.max_ctrl)
 
     def xfiltered_callback(self, msg):

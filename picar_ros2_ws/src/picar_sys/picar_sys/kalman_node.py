@@ -25,8 +25,8 @@ class KalmanNode(Node):
         self.kf_localx = KalmanFilter(dim_x=1, dim_z=1)
         self.kf_localx.x = np.array([[0.0]])
         self.kf_init(self.kf_localx, self.f_s, np.array([[1.]]), 
-                     0.005 * ms_var, 5000.0 * imu_x_var, custom_F = np.array([[1.]]), 
-                     custom_B=np.array([[1./self.f_s]]))
+                     local_ms_mult * ms_var, local_imu_x_mult * imu_x_var,
+                     custom_F = np.array([[1.]]), custom_B=np.array([[1./self.f_s]]))
 
         # x-axis kf config
         self.kf_x = KalmanFilter(dim_x=2, dim_z=2)

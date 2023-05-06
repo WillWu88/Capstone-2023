@@ -98,6 +98,8 @@ rpm_cov = cov(rpm_20(2,:));
 m_s_cov = cov(m_s_20);
 psi_cov = cov(atan_psi);
 psi_rad_cov = cov(psi_rad);
+%gps(latitude,:) = gps(latitude,:) * 1852/4;
+%gps(longitude,:) = gps(longitude,:) * 1852/4 * cos(38 * pi / 180);
 gps_cov = cov(gps');
 
 %% Kalman filter setup

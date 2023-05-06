@@ -75,7 +75,7 @@ class Navigation(Node):
                 msg.xsetpoint = self.xsetpoint_callback()
                 msg.ysetpoint = self.ysetpoint_callback()
                 msg.yawsetpoint = self.yawsetpoint_callback()
-                msg.heading = self.heading
+                msg.macro_heading = self.heading
                 msg.header.frame_id = 'earth'
             case 'vel_set_point':
                 msg = VelSetpoint()
