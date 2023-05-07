@@ -68,8 +68,6 @@ $$
 \frac{d\mathbf{r(t)}}{dt} = 1/J *(a*(F_{x,FL}(t)+F_{x,FR}(t))sin(\delta(t)) - (F_{y,FL}(t)+F_{y,FR}(t))cos(\delta(t) -b*( F_{y,RL}(t)+F_{y,RR}(t)))
 $$
 
-
-
 ### 3. State-Space Model
 We define the state vector of the car as follows:
 
@@ -80,12 +78,10 @@ Our dynamic system contains two inputs: steering angle $\theta$ and motor torque
 $$\vec{u} = \begin{bmatrix}\theta \\ \tau_m\end{bmatrix}$$
 Though we can control $\theta$ with direct command from the Raspberry Pi, we indirectly control $\tau_m$ by varying the voltage. See [[System Identification]] and [[#III. Actuator Modelling]] for details.
 
-
 ## III. Actuator Modelling
 
-- Check with IMU alignment
 
-## IV. Aerodynamics Modelling
+
 
 ## V. Power Modelling
 

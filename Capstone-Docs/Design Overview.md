@@ -16,7 +16,7 @@ While physical design is extremely important, most of our project bandwidth went
 
 We began this process with [[PiCar Modelling and Simulation]], where we ulilized state space modeling and our previous system identification in order to model our PiCar in Matlab. 
 
-After completing our model, we began getting basic code to run on each of our sensors ([[Sensor SetUp]]). Including trying to take notes on the different configuration specs when the sample code exposed the configuration ([[MPU6050 Configuration]]).
+After completing our model, we began writing preliminary sensor codes ([[Sensor SetUp]]). Including trying to take notes on the different configuration specs when the sample code exposed the configuration ([[MPU6050 Configuration]]).
 
 Running the sensor code exposed the need for [[Bus Communication Protocols]] knowledge. Specifically with utilizing [[I2C]], but also looking into [[CAN]] and [[SPI]].
 

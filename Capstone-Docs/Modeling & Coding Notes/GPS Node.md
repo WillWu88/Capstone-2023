@@ -29,7 +29,6 @@ self.gps.send_command(b"PMTK220,100")
 The gps readings are saved in an array organized as:
 ```python
 self.index_dict = {
-
             "lat_deg": 0,
             "lat_min": 1,
             "long_deg":2,

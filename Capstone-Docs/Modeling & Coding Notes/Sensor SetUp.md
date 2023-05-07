@@ -17,15 +17,10 @@ Follow [this](https://abyz.me.uk/rpi/pigpio/download.html)  and [this](https://f
 - Update I2C permission: [Link](https://ask.wingware.com/question/3/i2c-problem-with-remote-raspberry-pi/)
 
 ### I. MPU6050 Register Configuration
-- [[MPU6050 Configuration]]
+- Check [[MPU6050 Configuration]] for the setups.
 Follow [this](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf) for the register map of the MPU6050.
 - Key registers and their functionalities are listen in the MPU6050 setup.
 - x, y, z in m/s, p, q, r (angular velocity) in deg/s
-
-### Camera
-
-[Installation camera](https://picamera.readthedocs.io/en/release-1.13/install.html)
-
 
 ### IMU
 
@@ -47,6 +42,8 @@ sudo pip3 install rplidar-roboticia
 
 Utilizing sample code found on Github [Lidar Sample Code Github](https://github.com/Roboticia/RPLidar) we were able to get preliminary data on the Lidar. 
 
-### I. Slamtec ROS2 package:
+[Lidar prelim data](Figures/Lidar.png)
+
+### Slamtec ROS2 package:
 - [Link](https://github.com/Slamtec/sllidar_ros2)
 

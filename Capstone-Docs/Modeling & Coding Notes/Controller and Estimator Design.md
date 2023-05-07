@@ -37,13 +37,14 @@ $$u_k = u_{k-1} + K_p[(1+\frac{\Delta t}{K_p}+\frac{K_d}{K_p\Delta t} )e_k + (-1
 
 ### I. Engine Speed Regulator
 
-- error function
+Error function
 $$e_\tau(t) = V_{m_{ref}} - V_{m_{actual}}$$
 
 
 ### II. Steering Angle Regulator
 
-
+Error function:
+$$e_\theta(t) = \theta_{ref} - \theta_{actual}$$
 
 ### III. Anti-windup regulator
 
