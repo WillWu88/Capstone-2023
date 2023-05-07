@@ -82,8 +82,6 @@
 
 - 3/30/2023: Obsidian Notes page restructure and notes of what notes need to be filled out/updated were added. 
 
-- 4/1/2023: *Meeting I missed, need help filling this out*
-
 - 4/6/2023: Working encoder with Raspberry Pi pico node
 
 - 4/7/2023: Able to connect to the GPS with a hotspot and run GPS test code.
