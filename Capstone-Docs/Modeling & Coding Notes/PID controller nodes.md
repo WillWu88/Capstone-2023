@@ -6,7 +6,6 @@ A [[ROS2]] node that reads Kalman filter estimations and navigation set points a
 
 The overall control function in continuous time can be defined as:
 $$u(t) = K_pe(t) + K_i\int_0^te(\tau)d\tau + K_d\frac{d\:e(t)}{dt}$$
-Check [[Controller and Estimator Design]] and [[Feedback Systems]] for detailed explanation.
 
 The discrete algorithm of our controller:
 $$u(t_k) = u(t_{k-1}) + (K_p + K_i\Delta t + K_d/\Delta t)e(t_k) + (-K_p - 2K_d/\Delta t)e(t_{k-1}) + (K_d/\Delta t) e(t{k-2}) $$
@@ -18,6 +17,8 @@ $$u(t_k) = u(t_{k-1}) + (K_p + K_i\Delta t + K_d/\Delta t)e(t_k) + (-K_p - 2K_d/
 - $e(t_{k-1})$ and $e(t_{k-2})$ are the previous errors.
 - $u(t_k)$ is the current state.
 - $u(t_{k-1})$ is the previous state.
+
+Check [[Controller and Estimator Design]] and [[Feedback Systems]] for detailed explanation.
 
 ## II. PID driver
 
