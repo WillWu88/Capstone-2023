@@ -5,3 +5,5 @@ Progress\ Reports/
 picar_ros2_ws/build/
 picar_ros2_ws/install/
 picar_ros2_ws/log/
+picar_ros2_ws/test_bags/
+picar_ros2_ws/rosbag*
