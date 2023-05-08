@@ -1,6 +1,6 @@
 import numpy as np
 import time
-from tutorial_interfaces.msg import VelSetpoint, XFiltered, PIDVEL
+from tutorial_interfaces.msg import VelSetpoint, XFiltered, PIDVEL, RPM
 import rclpy
 import drivers.pid_driver
 from drivers.pid_constant import *
@@ -16,6 +16,7 @@ class PidVel(Node):
         # Subscriber
         self.kfx_sub = self.create_subscription(XFiltered, 'x_filtered', 
                                                 self.xfiltered_callback, 10)
+        # self.test_speed_sub = self.create_subscription(RPM, 'rpm_raw', self.rpm_callback, 10)
         self.vel_set = self.create_subscription(VelSetpoint, 'vel_setpoint', 
                                                 self.velset_callback, 10)
         # Publisher
@@ -39,6 +40,10 @@ class PidVel(Node):
         msg = self.populate_message()
         self.pid_pub.publish(msg)
         self.pid_driver.update()
+
+    def rpm_callback(self, msg):
+        self.pid_driver.curr_state = msg.derivedms
+        self.pid_driver.error_calc()
  
     def populate_message(self):
         msg = PIDVEL()

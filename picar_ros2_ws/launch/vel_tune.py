@@ -15,6 +15,11 @@ def generate_launch_description():
         ),
         Node(
             package='picar_sys',
+            executable='rpm',
+            name='raw_rpm'
+        ),
+        Node(
+            package='picar_sys',
             executable='test_pub',
             name='test_pub'
         ),
