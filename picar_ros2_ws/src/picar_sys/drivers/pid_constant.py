@@ -1,8 +1,13 @@
+# position controller
+Kp_pos = 1
+Ki_pos = 0.
+Kd_pos = 0.
+
 # classic pid
-#Ku = 0.00004, Tu = 7s
-Kp_vel = 0.000024
-Ki_vel = 0.00000686
-Kd_vel = 0.000021
+#Ku = 0.03, Tu = 4s
+Kp_vel = 0.006
+Ki_vel = 0.000025
+Kd_vel = 0.055
 
 Kp_pose = 0.002
 Ki_pose = 0.015

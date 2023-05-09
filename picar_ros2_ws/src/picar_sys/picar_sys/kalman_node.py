@@ -115,7 +115,7 @@ class KalmanNode(Node):
             # self.get_logger().info('Kalman X Updated')
 
     def gps_callback(self, imu_msg, gps_msg):
-        self.get_logger().warning('GPS Fusion Updating')
+        # self.get_logger().warning('GPS Fusion Updating')
         if (not (self.calibrated)):
             self.gps_x = math.copysign(gps_msg.latmin, gps_msg.latdeg)
             self.gps_y = math.copysign(gps_msg.longmin, gps_msg.longdeg)
@@ -176,12 +176,12 @@ class KalmanNode(Node):
         self.gps_y = new_y - gps_y_mean
 
     def heading_update(self, heading_msg):
-        self.heading = heading_msg.heading
-        x_b = np.array([[cos(self.heading*pi), sin(self.heading*pi)]])
-        y_b = np.array([[-sin(self.heading*pi), cos(self.heading*pi)]])
-        self.kf_x.B = np.dot(self.discrete_b, x_b)
-        self.kf_y.B = np.dot(self.discrete_b, y_b)
-        self.dist_accu = 0
+        # only updates when there's a heading change
+        if (self.heading != heading_msg.heading):
+            self.heading = heading_msg.heading
+            self.kf_x.x[0] = 0
+            self.dist_accu = 0
+            self.kf_localx.x[0] = 0
 
         
 

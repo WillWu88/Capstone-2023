@@ -29,7 +29,7 @@ class PidPose(Node):
         timer_period = 0.05 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
-        self.pid_driver = drivers.pid_driver.PidDriver(Kp_pose, Ki_pose, Kd_pose, 1/timer_period, 5)
+        self.pid_driver = drivers.pid_driver.PidDriver(Kp_pose, Ki_pose, Kd_pose, 1/timer_period, 5, -5)
         self.heading = 0.
         self.x_set = point_q[0][0]
         self.y_set = point_q[0][1]

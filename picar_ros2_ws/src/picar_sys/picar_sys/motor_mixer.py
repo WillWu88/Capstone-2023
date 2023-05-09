@@ -12,11 +12,15 @@ class MotorMixer(Node):
         self.tau = 0.
         self.curr = 0.
         self.timer = self.create_timer(0.005, self.timer_callback)
+        self.stop_now = False
 
     def tau_callback(self, msg):
         self.tau = msg.tau
+        self.stop_now = msg.kill_switch
 
     def timer_callback(self):
+        if (self.stop_now):
+            self.driver.Motor_Speed(0)
         if (self.curr != self.tau):
             self.driver.Motor_Speed(self.tau)
             self.curr = self.tau

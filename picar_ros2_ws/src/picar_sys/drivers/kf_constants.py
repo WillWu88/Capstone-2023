@@ -32,4 +32,4 @@ tan_var = 0.0038
 deg_rad_conv = 0.0175 # pi / 180
 
 # weighted consensus
-weight = 0.55
+weight = 0.65
