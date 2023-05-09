@@ -49,6 +49,16 @@ Check [[PID controller nodes]] for the usage of the .msg file.
 
 ## V. PoseSetpoint
 
+This custom message publishes the steering angle setpoint by the Navigation node.
+```python
+std_msgs/Header header
+float64 yawsetpoint
+float64 macro_heading
+bool turning_override
+float64 debug_current_heading
+float64 debug_target_heading
+```
+Check [[Navigation Design]] for implementation.
 
 ## VI. XFiltered
 

@@ -13,7 +13,8 @@
 - Typical I<sup>2</sup>C message is set up as follows
 ![I2C Message](https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-I2C-Message-Frame-and-Bit-2-1024x258.png)
 - Address frame: slave address
-- 
+
+
 
 ## Appendix: References
 - [Wikipedia Page](https://en.wikipedia.org/wiki/I%C2%B2C)

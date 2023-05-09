@@ -2,7 +2,7 @@
 ## Notes of things that need to be filled out
 - [x] Reference figures in the relevant sections
 - [x] Study Section needs updates
-- [ ] Design Overview has notes of sections I needed help filling out
+- [x] Design Overview has notes of sections I needed help filling out
 - [ ] Bus communication, whether it is combined with I2C or not.
 - [ ] SPI if not deleted
 - [ ] CAN if not deleted
