@@ -9,7 +9,7 @@
 - [ ] Controller and Estimator Design isn't finished/ may need to be adjusted in content for new scope
 - [ ] Python Notes and IMU publisher could use some explanation
 - [x] Numpy if not deleted
-- [ ] Actuators
+- [x] Actuators
 - [ ] SLAM
 
 ## Notes of things to be combined
@@ -35,12 +35,12 @@
 - [ ] KF node
 - [ ] Motor driver
 - [ ] Servo driver
-- [ ] Navigation publisher
+- [x] Navigation publisher
 - [x] Outside Testing Process
 
 ## Notes of things to clean up
 - [ ] Sensor SetUp needs to be cleaned up and designed its final function/purpose because it seems to jump around and have no explanation.
-- [ ] PiCar Modelling and Simulation has a few empty sections.
+- [x] PiCar Modelling and Simulation has a few empty sections.
 - [x] Need to decide on one format for sensors and electronics
 - [x] Clean up and actually write up System Identification instead of just having it as notes.
 - [ ] Need to clean up the links in estimators and add extended kalman filter, kalman filter, and sensor fusion as links (and maybe put them in a folder) perhaps alpha-beta-gamma too
