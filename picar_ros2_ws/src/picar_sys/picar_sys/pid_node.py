@@ -12,9 +12,9 @@ class PidVel(Node):
         super().__init__('pid_node')
 
         # Subscriber
-        self.kfx_sub = self.create_subscription(XFiltered, 'x_filtered', 
+        self.kfx_sub = self.create_subscription(XFiltered, 'x_filtered_fast', 
                                                 self.xfiltered_callback, 10)
-        self.test_speed_sub = self.create_subscription(RPM, 'rpm_raw', self.rpm_callback, 10)
+        # self.test_speed_sub = self.create_subscription(RPM, 'rpm_raw', self.rpm_callback, 10)
         self.vel_set = self.create_subscription(VelSetpoint, 'vel_setpoint', 
                                                 self.velset_callback, 10)
         # Publisher

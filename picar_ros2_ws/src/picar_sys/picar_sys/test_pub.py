@@ -53,19 +53,15 @@ class TestPub(Node):
         # msg3.header.stamp = self.get_clock().now().to_msg()
         # self.test_pub3.publish(msg3)
 
-        # msg4 = PoseSetpoint()
-        # msg4.header.frame_id = 'body'
+        msg4 = PoseSetpoint()
+        msg4.header.frame_id = 'body'
         # msg4.xsetpoint = p1_lat_min
         # msg4.ysetpoint = p1_long_min
-        # msg4.turning_override = False
-        # try:
-        #     msg4.yawsetpoint = atan((self.y_target - self.curr_y)/(self.curr_x - self.x_target))
-        # except ZeroDivisionError:
-        #     msg4.yawsetpoint = 0
+        msg4.yawsetpoint = 0.0
         # msg4.heading = 0.
-        # msg4.header.stamp = self.get_clock().now().to_msg()
-        # self.test_pub4.publish(msg4)
-        self.get_logger().info('Publishing setpoint')
+        msg4.header.stamp = self.get_clock().now().to_msg()
+        self.test_pub4.publish(msg4)
+        # self.get_logger().info('Publishing setpoint')
 
     def x_sub_callback(self, msg):
         self.curr_x = msg.xpos
