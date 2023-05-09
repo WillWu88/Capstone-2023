@@ -37,16 +37,14 @@ $$u_k = u_{k-1} + K_p[(1+\frac{\Delta t}{K_p}+\frac{K_d}{K_p\Delta t} )e_k + (-1
 
 ### I. Engine Speed Regulator
 
-Error function
+Error function we are using for the velocity [[PID Control]].
 $$e_\tau(t) = V_{m_{ref}} - V_{m_{actual}}$$
 
 
 ### II. Steering Angle Regulator
 
-Error function:
+Error function we are using for the steering angle $\theta$ [[PID Control]].
 $$e_\theta(t) = \theta_{ref} - \theta_{actual}$$
-
-### III. Anti-windup regulator
 
 ## Appendix: References
 

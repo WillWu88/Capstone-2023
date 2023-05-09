@@ -6,22 +6,22 @@
 - [ ] Bus communication, whether it is combined with I2C or not.
 - [ ] SPI if not deleted
 - [ ] CAN if not deleted
-- [ ] Controller and Estimator Design isn't finished/ may need to be adjusted in content for new scope
-- [ ] Python Notes and IMU publisher could use some explanation
+- [x] Controller and Estimator Design isn't finished/ may need to be adjusted in content for new scope
+- [x] Python Notes and IMU publisher could use some explanation
 - [x] Numpy if not deleted
 - [x] Actuators
 - [ ] SLAM
 
 ## Notes of things to be combined
 - [ ] Bus Communication and I2C if thats the only relevant one
-- [ ] MPU6050 Config and Sensor SetUp?
+- [x] MPU6050 Config and Sensor SetUp?
 
 ## Notes of things that might be able to be deleted (no longer in scope)
 - [ ] Review the documents and ensure relevance
 - [ ] SPI
 - [ ] CAN
 - [x] Numpy
-- [ ] Alpha-Beta-Gamma 
+- [x] Alpha-Beta-Gamma 
 
 ## Notes of things to add pages for
 - [ ] Potentially pictures of wired up sensors/ the finished Picar
