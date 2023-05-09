@@ -51,6 +51,14 @@ class KalmanNode(Node):
                      custom_F = np.array([[1.]]),
                      custom_B = np.array([[1/self.f_s]]))
 
+        self.kf_int = KalmanFilter(dim_x=1, dim_z=1)
+        self.kf_int.x = np.array([[0.0]])
+        self.kf_init(self.kf_int, self.f_s, np.array([[1.]]),
+                     R_mult_yaw * tan_var,
+                     Q_mult_yaw * imu_yaw_var,
+                     custom_F = np.array([[1.]]),
+                     custom_B = np.array([[1/self.f_s]]))
+
         # time synchronizer for simultaneous sensor reading
         self.imu_sub = Subscriber(self, Imu, "/imu_raw", qos_profile=10) #qos profile always 10
         self.rpm_sub = Subscriber(self, RPM, "/rpm_raw", qos_profile=10) 
@@ -70,9 +78,12 @@ class KalmanNode(Node):
         self.ORIGIN_Y = -30.2358 #east west-direction, longitude
         self.gps_x = self.ORIGIN_X
         self.gps_y = self.ORIGIN_Y
+        # calibrate origin, pull first valid point as origin
         self.calibrated = False;
         self.dist_accu = 0.
         self.heading_accu = 0.
+        # inert angle compare to true north, calculated by origin-waypoint pair
+        self.heading_correction = -9.31 # degrees
 
     def kf_init(self, kf, f_s, custom_H, custom_R, 
                 custom_Q, custom_F=None, custom_B=None):
@@ -100,6 +111,10 @@ class KalmanNode(Node):
             pass
         finally:
             u_x = imu_msg.linear_acceleration.x - imu_x_mean
+            u_psi = imu_msg.angular_velocity.z - imu_yaw_mean
+
+            # only integrating angular z, no measurement
+            self.kf_int.predict(u=np.array([[u_psi]]))
             
             # fast kf publish
             self.kf_localx.predict(u=np.array([[u_x]]))
@@ -111,6 +126,7 @@ class KalmanNode(Node):
             x_fast_msg.header.frame_id = 'body' 
             x_fast_msg.xpos = float(self.kf_localx.x[0])
             x_fast_msg.xvel = float(self.kf_localx.x[1])
+            x_fast_msg.yaw = float(self.kf_int.x[0])
             self.fast_pub.publish(x_fast_msg)
             # self.get_logger().info('Kalman X Updated')
 
@@ -119,6 +135,8 @@ class KalmanNode(Node):
         if (not (self.calibrated)):
             self.gps_x = math.copysign(gps_msg.latmin, gps_msg.latdeg)
             self.gps_y = math.copysign(gps_msg.longmin, gps_msg.longdeg)
+            self.ORIGIN_X = self.gps_x
+            self.ORIGIN_Y = self.gps_y
             self.calibrated = True;
         # get new gps reading
         new_x = math.copysign(gps_msg.latmin, gps_msg.latdeg) # north-south, latitude
@@ -136,13 +154,15 @@ class KalmanNode(Node):
         # when going north
         try:
             if (self.heading % 1 == 0):
-                heading_meas = degrees(atan(-y_dist / x_dist))
+                # heading_meas = degrees(atan(-y_dist / x_dist))
+                heading_meas = degrees(atan(-(new_y - self.ORIGIN_Y)/ (new_x - self.ORIGIN_X)))
             else:
-                heading_meas = degrees(atan(x_dist / y_dist))
+                # heading_meas = degrees(atan(x_dist / y_dist))
+                heading_meas = degrees(atan((new_x - self.ORIGIN_X)/(new_y - self.ORIGIN_X)))
         except ZeroDivisionError:
             heading_meas = 0
         finally:
-            self.heading_accu += heading_meas
+            heading_meas = heading_meas - self.heading_correction
 
         u_x = imu_msg.linear_acceleration.x - imu_x_mean
         u_psi = imu_msg.angular_velocity.z - imu_yaw_mean
@@ -151,7 +171,7 @@ class KalmanNode(Node):
         self.kf_x.update(self.dist_accu)
 
         self.kf_yaw.predict(u=np.array([[u_psi]]))
-        self.kf_yaw.update(self.heading_accu)
+        self.kf_yaw.update(heading_meas)
 
         # publish updated x and yaw estimate
         x_msg = XFiltered()
@@ -182,6 +202,8 @@ class KalmanNode(Node):
             self.kf_x.x[0] = 0
             self.dist_accu = 0
             self.kf_localx.x[0] = 0
+            # redefines origin for heading measurement
+            self.calibrated = False
 
         
 

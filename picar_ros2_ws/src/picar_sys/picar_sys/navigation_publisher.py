@@ -60,6 +60,8 @@ class Navigation(Node):
     
     def kf_callback(self, msg):
         self.curr_x = msg.weighted_x_pos
+        # only continue if car has arrived at the current
+        # but not last waypoint
         if (self.car_arrived() and not self.stop_now):
             point_q.pop(0)
             if not(len(point_q)):
@@ -101,9 +103,10 @@ class Navigation(Node):
                 if (not (self.stop_now)):
                     msg.xsetpoint = point_q[0][coord_label["lat"]]
                     msg.ysetpoint = point_q[0][coord_label["long"]] 
-                msg.yawsetpoint = self.yawsetpoint_callback()
+                msg.yawsetpoint = 0. # stay straight
                 msg.macro_heading = self.heading
                 msg.header.frame_id = 'earth'
+                msg.turning_override = self.turn_now
             case 'vel_set_point':
                 msg = VelSetpoint()
                 msg.target = self.target_vel
@@ -117,9 +120,6 @@ class Navigation(Node):
         msg.header.stamp = self.get_clock().now().to_msg()
         return msg
     
-    def yawsetpoint_callback(self):
-        return 0.
-
     def car_arrived(self):
         if (self.curr_x - self.target_x) ** 2 < 0.2:
             return True

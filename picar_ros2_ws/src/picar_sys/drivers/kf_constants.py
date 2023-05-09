@@ -11,7 +11,7 @@ local_ms_mult = 1.5
 Q_mult_x = 0.01
 R_mult_x = 1000.
 # global yaw kf
-Q_mult_yaw = 1.0
+Q_mult_yaw = 0.1
 R_mult_yaw = 1.0
 
 # process input calibration

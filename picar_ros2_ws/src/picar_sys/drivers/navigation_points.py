@@ -1,9 +1,9 @@
 # All navigation points:
 
 origin_lat_deg = 38.0
-origin_lat_min = 64.8417
+origin_lat_min = 64.8420
 origin_long_deg = -90.0
-origin_long_min = -30.2358
+origin_long_min = -30.2360
 
 point_q = []
 is_turn_q = []
@@ -19,25 +19,25 @@ coord_label = {
 }
 
 
-p1_lat_min = 64.8664
-p1_long_min = -30.2264
+p1_lat_min = 64.8670
+p1_long_min = -30.2319
 # p1_lat_min = 15.
 # p1_long_min = -0.5
 point_q.append([p1_lat_min, p1_long_min])
 is_turn_q.append(is_turn_status["turn"])
 
-# # Turn 1
-# 
-# p2_lat_min = 64.8664
-# p2_long_min = -30.2071
-# point_q.append([p2_lat_min, p2_long_min])
-# is_turn_q.append(is_turn_status["heading_change"])
-# 
-# 
-# p3_lat_min = 64.8588
-# p3_long_min = -30.1743
-# point_q.append([p3_lat_min, p3_long_min])
-# is_turn_q.append(is_turn_status["turn"])
+# Turn 1
+
+p2_lat_min = 64.8705
+p2_long_min = -30.2236
+point_q.append([p2_lat_min, p2_long_min])
+is_turn_q.append(is_turn_status["heading_change"])
+
+
+p3_lat_min = 64.8630
+p3_long_min = -30.1800
+point_q.append([p3_lat_min, p3_long_min])
+is_turn_q.append(is_turn_status["turn"])
 # 
 # # Turn 2
 # 
