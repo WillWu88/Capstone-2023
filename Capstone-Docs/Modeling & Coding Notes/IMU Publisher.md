@@ -2,7 +2,7 @@
 
 A [[ROS2]] node that publishes raw IMU readings
 
-## I. IMU driver -- will need explanation of the conversion!!!
+## I. IMU driver
 
 To see the sensor configuration and setups refer to [[MPU6050 Configuration]].
 

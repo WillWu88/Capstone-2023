@@ -78,12 +78,7 @@ Our dynamic system contains two inputs: steering angle $\theta$ and motor torque
 $$\vec{u} = \begin{bmatrix}\theta \\ \tau_m\end{bmatrix}$$
 Though we can control $\theta$ with direct command from the Raspberry Pi, we indirectly control $\tau_m$ by varying the voltage. See [[System Identification]] and [[#III. Actuator Modelling]] for details.
 
-## III. Actuator Modelling
-
-
-
-
-## V. Power Modelling
+## III. Power Modelling
 
 We notice a significant degradation in motor speed due to power consumption. The battery drops in voltage, resulting in a decrease in motor rpm. We assume the following linear relationship for battery/motor degradation.
 

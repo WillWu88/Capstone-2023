@@ -65,7 +65,7 @@ Ki_vel = 0.00000686
 Kd_vel = 0.000021
 ```
 
-Our PId constants for our steering control are:
+Our PID constants for our steering control are:
 ```python
 Kp_pose = 0.002
 
@@ -158,6 +158,8 @@ Where $\hat{x}$ and $\hat{y}$ are the next set points the car must go to. $\bar{
 - A `populate_message` function which will assign the correct information to each messages accordingly.
 
 ## V. Results
+
+Check [[Outdoor Testing]] for results.
 
 ## References:
 - [Matlab Vehicle Modelling](https://www.mathworks.com/help/ident/ug/modeling-a-vehicle-dynamics-system.html)
