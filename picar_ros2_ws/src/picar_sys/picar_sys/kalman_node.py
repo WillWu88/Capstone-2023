@@ -1,8 +1,7 @@
 import numpy as np
 import rclpy
-from math import cos, sin, pi, degrees
+from math import cos, sin, pi
 from rclpy.node import Node
-from std_msgs.msg import String, Header
 from sensor_msgs.msg import Imu
 from tutorial_interfaces.msg import GPS, PoseSetpoint, RPM, VelSetpoint, XFiltered, Heading
 from message_filters import ApproximateTimeSynchronizer, Subscriber
@@ -111,10 +110,9 @@ class KalmanNode(Node):
                 # use previous state estimate if not available
                 x_pos_meas = float(self.kf_x.x[0])
                 y_pos_meas = float(self.kf_y.x[0])
-            
 
-            x_meas = np.array([[x_pos_meas],[vel_meas*cos(self.heading*pi)]])
-            y_meas = np.array([[y_pos_meas],[vel_meas*sin(self.heading*pi)]])
+            x_meas = np.array([[x_pos_meas], [vel_meas*cos(self.heading*pi)]])
+            y_meas = np.array([[y_pos_meas], [vel_meas*sin(self.heading*pi)]])
 
             self.kf_x.update(x_meas)
             self.kf_y.update(y_meas)
