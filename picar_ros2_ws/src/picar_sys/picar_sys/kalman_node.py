@@ -127,6 +127,7 @@ class KalmanNode(Node):
             x_fast_msg.xpos = float(self.kf_localx.x[0])
             x_fast_msg.xvel = float(self.kf_localx.x[1])
             x_fast_msg.yaw = float(self.kf_int.x[0])
+            x_fast_msg.yawvel = float(u_psi)
             self.fast_pub.publish(x_fast_msg)
             # self.get_logger().info('Kalman X Updated')
 
@@ -161,7 +162,7 @@ class KalmanNode(Node):
                 heading_meas = degrees(atan((new_x - self.ORIGIN_X)/(new_y - self.ORIGIN_X)))
         except ZeroDivisionError:
             heading_meas = 0
-        finally:
+        else:
             heading_meas = heading_meas - self.heading_correction
 
         u_x = imu_msg.linear_acceleration.x - imu_x_mean
@@ -198,6 +199,7 @@ class KalmanNode(Node):
     def heading_update(self, heading_msg):
         # only updates when there's a heading change
         if (self.heading != heading_msg.heading):
+            self.get_logger.warn("Heading change! reset origin")
             self.heading = heading_msg.heading
             self.kf_x.x[0] = 0
             self.dist_accu = 0

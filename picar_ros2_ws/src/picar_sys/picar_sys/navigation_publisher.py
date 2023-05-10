@@ -41,7 +41,7 @@ class Navigation(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
         # velocity control
-        self.target_vel = 2.3 #m/s
+        self.target_vel = 1.3 #m/s
         self.stop_now = False
 
     def timer_callback(self):
@@ -63,7 +63,7 @@ class Navigation(Node):
         # only continue if car has arrived at the current
         # but not last waypoint
         if (self.car_arrived() and not self.stop_now):
-            point_q.pop(0)
+            last_point = point_q.pop(0)
             if not(len(point_q)):
                 self.get_logger().info("Stopping")
                 self.stop_now = True
@@ -72,10 +72,14 @@ class Navigation(Node):
             heading_change = is_turn_status["heading_change"]
             turn = is_turn_status["turn"]
             if (ret == heading_change):
+                self.curr_long_origin = last_point[coord_label["long"]] - self.long_correction
+                self.curr_lat_origin = last_point[coord_label["lat"]] - self.lat_correction
                 self.update_target()
                 self.heading -= 0.5
                 self.turn_now = False
             elif (ret == turn):
+                # execute turn, 4 meters
+                self.target_x += 7
                 self.turn_now = True
             else:
                 self.turn_now = False
@@ -100,10 +104,7 @@ class Navigation(Node):
             case 'pose_set_point':
                 msg = PoseSetpoint()
                 # peek the queue
-                if (not (self.stop_now)):
-                    msg.xsetpoint = point_q[0][coord_label["lat"]]
-                    msg.ysetpoint = point_q[0][coord_label["long"]] 
-                msg.yawsetpoint = 0. # stay straight
+                msg.yawsetpoint = -0.015 # stay straight
                 msg.macro_heading = self.heading
                 msg.header.frame_id = 'earth'
                 msg.turning_override = self.turn_now
@@ -132,7 +133,7 @@ class Navigation(Node):
                         point_q[0][coord_label["long"]] - self.long_correction)
         x_dist = approx_distance_lat(self.curr_lat_origin, 
                         point_q[0][coord_label["lat"]] - self.lat_correction)
-        self.target_x = sqrt(x_dist ** 2 + y_dist ** 2)
+        self.target_x = sqrt(x_dist ** 2 + y_dist ** 2) * gps_sens_factor
         self.get_logger().info("Target distance updated, %f" % self.target_x)
 
 def main(args=None):

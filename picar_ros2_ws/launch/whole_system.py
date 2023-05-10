@@ -3,21 +3,21 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     return LaunchDescription([
-        # Node(
-        #     package='picar_sys',
-        #     executable='imu',
-        #     name='imu'
-        # ),
-        # Node(
-        #     package='picar_sys',
-        #     executable='rpm',
-        #     name='rpm'
-        # ),
-        # Node(
-        #     package='picar_sys',
-        #     executable='gps',
-        #     name='gps'
-        # ),
+        Node(
+            package='picar_sys',
+            executable='imu',
+            name='imu'
+        ),
+        Node(
+            package='picar_sys',
+            executable='rpm',
+            name='rpm'
+        ),
+        Node(
+            package='picar_sys',
+            executable='gps',
+            name='gps'
+        ),
         Node(
             package='picar_sys',
             executable='kf',
@@ -33,19 +33,19 @@ def generate_launch_description():
             executable='motor',
             name='motor_mixer'
         ),
-        #Node(
-        #    package='picar_sys',
-        #    executable='steer',
-        #    name='servo_mixer'
-        #),
+        Node(
+            package='picar_sys',
+            executable='steer',
+            name='servo_mixer'
+        ),
         Node(
             package='picar_sys',
             executable='pid_vel',
             name='velocity_control'
         ),
-        # Node(
-        #     package='picar_sys',
-        #     executable='pid_pose',
-        #     name='pose_control'
-        # ),
+        Node(
+            package='picar_sys',
+            executable='pid_pose',
+            name='pose_control'
+        ),
     ])

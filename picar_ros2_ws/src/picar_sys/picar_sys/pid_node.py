@@ -56,7 +56,9 @@ class PidVel(Node):
         # Rest of the message
         if (self.stop_now):
             msg.kill_switch = True
-        msg.tau = float(self.pid_driver.pid_calc())
+            msg.tau = 0. # engine braking
+        else:
+            msg.tau = float(self.pid_driver.pid_calc())
         return msg
 
 

@@ -1,5 +1,5 @@
 # All navigation points:
-
+gps_sens_factor = 1./1.07
 origin_lat_deg = 38.0
 origin_lat_min = 64.8420
 origin_long_deg = -90.0

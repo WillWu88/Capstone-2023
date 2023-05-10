@@ -26,10 +26,11 @@ class PidPose(Node):
         self.pid_pose_pub = self.create_publisher(PIDPOSE, 'theta', 10)
 
         # Time period
-        timer_period = 0.05 # seconds
+        timer_period = 0.025 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
-        self.pid_driver = drivers.pid_driver.PidDriver(Kp_pose, Ki_pose, Kd_pose, 1/timer_period, 5, -5)
+        self.pid_driver = drivers.pid_driver.PidDriver(Kp_pose, Ki_pose, Kd_pose, 
+                                                        1/timer_period, 1.5, -1.5)
         self.heading = 0.
         self.x_set = point_q[0][0]
         self.y_set = point_q[0][1]
@@ -37,7 +38,8 @@ class PidPose(Node):
 
 
     def xfiltered_callback(self, msg):
-        self.pid_driver.curr_state = msg.yaw
+        # yaw rate control
+        self.pid_driver.curr_state = msg.yawvel
         self.pid_driver.error_calc()
         # self.pid_driver.e1 += 0.5
  
@@ -59,7 +61,7 @@ class PidPose(Node):
         msg.header.frame_id = 'body'
         # Rest of the message
         if (self.turn_now):
-            msg.theta = 4.
+            msg.theta = 5.5
         else:
             msg.theta = float(self.pid_driver.pid_calc())
         msg.debug_error = self.pid_driver.e1
