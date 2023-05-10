@@ -47,4 +47,23 @@ R_mult_x = 1000.
 Q_mult_yaw = 0.1
 R_mult_yaw = 1.0
 ```
+- In our `gps_callback` we are also populating our messages with the correct data.
+```python
+# publish updated x and yaw estimate
 
+        x_msg = XFiltered()
+
+        x_msg.header.stamp = self.get_clock().now().to_msg()
+
+        x_msg.header.frame_id = 'body'
+
+        x_msg.xpos = float(self.kf_x.x[0])
+
+        x_msg.xvel = float(self.kf_x.x[1])
+
+        x_msg.weighted_x_pos = float(self.kf_localx.x[0] * (1.-weight) + self.kf_x.x[0] * weight)
+
+        x_msg.yaw = float(self.kf_yaw.x[0])
+
+        x_msg.yawvel = float(u_psi)
+```
