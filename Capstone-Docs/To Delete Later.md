@@ -3,9 +3,9 @@
 - [x] Reference figures in the relevant sections
 - [x] Study Section needs updates
 - [x] Design Overview has notes of sections I needed help filling out
-- [ ] Bus communication, whether it is combined with I2C or not.
-- [ ] SPI if not deleted
-- [ ] CAN if not deleted
+- [x] Bus communication, whether it is combined with I2C or not.
+- [x] SPI if not deleted
+- [x] CAN if not deleted
 - [x] Controller and Estimator Design isn't finished/ may need to be adjusted in content for new scope
 - [x] Python Notes and IMU publisher could use some explanation
 - [x] Numpy if not deleted
@@ -13,13 +13,13 @@
 - [ ] SLAM
 
 ## Notes of things to be combined
-- [ ] Bus Communication and I2C if thats the only relevant one
+- [x] Bus Communication and I2C if thats the only relevant one
 - [x] MPU6050 Config and Sensor SetUp?
 
 ## Notes of things that might be able to be deleted (no longer in scope)
 - [ ] Review the documents and ensure relevance
-- [ ] SPI
-- [ ] CAN
+- [x] SPI
+- [x] CAN
 - [x] Numpy
 - [x] Alpha-Beta-Gamma 
 

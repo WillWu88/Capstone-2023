@@ -27,14 +27,22 @@ sudo i2cdetect -y 1
 ```
 
 
-## II. SPI
+## II. SPI basics
 
+Serial peripheral interface (SPI) is a widely used interface between microcontrollers and peripheral I2Cs. This interface follows a synchronous duplex main-subnode base. 
 
+![SPI config](https://www.analog.com/-/media/images/analog-dialogue/en/volume-52/number-3/articles/introduction-to-spi-interface/205973_fig_01.svg?la=en&imgver=3)
 
-## III. CAN
+A 4-wire SPI device has 4 signals:
+- Clock (SPI CLK SCLK)
+- Chip select ($\bar{CS}$)
+-   main out, subnode in (MOSI)
+-   main in, subnode out (MISO)
 
-
+MOSI and MISO are the data lines. MOSI transfers data from the main node to the subnode and MISO from the subnode to main. During SPI communication, transmission and reception of data is simultanious. 
 
 
 ## Appendix: References
 - [Wikipedia Page for I2C ](https://en.wikipedia.org/wiki/I%C2%B2C)
+- [Introduction to SPI interface](https://www.analog.com/en/analog-dialogue/articles/introduction-to-spi-interface.html)
+- 
