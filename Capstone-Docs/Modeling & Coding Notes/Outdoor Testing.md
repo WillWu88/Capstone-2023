@@ -1,15 +1,23 @@
 In preparations for ESE Day we began running our PiCar outdoors, these tests allowed us to gather sensor data to later be used in a Kalman Filter, see the current issues with the Picar's running ability, and test our current scripts for running the PiCar.
 
-## Day 1: 4/10/2023
+## I. Preliminary testing
 
-### Test intention
+#### a. IMU 
+Gathering IMU data in order to calculate the covariance and the mean of the data, which we will use in the estimation. We find that both of the gyroscopes and accelerations follow a normal distribution. Results:
+![IMU acceleration Prefliminary results](Figures/IMU-Reading-acc.png)
+![IMU acceleration Prefliminary results](Figures/IMU-Reading-gyro.png)
 
-The first outdoor test day was ran mainly with the purpose of gathering RPM and IMU data. These tests went better than expected and we were able to essentially manually run the PiCar completely around the track using our motor and servo control programs. 
+## b. RPM
+Gathering preliminary encoder data to test the accuracy of using a moving average to filter the RPM. Results:
 
-### Other things learned
+![Prelim RPM data](Figures/rpm_sensor.jpg)
+
+## c. GPS
+Testing of GPS sensor. We have the GPS indicate the longitude and latitude in degrees and minutes, which we verified later. The GPS has a very precise and accurate reading of our position.
+![GPS Preliminary test](Figures/GPS_set_points/origin-gps.png)
+
+### d. Servo
 
 From our outdoor test we also learned that our servo angle of 0 wasn't actually straight ahead, and that a servo angle of 3 is in fact much closer to straight ahead. The outdoor test also allowed us alot of insight into the speed the car should be running around the track, both on the straight aways and when turning, and gave a clear indication that a PID controller to keep the car from veering off is essential for our final product. 
 
-### Goals for next test
-
-In our next test we hope to gather GPS data of the track. In addition, we hope to run more specific/intentioned RPM and servo tests including on straight aways, during curves, and potentially inside, this will allow us to better see the effects kalman filtering is having on our data and have a better indication of what the data should look like after our outdoor test is complete. 
+## II. ROS2 nodes testing

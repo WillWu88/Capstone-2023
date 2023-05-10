@@ -24,14 +24,13 @@ def abs_distance(lat1, lat2, lon1, lon2):
 def approx_distance_lat(old, new):
     # credit: https://stackoverflow.com/questions/639695/how-to-convert-latitude-or-longitude-to-meters
     # longitude measurements in minutes
-    # somehow the minute measurements are off by a factor of 4
-    return (new - old) * 1852 / 4
+    return (new - old) * 1852 / 2
 
 def approx_distance_lon(old, new):
     # longitude measurements in minutes
     # somehow the minute measurements are off by a factor of 4
     # not on the equator: correct for smaller radius
-    return (new - old) * 1852 / 4 * cos(radians(38))
+    return (new - old) * 1852 / 2 * cos(radians(38))
 
 def frame_transfer_x(angle, x, y):
     # first row of the rotation matrix

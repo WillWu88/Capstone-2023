@@ -1,10 +1,9 @@
 import numpy as np
 import rclpy
-from math import atan, copysign, pi, degrees
+from math import atan, copysign, pi, degrees, sqrt
 from rclpy.node import Node
 import drivers.navigation_driver
 from tutorial_interfaces.msg import VelSetpoint, Heading, PoseSetpoint, XFiltered, GPS
-from drivers.car_param import *
 from drivers.navigation_points import *
 from drivers.gps_helper import *
 
@@ -18,12 +17,19 @@ class Navigation(Node):
         self.vel_pub = self.create_publisher(VelSetpoint, 'vel_setpoint', 10)
         
         # Subscribers
-        # self.kf_sub = self.create_subscription(XFiltered, 'x_filtered', self.kf_callback, 10)
-        self.gps_sub = self.create_subscription(GPS, 'gps_raw', self.kf_callback, 10)
-        self.origin_x = ORIGIN_X
-        self.origin_y = ORIGIN_Y
-        self.curr_x = ORIGIN_X
-        self.curr_y = ORIGIN_Y
+        self.kf_sub = self.create_subscription(XFiltered, 'x_filtered', self.kf_callback, 10)
+        self.gps_sub = self.create_subscription(GPS, 'gps_raw', self.gps_callback, 10)
+
+        # gps origin and drift correction
+        self.lat_correction = 0
+        self.long_correction = 0
+        self.curr_lat_origin = origin_lat_min
+        self.curr_long_origin = origin_long_min
+        self.drift_corrected = False
+        self.drift_spacing = 4
+        self.curr_x = 0
+        self.target_x = 0
+        
         self.heading = 0.
         self.turn_now = False
         self.turn_angle = 4;
@@ -31,8 +37,12 @@ class Navigation(Node):
         # heading is in radians, but servo control is in degrees
 
         # Timer period
-        timer_period = 0.1
+        timer_period = 0.2 # seconds, currently at 5hz update
         self.timer = self.create_timer(timer_period, self.timer_callback)
+
+        # velocity control
+        self.target_vel = 1.3 #m/s
+        self.stop_now = False
 
     def timer_callback(self):
         # Set point
@@ -48,88 +58,83 @@ class Navigation(Node):
         self.heading_pub.publish(msg_heading)
 
     
-    def kf_callback(self,msg):
-        # self.curr_x = msg.xpos*0.002160 + 64.8417 # hard code fix later. Reverse approx distance
-        # self.curr_y = -30.2358 + 0.00274*msg.ypos
-        self.curr_x = msg.latmin
-        self.curr_y = -msg.longmin
-        if self.car_arrived():
+    def kf_callback(self, msg):
+        self.curr_x = msg.weighted_x_pos
+        # only continue if car has arrived at the current
+        # but not last waypoint
+        if (self.car_arrived() and not self.stop_now):
+            last_point = point_q.pop(0)
             if not(len(point_q)):
-                # we have reached our last point
-                raise SystemExit
+                self.get_logger().info("Stopping")
+                self.stop_now = True
                 return
-            point_q.pop(0)
             ret  = is_turn_q.pop(0);
             heading_change = is_turn_status["heading_change"]
             turn = is_turn_status["turn"]
             if (ret == heading_change):
+                self.curr_long_origin = last_point[coord_label["long"]] - self.long_correction
+                self.curr_lat_origin = last_point[coord_label["lat"]] - self.lat_correction
+                self.update_target()
                 self.heading -= 0.5
                 self.turn_now = False
             elif (ret == turn):
+                # execute turn, 4 meters
+                self.target_x += 7
                 self.turn_now = True
             else:
                 self.turn_now = False
+
+
+    def gps_callback(self,msg):
+        if (not(self.drift_corrected)):
+            new_lat_org = msg.latmin
+            new_long_org = -msg.longmin
+            self.lat_correction = origin_lat_min - new_lat_org
+            self.long_correction = origin_long_min - new_long_org
+            
+            # calculate new target distance
+            self.update_target()
+            if (self.drift_spacing == 0):
+                self.drift_corrected = True
+            else:
+                self.drift_spacing -= 1
 
     def populate_message(self, msg_type):
         match msg_type:
             case 'pose_set_point':
                 msg = PoseSetpoint()
-                msg.xsetpoint = self.xsetpoint_callback()
-                msg.ysetpoint = self.ysetpoint_callback()
-                msg.yawsetpoint = self.yawsetpoint_callback()
+                # peek the queue
+                msg.yawsetpoint = -0.015 # stay straight
                 msg.macro_heading = self.heading
                 msg.header.frame_id = 'earth'
+                msg.turning_override = self.turn_now
             case 'vel_set_point':
                 msg = VelSetpoint()
-                msg.target = self.velsetpoint_callback()
+                msg.target = self.target_vel
+                msg.kill_switch = self.stop_now
                 msg.header.frame_id = 'body'
             case 'heading':
                 msg = Heading()
-                msg.heading = self.heading_callback()
+                msg.heading = self.heading
                 msg.header.frame_id = 'earth'
         # Header
         msg.header.stamp = self.get_clock().now().to_msg()
         return msg
     
-    def xsetpoint_callback(self): 
-        return point_q[0][coord_label["lat"]] # peek the queue
-
-    def ysetpoint_callback(self):
-        return point_q[0][coord_label["long"]] # peek the queue
-
-    def velsetpoint_callback(self):
-        target_vel = 2.5 #m/s
-        return target_vel
-
-    def yawsetpoint_callback(self):
-        if not(self.turn_now):
-            try:
-                if self.heading % 1 != 0:
-                    self.frac = (self.curr_x - point_q[0][coord_label["lat"]])/(self.curr_y - point_q[0][coord_label["long"]])
-                else:
-                    self.frac = -1/((self.curr_x - point_q[0][coord_label["lat"]])
-                                /(self.curr_y - point_q[0][coord_label["long"]]))
-            except ZeroDivisionError:
-                if self.heading % 1 != 0:
-                    self.frac = 0
-                else:
-                    self.frac = 0
-            return atan(self.frac)
-        else:
-            return self.turn_angle 
-
-    def heading_callback(self):
-        return self.heading
-
-
     def car_arrived(self):
-        x_dist = approx_distance_lat(point_q[0][coord_label["lat"]], self.curr_x) ** 2
-        y_dist = approx_distance_lon(point_q[0][coord_label["long"]], self.curr_y) ** 2
-                   
-        if (x_dist + y_dist) < 0.2:
+        if (self.curr_x - self.target_x) ** 2 < 0.2:
             return True
         else:
             return False
+
+    def update_target(self):
+        # calculate the distance needed between current target and current origin
+        y_dist = approx_distance_lon(self.curr_long_origin, 
+                        point_q[0][coord_label["long"]] - self.long_correction)
+        x_dist = approx_distance_lat(self.curr_lat_origin, 
+                        point_q[0][coord_label["lat"]] - self.lat_correction)
+        self.target_x = sqrt(x_dist ** 2 + y_dist ** 2) * gps_sens_factor
+        self.get_logger().info("Target distance updated, %f" % self.target_x)
 
 def main(args=None):
     rclpy.init(args=args)

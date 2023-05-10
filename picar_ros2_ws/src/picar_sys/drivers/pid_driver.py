@@ -4,7 +4,7 @@ import time
 
 class PidDriver():
 
-    def __init__(self, Ki, Kp, Kd, delta, sat_val):
+    def __init__(self, Kp, Ki, Kd, delta, upp, lower):
         self.curr_state = 0.
         self.setpoint = 0.
         self.e1 = 0.
@@ -16,7 +16,8 @@ class PidDriver():
         self.Ki = Ki
         self.Kd = Kd
         self.delta = delta
-        self.sat_val = sat_val
+        self.upp = upp # upper limit
+        self.lower = lower #lower limit
 
     def error_calc(self):
         self.e1 = self.setpoint - self.curr_state
@@ -37,8 +38,10 @@ class PidDriver():
 
     def saturation(self, u):
         # allow for negative inputs
-        if (abs(u) >= self.sat_val):
-            return math.copysign(self.sat_val, u)
+        if (u > self.upp):
+            return self.upp
+        elif (u < self.lower):
+            return self.lower
         else:
             return u
 

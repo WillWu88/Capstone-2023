@@ -17,11 +17,10 @@ class TestPub(Node):
         self.test_pub4 = self.create_publisher(PoseSetpoint, 'pose_setpoint', 10)
         timer_period = 0.1
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.x_sub = self.create_subscription(XFiltered, 'x_filtered', self.x_sub_callback, 10)
+        self.x_sub = self.create_subscription(XFiltered, 'x_filtered_fast', self.x_sub_callback, 10)
         self.curr_x = 0
         self.curr_y = 0
-        self.x_target = point_q[0][0]
-        self.y_target = point_q[0][1]
+        self.accu = 0
 
     def timer_callback(self):
         # msg = PIDVEL()
@@ -29,15 +28,23 @@ class TestPub(Node):
         # msg.header.frame_id = 'body'
         # msg.header.stamp = self.get_clock().now().to_msg()
         # self.test_pub.publish(msg)
-        if (self.curr_x > 0 and self.curr_x - self.x_target < 0.003):
-            point_q.pop(0)
-            self.x_target = point_q[0][0]
-            self.y_target = point_q[0][1]
+        # if (self.curr_x > 0 and self.curr_x - self.x_target < 0.003):
+        #     point_q.pop(0)
+        #     ret = is_turn_q.pop(0)
+        #     self.x_target = point_q[0][0]
+        #     self.y_target = point_q[0][1]
 
-        msg2.target = 2.5
+        msg2 = VelSetpoint()
+        msg2.target = 2.
 
         msg2.header.frame_id = 'body'
         msg2.header.stamp = self.get_clock().now().to_msg()
+        msg2.target = 2.5 #m/s
+        if (self.accu < 100):
+            self.accu += 1
+            msg2.kill_switch = False
+        else:
+            msg2.kill_switch = True
         self.test_pub2.publish(msg2)
 
         # msg3 = PIDPOSE()
@@ -48,16 +55,13 @@ class TestPub(Node):
 
         msg4 = PoseSetpoint()
         msg4.header.frame_id = 'body'
-        msg4.xsetpoint = p1_lat_min
-        msg4.ysetpoint = p1_long_min
-        try:
-            msg4.yawsetpoint = atan((self.y_target - self.curr_y)/(self.curr_x - self.x_target))
-        except ZeroDivisionError:
-            msg4.yawsetpoint = 0
-        msg4.heading = 0.
+        # msg4.xsetpoint = p1_lat_min
+        # msg4.ysetpoint = p1_long_min
+        msg4.yawsetpoint = 0.0
+        # msg4.heading = 0.
         msg4.header.stamp = self.get_clock().now().to_msg()
         self.test_pub4.publish(msg4)
-        self.get_logger().info('Publishing setpoint')
+        # self.get_logger().info('Publishing setpoint')
 
     def x_sub_callback(self, msg):
         self.curr_x = msg.xpos

@@ -1,11 +1,4 @@
 #programming 
-## Putty info
-
-IP Address: 172.27.51.9
-
-Username: willwu
-
-Password: Raspberry23
 
 ## Key Commands:
 

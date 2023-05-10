@@ -18,7 +18,7 @@ class PidPose(Node):
 
         # Subscriber
         self.curr_heading = 0.
-        self.kfx_sub = self.create_subscription(XFiltered, 'x_filtered', 
+        self.kfx_sub = self.create_subscription(XFiltered, 'x_filtered_fast', 
                                                 self.xfiltered_callback, 10)
         self.posesetpoint_sub = self.create_subscription(PoseSetpoint, 'pose_setpoint',
                                                 self.poseset_callback, 10)
@@ -26,42 +26,32 @@ class PidPose(Node):
         self.pid_pose_pub = self.create_publisher(PIDPOSE, 'theta', 10)
 
         # Time period
-        timer_period = 0.05 # seconds
+        timer_period = 0.025 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
-        self.pid_driver = drivers.pid_driver.PidDriver(Kp_pose, Ki_pose, Kd_pose, 1/timer_period, 5)
+        self.pid_driver = drivers.pid_driver.PidDriver(Kp_pose, Ki_pose, Kd_pose, 
+                                                        1/timer_period, 1.5, -1.5)
         self.heading = 0.
         self.x_set = point_q[0][0]
         self.y_set = point_q[0][1]
+        self.turn_now = False
 
 
     def xfiltered_callback(self, msg):
-        try: 
-            if self.heading % 1 == 0:
-                theta_calc = atan(-1* (self.y_set-msg.ypos)/(self.x_set-msg.xpos))
-            else:
-                theta_calc = atan(1/(self.y_set-msg.ypos)*(self.x_set-msg.xpos))
-        except ZeroDivisionError:
-            if self.heading % 1 == 0:
-                theta_calc = 0
-            else:
-                theta_calc = 0
-
-        self.pid_driver.curr_state = theta_calc
+        # yaw rate control
+        self.pid_driver.curr_state = msg.yawvel
         self.pid_driver.error_calc()
-        self.pid_driver.e1 += 0.5
+        # self.pid_driver.e1 += 0.5
  
     def poseset_callback(self, msg):
-        self.pid_driver
         self.pid_driver.setpoint = msg.yawsetpoint
-        self.x_set = msg.xsetpoint
-        self.y_set = msg.ysetpoint
-        self.get_logger().info('Received Yaw setpoint: "%f"' %msg.yawsetpoint)
+        self.turn_now = msg.turning_override
+        # self.get_logger().info('Received Yaw setpoint: "%f"' %msg.yawsetpoint)
     
     def timer_callback(self):
         msg = self.populate_message()
         self.pid_pose_pub.publish(msg)
-        self.get_logger().info('Publishing: "%f"' %msg.theta)
+        # self.get_logger().info('Publishing: "%f"' %msg.theta)
         self.pid_driver.update()
  
     def populate_message(self):
@@ -70,7 +60,10 @@ class PidPose(Node):
         msg.header.stamp = self.get_clock().now().to_msg()
         msg.header.frame_id = 'body'
         # Rest of the message
-        msg.theta = self.pid_driver.pid_calc()
+        if (self.turn_now):
+            msg.theta = 5.5
+        else:
+            msg.theta = float(self.pid_driver.pid_calc())
         msg.debug_error = self.pid_driver.e1
         return msg
 

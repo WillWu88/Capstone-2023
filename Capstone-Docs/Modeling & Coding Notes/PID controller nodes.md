@@ -2,11 +2,10 @@
 
 A [[ROS2]] node that reads Kalman filter estimations and navigation set points and publishes the controlled input of the system.
 
-## 1. Discrete implementation
+## I. Discrete implementation
 
 The overall control function in continuous time can be defined as:
 $$u(t) = K_pe(t) + K_i\int_0^te(\tau)d\tau + K_d\frac{d\:e(t)}{dt}$$
-Check [[Controller and Estimator Design]].
 
 The discrete algorithm of our controller:
 $$u(t_k) = u(t_{k-1}) + (K_p + K_i\Delta t + K_d/\Delta t)e(t_k) + (-K_p - 2K_d/\Delta t)e(t_{k-1}) + (K_d/\Delta t) e(t{k-2}) $$
@@ -19,7 +18,9 @@ $$u(t_k) = u(t_{k-1}) + (K_p + K_i\Delta t + K_d/\Delta t)e(t_k) + (-K_p - 2K_d/
 - $u(t_k)$ is the current state.
 - $u(t_{k-1})$ is the previous state.
 
-## 2. PID driver
+Check [[Controller and Estimator Design]] and [[Feedback Systems]] for detailed explanation.
+
+## II. PID driver
 
 We implemented the PID controller in a separate driver. Firstly, we initialized all of the parameters. 
 ```python
@@ -49,11 +50,31 @@ def __init__(self, Ki, Kp, Kd, delta, sat_val):
 
         self.sat_val = sat_val
 ```
-In a separate function, we have the current error function which is the current set point substracted by the current reading:
+In a separate function, we have the current error function which is the current set point substracted by the current reading (w being the state):
 $$e(t_k) = w_{setpoint} - w_{estimation}$$
 Once this calculation is done, we can implement the discrete algorithm and return the corrected state. Finally, all of the parameters will be updated accordingly.
 
-## 3. ROS nodes
+## III. PID constants tuning
+
+After thorough testing, our final PID constants which proved to produce the best results for velocity control are:
+```python
+Kp_vel = 0.000024
+
+Ki_vel = 0.00000686
+
+Kd_vel = 0.000021
+```
+
+Our PID constants for our steering control are:
+```python
+Kp_pose = 0.002
+
+Ki_pose = 0.015
+
+Kd_pose = 0.
+```
+
+## IV. ROS nodes
 
 Two PID nodes were created, one that publishes the velocity input $\tau$ and the steering angle $\theta$. See [[PiCar Modelling and Simulation]] for the detailed state-space model of the car.
 
@@ -135,6 +156,10 @@ $$ \theta = atan((\hat{y} - \bar{y})/(\hat{x} - \bar{x})) $$
 Where $\hat{x}$ and $\hat{y}$ are the next set points the car must go to. $\bar{x}$ and $\bar{y}$ are the estimation from the Kalman filter.
 - A `timer_callback` which increments the message field and call the publisher method at a frequency of 20Hz (so every 0.05s) to publish the message. It will also call back on the driver functions to calculate the current state.
 - A `populate_message` function which will assign the correct information to each messages accordingly.
+
+## V. Results
+
+Check [[Outdoor Testing]] for results.
 
 ## References:
 - [Matlab Vehicle Modelling](https://www.mathworks.com/help/ident/ug/modeling-a-vehicle-dynamics-system.html)

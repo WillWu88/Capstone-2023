@@ -34,6 +34,7 @@ setup(
             'nav = picar_sys.navigation_publisher:main',
             'motor = picar_sys.motor_mixer:main',
             'steer = picar_sys.servo_node:main',
+            'pid_posi = picar_sys.pid_position_node:main',
         ],
     },
 )

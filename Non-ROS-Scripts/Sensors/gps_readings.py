@@ -50,6 +50,8 @@ if __name__ == "__main__":
     sample_count = 0
     sample_num = int(input("# of data > "))
     log_data = np.zeros((2, sample_num))
+    lat_average = 0
+    long_average = 0
 
     print("Collecting data now...")
     while sample_count < sample_num:
@@ -72,12 +74,19 @@ if __name__ == "__main__":
             print(sample_count)
             log_data[index_dict["long"], sample_count] = gps.longitude_minutes
             log_data[index_dict["lat"], sample_count] = gps.latitude_minutes
+            long_average += gps.longitude_minutes
+            lat_average += gps.latitude_minutes
 
             sample_count += 1
 
     output_data = {"GPS_readings": log_data}
+    lat_average /= sample_num
+    long_average /= sample_num
     date_str = date.today()
     savemat("./Data/GPS_readings_"+date_str.strftime("%b_%d_%Y")+".mat", output_data)
+    print("Average:")
+    print("Lat: " + str(lat_average))
+    print("Long: " + str(long_average))
 '''
     except KeyboardInterrupt:
         output_data = {"GPS_readings": log_data}

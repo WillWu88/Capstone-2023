@@ -5,33 +5,23 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='picar_sys',
-            executable='pid_pose',
-            name='pid_pose'
+            executable='motor',
+            name='motor_mixer'
         ),
-        # Node(
-        #     package='picar_sys',
-        #     executable='motor',
-        #     name='motor_mixer'
-        # ),
         Node(
             package='picar_sys',
-            executable='steer',
-            name='servo_mixer'
-        ),
-        # Node(
-        #     package='picar_sys',
-        #     executable='pid_vel',
-        #     name='velocity_control'
-        # ),
-        Node(
-            package='picar_sys',
-            executable='test_pub',
-            name='navigator'
+            executable='pid_vel',
+            name='velocity_control'
         ),
         Node(
             package='picar_sys',
             executable='kf',
-            name='kf'
+            name='kf_fast'
+        ),
+        Node(
+            package='picar_sys',
+            executable='pid_posi',
+            name='posi_ctrl'
         ),
         Node(
             package='picar_sys',

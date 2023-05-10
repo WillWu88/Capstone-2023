@@ -2,7 +2,45 @@
 
 A [[ROS2]] node that publishes raw IMU readings
 
-## I. Node Design
+## I. IMU driver
+
+To see the sensor configuration and setups refer to [[MPU6050 Configuration]].
+
+The accelerometer and gyroscope values are 16-bit, and are stored in the following array:
+```python
+self.index_dict = {
+
+            "acc_x": 0,
+            "acc_y": 1,
+            "acc_z": 2,
+
+            "gyro_x": 3,
+            "gyro_y": 4,
+            "gyro_z": 5
+        }
+```
+
+To convert them to actual metric units, we concatenate the high and low bit values, and convert them accordingly.
+
+```python
+#Read Accelerometer and Gyro value, then convert
+
+self.data[self.index_dict["acc_x"]] = self.read_raw_data(ACCEL_XOUT_H)/16384.0
+
+self.data[self.index_dict["acc_y"]] = self.read_raw_data(ACCEL_YOUT_H)/16384.0
+
+self.data[self.index_dict["acc_z"]] = self.read_raw_data(ACCEL_ZOUT_H)/16384.0  
+
+#Read Gyroscope raw value
+
+self.data[self.index_dict["gyro_x"]] = self.read_raw_data(GYRO_XOUT_H)/131.0
+
+self.data[self.index_dict["gyro_y"]] = self.read_raw_data(GYRO_YOUT_H)/131.0
+
+self.data[self.index_dict["gyro_z"]] = self.read_raw_data(GYRO_ZOUT_H)/131.0
+```
+
+## II. Node Design
 
 Important aspects include:
 - Using datatype: `IMU` from `sensor_msgs`
