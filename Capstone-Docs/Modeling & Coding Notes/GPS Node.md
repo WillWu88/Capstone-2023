@@ -50,14 +50,31 @@ super().__init__('gps_publisher')
 self.publisher = self.create_publisher(GPS, 'gps_raw', 10)
 ```
 - A `timer_callback` which increments the message field and call the publisher method at a frequency of 10Hz (so every 0.1s) to publish the message. The message is then published to the console with `get_logger().info` method.
-- A `populate message` function which assigns data using the followgin custom `.msg` file:
+- A `populate message` function which assigns data to the correct topic
 ```python
-std_msgs/Header header
-float64 latdeg # latitude in degrees
-float64 longdeg # longitude in degrees
-float64 latmin # latitude in minutes
-float64 longmin # longitude in minutes
-bool flag # boolean which indicates if there is a fix
+def populate_message(self) -> GPS:
+
+        msg = GPS()
+
+        #Header
+
+        msg.header.stamp = self.get_clock().now().to_msg()
+
+        msg.header.frame_id = 'world'
+
+        msg.longdeg = self.gps.data[self.gps.index_dict['long_deg']]
+
+        msg.longmin = self.gps.data[self.gps.index_dict['long_min']]
+
+        msg.latdeg = self.gps.data[self.gps.index_dict['lat_deg']]
+
+        msg.latmin = self.gps.data[self.gps.index_dict['lat_min']]
+
+        msg.flag = self.flag
+
+        self.flag = not(self.flag)
+
+        return msg
 ```
 
 ## References
