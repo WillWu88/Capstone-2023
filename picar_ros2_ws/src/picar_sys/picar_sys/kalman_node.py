@@ -1,11 +1,8 @@
 import numpy as np
 import rclpy
-<<<<<<< HEAD
-from math import cos, sin, pi
-=======
 from math import cos, sin, pi, degrees, atan
->>>>>>> 5aa10e8cd92f6ae52c366f2edeb0ba604ffdab25
 from rclpy.node import Node
+from std_msgs.msg import String, Header
 from sensor_msgs.msg import Imu
 from tutorial_interfaces.msg import GPS, PoseSetpoint, RPM, VelSetpoint, XFiltered, Heading
 from message_filters import ApproximateTimeSynchronizer, Subscriber
