@@ -67,21 +67,21 @@ title('Sensor Data at Stationary Equilibrium')
 % RPM time series, 10000 samples
 figure;
 plot(rpm_20(2,:))
-title('RPM Time Series')
+title('RPM Time Series'), xlabel('Sample Number'), ylabel('RPM Reading')
 
 figure, plot(m_s_20), title('m/s time series')
 
 %% statiscal analysis
 
 % distribution analysis
-figure, histogram(stationary(acc_x,:)), title('X Acc Distribution');
-figure, histogram(stationary(acc_y,:)), title('Y Acc Distribution');
-figure, histogram(stationary(acc_z,:)), title('Z Acc Distribution');
-figure, histogram(rpm_20(2,:)), title('RPM Distribution (20% PWM)');
-figure, histogram(m_s_20), title('linear speed Distribution (20% PWM)')
-figure, histogram(psi_rad), title('Yaw angular velocity (rad/s)')
-figure, histogram(gps(longitude,:)), title('Longitude Distribution');
-figure, histogram(gps(latitude,:)), title('Latitude Distribution');
+figure, histogram(stationary(acc_x,:)), title('X Acc Distribution'), xlabel('Raw Reading (m/s^2)'), ylabel('Frequency');
+figure, histogram(stationary(acc_y,:)), title('Y Acc Distribution'), xlabel('Raw Reading (m/s^2)'), ylabel('Frequency');
+figure, histogram(stationary(acc_z,:)), title('Z Acc Distribution'), xlabel('Raw Reading (m/s^2)'), ylabel('Frequency');
+figure, histogram(rpm_20(2,:)), title('RPM Distribution (20% PWM)'), xlabel('Raw Reading (rpm)'), ylabel('Frequency');
+figure, histogram(m_s_20), title('linear speed Distribution (20% PWM)'), xlabel('Raw Reading (m/s)'), ylabel('Frequency')
+figure, histogram(psi_rad), title('Yaw Angular Velocity Distribution'), xlabel('Raw Reading (deg/s)'), ylabel('Frequency')
+figure, histogram(gps(longitude,:)), title('Longitude Distribution'), xlabel('Raw Reading (minutes longitude)'), ylabel('Frequency');
+figure, histogram(gps(latitude,:)), title('Latitude Distribution'), xlabel('Raw Reading (minutes latitude)'), ylabel('Frequency');
 
 % gyro readings in deg/s
 sensor_mean = mean(stationary(acc_x:gyro_z,:),2);
